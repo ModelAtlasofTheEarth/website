@@ -13,6 +13,8 @@ config.autoAddCss = false; /* eslint-disable import/first */
 
 import AtlasIcon from "../img/atlas-icon.png";
 
+
+
 const IndexPageTemplate = ({
   image,
   title,
@@ -28,8 +30,9 @@ const IndexPageTemplate = ({
     <h1 className="has-text-weight-bold is-size-2 is-size-1-widescreen gp-title">
       MATE website
     </h1>
-    <h1 className="has-text-weight-bold is-size-2 gp-title">Coming soon....</h1>
+    <h1 className="has-text-weight-bold is-size-2 gp-title">Coming soon....!!!3!!!</h1>
     <div style={{ paddingTop: "2rem" }}>
+      {/*
       <img
         src={AtlasIcon}
         alt="Atlas Icon"
@@ -41,7 +44,14 @@ const IndexPageTemplate = ({
         }}
         role="presentation"
       />
+      */}
+
     </div>
+
+  <video id="myVideo" loop muted playsinline autoPlay>
+    <source src="https://mate.science/webdav/media/header-video.mp4" type="video/mp4"/>
+  </video>
+
   </div>
 );
 
