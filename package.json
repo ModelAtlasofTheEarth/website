@@ -1,8 +1,8 @@
 {
-  "name": "gplates-website",
-  "description": "The website for GPlates project",
+  "name": "mate-website",
+  "description": "Model Atlas of the Earth (M@TE)",
   "version": "1.0.0",
-  "author": "GPlates developers",
+  "author": "M@TE team",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
@@ -33,6 +33,8 @@
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
+    "react-tabs": "",
+    "react-player": "",
     "uuid": "^9.0.0"
   },
   "keywords": [

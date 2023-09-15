@@ -17,6 +17,9 @@ exports.createPages = ({ actions, graphql }) => {
             }
             frontmatter {
               tags
+              creator {
+                name
+              }
               templateKey
             }
           }
@@ -66,6 +69,25 @@ exports.createPages = ({ actions, graphql }) => {
         component: path.resolve(`src/templates/tags.js`),
         context: {
           tag,
+        },
+      })
+    })
+
+    // Author pages:
+    let authors = []
+    posts.forEach((edge) => {
+      if (_.get(edge, `node.frontmatter.creator.name`)) {
+        authors = authors.concat(edge.node.frontmatter.creator.name)
+      }
+    })
+    authors = _.uniq(authors)
+    authors.forEach((author) => {
+      const authorPath = `/authors/${_.kebabCase(author)}/`
+      createPage({
+        path: authorPath,
+        component: path.resolve(`src/templates/authors.js`),
+        context: {
+          author,
         },
       })
     })

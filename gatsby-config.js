@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: "GPlates",
-    description: "This is the GPlates project website.",
+    title: "M@TE",
+    description: "Model Atlas of the Earth (M@TE).",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
