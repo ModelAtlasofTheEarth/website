@@ -146,7 +146,7 @@ const ModelTemplate = ({
               </div>
             }
             {
-              model_setup &&
+              model_setup.src &&
               <div>
                 <h3>Model setup</h3>
                 <PreviewCompatibleImage

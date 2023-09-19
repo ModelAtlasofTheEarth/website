@@ -29,7 +29,7 @@ images:
     src: ./fig1.png
     alt: ""
   model_setup:
-    src: ""
+    src:
     alt: ""
 animations:
   - src: ./S1_reference_model.mp4
