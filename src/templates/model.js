@@ -1,10 +1,8 @@
 import React from "react"
-import { kebabCase } from "lodash"
 import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 import "react-tabs/style/react-tabs.css"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Animation from "../components/Animation"
 import Content, { HTMLContent } from "../components/Content"
 import {
@@ -183,19 +181,6 @@ const ModelTemplate = ({
             }
           </TabPanel>
         </Tabs>
-
-      <h2>Tags</h2>
-      <ul>
-        {
-          tags.map((tag) =>
-            <li>
-              <Link to={`/tags/${kebabCase(tag)}`}>
-                {tag}
-              </Link>
-            </li>
-          )
-        }
-      </ul>
 
       </div>
       <PostContent content={content}/>
