@@ -30,11 +30,11 @@ const ModelTemplate = ({
   tags,
 }) => {
   const PostContent = contentComponent || Content
-  if (!dataset.url && dataset.doi) {
-    var dataset_url = "https://doi.org/" + dataset.doi
-  } else {
-    var dataset_url = dataset.url
-  }
+  var dataset_url = (
+    (!dataset.url && dataset.doi)
+    ? "https://doi.org/" + dataset.doi
+    : dataset.url
+  )
 
   return (
     <section className="section">

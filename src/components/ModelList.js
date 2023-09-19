@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql, StaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { TagsList } from "./Badges"
 

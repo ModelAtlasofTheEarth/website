@@ -1,11 +1,8 @@
 import React from "react"
 import Layout from "../../components/Layout"
 import PropTypes from "prop-types"
-import { Link, graphql, StaticQuery } from "gatsby"
+import { graphql, StaticQuery } from "gatsby"
 import PageHead from "../../components/Head"
-import PreviewCompatibleImage from "../../components/PreviewCompatibleImage"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { TagsList } from "../../components/Badges"
 import ModelList from "../../components/ModelList"
 
 class ModelsPage extends React.Component {
