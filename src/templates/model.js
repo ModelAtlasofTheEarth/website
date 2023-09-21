@@ -7,7 +7,7 @@ import Animation from "../components/Animation"
 import Content, { HTMLContent } from "../components/Content"
 import {
   BadgeDoi,
-  BadgeTag,
+  TagsList,
 } from "../components/Badges"
 import PageHead from "../components/Head"
 import Layout from "../components/Layout"
@@ -30,7 +30,7 @@ const ModelTemplate = ({
   tags,
 }) => {
   const PostContent = contentComponent || Content
-  var dataset_url = (
+  const dataset_url = (
     (!dataset.url && dataset.doi)
     ? "https://doi.org/" + dataset.doi
     : dataset.url
@@ -71,13 +71,7 @@ const ModelTemplate = ({
             <h2>Abstract</h2>
             <p>{abstract}</p>
             <h3>Tags</h3>
-            <p>
-              {
-                tags.toSorted().map((tag) =>
-                  <BadgeTag tag={tag}/>
-                )
-              }
-            </p>
+            <p><TagsList tags={tags}/></p>
             {graphic_abstract &&
               <div>
                 <h3>Graphic abstract</h3>

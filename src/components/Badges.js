@@ -22,8 +22,9 @@ const BadgeTag = ({ tag }) => {
 }
 
 const TagsList = ({ tags }) => {
+  const tags_sorted = [...tags].sort()
   return (
-    tags.toSorted().map((tag) =>
+    tags_sorted.map((tag) =>
       <BadgeTag tag={tag}/>
     )
   )
