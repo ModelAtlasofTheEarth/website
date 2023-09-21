@@ -2,7 +2,7 @@
 templateKey: 'model'
 slug: 'corcho-2022-collision'
 title: 'The Role of Lithospheric-Deep Mantle Interactions on the Style and Stress Evolution of Arc-Continent Collision'
-date: 2023-28-08T15:04:10.000Z
+date: 2023-08-28T15:04:10.000Z
 featuredpost: false
 for_code: 3706,370604
 status: completed

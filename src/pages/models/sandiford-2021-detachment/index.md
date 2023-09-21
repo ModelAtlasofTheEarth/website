@@ -2,7 +2,7 @@
 templateKey: 'model'
 slug: 'sandiford-2021-detachment'
 title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid-Block Rotation and Apparent Unbending'
-date: 2023-28-08T17:04:10.000Z
+date: 2023-08-28T17:04:10.000Z
 featuredpost: false
 for_code: 3706,370604
 status: completed
