@@ -254,6 +254,19 @@ $menu-label-color: $white-ter
   font-size: 22px
   font-weight: bold
 
+.model-page
+  text-align: left
+
+.model-page-header
+  @extend .model-page
+  text-align: center
+  font-size: 22px
+
+.model-page-header h1
+  font-size: 30px
+  font-weight: 600
+  margin-bottom: 30px
+
 .react-player
   height: auto !important
   aspect-ratio: 16/9
@@ -268,7 +281,7 @@ $menu-label-color: $white-ter
 .badge-tag
   @extend .badge
   font-size: 14px
-  background-color: #777
+  background-color: #007ec6
   color: white
   margin: 2px
   &:hover
@@ -288,6 +301,15 @@ $menu-label-color: $white-ter
   @extend .badge-doi-base
   background-color: #007ec6
   border-radius: 0px 5px 5px 0px
+
+.badge-author
+  @extend .badge
+  font-size: 16px
+  background-color: #007ec6
+  color: white
+  margin: 2px
+  &:hover
+    filter: opacity(75%)
 
 .mc-card-container:hover .mc-card-overlay
   //bottom: 0

@@ -1,7 +1,7 @@
-import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { TagsList } from "./Badges"
+import React from "react"
+import { BadgeAuthor, TagsList } from "./Badges"
 
 const ModelList = ({ posts }) => (
   <div className="container models">
@@ -10,7 +10,7 @@ const ModelList = ({ posts }) => (
         <ModelListItem
           slug={post.fields.slug}
           title={post.frontmatter.title}
-          author={post.frontmatter.creator.name}
+          author={post.frontmatter.uploader.name}
           date={post.frontmatter.date}
           tags={post.frontmatter.tags}
           landing_image={post.frontmatter.images.landing_image}
@@ -18,6 +18,15 @@ const ModelList = ({ posts }) => (
       ))
     }
   </div>
+)
+
+const isValidModelListItem = (post) => (
+  post.fields.slug &&
+  post.frontmatter.title &&
+  post.frontmatter.uploader?.name &&
+  post.frontmatter.date &&
+  post.frontmatter.tags &&
+  post.frontmatter.images.landing_image
 )
 
 const ModelListItem = ({
@@ -47,10 +56,12 @@ const ModelListItem = ({
           <Link className="models-text" to={slug}>
             <h3>{title}</h3>
           </Link>
-          <p><b>Author:</b> {author}</p>
+          <p>
+            <b>Uploaded by:</b>{" "}
+            <BadgeAuthor author={author}/>
+          </p>
           <p><b>Uploaded:</b> {date}</p>
-          <p><b>Tags:</b></p>
-          <p><TagsList tags={tags}/></p>
+          <p><b>Tags:</b>{" "}<TagsList tags={tags}/></p>
         </th>
       </tr>
     </table>
@@ -58,4 +69,4 @@ const ModelListItem = ({
 }
 
 export default ModelList
-export { ModelListItem }
+export { ModelListItem, isValidModelListItem }

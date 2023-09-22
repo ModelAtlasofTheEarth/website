@@ -1,14 +1,15 @@
-import React from "react"
+import { graphql } from "gatsby"
 import PropTypes from "prop-types"
+import React from "react"
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 import "react-tabs/style/react-tabs.css"
-import { graphql } from "gatsby"
 import Animation from "../components/Animation"
-import Content, { HTMLContent } from "../components/Content"
 import {
+  BadgeAuthor,
   BadgeDoi,
   TagsList,
 } from "../components/Badges"
+import Content, { HTMLContent } from "../components/Content"
 import PageHead from "../components/Head"
 import Layout from "../components/Layout"
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage"
@@ -18,7 +19,8 @@ const ModelTemplate = ({
   contentComponent,
   title,
   date,
-  creator,
+  uploader,
+  authors,
   email,
   abstract,
   graphic_abstract,
@@ -38,22 +40,35 @@ const ModelTemplate = ({
 
   return (
     <section className="section">
-      <div className="container content">
-        <h1
-          className="title is-size-3 has-text-weight-bold is-bold-light"
-          style={{ textAlign: "center" }}
-        >
-          {title}
-        </h1>
-        <p className="is-size-5" style={{ textAlign: "center" }}>
-          <b>{creator}</b>:{" "}
-          <a href={`mailto:` + email}>{email}</a>
-        </p>
-        <p className="is-size-5" style={{ textAlign: "center" }}>
-          <b>Uploaded:{" "}</b>{date}
-        </p>
+      <div className="container content model-page">
+        <div className="model-page-header">
+          {/* <h1
+            className="title is-size-3 has-text-weight-bold is-bold-light"
+          > */}
+          <h1>
+            {title}
+          </h1>
+          <p className="model-page-header" style={{ marginBottom: "15px" }}>
+            <b>Authors:</b>{" "}
+            {
+              authors.map((author) => (
+                <BadgeAuthor
+                  author={author.name}
+                  style={{ fontSize: "20px" }}
+                />
+              ))
+            }
+          </p>
+          <p className="model-page-header" style={{ marginBottom: "15px" }}>
+            <b>Uploaded by:</b> {uploader}{" "}
+            (<a href={`mailto${email}`}>{email}</a>)
+          </p>
+          <p className="model-page-header" style={{ marginBottom: "15px" }}>
+            <b>Upload date:</b> {date}
+          </p>
+        </div>
 
-        <Tabs>
+        <Tabs className="model-page">
           <TabList>
             <Tab>Abstract</Tab>
             <Tab disabled={!dataset_url}>
@@ -189,7 +204,7 @@ ModelTemplate.propTypes = {
   date: PropTypes.string,
   abstract: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string),
-  creator: PropTypes.string,
+  uploader: PropTypes.string,
   email: PropTypes.string,
   dataset: PropTypes.objectOf(PropTypes.string),
   animations: PropTypes.arrayOf(PropTypes.object),
@@ -207,8 +222,9 @@ const Models = ({ data }) => {
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         date={post.frontmatter.date}
-        creator={post.frontmatter.creator.name}
-        email={post.frontmatter.creator.email}
+        uploader={post.frontmatter.uploader.name}
+        authors={post.frontmatter.authors}
+        email={post.frontmatter.uploader.email}
         abstract={post.frontmatter.abstract}
         graphic_abstract={post.frontmatter.images.graphic_abstract}
         model_setup={post.frontmatter.images.model_setup}
@@ -235,9 +251,12 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        creator {
+        uploader {
           name
           email
+        }
+        authors {
+          name
         }
         abstract
         images {

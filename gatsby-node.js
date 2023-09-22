@@ -17,7 +17,10 @@ exports.createPages = ({ actions, graphql }) => {
             }
             frontmatter {
               tags
-              creator {
+              uploader {
+                name
+              }
+              authors {
                 name
               }
               templateKey
@@ -76,8 +79,15 @@ exports.createPages = ({ actions, graphql }) => {
     // Author pages:
     let authors = []
     posts.forEach((edge) => {
-      if (_.get(edge, `node.frontmatter.creator.name`)) {
-        authors = authors.concat(edge.node.frontmatter.creator.name)
+      if (_.get(edge, `node.frontmatter.uploader.name`)) {
+        authors = authors.concat(edge.node.frontmatter.uploader.name)
+      }
+      if (_.get(edge, `node.frontmatter.authors`)) {
+        edge.node.frontmatter.authors.forEach((author) => {
+          if (_.get(author, `name`)) {
+            authors = authors.concat(author.name)
+          }
+        })
       }
     })
     authors = _.uniq(authors)

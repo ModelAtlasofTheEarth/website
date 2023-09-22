@@ -8,9 +8,14 @@ for_code: 3706,370604
 status: completed
 software: ASPECT
 licence: cc-by-4.0
-creator:
+uploader:
   name: Dan Sandiford
   email: dan.sandiford@sydney.edu.au
+authors:
+  - name: Dan Sandiford
+    email: dan.sandiford@sydney.edu.au
+  - name: Jane Doe
+    email: jane@example.com
 tags:
   - tectonics
   - extension
@@ -44,6 +49,6 @@ input_files:
   url: https://github.com/dansand/sandiford-2021-detachment/tree/main/model_files
   notes: ""
 postprocessing_files:
-  url: ""
-  notes: ""
+  url:
+  notes:
 ---

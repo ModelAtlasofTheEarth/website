@@ -8,9 +8,15 @@ for_code: 3706,370604
 status: completed
 software: UWGeodynamics
 licence: cc-by-4.0
-creator:
+uploader:
   name: John Doe
   email: john@example.com
+authors:
+  - name: John Doe
+    email: john@example.com
+  - name: Jane Doe
+    email: jane@example.com
+#   - name: John Doe II
 tags:
   - collision
   - subduction
@@ -21,6 +27,7 @@ tags:
   - model postprocessing files
   - C
   - Python
+  - placeholder
 abstract: >
   Continents grow by the successive accretion of material to their margins, mostly collision and accretion of intra-oceanic magmatic arcs. We investigate the effect of arc buoyancy and viscosity on the mode of collision, and the effects on the margin using a computer modeling approach. Our simulations show that upon collision, it is a small differential in density (3%) between the colliding arc and the continental margin that dictates whether subduction continues or stops after collision. In addition, our models show that arc buoyancy and viscosity drive lithospheric extension in the continental plate. Also, as the subducting slab reaches a mantle discontinuity at 660 km depth, it folds and causes strain and stress fluctuations on the margin.
 images:
@@ -48,6 +55,6 @@ input_files:
   url: https://github.com/dansand/corcho_2022_collision_test/tree/main/model_reproduction_files
   notes: ""
 postprocessing_files:
-  url: ""
-  notes: ""
+  url: "https://www.gplates.org"
+  notes: "Notes re: post-processing files"
 ---  

@@ -1,20 +1,34 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Link, graphql } from "gatsby";
+import PageHead from "../components/Head"
 import Layout from "../components/Layout";
+import { ModelListItem, isValidModelListItem } from "../components/ModelList"
 
 class TagRoute extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges;
     const postLinks = posts.map((post) => (
-      <li key={post.node.fields.slug}>
-        <Link to={post.node.fields.slug}>
-          <h2 className="is-size-2">{post.node.frontmatter.title}</h2>
-        </Link>
-      </li>
-    ));
+        isValidModelListItem(post.node) ?
+        (
+          <ModelListItem
+            key={post.node.fields.slug}
+            slug={post.node.fields.slug}
+            title={post.node.frontmatter.title}
+            author={post.node.frontmatter.uploader.name}
+            date={post.node.frontmatter.date}
+            tags={post.node.frontmatter.tags}
+            landing_image={post.node.frontmatter.images.landing_image}
+          />
+        ) :
+        (
+          <li key={post.node.fields.slug}>
+          <Link to={post.node.fields.slug}>
+            <h2 className="is-size-2">{post.node.frontmatter.title}</h2>
+          </Link>
+          </li>
+        )
+    ))
     const tag = this.props.pageContext.tag;
-    const title = this.props.data.site.siteMetadata.title;
     const totalCount = this.props.data.allMarkdownRemark.totalCount;
     const tagHeader = `${totalCount} post${
       totalCount === 1 ? "" : "s"
@@ -23,7 +37,6 @@ class TagRoute extends React.Component {
     return (
       <Layout>
         <section className="section">
-          <Helmet title={`${tag} | ${title}`} />
           <div className="container content">
             <div className="columns">
               <div
@@ -45,6 +58,7 @@ class TagRoute extends React.Component {
 }
 
 export default TagRoute;
+export const Head = ({ pageContext }) => <PageHead title={pageContext.tag}/>
 
 export const tagPageQuery = graphql`
   query TagPage($tag: String) {
@@ -54,7 +68,6 @@ export const tagPageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      limit: 7
       sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
@@ -66,6 +79,24 @@ export const tagPageQuery = graphql`
           }
           frontmatter {
             title
+            uploader {
+              name
+            }
+            date(formatString: "MMMM DD, YYYY")
+            tags
+            images {
+              landing_image {
+                alt
+                src {
+                  childImageSharp {
+                    gatsbyImageData(
+                      quality: 100
+                      layout: CONSTRAINED
+                    )
+                  }
+                }
+              }
+            }
           }
         }
       }

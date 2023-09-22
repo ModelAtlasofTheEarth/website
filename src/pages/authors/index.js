@@ -11,6 +11,9 @@ const AuthorsPage = ({
     allMarkdownRemark: { group },
   },
 }) => {
+  const group_sorted = [...group]
+//   group_sorted.sort((a, b) => b.totalCount - a.totalCount)
+  group_sorted.sort()
   return (
     <Layout>
       <section className="section">
@@ -23,7 +26,7 @@ const AuthorsPage = ({
               <h1 className="title is-size-2 is-bold-light">Authors</h1>
               <ul className="authorlist">
                 {
-                  group.map((name) => (
+                  group_sorted.map((name) => (
                     <li key={name.fieldValue}>
                       <Link to={`/authors/${kebabCase(name.fieldValue)}`}>
                         {name.fieldValue} ({name.totalCount})
@@ -45,7 +48,7 @@ export default AuthorsPage
 export const authorsPageQuery = graphql`
   query AuthorsQuery {
     allMarkdownRemark {
-      group(field: {frontmatter: {creator: {name: SELECT}}}) {
+      group(field: {frontmatter: {authors: {name: SELECT}}}) {
         fieldValue
         totalCount
       }
