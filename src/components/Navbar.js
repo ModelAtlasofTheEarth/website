@@ -69,7 +69,7 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/contact">
+              <Link className="navbar-item" to="/models">
                 <span
                   className="icon has-text-extensions"
                   aria-hidden="true"
@@ -78,7 +78,7 @@ const Navbar = class extends React.Component {
                   <FontAwesomeIcon icon={faUsersViewfinder} />
                 </span>
 
-                <span>Model</span>
+                <span>Models</span>
               </Link>
               <a
                 className="navbar-item"
