@@ -1,6 +1,5 @@
 import * as JsSearch from "js-search"
 import React, { Component } from "react"
-import * as _ from "lodash"
 
 import ModelList from "./ModelList"
 
@@ -72,12 +71,9 @@ class ClientSearch extends Component {
       selectedSanitizer,
     } = this.state
     const { models } = this.props
-    _.forEach(
-      models,
-      (model) => {
-        model.author_names = model.frontmatter.authors.map((author) => author.name)
-      }
-    )
+    for (const model of models) {
+      model.author_names = model.frontmatter.authors.map((author) => author.name)
+    }
 
     const dataToSearch = new JsSearch.Search("id")
     if (removeStopWords) {
@@ -103,7 +99,7 @@ class ClientSearch extends Component {
       ? (dataToSearch.sanitizer = new JsSearch.CaseSensitiveSanitizer())
       : (dataToSearch.sanitizer = new JsSearch.LowerCaseSanitizer())
     termFrequency === true
-      ? (dataToSearch.searchIndex = new JsSearch.TfIdfSearchIndex("isbn"))
+      ? (dataToSearch.searchIndex = new JsSearch.TfIdfSearchIndex(["fields", "slug"]))
       : (dataToSearch.searchIndex = new JsSearch.UnorderedSearchIndex())
 
     if (indexByTitle) {
@@ -141,7 +137,7 @@ class ClientSearch extends Component {
       <section className="container models-search">
         <form className="models-search" onSubmit={this.handleSubmit}>
             <label htmlFor="Search">
-              Search title, authors, tags, and abstracts:{" "}
+              Search by title, authors, tags, or abstract:{" "}
             </label>
             <div className="control models-search has-icons-left">
               <input
