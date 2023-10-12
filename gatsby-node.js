@@ -8,22 +8,43 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark(limit: 1000) {
+      allMarkdownRemark(
+        limit: 1000
+      ) {
         edges {
           node {
-            id
             fields {
               slug
             }
             frontmatter {
-              tags
-              uploader {
-                name
-              }
               authors {
                 name
               }
+              date(formatString: "MMMM DD, YYYY")
+              images {
+                landing_image {
+                  alt
+                  src {
+                    childImageSharp {
+                      gatsbyImageData(
+                        quality: 100
+                        layout: CONSTRAINED
+                      )
+                    }
+                  }
+                }
+              }
+              software
+              tags
               templateKey
+              title
+              uploader {
+                name
+              }
+            }
+            id
+            internal {
+              content
             }
           }
         }
@@ -101,6 +122,41 @@ exports.createPages = ({ actions, graphql }) => {
         },
       })
     })
+
+    // Search page
+    let models_list = []
+    posts.forEach((edge) => {
+      if (edge.node.frontmatter.templateKey == "model") {
+        models_list = _.concat(models_list, edge.node)
+      }
+    })
+    if (models_list.length > 0) {
+      createPage({
+        path: "/search",
+        component: path.resolve("./src/templates/client-search.js"),
+        context: {
+          modelData: {
+            allModels: models_list,
+            options: {
+              indexStrategy: "Prefix match",
+              searchSanitizer: "Lower Case",
+              SearchByTerm: true,
+              TitleIndex: true,
+              TagsIndex: true,
+              UploaderIndex: true,
+              AuthorsIndex: true,
+              AbstractIndex: true,
+              SoftwareIndex: true,
+              ContentIndex: true,
+            },
+          },
+        },
+      })
+    } else {
+      console.log("===========================================")
+      console.log("error creating search page: no models found")
+      console.log("===========================================")
+    }
   })
 }
 

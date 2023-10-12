@@ -192,7 +192,10 @@ const ModelTemplate = ({
         </Tabs>
 
       </div>
-      <PostContent content={content}/>
+      <PostContent
+        content={content}
+        className="container content model-page"
+      />
     </section>
   )
 }
@@ -249,16 +252,22 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-        uploader {
-          name
-          email
+        abstract
+        animations {
+          alt
+          src {
+            publicURL
+          }
         }
         authors {
           name
         }
-        abstract
+        dataset {
+          url
+          doi
+          notes
+        }
+        date(formatString: "MMMM DD, YYYY")
         images {
           graphic_abstract {
             alt
@@ -283,18 +292,6 @@ export const pageQuery = graphql`
             }
           }
         }
-        animations {
-          alt
-          src {
-            publicURL
-          }
-        }
-        tags
-        dataset {
-          url
-          doi
-          notes
-        }
         input_files {
           url
           notes
@@ -302,6 +299,12 @@ export const pageQuery = graphql`
         postprocessing_files {
           url
           notes
+        }
+        tags
+        title
+        uploader {
+          name
+          email
         }
       }
     }

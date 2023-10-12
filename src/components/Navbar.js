@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import github from "../img/github-icon.svg";
 import logo from "../img/atlas-icon.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers, faUsersViewfinder } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faUsers, faUsersViewfinder } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -37,16 +37,16 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav
-        className="navbar is-transparent is-fixed-top"
+        className="navbar is-fixed-top"
         role="navigation"
         aria-label="main-navigation"
       >
         <div className="container">
           <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
+            <Link to="/" className="navbar-item" title="M@TE">
               <img
                 src={logo}
-                alt="GPlates"
+                alt="M@TE"
                 style={{ width: "40px", maxHeight: "40px" }}
               />
             </Link>
@@ -69,7 +69,7 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/models">
+              <Link className="navbar-item hover-darken" to="/models">
                 <span
                   className="icon has-text-extensions"
                   aria-hidden="true"
@@ -81,7 +81,7 @@ const Navbar = class extends React.Component {
                 <span>Models</span>
               </Link>
               <a
-                className="navbar-item"
+                className="navbar-item hover-darken"
                 href="https://discourse.gplates.org/"
                 target="_blank"
                 rel="noreferrer"
@@ -95,6 +95,16 @@ const Navbar = class extends React.Component {
                 </span>
                 <span>Forum</span>
               </a>
+              <Link className="navbar-item hover-darken" to="/search">
+                <span
+                  className="icon has-text-extensions"
+                  aria-hidden="true"
+                  style={{ color: "darkolivegreen" }}
+                >
+                  <FontAwesomeIcon icon={faMagnifyingGlass}/>
+                </span>
+                <span>Search</span>
+              </Link>
             </div>
             <div className="navbar-end has-text-centered">
               <a

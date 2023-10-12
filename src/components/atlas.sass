@@ -10,6 +10,8 @@ $primary-invert: $kaldi-red-invert
 $body-color: #333
 $black: #2b2523
 
+$navbar-color: rgba(240, 248, 250, .85)
+
 .navbar .navbar-menu
   box-shadow:none !important
 
@@ -148,6 +150,8 @@ $menu-label-color: $white-ter
 @import "~bulma/sass/helpers/color"
 @import "~bulma/sass/elements/container"
 @import "~bulma/sass/elements/button"
+@import "~bulma/sass/form/_all"
+@import "~@fortawesome/fontawesome-free/css/all.min.css"
 
 .section
   padding: 1.5rem 0.75rem
@@ -218,6 +222,12 @@ $menu-label-color: $white-ter
 
 .models
   text-align: left
+  align: center
+
+.models h2
+  font-size: 40px
+  font-weight: 600
+  text-align: center
 
 .models h3
   font-size: 18px
@@ -225,18 +235,31 @@ $menu-label-color: $white-ter
 
 .models-entry
   width: 100%
-  height: 200px
+  height: 150px
   margin: 25px
   padding: 20px
+  align: center
   border-radius: 20px
-  border-width: 1px
+  border-width: 2px
   border-style: solid
   border-color: #eee
   border-collapse: separate
 
+.hover-shadow
+  &:hover
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1)
+
+.hover-opacity
+  &:hover
+    filter: opacity(75%)
+
+.hover-darken
+  &:hover
+    filter: saturate(120%) contrast(120%) opacity(80%)
+
 .models-image
-  width: 35%
-  min-width: 400px
+  width: 25%
+  min-width: 200px
   vertical-align: middle
 
 .models-image img
@@ -253,6 +276,20 @@ $menu-label-color: $white-ter
 .models-text h3
   font-size: 22px
   font-weight: bold
+
+.models-search
+  @extend .models
+  font-size: 20px
+
+.models-search input[type="text"]
+  margin-bottom: 20px
+
+.models-search input[type="checkbox"]
+  margin-right: 5px
+
+.models-search label
+  margin-right: 30px
+  margin-left: 0px
 
 .model-page
   text-align: left
@@ -284,8 +321,6 @@ $menu-label-color: $white-ter
   background-color: #007ec6
   color: white
   margin: 2px
-  &:hover
-    filter: opacity(75%)
 
 .badge-doi-base
   @extend .badge
@@ -308,8 +343,6 @@ $menu-label-color: $white-ter
   background-color: #007ec6
   color: white
   margin: 2px
-  &:hover
-    filter: opacity(75%)
 
 .mc-card-container:hover .mc-card-overlay
   //bottom: 0
@@ -601,11 +634,8 @@ div.download-box table .content
   width: unset !important
 
 .navbar
-  //position: absolute
-  //top: 0
-  //width: 100%
-  background: rgba(240, 248, 250, .85)
   border-bottom: none
+  background: $navbar-color
 
 #gplates-icon-div svg
   display: block
