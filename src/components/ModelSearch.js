@@ -3,7 +3,7 @@ import React, { Component } from "react"
 
 import ModelList from "./ModelList"
 
-class ClientSearch extends Component {
+class ModelSearch extends Component {
   state = {
     isLoading: true,
     searchResults: [],
@@ -303,4 +303,4 @@ class ClientSearch extends Component {
   }
 }
 
-export default ClientSearch
+export default ModelSearch

@@ -133,7 +133,7 @@ exports.createPages = ({ actions, graphql }) => {
     if (models_list.length > 0) {
       createPage({
         path: "/search",
-        component: path.resolve("./src/templates/client-search.js"),
+        component: path.resolve("./src/templates/model-search.js"),
         context: {
           modelData: {
             allModels: models_list,

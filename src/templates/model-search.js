@@ -1,6 +1,6 @@
 import React from "react"
 
-import ClientSearch from "../components/ClientSearch"
+import ModelSearch from "../components/ModelSearch"
 import Layout from "../components/Layout"
 
 const SearchTemplate = props => {
@@ -12,7 +12,7 @@ const SearchTemplate = props => {
     <Layout>
       <div className="models-search">
         <h2>Model Search</h2>
-        <ClientSearch
+        <ModelSearch
           models={allModels}
           engine={options}
         />
