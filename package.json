@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "M@TE team",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.2",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
@@ -24,6 +25,7 @@
     "gatsby-source-filesystem": "^5.8.0",
     "gatsby-transformer-remark": "^6.8.0",
     "gatsby-transformer-sharp": "^5.8.0",
+    "js-search": "^2.0.1",
     "lodash": "^4.17.21",
     "lodash-webpack-plugin": "^0.11.6",
     "node-sass": "^8.0.0",
@@ -33,8 +35,8 @@
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "react-tabs": "",
-    "react-player": "",
+    "react-player": "^2.13.0",
+    "react-tabs": "^6.0.2",
     "uuid": "^9.0.0"
   },
   "keywords": [

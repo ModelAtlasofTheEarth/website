@@ -16,7 +16,8 @@ authors:
     email: john@example.com
   - name: Jane Doe
     email: jane@example.com
-#   - name: John Doe II
+  - name: Bob Smith
+    email: b.smith@example.sydney.edu.au
 tags:
   - collision
   - subduction
@@ -57,4 +58,9 @@ input_files:
 postprocessing_files:
   url: "https://www.gplates.org"
   notes: "Notes re: post-processing files"
----  
+---
+Test content.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacinia varius magna ut dignissim. Nulla vitae tellus sed tortor ullamcorper pharetra. Nullam eleifend libero ut tempus mattis. Phasellus nisi lacus, feugiat egestas nisl nec, sollicitudin mattis diam. Curabitur sed massa rhoncus ante finibus hendrerit. Pellentesque imperdiet purus non scelerisque fermentum. Pellentesque congue augue ac tortor elementum, eu tincidunt elit blandit. Donec interdum euismod justo, eget fermentum metus dapibus sit amet. Praesent sit amet purus leo. Aliquam metus arcu, tincidunt eu eros at, tristique luctus ante. In non varius elit. Quisque elit nisl, ullamcorper in aliquet ac, tempor ac sem. Pellentesque elementum nisi eu tincidunt rhoncus.
+
+Fusce a neque non nibh porta porta sed quis nisi. Mauris semper gravida diam eget luctus. In eu imperdiet massa, sit amet facilisis nisi. Duis pharetra lacus non orci faucibus, sed finibus nisi ultrices. Fusce aliquam eros vitae orci pharetra porttitor. Aliquam aliquam elit justo, a dignissim arcu facilisis in. Quisque ultricies congue turpis eu pulvinar. Maecenas ornare neque quis placerat sodales. Sed iaculis sit amet elit sed bibendum.

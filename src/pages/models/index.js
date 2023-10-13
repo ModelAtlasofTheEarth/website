@@ -12,10 +12,10 @@ class ModelsPage extends React.Component {
 
     return (
       <Layout>
-        <h2 className="has-text-weight-bold is-size-2 gp-title">
-          Available Models
-        </h2>
-        <ModelList posts={posts}/>
+        <div className="models">
+          <h2>Available Models</h2>
+          <ModelList posts={posts}/>
+        </div>
       </Layout>
     )
   }
@@ -45,12 +45,6 @@ const fn = () => (
                 slug
               }
               frontmatter {
-                title
-                uploader {
-                  name
-                }
-                tags
-                templateKey
                 date(formatString: "MMMM DD, YYYY")
                 images {
                   landing_image {
@@ -64,6 +58,13 @@ const fn = () => (
                       }
                     }
                   }
+                }
+                software
+                tags
+                templateKey
+                title
+                uploader {
+                  name
                 }
               }
             }
