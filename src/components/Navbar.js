@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import github from "../img/github-icon.svg";
 import logo from "../img/atlas-icon.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faUsers, faUsersViewfinder } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faUsersViewfinder } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -80,21 +80,6 @@ const Navbar = class extends React.Component {
 
                 <span>Models</span>
               </Link>
-              <a
-                className="navbar-item hover-darken"
-                href="https://discourse.gplates.org/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span
-                  className="icon has-text-extensions"
-                  aria-hidden="true"
-                  style={{ color: "yellowgreen" }}
-                >
-                  <FontAwesomeIcon icon={faUsers} />
-                </span>
-                <span>Forum</span>
-              </a>
               <Link className="navbar-item hover-darken" to="/search">
                 <span
                   className="icon has-text-extensions"
