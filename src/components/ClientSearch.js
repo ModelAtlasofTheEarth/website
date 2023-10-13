@@ -156,8 +156,7 @@ class ClientSearch extends Component {
       const new_state = {}
       new_state[key] = new_value
 
-      this.setState(new_state)
-      this.rebuildIndex()
+      this.setState(new_state, this.rebuildIndex)
     }
   }
 
@@ -197,7 +196,7 @@ class ClientSearch extends Component {
       <section className="container models-search">
         <form className="models-search" onSubmit={this.handleSubmit}>
             <label htmlFor="Search">
-              {this.getSearchKeys()}
+              Search fields:
             </label>
             <div className="models-search">
               <label
@@ -285,7 +284,7 @@ class ClientSearch extends Component {
                 className="input models-search is-rounded is-normal"
                 value={searchQuery}
                 onChange={this.searchData}
-                placeholder="Enter your search here"
+                placeholder={this.getSearchKeys()}
                 type="text"
               />
               <span className="icon is-small is-left">
