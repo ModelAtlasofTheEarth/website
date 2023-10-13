@@ -128,6 +128,66 @@ class ClientSearch extends Component {
     this.setState({ search: dataToSearch, isLoading: false })
   }
 
+  handleCheckbox = (e) => {
+    const key = e.target.id
+    const {
+      indexByTitle,
+      indexByAuthors,
+      indexByTags,
+      indexByAbstract,
+      indexByUploader,
+      indexBySoftware,
+    } = this.state
+    const num_true = [
+      indexByTitle,
+      indexByAuthors,
+      indexByTags,
+      indexByAbstract,
+      indexByUploader,
+      indexBySoftware,
+    ].reduce((a, b) => (a + b), 0)
+
+    if (Object.keys(this.state).includes(key)) {
+      const new_value = !this.state[key]
+      if (new_value === false && num_true <= 1) {
+        return
+      }
+
+      const new_state = {}
+      new_state[key] = new_value
+
+      this.setState(new_state)
+      this.rebuildIndex()
+    }
+  }
+
+  getSearchKeys = () => {
+    const {
+      indexByTitle,
+      indexByAuthors,
+      indexByTags,
+      indexByAbstract,
+      indexByUploader,
+      indexBySoftware,
+    } = this.state
+    const arr = []
+    if (indexByTitle) {arr.push("title")}
+    if (indexByAuthors) {arr.push("authors")}
+    if (indexByTags) {arr.push("tags")}
+    if (indexByAbstract) {arr.push("abstract")}
+    if (indexByUploader) {arr.push("uploader")}
+    if (indexBySoftware) {arr.push("software")}
+
+    let output = "Searching by "
+    if (arr.length === 1) {output = output + arr[0]}
+    if (arr.length === 2) {output = output + `${arr[0]} and ${arr[1]}`}
+    if (arr.length > 2) {
+      output = output + arr.slice(0, arr.length - 1).join(", ")
+      output = output + `, and ${arr[arr.length - 1]}`
+    }
+    return output + ":"
+  }
+
   render() {
     const { searchResults, searchQuery } = this.state
     const { models } = this.props
@@ -137,8 +197,88 @@ class ClientSearch extends Component {
       <section className="container models-search">
         <form className="models-search" onSubmit={this.handleSubmit}>
             <label htmlFor="Search">
-              Search by title, authors, tags, or abstract:{" "}
+              {this.getSearchKeys()}
             </label>
+            <div className="models-search">
+              <label
+                className="checkbox models-search"
+                for="indexByTitle"
+              >
+                <input
+                  id="indexByTitle"
+                  name="searchindex"
+                  type="checkbox"
+                  checked={this.state.indexByTitle}
+                  onChange={this.handleCheckbox}
+                />
+                Title
+              </label>
+              <label
+                className="checkbox models-search"
+                for="indexByAuthors"
+              >
+                <input
+                  id="indexByAuthors"
+                  name="searchindex"
+                  type="checkbox"
+                  checked={this.state.indexByAuthors}
+                  onChange={this.handleCheckbox}
+                />
+                Authors
+              </label>
+              <label
+                className="checkbox models-search"
+                for="indexByTags"
+              >
+                <input
+                  id="indexByTags"
+                  name="searchindex"
+                  type="checkbox"
+                  checked={this.state.indexByTags}
+                  onChange={this.handleCheckbox}
+                />
+                Tags
+              </label>
+              <label
+                className="checkbox models-search"
+                for="indexByAbstract"
+              >
+                <input
+                  id="indexByAbstract"
+                  name="searchindex"
+                  type="checkbox"
+                  checked={this.state.indexByAbstract}
+                  onChange={this.handleCheckbox}
+                />
+                Abstract
+              </label>
+              <label
+                className="checkbox models-search"
+                for="indexByUploader"
+              >
+                <input
+                  id="indexByUploader"
+                  name="searchindex"
+                  type="checkbox"
+                  checked={this.state.indexByUploader}
+                  onChange={this.handleCheckbox}
+                />
+                Uploader
+              </label>
+              <label
+                className="checkbox models-search"
+                for="indexBySoftware"
+              >
+                <input
+                  id="indexBySoftware"
+                  name="searchindex"
+                  type="checkbox"
+                  checked={this.state.indexBySoftware}
+                  onChange={this.handleCheckbox}
+                />
+                Software
+              </label>
+            </div>
             <div className="control models-search has-icons-left">
               <input
                 id="Search"
