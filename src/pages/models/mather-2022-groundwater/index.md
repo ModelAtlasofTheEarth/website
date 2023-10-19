@@ -14,6 +14,7 @@ uploader:
 authors:
   - name: Ben Mather
     email: ben.mather@sydney.edu.au
+    orcid: 0000-0003-3566-1557
   - name: Jane Doe
     email: jane@example.com
 tags:
