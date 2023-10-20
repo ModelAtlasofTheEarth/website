@@ -4,7 +4,12 @@ slug: 'mather-2022-groundwater'
 title: 'Constraining the response of continental‐scale groundwater flow to climate change'
 date: 2023-08-28T17:04:10.000Z
 featuredpost: false
-for_code: 0406, 0403, 040603, 040601, 040301
+for_codes:
+  - 0406
+  - 0403
+  - 040603
+  - 040601
+  - 040301
 status: completed
 software: Underworld2
 licence: cc-by-4.0
@@ -12,7 +17,7 @@ uploader:
   name: Ben Mather
   email: ben.mather@sydney.edu.au
 authors:
-    name: Ben Mather
+  - name: Ben Mather
     email: ben.mather@sydney.edu.au
     orcid: 0000-0003-3566-1557
 tags:
@@ -26,24 +31,24 @@ abstract: >
 images:
   landing_image:
     src: ./fig1.png
-    alt: ""
+    alt:
   graphic_abstract:
     src: ./fig1.png
-    alt: ""
+    alt:
   model_setup:
     src:
-    alt: ""
+    alt:
 animations:
-  src: ""
-  alt: ""
+  - src:
+    alt:
 dataset:
   url: https://doi.org/xxxx
   doi: xxxx
   notes: >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ornare orci nunc, non rutrum velit elementum non. Suspendisse ac cursus nibh. Sed nec laoreet purus. Aliquam lobortis massa sit amet mi posuere, sed facilisis elit luctus. Donec eu vehicula augue. Mauris iaculis nisl in fringilla gravida. Nunc dictum felis quis mi tincidunt egestas. Duis mollis neque vitae elementum volutpat. Praesent leo augue, tempus ac diam nec, varius posuere libero. Cras vel finibus sapien. Nunc scelerisque ut nibh in faucibus. Praesent ut magna felis. Etiam et sem at tortor volutpat vestibulum. Phasellus egestas mollis tempor. Donec ultrices, sapien faucibus porttitor lacinia, ligula ante interdum lectus, ac hendrerit nisi nunc sit amet magna. Maecenas pellentesque risus quis gravida fringilla. Pellentesque efficitur sed velit a molestie. Aliquam volutpat dictum consectetur. Nulla facilisi. Ut rutrum nec tellus sit amet lobortis. Suspendisse in arcu ut ipsum varius lacinia. Donec velit arcu, laoreet sed felis et, convallis tincidunt neque. Vestibulum non justo maximus, pulvinar enim non, tristique arcu. Nam fringilla suscipit est, id pretium urna dignissim id. Aenean interdum lacus quis eros molestie, eget eleifend massa rhoncus. Sed eu urna risus. Suspendisse commodo malesuada blandit.
 input_files:
-  url: ""
-  notes: ""
+  url:
+  notes:
 postprocessing_files:
   url:
   notes:
