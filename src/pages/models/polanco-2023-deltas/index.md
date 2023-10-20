@@ -12,11 +12,9 @@ uploader:
   name: Sara Polanco
   email: sara.moronpolanco@sydney.edu.au
 authors:
-  - name: Sara Polanco
-    email: sara.moronpolanco@sydney.edu.au
-    orcid: 0000-0002-1270-4377
-  - name: Jane Doe
-    email: jane@example.com
+  name: Sara Polanco
+  email: sara.moronpolanco@sydney.edu.au
+  orcid: 0000-0002-1270-4377
 tags:
   - erosion
   - deposition
@@ -38,8 +36,8 @@ images:
     src:
     alt: ""
 animations:
-  - src: ./S1_reference_model.mp4
-    alt: ""
+  src: ./S1_reference_model.mp4
+  alt: ""
 dataset:
   url: https://doi.org/xxxx
   doi: xxxx
