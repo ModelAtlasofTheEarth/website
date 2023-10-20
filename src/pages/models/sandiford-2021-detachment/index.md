@@ -12,10 +12,8 @@ uploader:
   name: Dan Sandiford
   email: dan.sandiford@sydney.edu.au
 authors:
-  - name: Dan Sandiford
-    email: dan.sandiford@sydney.edu.au
-  - name: Jane Doe
-    email: jane@example.com
+  name: Dan Sandiford
+  email: dan.sandiford@sydney.edu.au
 tags:
   - tectonics
   - extension
@@ -37,8 +35,8 @@ images:
     src:
     alt: ""
 animations:
-  - src: ./S1_reference_model.mp4
-    alt: ""
+  src: ./S1_reference_model.mp4
+  alt: ""
 dataset:
   url: https://doi.org/xxxx
   doi: xxxx
