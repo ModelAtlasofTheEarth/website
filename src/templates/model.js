@@ -74,7 +74,7 @@ const ModelTemplate = ({
             <Tab disabled={!dataset_url}>
               Dataset
             </Tab>
-            <Tab disabled={!input_files.url}>
+            <Tab disabled={!(input_files?.url || model_setup?.src)}>
               Input files
             </Tab>
             <Tab disabled={!postprocessing_files.url}>
@@ -88,7 +88,7 @@ const ModelTemplate = ({
             <h3>Tags</h3>
             <p><TagsList tags={tags}/></p>
             {graphic_abstract &&
-              <div>
+              <p>
                 <h3>Graphic abstract</h3>
                 <PreviewCompatibleImage
                   imageInfo={{
@@ -99,7 +99,7 @@ const ModelTemplate = ({
                   ),
                   }}
                 />
-              </div>
+              </p>
             }
           </TabPanel>
           <TabPanel>
@@ -123,7 +123,7 @@ const ModelTemplate = ({
               )
             }
             {
-              animations &&
+              (animations && animations[0]?.src?.publicURL) &&
               <div>
                 <h3>Animations</h3>
                 {
@@ -141,21 +141,27 @@ const ModelTemplate = ({
             }
           </TabPanel>
           <TabPanel>
-            <h2>Input files</h2>
-            <p>
-              The input files for this model
-              can be downloaded here:{" "}
-              <a href={input_files.url}>{input_files.url}</a>
-            </p>
             {
-              input_files.notes &&
+              (input_files?.url || input_files?.notes) &&
+              <h2>Input files</h2>
+            }
+            {
+              input_files?.url &&
+              <p>
+                The input files for this model
+                can be downloaded here:{" "}
+                <a href={input_files.url}>{input_files.url}</a>
+              </p>
+            }
+            {
+              input_files?.notes &&
               <div>
                 <h3>Notes</h3>
                 <p>{input_files.notes}</p>
               </div>
             }
             {
-              model_setup.src &&
+              model_setup?.src &&
               <div>
                 <h3>Model setup</h3>
                 <PreviewCompatibleImage
@@ -172,15 +178,18 @@ const ModelTemplate = ({
           </TabPanel>
           <TabPanel>
             <h2>Post-processing files</h2>
-            <p>
-              The post-processing files for this model
-              can be downloaded here:{" "}
-              <a href={postprocessing_files.url}>
-                {postprocessing_files.url}
-              </a>
-            </p>
             {
-              postprocessing_files.notes &&
+              postprocessing_files?.url &&
+              <p>
+                The post-processing files for this model
+                can be downloaded here:{" "}
+                <a href={postprocessing_files.url}>
+                  {postprocessing_files.url}
+                </a>
+              </p>
+            }
+            {
+              postprocessing_files?.notes &&
               (
                 <div>
                   <h3>Notes</h3>

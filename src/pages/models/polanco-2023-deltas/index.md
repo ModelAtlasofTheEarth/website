@@ -4,7 +4,11 @@ slug: 'polanco-2023-deltas'
 title: 'The flexural isostatic response of climatically driven sea-level changes  on continental-scale deltas'
 date: 2023-08-28T17:04:10.000Z
 featuredpost: false
-for_code: 3706, 370604,0406, 040601
+for_codes:
+  - 3706
+  - 370604
+  - 0406
+  - 040601
 status: completed
 software: BADLANDS
 licence: cc-by-4.0
@@ -12,9 +16,9 @@ uploader:
   name: Sara Polanco
   email: sara.moronpolanco@sydney.edu.au
 authors:
-  name: Sara Polanco
-  email: sara.moronpolanco@sydney.edu.au
-  orcid: 0000-0002-1270-4377
+  - name: Sara Polanco
+    email: sara.moronpolanco@sydney.edu.au
+    orcid: 0000-0002-1270-4377
 tags:
   - erosion
   - deposition
@@ -28,16 +32,16 @@ abstract: >
 images:
   landing_image:
     src: ./fig1.png
-    alt: ""
+    alt:
   graphic_abstract:
     src: ./fig1.png
-    alt: ""
+    alt:
   model_setup:
-    src:
-    alt: ""
+    src: ./fig2.png
+    alt:
 animations:
-  src: ./S1_reference_model.mp4
-  alt: ""
+  - src:
+    alt:
 dataset:
   url: https://doi.org/xxxx
   doi: xxxx
@@ -46,7 +50,7 @@ dataset:
     Etiam et sem at tortor volutpat vestibulum. Phasellus egestas mollis tempor. Donec ultrices, sapien faucibus porttitor lacinia, ligula ante interdum lectus, ac hendrerit nisi nunc sit amet magna. Maecenas pellentesque risus quis gravida fringilla. Pellentesque efficitur sed velit a molestie. Aliquam volutpat dictum consectetur. Nulla facilisi. Ut rutrum nec tellus sit amet lobortis. Suspendisse in arcu ut ipsum varius lacinia. Donec velit arcu, laoreet sed felis et, convallis tincidunt neque. Vestibulum non justo maximus, pulvinar enim non, tristique arcu. Nam fringilla suscipit est, id pretium urna dignissim id. Aenean interdum lacus quis eros molestie, eget eleifend massa rhoncus. Sed eu urna risus. Suspendisse commodo malesuada blandit.
 input_files:
   url: https://github.com/saraemp/egusphere-2023-53
-  notes: ""
+  notes:
 postprocessing_files:
   url:
   notes:

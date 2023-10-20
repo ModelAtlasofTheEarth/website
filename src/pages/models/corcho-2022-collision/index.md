@@ -4,17 +4,19 @@ slug: 'corcho-2022-collision'
 title: 'The Role of Lithospheric-Deep Mantle Interactions on the Style and Stress Evolution of Arc-Continent Collision'
 date: 2023-08-28T15:04:10.000Z
 featuredpost: false
-for_code: 3706,370604
+for_codes:
+  - 3706
+  - 370604
 status: completed
 software: UWGeodynamics
 licence: cc-by-4.0
 uploader:
   name: Andrés Felipe Rodríguez Corcho
-  email: john@example.com
+  email: andres.rodriguez1@sydney.edu.au
 authors:
- name: Andrés Felipe Rodríguez Corcho
- email: andres.rodriguez1@sydney.edu.au
- orcid: 0000-0002-1521-7910
+  - name: Andrés Felipe Rodríguez Corcho
+    email: andres.rodriguez1@sydney.edu.au
+    orcid: 0000-0002-1521-7910
 tags:
   - collision
   - subduction
@@ -34,15 +36,15 @@ images:
     alt: "Alt text for landing image"
   graphic_abstract:
     src: ./graphic_abstract.png
-    alt: ""
+    alt: "Alt text for graphic abstract"
   model_setup:
     src: ./model_setup.jpg	
-    alt: ""
+    alt: "Alt text for model setup"
 animations:
-  src: ./animation_25.gif
-  alt: ""
-  src: ./animation_35.gif
-  alt: ""
+  - src: ./animation_25.gif
+    alt: "Alt text for animation 1"
+  - src: ./animation_35.gif
+    alt: "Alt text for animation 2"
 dataset:
   url:
   doi: xxxx
