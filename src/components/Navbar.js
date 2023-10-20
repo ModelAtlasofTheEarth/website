@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "gatsby";
 import github from "../img/github-icon.svg";
-import logo from "../img/atlas-icon-transparent.png";
+import logo from "../img/atlas-icon.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faUsersViewfinder, faUsersBetweenLines } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faUsersViewfinder } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -79,16 +79,6 @@ const Navbar = class extends React.Component {
                 </span>
 
                 <span>Models</span>
-              </Link>
-              <Link className="navbar-item hover-darken" to="/contact">
-                <span
-                  className="icon has-text-extensions"
-                  aria-hidden="true"
-                  style={{ color: "darkolivegreen" }}
-                >
-                  <FontAwesomeIcon icon={faUsersBetweenLines}/>
-                </span>
-                <span>People</span>
               </Link>
               <Link className="navbar-item hover-darken" to="/search">
                 <span
