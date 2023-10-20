@@ -1,31 +1,34 @@
 ---
 templateKey: 'model'
-slug: 'sandiford-2021-detachment'
-title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid-Block Rotation and Apparent Unbending'
+slug: 'polanco-2023-deltas'
+title: 'The flexural isostatic response of climatically driven sea-level changes  on continental-scale deltas'
 date: 2023-08-28T17:04:10.000Z
 featuredpost: false
 for_codes:
   - 3706
   - 370604
+  - 0406
+  - 040601
 status: completed
-software: ASPECT
+software: BADLANDS
 licence: cc-by-4.0
 uploader:
-  name: Dan Sandiford
-  email: dan.sandiford@sydney.edu.au
+  name: Sara Polanco
+  email: sara.moronpolanco@sydney.edu.au
 authors:
-  - name: Dan Sandiford
-    email: dan.sandiford@sydney.edu.au
+  - name: Sara Polanco
+    email: sara.moronpolanco@sydney.edu.au
+    orcid: 0000-0002-1270-4377
 tags:
-  - tectonics
-  - extension
-  - mid-ocean ridge
-  - attempted reproduction of a previous model 
-  - model output data
-  - model input files
-  - C++
+  - erosion
+  - deposition
+  - sea-level
+  - flexure
+  - fluvial
+  - deltas
+  - Python
 abstract: >
-  Seafloor spreading at slow rates can be accommodated on large-offset oceanic detachment faults (ODFs), that exhume lower crustal and mantle rocks in footwall domes termed oceanic core complexes (OCCs). Footwall rocks experience large rotation during exhumation, yet important aspects of the kinematics—particularly the relative roles of solid-block rotation and flexure—are not clearly understood. Using a high-resolution numerical model, we explore the exhumation kinematics in the footwall beneath an emergent ODF/OCC. A key feature of the models is that footwall motion is dominated by solid-block rotation, accommodated by the nonplanar, concave-down fault interface. A consequence is that curvature measured along the ODF is representative of a neutral stress configuration, rather than a “bent” one. Instead, it is in the subsequent process of “apparent unbending” that significant flexural stresses are developed in the model footwall. The brittle strain associated with apparent unbending is produced dominantly in extension, beneath the OCC, consistent with earthquake clustering observed in the Trans-Atlantic Geotraverse at the Mid-Atlantic Ridge.
+ The interplay between climate-forced sea-level change, sediment erosion and deposition, and flexural adjustments in deep time on passive margin deltas remains poorly understood. We performed a series of conceptual simulations to investigate flexural isostatic responses to high-frequency fluctuations in water and sediment load associated with climatically driven sea-level changes. We model a large drainage basin that discharges to a continental margin to generate a deltaic depocenter, then prescribe synthetic and climatic-driven sea-level curves of different frequencies to assess flexural response. Results show that flexural isostatic adjustments are bidirectional over 100-1000 kyr timescales and are in sync with the magnitude, frequency, and direction of sea-level fluctuations, and that isostatic adjustments play an important role in driving along-strike and cross-shelf river-mouth migration and sediment accumulation. Our findings demonstrate that climate-forced sea-level changes produce a feedback mechanism that results in self-sustaining creation of accommodation into which sediment is deposited and plays a major role in delta morphology and stratigraphic architecture.
 images:
   landing_image:
     src: ./fig1.png
@@ -34,10 +37,10 @@ images:
     src: ./fig1.png
     alt:
   model_setup:
-    src:
+    src: ./fig2.png
     alt:
 animations:
-  - src: ./S1_reference_model.mp4
+  - src:
     alt:
 dataset:
   url: https://doi.org/xxxx
@@ -46,7 +49,7 @@ dataset:
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ornare orci nunc, non rutrum velit elementum non. Suspendisse ac cursus nibh. Sed nec laoreet purus. Aliquam lobortis massa sit amet mi posuere, sed facilisis elit luctus. Donec eu vehicula augue. Mauris iaculis nisl in fringilla gravida. Nunc dictum felis quis mi tincidunt egestas. Duis mollis neque vitae elementum volutpat. Praesent leo augue, tempus ac diam nec, varius posuere libero. Cras vel finibus sapien. Nunc scelerisque ut nibh in faucibus. Praesent ut magna felis.
     Etiam et sem at tortor volutpat vestibulum. Phasellus egestas mollis tempor. Donec ultrices, sapien faucibus porttitor lacinia, ligula ante interdum lectus, ac hendrerit nisi nunc sit amet magna. Maecenas pellentesque risus quis gravida fringilla. Pellentesque efficitur sed velit a molestie. Aliquam volutpat dictum consectetur. Nulla facilisi. Ut rutrum nec tellus sit amet lobortis. Suspendisse in arcu ut ipsum varius lacinia. Donec velit arcu, laoreet sed felis et, convallis tincidunt neque. Vestibulum non justo maximus, pulvinar enim non, tristique arcu. Nam fringilla suscipit est, id pretium urna dignissim id. Aenean interdum lacus quis eros molestie, eget eleifend massa rhoncus. Sed eu urna risus. Suspendisse commodo malesuada blandit.
 input_files:
-  url: https://github.com/dansand/sandiford-2021-detachment/tree/main/model_files
+  url: https://github.com/saraemp/egusphere-2023-53
   notes:
 postprocessing_files:
   url:
