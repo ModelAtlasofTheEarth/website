@@ -9,15 +9,12 @@ status: completed
 software: UWGeodynamics
 licence: cc-by-4.0
 uploader:
-  name: John Doe
+  name: Andrés Felipe Rodríguez Corcho
   email: john@example.com
 authors:
-  - name: John Doe
-    email: john@example.com
-  - name: Jane Doe
-    email: jane@example.com
-  - name: Bob Smith
-    email: b.smith@example.sydney.edu.au
+ name: Andrés Felipe Rodríguez Corcho
+ email: andres.rodriguez1@sydney.edu.au
+ orcid: 0000-0002-1521-7910
 tags:
   - collision
   - subduction
@@ -42,10 +39,10 @@ images:
     src: ./model_setup.jpg	
     alt: ""
 animations:
-  - src: ./animation_25.gif
-    alt: ""
-  - src: ./animation_35.gif
-    alt: ""
+  src: ./animation_25.gif
+  alt: ""
+  src: ./animation_35.gif
+  alt: ""
 dataset:
   url:
   doi: xxxx
