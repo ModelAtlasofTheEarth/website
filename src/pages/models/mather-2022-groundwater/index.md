@@ -12,11 +12,9 @@ uploader:
   name: Ben Mather
   email: ben.mather@sydney.edu.au
 authors:
-  - name: Ben Mather
+    name: Ben Mather
     email: ben.mather@sydney.edu.au
     orcid: 0000-0003-3566-1557
-  - name: Jane Doe
-    email: jane@example.com
 tags:
   - groundwater
   - basins
@@ -36,8 +34,8 @@ images:
     src:
     alt: ""
 animations:
-  - src: ""
-    alt: ""
+  src: ""
+  alt: ""
 dataset:
   url: https://doi.org/xxxx
   doi: xxxx
