@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Archivo+Black&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Archivo&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;700&family=Lato:wght@100&display=swap);
+
+
+body { 
+  margin:0;
+  padding:0;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: "IBM Plex Sans";
+}
+
+
+#navbar {
+  position: fixed; /* Make it stick/fixed */
+  top: 0; /* Stay on top */
+  width: 100%; /* Full width */
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
+}

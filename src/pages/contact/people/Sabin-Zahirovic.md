@@ -4,6 +4,15 @@ name: "Sabin Zahirovic"
 title: "ARC DECRA Fellow at The University of Sydney"
 date: 2016-10-15
 image: ./images/sabin-zahirovic-360x360.png
+headerImage: ./images/sabin-zahirovic-1200x650.png
+
+contact: 
+  Orcid: "12345"
+  ResearchGate: "https://www.researchgate.net/" 
+  Twitter: "https://twitter.com/home"
+  Twitterhandle: "@abcd"
+  Scholar: "https://scholar.google.com.au/" 
+  
 description: >-
   This is a description.
 tags:

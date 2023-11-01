@@ -3,100 +3,143 @@ import Layout from "../../components/Layout";
 import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
 import PreviewCompatibleImage from "../../components/PreviewCompatibleImage";
+import "./index_styles.css";
+
 
 class ContactPage extends React.Component {
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
 
+
     return (
       <Layout>
-        <h2 className="has-text-weight-bold is-size-2 gp-title">
-          GPlates Team
-        </h2>
-        <div className="container">
-          <div className="column is-12 is-offset-0">
-            <div className="columns is-multiline">
-              {posts &&
-                posts.map(({ node: post }) => (
-                  <div
-                    className="is-parent column is-4"
-                    key={post.id}
-                    title={post.frontmatter.title}
-                  >
-                    <div className="box people">
-                      <Link to={post.fields.slug}>
-                        <PreviewCompatibleImage
-                          imageInfo={{
-                            image: post.frontmatter.image,
-                            alt: `photo thumbnail for  ${post.frontmatter.name}`,
-                          }}
-                        />
-                      </Link>
-                      <h3 style={{ textAlign: "center", marginTop: "7px" }}>
-                        {post.frontmatter.name}
-                      </h3>
-                      <p style={{ textAlign: "center", marginTop: "7px" }}>
-                        {post.frontmatter.title}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-            </div>
-            <strong>
-              GPlates is developed by an international team of scientists and
-              professional software developers at:
-            </strong>
-            <li>
-              the EarthByte group in the school of Geosciences at the University
-              of Sydney{" "}
-            </li>
-            <strong>with past contributions from:</strong>
-            <li>
-              the Division of Geological and Planetary Sciences (GPS) at Caltech{" "}
-            </li>
-            <li>
-              the Centre for Earth Evolution and Dynamics (CEED) at the
-              Department of Geosciences, University of Oslo, Norway{" "}
-            </li>
-            <li>
-              the Geodynamics Team at the Geological Survey of Norway (NGU)
-            </li>
-            <div>
-              <strong>Contact Us</strong>
+        <div class="image">
+          {/*** An image to be hosted by GitHub */}
+          <img 
+          
+            src="https://github.com/GPlates/gplately/blob/master/Notebooks/NotebookFiles/pdoc_Files/docs_muller19_seed_points.gif?raw=true"
+            alt="Description" 
+            textAlign="center" 
+            style={{
+              paddingTop: "-100px",
+              top: "0",
+              position: "fixed",
+              height: "100",
+              width: "100%",
+              display: "block",
+              margin: "auto",
+              backgroundPosition: "center center",
+              display: "block",
+ 
+              zIndex: "-1"
+            }}
+          />
+        </div>
+
+
+        <div class="staticslide">
+        </div>
+
+        <div class="slide header">
+        </div>
+
+        <div id="slide3" class="slide">
+
+          <div class="header2">
+            <h1>
+              Meet the MATE Team
+            </h1>
+          </div>
+
+          <div className="columns is-multiline">
+            <br></br>
+            <div className="bodytext column is-four-fifths ">
+              <br></br>
+              <strong> The Model Atlas of the Earth </strong> is developed by an international team of 
+              scientists and professional software developers at
+              the EarthByte Group in the School of Geosciences at the University
+              of Sydney with contributions from:
               <li>
-                If you have any scientific or organisational questions about
-                GPlates or the participation of the University of Sydney,
-                contact GPlates project director <strong>Dietmar Müller</strong>{" "}
-                at <a href="https://www.earthbyte.org/contact-us-3/">here</a>
+                The Sydney Informatics Hub
               </li>
               <li>
-                If you have any technical questions about GPlates or questions
-                about the development roadmap or collaboration, post on{" "}
-                <a href="https://discourse.gplates.org">
-                  GPlates Online Community Forum
-                </a>
+                National Computational Infrastructure (NCI)
               </li>
               <li>
-                If you have any questions about the linkage with geodynamic
-                models or the participation of Caltech, contact{" "}
-                <strong>Michael Gurnis </strong> at{" "}
-                <a href="https://web.gps.caltech.edu/~gurnis/contact/index.html">
-                  here
-                </a>
-              </li>
-              <li>
-                If you are only interested in release notices and other
-                important news regarding GPlates software, subscribe this
-                mailing list{" "}
-                <a href="https://mailman.sydney.edu.au/mailman/listinfo/gplates-announce">
-                  GPlates-announce
-                </a>
+                AuScope
               </li>
             </div>
           </div>
+
         </div>
-        <br></br>
+
+        <div id="slide1" class="slide">
+        
+            <div class="header3">
+                <h1>
+                  EarthByte Group
+                </h1>
+            </div>
+
+          <div className="columns is-multiline">
+            {posts &&
+              posts.map(({ node: post }) => (
+                <div
+                  className="is-parent column is-3"
+                  key={post.id}
+                  title={post.frontmatter.title}>
+                
+                  <link rel='stylesheet' href= 'https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css'></link>
+                  
+                  <div id="peoplebox" className="people">
+
+                    
+                    <PreviewCompatibleImage
+                      imageInfo={{
+                        image: post.frontmatter.image,
+                        alt: `photo thumbnail for  ${post.frontmatter.name}`,
+                      }}
+                    />
+                   
+                    <h3 style={{ textAlign: "center", marginTop: "7px", fontWeight: "bold", fontSize: "20px" }}>
+                      {post.frontmatter.name}
+                    </h3>
+                    <p style={{ textAlign: "center", marginTop: "5px", }}>
+                      {post.frontmatter.title}
+                      
+                    </p>
+                    <br></br>
+                    <Link to={post.fields.slug}>
+                    <a href="" className="link-arrow button is-white"> Read more &nbsp; <p>&#10132;</p>
+                    
+                    </a>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+              
+          </div>
+        </div>
+
+        <div id="slide2" class="slide header3">
+          <h1>Sydney Informatics Hub</h1>
+        </div>
+
+
+        <div id="slide3" class="slide header3">
+          <h1>National Computational Infrastructure (NCI)</h1>
+        </div>
+
+        <div id="slide1" class="slide header3">
+          <h1>AuScope</h1>
+        </div>
+
+
+
+
+     
+
       </Layout>
     );
   }

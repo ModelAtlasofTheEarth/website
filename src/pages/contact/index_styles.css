@@ -1,0 +1,179 @@
+@import url(https://fonts.googleapis.com/css?family=Archivo+Black&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Archivo&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;700&family=Lato:wght@100&display=swap);
+
+
+body { 
+    margin:0;
+    padding:0;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: "IBM Plex Sans";
+}
+
+.bodytext {
+    font-size: 1.2em;
+    line-height: 35px;
+    color: #000;
+    font-family: "Archivo";
+    display: block;
+    padding: 20px;
+  }
+
+/* For the boxes with text */
+.peoplebox {
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+  }
+
+.slide {
+    position: relative;
+    padding: 15vh 10%;
+    min-height: 50%;
+    width: 100vw;
+    box-sizing: border-box;
+    transform-style: inherit;
+
+}
+
+
+/* For the boxes with text */
+.titlee {
+  width: 50%;
+  padding: 5%;
+  border-radius: 5px;
+  background: rgba(255,255,255,.3);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+}
+
+
+.slide, .slide:before {
+  background: 50% 50% / cover;  
+}
+
+.header {
+  text-align: center;
+  font-size: 4vw;
+  color: #000;
+  font-family: "Archivo";
+  height: 30vw;
+}
+
+.header2 {
+    text-align: left;
+    font-size: 70px;
+    color: #000;
+    font-family: "Archivo";
+  }
+
+.header3 {
+  text-align: center;
+  font-size: 60px;
+  color: #000;
+  font-family: "Archivo";
+  height: 200px;
+}
+
+.header4 {
+    text-align: left;
+    color: #000;
+    font-family: "Archivo";
+    font-size: 6vh;
+  }
+
+  .header5 {
+    text-align: left;
+    color: #000;
+    font-family: "Archivo";
+    font-size: 3vh;
+  }
+
+#staticslide {
+    background-color: rgba(255,255,255,1);
+    z-index:-1;
+    font-family: "Archivo";
+    position: fixed;
+    top: 0;
+    height: 100;
+    width: 100%;
+    display: block;
+    margin: auto;
+    background-position: center center;
+}
+
+#slide1 {
+  background-color: rgba(255,255,255,1);
+  z-index:2;
+  font-family: "Archivo"
+  
+}
+
+#slide2 {
+    background-color: rgb(237, 241, 255);
+    z-index:2;
+    font-family: "Archivo"
+}
+
+#slide3 {
+    background-color: rgb(250, 250, 250);
+    font-family: "Archivo"
+}
+
+#slide4 {
+    background: #222;
+    font-family: "Archivo"
+}
+
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.link-arrow p {
+    display: inline-block;
+    transition: 0.1s ease-in;
+    font-family: "Archivo";
+}
+
+.link-arrow:hover p {
+    transform: translateX(75%);
+
+}
+
+#scroll-container {
+    overflow: hidden;
+    
+}
+
+
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+    from { -moz-transform: translateX(100%); }
+    to { -moz-transform: translateX(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+    from { -webkit-transform: translateX(100%); }
+    to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+.tabs {
+    font-family: "Archivo";
+}

@@ -8,6 +8,18 @@ import {
   faMagnifyingGlass,
   faUsersViewfinder,
 } from "@fortawesome/free-solid-svg-icons";
+import "./navbar_styles.css";
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -41,6 +53,7 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav
+        id="navbar"
         className="navbar is-fixed-top"
         role="navigation"
         aria-label="main-navigation"
