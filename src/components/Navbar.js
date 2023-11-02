@@ -8,6 +8,9 @@ import {
   faMagnifyingGlass,
   faUsersViewfinder,
 } from "@fortawesome/free-solid-svg-icons";
+import "./navbar_styles.css";
+
+
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -41,6 +44,7 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav
+        id="navbar"
         className="navbar is-fixed-top"
         role="navigation"
         aria-label="main-navigation"
