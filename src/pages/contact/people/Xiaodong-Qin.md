@@ -7,7 +7,7 @@ image: ./images/xiaodong-qin-360x360.png
 headerImage: ./images/xiaodong-qin-1200x650.png
 
 contact: 
-  Orcid: "12345"
+  Orcid:
   ResearchGate: "https://www.researchgate.net/" 
   Twitter: "https://twitter.com/home"
   Twitterhandle: "@abcd"
