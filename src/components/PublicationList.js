@@ -26,6 +26,8 @@ class PublicationList extends React.Component {
           }
         )
         html = replaceDois({ html, style })
+        html = replaceScp(html)
+        console.log(html)
         return {
           html: html,
           id: pub.id,
@@ -86,6 +88,16 @@ function replaceDois({ html, style }) {
     }
   }
   return html;
+}
+
+function replaceScp(content) {
+  return content
+    .replaceAll("<scp>", "")
+    .replaceAll("&#60;scp&#62;", "")
+    .replaceAll("</scp>", "")
+    .replaceAll("&#60;/scp&#62;", "")
+    .replaceAll("<scp/>", "")
+    .replaceAll("&#60;scp/&#62;", "")
 }
 
 export default PublicationList

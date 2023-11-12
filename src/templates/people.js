@@ -39,7 +39,7 @@ const PeopleTemplate = ({
       <h2 className="person">{title}</h2>
 
       <div className="columns person">
-        <div className="column is-3">
+        <div className="column is-4">
           <div className="box contact-box">
             <h3>Contact</h3>
             {
