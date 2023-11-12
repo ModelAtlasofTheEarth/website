@@ -123,7 +123,7 @@ exports.createPages = async ({ actions, graphql }) => {
     }
     if (edge.node.frontmatter?.authors) {
       for (const author of edge.node.frontmatter.authors) {
-        authors.push(author)
+        authors.push(author.name)
       }
     }
   }
