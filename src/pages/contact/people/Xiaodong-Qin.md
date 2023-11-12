@@ -6,12 +6,11 @@ date: 2001-11-15
 image: ./images/xiaodong-qin-360x360.png
 headerImage: ./images/xiaodong-qin-1200x650.png
 
-contact: 
+contact:
+  Email: michael.chin@sydney.edu.au
   Orcid:
-  ResearchGate: "https://www.researchgate.net/" 
-  Twitter: "https://twitter.com/home"
-  Twitterhandle: "@abcd"
-  Scholar: "https://scholar.google.com.au/" 
+  ResearchGate:
+  Scholar:
   
 description: >-
   This is a description.

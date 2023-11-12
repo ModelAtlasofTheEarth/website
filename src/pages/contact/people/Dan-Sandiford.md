@@ -6,10 +6,10 @@ image: ./images/dan_sandiford.png
 headerImage: ./images/dan-sandiford-header.png
 
 contact:
+  Email:
   Orcid: "0000-0002-2207-6837"
-  ResearchGate: "https://www.researchgate.net/"
-  Twitter: "https://twitter.com/home"
-  Twitterhandle: "@sonderfjord"
+  ResearchGate:
+  Twitter: sonderfjord
   Scholar: "https://scholar.google.com/citations?user=YlpdGWkAAAAJ&hl=en"
 
 tags:

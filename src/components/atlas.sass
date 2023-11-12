@@ -147,11 +147,16 @@ $menu-label-color: $white-ter
   .blog-list-item .post-meta
     margin-left: 1rem
 
-@import "~bulma/sass/helpers/color"
-@import "~bulma/sass/elements/container"
+@import "~bulma/sass/components/tabs"
 @import "~bulma/sass/elements/button"
+@import "~bulma/sass/elements/container"
 @import "~bulma/sass/form/_all"
+@import "~bulma/sass/grid/columns"
+@import "~bulma/sass/helpers/color"
+
 @import "~@fortawesome/fontawesome-free/css/all.min.css"
+
+@import "~react-tabs/style/react-tabs"
 
 .section
   padding: 1.5rem 0.75rem
@@ -159,81 +164,171 @@ $menu-label-color: $white-ter
 .notification
   padding: 0.5rem
 
-.mc-card
-  boxShadow: 20px 20px 20px -20px rgba(0,0,0,0.57)
-  borderRadius: 10px
+.hover-shadow:hover
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1)
 
+.hover-opacity:hover
+  filter: opacity(75%)
 
-.mc-card-overlay 
-  position: absolute
-  bottom: 100%
-  left: 0
-  right: 0
-  background-color: rgba(0,140,186,0.57)
-  overflow: hidden
-  width: 100%
-  height: 0%
-  transition: .5s ease
+.hover-darken:hover
+  filter: saturate(120%) contrast(120%) opacity(80%)
 
-.mc-card-container
-  position: relative
-  margin: auto
-  border: 1px solid #dadce0;
-  border-radius: 8px;
-  padding: 0.75rem
-  height: 100%
+.background-image
+  z-index: -1
+  padding-top: 50px
+  height: 400px
+  position: fixed
   display: flex
-  flex-direction: column
-
-.mc-card-container img:hover
-  transform: scale(1.5)
-  filter: saturate(1.7)
-  transition: 1.5s ease
-  -webkit-transition: 1.5s ease
-  -ms-transition: 1.5s ease
-  
-
-  
-.pg-screenshot-box img:hover
-  transform: scale(1.5)
-  filter: saturate(1.7)
-  transition: 1.5s ease !important
-  -webkit-transition: 1.5s ease !important
-  -ms-transition: 1.5s ease !important
-
-.pg-screenshot-box
-  padding-bottom: 0.5rem
+  justify-content: center
+  top: 0
+  width: 100%
+  & img
+    height: fit-content
+    width: auto
+    justify-self: center
 
 .people
-  text-align: center
+  margin: 0
+  padding: 0
+  height: 100%
+  &-body
+    & p
+      font-size: 1.2em
+      line-height: 35px
+      color: black
+      padding: 20px
+      margin-left: 10%
+      margin-right: 25%
+    & h1
+      text-align: left
+      font-size: 70px
+      padding-top: 80px
+      padding-left: 20px
+      margin-left: 10%
+      margin-right: 25%
+    & ul
+      list-style: inside square
+  &-box
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-direction: column
+    background-color: rgb(255,255,255)
+    text-align: center
+    font-size: 18px
+    margin-top: 5px
+    & img
+      border-radius: 5px 5px 5px 5px
+    & h3
+      text-align: center
+      margin-top: 7px
+      font-weight: bold
+      font-size: 22px
 
-.people img
-  //border-radius: 50%
-  height: auto
-  width: 250px
-  -webkit-filter: grayscale(0%)
-  transition: 1.5s ease !important
-  -webkit-transition: 1.5s ease !important
-  -ms-transition: 1.5s ease !important
-  
+  &-slide
+    z-index: 2
+    background: scroll
+  &-header
+    text-align: center
+    font-size: 4vw
+    color: black
+    height: 30vw
+  &-header2
+    text-align: left
+    font-size: 70px
+    color: black
+  &-header3
+    text-align: center
+    font-size: 60px
+    height: 200px
+  &-header4
+    text-align: left
+    font-size: 6vh
+  &-header5
+    text-align: left
+    font-size: 3vh
 
-// .people img:hover
-//  -webkit-filter: grayscale(0%)
-//  transform: scale(1.5)
-// filter: saturate(1.2)
+#people-slide
+  &--static
+    background: rgba(0, 0, 0, 0)
+    z-index: -1
+    top: 0
+    height: 400px
+    width: 100%
+    display: block
+    margin: auto
+  &--1
+    background-color: rgb(255,255,255)
+    display: flex
+    flex-direction: column
+    justify-content: center
+  &--2
+    background-color: rgb(237, 241, 255)
+  &--3
+    background-color: rgb(250, 250, 250)
+    // display: flex
+    // flex-direction: column
+    // justify-content: center
+  &--4
+    background: #222
+
+#people-grid
+  padding-left: 5%
+  padding-right: 5%
+
+.person
+  text-align: left
+  font-size: 18px
+  & h1
+    font-size: 55px
+    font-weight: bold
+  & h2
+    font-size: 40px
+    font-weight: 600
+
+.contact-box
+  @extend .person
+  margin-top: 10px
+  font-size: 17px
+  height: 100%
+  & h3
+    font-size: 25px
+    font-weight: 600
+    margin-bottom: 10px
+    margin-left: 0px
+  & h4
+    font-size: 18px
+    font-weight: 600
+    padding-left: 7px
+  & a
+    padding-left: 20px
+
+.person-box
+  @extend .contact-box
+  & a
+    color: rgb(75, 75, 255)
+    @extend .hover-opacity
+
+.link-arrow
+  display: inline
+  & span
+    padding-left: 7px
+    display: inline-block
+    transition: 0.1s ease-in
+  &:hover span
+    transform: translateX(50%)
+
 
 .models
   text-align: left
   align: center
-
-.models h2
-  font-size: 40px
-  font-weight: 600
-  text-align: center
-
-.models h3
-  font-size: 18px
-  font-weight: bold
+  & h2
+    font-size: 40px
+    font-weight: 600
+    text-align: center
+  & h3
+    font-size: 18px
+    font-weight: bold
 
 .models-entry
   width: 100%
@@ -247,25 +342,41 @@ $menu-label-color: $white-ter
   border-color: #eee
   border-collapse: separate
 
-.hover-shadow
-  &:hover
-    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1)
+.custom-tabs
+  @extend .react-tabs
 
-.hover-opacity
-  &:hover
-    filter: opacity(75%)
+  &__tab-list
+    @extend .react-tabs__tab-list
+    font-size: 25px
+    font-weight: 600
 
-.hover-darken
-  &:hover
-    filter: saturate(120%) contrast(120%) opacity(80%)
+  &__tab
+    @extend .react-tabs__tab
+    border-radius: 5px 5px 0 0
+    padding-top: 0px
+    &:hover
+      @extend .hover-shadow
+
+    &--selected
+      @extend .react-tabs__tab--selected
+      &:hover
+        box-shadow: none
+
+    &--disabled
+      @extend .react-tabs__tab--disabled
+
+  &__tab-panel
+    @extend .react-tabs__tab-panel
+
+    &--selected
+      @extend .react-tabs__tab-panel--selected
 
 .models-image
   width: 25%
   min-width: 200px
   vertical-align: middle
-
-.models-image img
-  object-fit: scale-down
+  & img
+    object-fit: scale-down
 
 .models-text
   width: 60%
@@ -274,24 +385,20 @@ $menu-label-color: $white-ter
   vertical-align: middle
   font-weight: normal
   padding: 20px
-
-.models-text h3
-  font-size: 22px
-  font-weight: bold
+  & h3
+    font-size: 22px
+    font-weight: bold
 
 .models-search
   @extend .models
   font-size: 20px
-
-.models-search input[type="text"]
-  margin-bottom: 20px
-
-.models-search input[type="checkbox"]
-  margin-right: 10px
-
-.models-search label
-  margin-right: 30px
-  margin-left: 0px
+  & input[type="text"]
+    margin-bottom: 20px
+  & input[type="checkbox"]
+    margin-right: 10px
+  & label
+    margin-right: 30px
+    margin-left: 0px
 
 .model-page
   text-align: left
@@ -300,11 +407,23 @@ $menu-label-color: $white-ter
   @extend .model-page
   text-align: center
   font-size: 22px
+  & h1
+    font-size: 30px
+    font-weight: 600
+    margin-bottom: 30px
 
-.model-page-header h1
+.orcid-list
+  @extend .person
+  padding-bottom: 12px
+  list-style: square
+.orcid-list li
+  margin-left: 15px
+.orcid-list h3
+  padding-bottom: 12px
   font-size: 30px
   font-weight: 600
-  margin-bottom: 30px
+.orcid-list a
+  color: rgb(75, 75, 255)
 
 .react-player
   height: auto !important
@@ -345,26 +464,6 @@ $menu-label-color: $white-ter
   background-color: #007ec6
   color: white
   margin: 2px
-
-.mc-card-container:hover .mc-card-overlay
-  //bottom: 0
-  //height: 100%
-  //cursor: pointer
-
-.mc-overlay-text
-  color: yellow
-  font-size: 20px
-  font-weight: bold
-  position: absolute
-  top: 50%
-  left: 50%
-  -webkit-transform: translate(-50%, -50%)
-  -ms-transform: translate(-50%, -50%)
-  transform: translate(-50%, -50%)
-  text-align: center
-
-.mc-hr 
-  height: 2px
 
 .content h1.gp-landing-page-title
   color: #b6a676
@@ -409,19 +508,6 @@ $menu-label-color: $white-ter
       background: rgba(240,248,255, 0.85)
     100%
       background: rgba(240,248,255, 0.95)
-
-.gp-middle-icon:hover
-  //animation: shake 2s cubic-bezier(.36,.07,.19,.97) both
-  //transform: translate3d(0, 0, 0)
-  //backface-visibility: hidden
-  //perspective: 1000px
-  //cursor: wait
-
-  //@keyframes shake 
-  //  30% 
-  //    transform: translate3d(0, -20px, 0)
-  //  100% 
-  //    transform: translate3d(0, -1000px, 0)
   
 .gp-header:after
   display: block
@@ -450,55 +536,6 @@ $menu-label-color: $white-ter
 
 .gp-hidden-ctl:hover ~ .gp-header-info
   opacity: 0
-  
-.gp-card
-  display: flex;
-  flex-direction: column;
-  text-align: center
-  position: relative
-  perspective: 1000px
-  background-color: transparent
-  border-radius: 6px
-  box-shadow: 0 0.5em 1em -0.125em rgba(43, 37, 35, 0.1), 0 0px 0 1px rgba(43, 37, 35, 0.02)
-  color: #4a4a4a
-
-.gp-card-container
-  position: relative
-  width: 100%
-  height: 100%
-  padding-bottom: 56.25%
-  text-align: center
-  transition: transform 1.6s
-  transform-style: preserve-3d
-  //box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
-
-
-.gp-card:hover .gp-card-container 
-  transform: rotateY(180deg)
-
-.gp-card-front, .gp-card-back 
-  position: absolute
-  width: 100% 
-  height: 100%
-  overflow: hidden
-  -webkit-backface-visibility: hidden
-  backface-visibility: hidden
-
-
-.gp-card-front 
-  background-color: #bbb
-  color: black
-
-
-.gp-card-back 
-  display: flex
-  flex-direction: column
-  justify-content: center
-  align-items: center
-  padding: 1rem
-  background-color: #2980b9
-  color: white
-  transform: rotateY(180deg)
 
 @media screen and (min-width: 1600px)
   .full-width-image
@@ -519,9 +556,6 @@ body
   padding: .3rem
   color: black
   z-index: 10
-
-.gp-landing-page-title
-  text-align: center
 
 .navbar
   border-bottom: inset 1px lightgray
@@ -552,14 +586,6 @@ body
 .content li p
   margin-bottom: 0 !important
 
-@media screen and (min-width: 430px)
-  .more-pub
-    margin-left: 1rem
-
-@media screen and (max-width: 430px)
-  .more-pub
-    margin-top: 0.5rem
-
 .tip, 
 .important,
 .note,
@@ -585,55 +611,11 @@ body
   vertical-align: middle;
   border: none
   width: 7rem 
-  
 
 .doc-list .content
   border: none
   vertical-align: middle
   padding-left: 1.5em
-
-.download-box
-  max-width: 40em
-  border-radius: 10px
-
-div.download-box
-	background: #90ff80
-	font-size: 90%
-	padding-left: 1.1em
-	padding-right: 1.1em
-	padding-top: 0.1em 
-
-div.download-box a 
-	font-size: 150%
-	line-height: 120%
-	text-decoration: none
-	color: #0c5e00
-
-div.download-box a:hover 
-	background: #90ff80
-	text-decoration: underline
-	color: #0c5e00
-
-div.download-box img.download-icon 
-	background: #90ff80
-	float: left
-
-div.download-box a:visited 
-	color: #0c5e00;
-
-div.download-box table .icon
-  width: 5rem 
-  display: table-cell
-
-div.download-box table .content
-  vertical-align: middle
-  padding-left: 0
-
-.download-box .gatsby-resp-image-image 
-  box-shadow: none !important
-
-.download-box table
-  width: unset !important
 
 .navbar
   border-bottom: none
