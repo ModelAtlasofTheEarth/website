@@ -27,6 +27,26 @@ authors:
     family_name: Rodríguez Corcho
     ORCID: 0000-0002-1521-7910
     affiliation: EarthByte Group, School of Geosciences, The University of Sydney
+  - name: Sara Eugenia
+    family_name: Polanco
+    ORCID: 0000-0002-1270-4377
+    affiliation: EarthByte Group, School of Geosciences, The University of Sydney
+  - name: Rebecca
+    family_name: Farrington
+    ORCID: 0000-0002-2594-6965
+    affiliation: AuScope: Melbourne, Victoria
+  - name: Romain
+    family_name: Beucher
+    ORCID: 0000-0003-3891-5444
+    affiliation: Australian Earth System Simulator: Canberra
+  - name: Camilo
+    family_name: Montes
+    ORCID: 0000-0002-3553-0787
+    affiliation: Department of Physics and Geosciences, Universidad del Norte
+  - name: Louis
+    family_name: Moresi
+    ORCID: 0000-0003-3685-174X
+    affiliation: Research School of Earth, Sciences, Australian National University
 associated_publication:
   - title: The Role of Lithospheric-Deep Mantle Interactions on the Style and Stress Evolution of Arc-Continent Collision
     journal: Geochemistry, Geophysics, Geosystems
