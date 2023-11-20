@@ -46,7 +46,7 @@ authors:
   - name: Louis
     family_name: Moresi
     ORCID: 0000-0003-3685-174X
-    affiliation: Research School of Earth, Sciences, Australian National University
+    affiliation: Research School of Earth Sciences, Australian National University
 associated_publication:
   - title: The Role of Lithospheric-Deep Mantle Interactions on the Style and Stress Evolution of Arc-Continent Collision
     journal: Geochemistry, Geophysics, Geosystems
