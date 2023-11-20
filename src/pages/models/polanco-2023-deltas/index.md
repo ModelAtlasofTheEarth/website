@@ -60,7 +60,7 @@ authors:
   - name: Louis
     family_name: Moresi
     ORCID: 0000-0003-3685-174X
-    affiliation:
+    affiliation: Australian National University: Canberra, ACT, AU
 associated_publication:
   - title: The flexural isostatic response of climatically driven sea-level changes on continental-scale deltas
     journal: EGUsphere
