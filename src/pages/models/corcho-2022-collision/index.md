@@ -20,13 +20,11 @@ licence:
 contributor:
   name: Andrés Felipe
   family_name: Rodríguez Corcho
-  email: andres.rodriguez1@sydney.edu.au
   ORCID: 0000-0002-1521-7910
   affiliation: EarthByte Group, School of Geosciences, The University of Sydney
 authors:
   - name: Andrés Felipe
     family_name: Rodríguez Corcho
-    email: andres.rodriguez1@sydney.edu.au
     ORCID: 0000-0002-1521-7910
     affiliation: EarthByte Group, School of Geosciences, The University of Sydney
 associated_publication:
