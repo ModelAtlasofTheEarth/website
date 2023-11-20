@@ -65,10 +65,10 @@ abstract: >
   Numerical models of groundwater flow play a critical role for water management scenarios under climate extremes. Large-scale models play a key role in determining long range flow pathways from continental interiors to the oceans, yet struggle to simulate the local flow patterns ofered by small-scale models. We have developed a highly scalable numerical framework to model continental groundwater flow which capture the intricate flow pathways between deep aquifers and the near-surface. The coupled thermal-hydraulic basin structure is inferred from hydraulic head measurements, recharge estimates from geochemical proxies, and borehole temperature data using a Bayesian framework. We use it to model the deep groundwater flow beneath the Sydney–Gunnedah–Bowen Basin, part of Australia’s largest aquifer system. Coastal aquifers have flow rates of up to 0.3 m/ day, and a corresponding groundwater residence time of just 2,000 years. In contrast, our model predicts slow flow rates of 0.005 m/day for inland aquifers, resulting in a groundwater residence time of ∼400,000 years. Perturbing the model to account for a drop in borehole water levels since 2000, we fnd that lengthened inland flow pathways depart signifcantly from pre-2000 streamlines as groundwater is drawn further from recharge zones in a drying climate. Our results illustrate that progressively increasing water extraction from inland aquifers may permanently alter long-range flow pathways. Our open-source modelling approach can be extended to any basin and may help inform policies on the sustainable management of groundwater.
 images:
   landing_image:
-    src: ./fig1.png
+    src: ./graphics/fig1.png
     caption:
   graphic_abstract:
-    src: ./fig1.png
+    src: ./graphics/fig1.png
     caption:
   model_setup:
     src:
