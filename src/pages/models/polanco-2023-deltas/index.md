@@ -36,7 +36,7 @@ authors:
   - name: Tristan
     family_name: Salles
     ORCID: 0000-0001-6095-7689
-    affiliation:
+    affiliation: University of Sydney
   - name: Bruce C.
     family_name: Frederick
     ORCID: 0000-0001-6095-7689
@@ -44,19 +44,19 @@ authors:
   - name: Rebecca.
     family_name: Farrington
     ORCID: 0000-0002-2594-6965
-    affiliation:
+    affiliation: AuScope
   - name: Xuesong
     family_name: Ding
     ORCID: 0000-0003-3693-932X
-    affiliation:
+    affiliation: Ocean University of China
   - name: Ben
     family_name: Mather
     ORCID: 0000-0003-3566-1557
-    affiliation:
+    affiliation: University of Sydney
   - name: Claire
     family_name: Mallard
     ORCID: 0000-0003-2595-2414
-    affiliation:
+    affiliation: University of Sydney
   - name: Louis
     family_name: Moresi
     ORCID: 0000-0003-3685-174X
