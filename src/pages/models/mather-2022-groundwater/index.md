@@ -1,3 +1,6 @@
+# no spaces in key names, use underscores please
+# - / > multiline text (what is the difference) 
+# https://yaml.org/spec/1.2.2/
 ---
 templateKey: 'model'
 slug: 'mather-2022-groundwater'
@@ -11,46 +14,75 @@ for_codes:
   - 040601
   - 040301
 status: completed
-software: Underworld2
-licence: cc-by-4.0
-uploader:
-  name: Ben Mather
-  email: ben.mather@sydney.edu.au
-authors:
-  - name: Ben Mather
+#repeat these items for several softwares
+software:
+  - name: Underworld2
+    doi: 10.5281/zenodo.7455999
+    url_source: https://zenodo.org/records/7455999
+licence: 
+  - name: cc-by-4.0
+    licence_url: https://creativecommons.org/licenses/by/4.0/ 
+    licence_image: https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png
+    description: CC BY 4.0 DEED Attribution 4.0 International
+contributor:
+    name: Ben
+    family_name: Mather
     email: ben.mather@sydney.edu.au
-    orcid: 0000-0003-3566-1557
-tags:
+    ORCID: 0000-0003-3566-1557
+    affiliation: University of Sydney
+#repeat these items for several authors
+authors:
+  - name: Ben
+    family_name: Mather
+    email: ben.mather@sydney.edu.au
+    ORCID: 0000-0003-3566-1557
+    affiliation: University of Sydney
+#repeat thes items for several authors
+associated_publication:
+  - title: Scientific Reports
+    journal: Nature
+    publisher: Springer Nature
+    doi: https://doi.org/10.1038/s41598-022-08384-w
+    url: https://www.nature.com/articles/s41598-022-08384-w
+compute info:
+  computer_name:
+  organisation:
+  doi:
+  url:
+research_tags:
   - groundwater
   - basins
   - Darcy
   - Python
   - Climate Change
+compute tags:
+  - python
+grants_funders:
+  - funder_name: National Collaborative Research Infrastructure Strategy, NCRIS
+    number_id: 
+    doi:
 abstract: >
   Numerical models of groundwater flow play a critical role for water management scenarios under climate extremes. Large-scale models play a key role in determining long range flow pathways from continental interiors to the oceans, yet struggle to simulate the local flow patterns ofered by small-scale models. We have developed a highly scalable numerical framework to model continental groundwater flow which capture the intricate flow pathways between deep aquifers and the near-surface. The coupled thermal-hydraulic basin structure is inferred from hydraulic head measurements, recharge estimates from geochemical proxies, and borehole temperature data using a Bayesian framework. We use it to model the deep groundwater flow beneath the Sydney–Gunnedah–Bowen Basin, part of Australia’s largest aquifer system. Coastal aquifers have flow rates of up to 0.3 m/ day, and a corresponding groundwater residence time of just 2,000 years. In contrast, our model predicts slow flow rates of 0.005 m/day for inland aquifers, resulting in a groundwater residence time of ∼400,000 years. Perturbing the model to account for a drop in borehole water levels since 2000, we fnd that lengthened inland flow pathways depart signifcantly from pre-2000 streamlines as groundwater is drawn further from recharge zones in a drying climate. Our results illustrate that progressively increasing water extraction from inland aquifers may permanently alter long-range flow pathways. Our open-source modelling approach can be extended to any basin and may help inform policies on the sustainable management of groundwater.
 images:
   landing_image:
     src: ./fig1.png
-    alt:
+    caption:
   graphic_abstract:
     src: ./fig1.png
-    alt:
+    caption:
   model_setup:
     src:
-    alt:
+    caption:
 animations:
   - src:
-    alt:
+    caption:
 dataset:
-  url: https://doi.org/xxxx
-  doi: xxxx
+  url: 
+  doi:
   notes: >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ornare orci nunc, non rutrum velit elementum non. Suspendisse ac cursus nibh. Sed nec laoreet purus. Aliquam lobortis massa sit amet mi posuere, sed facilisis elit luctus. Donec eu vehicula augue. Mauris iaculis nisl in fringilla gravida. Nunc dictum felis quis mi tincidunt egestas. Duis mollis neque vitae elementum volutpat. Praesent leo augue, tempus ac diam nec, varius posuere libero. Cras vel finibus sapien. Nunc scelerisque ut nibh in faucibus. Praesent ut magna felis. Etiam et sem at tortor volutpat vestibulum. Phasellus egestas mollis tempor. Donec ultrices, sapien faucibus porttitor lacinia, ligula ante interdum lectus, ac hendrerit nisi nunc sit amet magna. Maecenas pellentesque risus quis gravida fringilla. Pellentesque efficitur sed velit a molestie. Aliquam volutpat dictum consectetur. Nulla facilisi. Ut rutrum nec tellus sit amet lobortis. Suspendisse in arcu ut ipsum varius lacinia. Donec velit arcu, laoreet sed felis et, convallis tincidunt neque. Vestibulum non justo maximus, pulvinar enim non, tristique arcu. Nam fringilla suscipit est, id pretium urna dignissim id. Aenean interdum lacus quis eros molestie, eget eleifend massa rhoncus. Sed eu urna risus. Suspendisse commodo malesuada blandit.
-input_files:
+  file_tree:
+model_files:
   url:
   notes:
-postprocessing_files:
-  url:
-  notes:
+  file_tree:
 ---
-
