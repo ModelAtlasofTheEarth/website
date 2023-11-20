@@ -30,12 +30,27 @@ contributor:
     affiliation: University of Sydney
 #repeat these items for several authors
 authors:
-  - name:
-    family_name:
+  - name: Sascha
+    family_name: Brune
     email:
-    ORCID:
-    affiliation:
-#repeat thes items for several authors
+    ORCID: 0000-0003-4985-1810
+    affiliation: Helmholtz Centre Potsdam—German Research Centre for Geosciences (GFZ)  Potsdam Germany
+  - name: Anne
+    family_name: Glerum
+    email:
+    ORCID: 0000-0002-9481-1749
+    affiliation: Helmholtz Centre Potsdam—German Research Centre for Geosciences (GFZ)  Potsdam Germany
+  - name: John
+    family_name: Naliboff
+    email:
+    ORCID: 0000-0002-5697-7203
+    affiliation: Department of Earth and Environmental Science New Mexico Institute of Mining and Technology  Socorro NM USA
+  - name: Joanne M.
+    family_name: Whittaker
+    email:
+    ORCID: 0000-0002-3170-3935
+    affiliation: Institute for Marine and Antarctic Studies University of Tasmania  Hobart TAS Australia
+#repeat these items for several publications
 associated_publication:
   - title: Kinematics of footwall exhumation at oceanic detachment faults: solid‐block rotation and apparent unbending
     journal: Geochemistry, Geophysics, Geosystems
