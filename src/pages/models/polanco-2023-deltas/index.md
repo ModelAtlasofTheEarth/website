@@ -25,42 +25,42 @@ contributor:
   ORCID: 0000-0002-1270-4377
   affiliation: EarthByte Group, School of Geosciences, The University of Sydney
 authors:
-  - name: Sara
-    family_name: Polanco
-    ORCID: 0000-0002-1270-4377
-    affiliation: EarthByte Group, School of Geosciences, The University of Sydney
-  - name: Mike
-    family_name: Blum
-    ORCID: 
-    affiliation:
-  - name: Tristan
-    family_name: Salles
-    ORCID: 0000-0001-6095-7689
-    affiliation:
-  - name: Bruce C.
-    family_name: Frederick
-    ORCID: 0000-0001-6095-7689
-    affiliation:
-  - name: Rebecca.
-    family_name: Farrington
-    ORCID: 0000-0002-2594-6965
-    affiliation:
-  - name: Xuesong
-    family_name: Ding
-    ORCID: 0000-0003-3693-932X
-    affiliation:
-  - name: Ben
-    family_name: Mather
-    ORCID: 0000-0003-3566-1557
-    affiliation:
-  - name: Claire
-    family_name: Mallard
-    ORCID: 0000-0003-2595-2414
-    affiliation:
-  - name: Louis
-    family_name: Moresi
-    ORCID: 0000-0003-3685-174X
-    affiliation: Australian National University: Canberra, ACT, AU
+- name: Sara
+  family_name: Polanco
+  ORCID: 0000-0002-1270-4377
+  affiliation: EarthByte Group, School of Geosciences, The University of Sydney
+- name: Mike
+  family_name: Blum
+  ORCID: 
+  affiliation:
+- name: Tristan
+  family_name: Salles
+  ORCID: 0000-0001-6095-7689
+  affiliation:
+- name: Bruce C.
+  family_name: Frederick
+  ORCID: 0000-0001-6095-7689
+  affiliation:
+- name: Rebecca.
+  family_name: Farrington
+  ORCID: 0000-0002-2594-6965
+  affiliation:
+- name: Xuesong
+  family_name: Ding
+  ORCID: 0000-0003-3693-932X
+  affiliation:
+- name: Ben
+  family_name: Mather
+  ORCID: 0000-0003-3566-1557
+  affiliation:
+- name: Claire
+  family_name: Mallard
+  ORCID: 0000-0003-2595-2414
+  affiliation:
+- name: Louis
+  family_name: Moresi
+  ORCID: 0000-0003-3685-174X
+  affiliation: Australian National University: Canberra, ACT, AU
 associated_publication:
   - title: The flexural isostatic response of climatically driven sea-level changes on continental-scale deltas
     journal: EGUsphere
