@@ -25,11 +25,30 @@ licence:
     licence_image: https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png
     description: CC BY 4.0 DEED Attribution 4.0 International
 contributor:
-    name: Ben
+    -name: Ben
     family_name: Mather
-    email: ben.mather@sydney.edu.au
     ORCID: 0000-0003-3566-1557
     affiliation: University of Sydney
+    -name: Dietmar
+    family_name: Müller
+    ORCID: 0000-0002-3334-5764
+    affiliation: University of Sydney
+    -name: Craig 
+    family_name: O’Neill
+    ORCID: 0000-0002-6034-1881
+    affiliation: Queensland University of Technology
+    -name: Adam
+    family_name: Beall
+    ORCID: 0000-0002-7182-1864
+    affiliation: School of Earth and Environmental Sciences, Cardiff University
+    -name: Willem
+    family_name: Vervoort
+    ORCID: 0000-0002-6557-0237
+    affiliation: University of Sydney
+    -name: Louis
+    family_name: Moresi
+    ORCID: 0000-0003-3685-174X
+    affiliation: Research School of Earth Sciences, Australian National University
 #repeat these items for several authors
 authors:
   - name: Ben
