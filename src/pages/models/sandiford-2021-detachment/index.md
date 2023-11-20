@@ -44,9 +44,9 @@ associated_publication:
     url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GC009681
 compute info:
   computer_name: LISE
-  organisation: HLRN
+  organisation: Nationales Hochleistungsrechnen – NHR
   doi: 
-  url: https://hlrn.de/
+  url: https://nhr.zib.de
 research_tags:
   - tectonics
   - extension
