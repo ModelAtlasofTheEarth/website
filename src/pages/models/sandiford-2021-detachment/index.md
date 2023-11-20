@@ -43,10 +43,10 @@ associated_publication:
     doi: https://doi.org/10.1029/2021GC009681
     url: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GC009681
 compute info:
-  computer_name: GADI
-  organisation: National Computational
-  doi: https://dx.doi.org/10.25914/608bfd1838db2
-  url:
+  computer_name: LISE
+  organisation: HLRN
+  doi: 
+  url: https://hlrn.de/
 research_tags:
   - tectonics
   - extension
