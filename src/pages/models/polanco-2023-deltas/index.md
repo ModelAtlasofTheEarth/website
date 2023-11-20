@@ -22,15 +22,29 @@ licence:
 contributor:
   name: Sara
   family_name: Polanco
-  email: sara.moronpolanco@sydney.edu.au
   ORCID: 0000-0002-1270-4377
   affiliation: EarthByte Group, School of Geosciences, The University of Sydney
 authors:
   - name: Sara
     family_name: Polanco
-    email: sara.moronpolanco@sydney.edu.au
     ORCID: 0000-0002-1270-4377
     affiliation: EarthByte Group, School of Geosciences, The University of Sydney
+  - name: Mike
+    family_name: Blum
+    ORCID: 
+    affiliation:
+  - name: Tristan
+    family_name: Salles
+    ORCID: 0000-0001-6095-7689
+    affiliation:
+  - name: Bruce C.
+    family_name: Frederick
+    ORCID: 0000-0001-6095-7689
+    affiliation:
+  - name: Rebecca.
+    family_name: Farrington
+    ORCID: 0000-0002-2594-6965
+    affiliation:
 associated_publication:
   - title: The flexural isostatic response of climatically driven sea-level changes on continental-scale deltas
     journal: EGUsphere
