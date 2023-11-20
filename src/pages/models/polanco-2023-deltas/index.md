@@ -63,13 +63,13 @@ abstract: >
  The interplay between climate-forced sea-level change, sediment erosion and deposition, and flexural adjustments in deep time on passive margin deltas remains poorly understood. We performed a series of conceptual simulations to investigate flexural isostatic responses to high-frequency fluctuations in water and sediment load associated with climatically driven sea-level changes. We model a large drainage basin that discharges to a continental margin to generate a deltaic depocenter, then prescribe synthetic and climatic-driven sea-level curves of different frequencies to assess flexural response. Results show that flexural isostatic adjustments are bidirectional over 100-1000 kyr timescales and are in sync with the magnitude, frequency, and direction of sea-level fluctuations, and that isostatic adjustments play an important role in driving along-strike and cross-shelf river-mouth migration and sediment accumulation. Our findings demonstrate that climate-forced sea-level changes produce a feedback mechanism that results in self-sustaining creation of accommodation into which sediment is deposited and plays a major role in delta morphology and stratigraphic architecture.
 images:
   landing_image:
-    src: ./fig1.png
+    src: ./graphics/fig1.png
     caption:
   graphic_abstract:
-    src: ./fig1.png
+    src: ./graphics/fig1.png
     caption:
   model_setup:
-    src: ./fig2.png
+    src: ./graphics/fig2.png
     caption:
 dataset:
   url: https://doi.org/xxxx
