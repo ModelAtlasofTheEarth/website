@@ -17,7 +17,7 @@ software:
 licence:
   name: cc-by-4.0
   licence_url: https://creativecommons.org/licenses/by/4.0/
-  licence_image: https://contentmanager.copernicus.org/2175964/ssl
+  licence_image: https://creativecommons.org/wp-content/themes/vocabulary-theme/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo
   description:
 contributor:
   name: Sara
