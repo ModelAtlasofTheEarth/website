@@ -33,11 +33,10 @@ associated_publication:
     publisher: American Geophysical Union
     doi: 10.1029/2022GC010386
     url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022GC010386
-compute info:
-  computer_name:
-  organisation:
-  doi:
-  url:
+compute_info:
+  computer_name: Nectar Research Cloud
+  organisation: Australian Research Data Commons
+  url: https://ardc.edu.au/services/ardc-nectar-research-cloud/
 research_tags:
   - collision
   - subduction
@@ -50,9 +49,17 @@ compute_tags:
   - C
   - Python
 grants_funders:
-  - funder_name:
-    number_id:
-    doi:
+  - funder_name: Asociación Colombiana de Geólogos y Geofísicos del Petróleo
+    number_id: XVIII
+  - funder_name: Australian Research Council
+    number_id: IH130200012
+  - funder_name: Australian Research Council
+    number_id: DP150102887
+  - funder_name: Nectar Research Cloud
+  - funder_name: University of Melbourne
+  - funder_name: National Computational Infrastructure
+  - funder_name: Ministerio de Ciencia, Tecnología e Innovación
+    number_id: 783
 abstract: >
   Continents grow by the successive accretion of material to their margins, mostly collision and accretion of intra-oceanic magmatic arcs. We investigate the effect of arc buoyancy and viscosity on the mode of collision, and the effects on the margin using a computer modeling approach. Our simulations show that upon collision, it is a small differential in density (3%) between the colliding arc and the continental margin that dictates whether subduction continues or stops after collision. In addition, our models show that arc buoyancy and viscosity drive lithospheric extension in the continental plate. Also, as the subducting slab reaches a mantle discontinuity at 660 km depth, it folds and causes strain and stress fluctuations on the margin.
 images:
@@ -66,10 +73,12 @@ images:
     src: ./graphics/model_setup.jpg
     caption: "Alt text for model setup"
 animations:
-  - src: ./graphics/animation_25.gif
+  - src: ./graphics/animation_25.mp4
     caption: "Alt text for animation 1"
-  - src: ./graphics/animation_35.gif
+  - src: ./graphics/animation_35.mp4
     caption: "Alt text for animation 2"
+  - src: ./graphics/animation_noArc.mp4
+    caption: "Alt text for animation 3"
 dataset:
   url:
   doi: xxxx
