@@ -34,11 +34,11 @@ authors:
   - name: Rebecca
     family_name: Farrington
     ORCID: 0000-0002-2594-6965
-    affiliation: AuScope: Melbourne, Victoria
+    affiliation: AuScope Melbourne, Victoria
   - name: Romain
     family_name: Beucher
     ORCID: 0000-0003-3891-5444
-    affiliation: Australian Earth System Simulator: Canberra
+    affiliation: Australian Earth System Simulator, Canberra
   - name: Camilo
     family_name: Montes
     ORCID: 0000-0002-3553-0787
