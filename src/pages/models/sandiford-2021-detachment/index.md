@@ -18,11 +18,15 @@ licence:
   licence_image: https://creativecommons.org/wp-content/themes/vocabulary-theme/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo
   description:
 contributor:
-    name: Dan
+  name: Dan
+  family_name: Sandiford
+  ORCID: 0000-0002-2207-6837
+  affiliation: University of Sydney
+authors:
+  - name: Dan
     family_name: Sandiford
     ORCID: 0000-0002-2207-6837
     affiliation: University of Sydney
-authors:
   - name: Sascha
     family_name: Brune
     ORCID: 0000-0003-4985-1810
