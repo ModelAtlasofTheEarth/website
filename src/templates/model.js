@@ -1,8 +1,10 @@
 import { graphql } from "gatsby"
+import { kebabCase } from "lodash"
 import PropTypes from "prop-types"
 import React from "react"
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 import "react-tabs/style/react-tabs.css"
+
 import Animation from "../components/Animation"
 import {
   BadgeAuthor,
@@ -15,21 +17,21 @@ import Layout from "../components/Layout"
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage"
 
 const ModelTemplate = ({
+  abstract,
+  animations,
+  authors,
+  compute_tags,
   content,
   contentComponent,
-  title,
-  date,
-  uploader,
-  authors,
-  email,
-  abstract,
-  graphic_abstract,
-  model_setup,
+  contributor,
   dataset,
-  animations,
-  input_files,
-  postprocessing_files,
-  tags,
+  date,
+  graphic_abstract,
+  landing_image,
+  model_files,
+  model_setup,
+  research_tags,
+  title,
 }) => {
   const PostContent = contentComponent || Content
   const dataset_url = (
@@ -37,76 +39,140 @@ const ModelTemplate = ({
     ? "https://doi.org/" + dataset.doi
     : dataset.url
   )
+  const all_tags = research_tags.concat(compute_tags)
+  const contributor_full_name = contributor.name + " " + contributor.family_name
+  const author_full_names = authors.map((author) => (
+    author.name + " " + author.family_name
+  ))
 
   return (
     <section className="section">
       <div className="container content model-page">
         <div className="model-page-header">
-          {/* <h1
-            className="title is-size-3 has-text-weight-bold is-bold-light"
-          > */}
           <h1>
             {title}
           </h1>
-          <p className="model-page-header" style={{ marginBottom: "15px" }}>
+          {
+            (animations && animations.length > 0) &&
+            <Animation
+              src={animations[0].src.publicURL}
+              alt={animations[0].caption || "Animation | " + title}
+            />
+          }
+          {
+            (!(animations && animations.length > 0) && landing_image.src) &&
+            <div className="animation-container">
+              <PreviewCompatibleImage
+                imageInfo={{
+                  image: landing_image.src,
+                  alt: landing_image.caption || title,
+                }}
+              />
+            </div>
+          }
+          <p className="model-page-header">
             <b>Authors:</b>{" "}
             {
-              authors.map((author) => (
+              author_full_names.map((author) => (
                 <BadgeAuthor
-                  author={author.name}
+                  author={author}
                   style={{ fontSize: "20px" }}
+                  key={kebabCase(author)}
                 />
               ))
             }
           </p>
-          <p className="model-page-header" style={{ marginBottom: "15px" }}>
-            <b>Uploaded by:</b> {uploader}{" "}
-            (<a href={`mailto${email}`}>{email}</a>)
+          <p className="model-page-header">
+            <b>Uploaded by:</b>{" "}{contributor_full_name}
           </p>
-          <p className="model-page-header" style={{ marginBottom: "15px" }}>
-            <b>Upload date:</b> {date}
+          <p className="model-page-header">
+            <b>Upload date:</b>{" "}{date}
           </p>
         </div>
 
         <Tabs className="model-page">
           <TabList>
-            <Tab>Abstract</Tab>
-            <Tab disabled={!dataset_url}>
-              Dataset
+            <Tab key="overview">Overview</Tab>
+            <Tab key="model-setup" disabled={!model_setup.src}>
+              Model setup
             </Tab>
-            <Tab disabled={!(input_files?.url || model_setup?.src)}>
-              Input files
+            <Tab key="model-files" disabled={!model_files?.url}>
+              Model files
             </Tab>
-            <Tab disabled={!postprocessing_files.url}>
-              Post-processing files
+            <Tab key="model-outputs" disabled={!dataset_url}>
+              Model outputs
             </Tab>
           </TabList>
 
-          <TabPanel>
+          <TabPanel key="overview">
             <h2>Abstract</h2>
             <p>{abstract}</p>
             <h3>Tags</h3>
-            <p><TagsList tags={tags}/></p>
+            <p><TagsList tags={all_tags}/></p>
             {graphic_abstract &&
-              <p>
+              <div>
                 <h3>Graphic abstract</h3>
                 <PreviewCompatibleImage
                   imageInfo={{
                   image: graphic_abstract.src,
                   alt: (
-                    graphic_abstract.alt ||
+                    graphic_abstract.caption ||
                     "Graphic abstract | " + title
                   ),
                   }}
                 />
-              </p>
+                {
+                  graphic_abstract.caption &&
+                  <p>{graphic_abstract.caption}</p>
+                }
+              </div>
             }
           </TabPanel>
-          <TabPanel>
+          <TabPanel key="model-setup">
+            {
+              model_setup?.src &&
+              <div>
+                <h3>Model setup</h3>
+                <PreviewCompatibleImage
+                  imageInfo={{
+                    image: model_setup.src,
+                    alt: (
+                      model_setup.caption ||
+                      "Model setup | " + title
+                    ),
+                  }}
+                />
+              </div>
+            }
+          </TabPanel>
+          <TabPanel key="model-files">
+            {
+              (model_files?.url || model_files?.notes) &&
+              <h2>Model files</h2>
+            }
+            {
+              model_files?.url &&
+              <p>
+                The input and/or post-processing files for this model
+                can be downloaded here:{" "}
+                <a href={model_files.url}>{model_files.url}</a>
+              </p>
+            }
+            {
+              model_files?.notes &&
+              <div>
+                <h3>Notes</h3>
+                <p>{model_files.notes}</p>
+              </div>
+            }
+          </TabPanel>
+          <TabPanel key="model-outputs">
             <h2>Dataset access</h2>
             {
               dataset.doi &&
-              <BadgeDoi doi={dataset.doi}/>
+              <p>
+                <BadgeDoi doi={dataset.doi}/>
+              </p>
             }
             <p>
               The output dataset for this model
@@ -123,79 +189,20 @@ const ModelTemplate = ({
               )
             }
             {
-              (animations && animations[0]?.src?.publicURL) &&
-              <div>
-                <h3>Animations</h3>
+              (animations && animations.length > 0) &&
+              <>
+                <h3 style={{paddingBottom: "30px"}}>Animations</h3>
                 {
-                  animations.map((i) => (
-                    <p>
-                      <Animation
-                        src={i.src.publicURL}
-                        alt={i.alt || "Animation | " + title}
-                        controls
-                      />
-                    </p>
+                  animations.map((animation, i) => (
+                    <Animation
+                      src={animation.src.publicURL}
+                      alt={animation.caption || "Animation | " + title}
+                      key={i}
+                      controls
+                    />
                   ))
                 }
-              </div>
-            }
-          </TabPanel>
-          <TabPanel>
-            {
-              (input_files?.url || input_files?.notes) &&
-              <h2>Input files</h2>
-            }
-            {
-              input_files?.url &&
-              <p>
-                The input files for this model
-                can be downloaded here:{" "}
-                <a href={input_files.url}>{input_files.url}</a>
-              </p>
-            }
-            {
-              input_files?.notes &&
-              <div>
-                <h3>Notes</h3>
-                <p>{input_files.notes}</p>
-              </div>
-            }
-            {
-              model_setup?.src &&
-              <div>
-                <h3>Model setup</h3>
-                <PreviewCompatibleImage
-                  imageInfo={{
-                    image: model_setup.src,
-                    alt: (
-                      model_setup.alt ||
-                      "Model setup | " + title
-                    ),
-                  }}
-                />
-              </div>
-            }
-          </TabPanel>
-          <TabPanel>
-            <h2>Post-processing files</h2>
-            {
-              postprocessing_files?.url &&
-              <p>
-                The post-processing files for this model
-                can be downloaded here:{" "}
-                <a href={postprocessing_files.url}>
-                  {postprocessing_files.url}
-                </a>
-              </p>
-            }
-            {
-              postprocessing_files?.notes &&
-              (
-                <div>
-                  <h3>Notes</h3>
-                  <p>{postprocessing_files.notes}</p>
-                </div>
-              )
+              </>
             }
           </TabPanel>
         </Tabs>
@@ -224,33 +231,33 @@ ModelTemplate.propTypes = {
   postprocessing_files: PropTypes.objectOf(PropTypes.string),
 }
 
-const Models = ({ data }) => {
+const ModelsPage = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
     <Layout>
       <ModelTemplate
+        abstract={post.frontmatter.abstract}
+        animations={post.frontmatter.animations}
+        authors={post.frontmatter.authors}
+        compute_tags={post.frontmatter.compute_tags}
         content={post.html}
         contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        date={post.frontmatter.date}
-        uploader={post.frontmatter.uploader.name}
-        authors={post.frontmatter.authors}
-        email={post.frontmatter.uploader.email}
-        abstract={post.frontmatter.abstract}
-        graphic_abstract={post.frontmatter.images.graphic_abstract}
-        model_setup={post.frontmatter.images.model_setup}
-        tags={post.frontmatter.tags}
+        contributor={post.frontmatter.contributor}
         dataset={post.frontmatter.dataset}
-        animations={post.frontmatter.animations}
-        input_files={post.frontmatter.input_files}
-        postprocessing_files={post.frontmatter.postprocessing_files}
+        date={post.frontmatter.date}
+        graphic_abstract={post.frontmatter.images.graphic_abstract}
+        landing_image={post.frontmatter.images.landing_image}
+        model_files={post.frontmatter.model_files}
+        model_setup={post.frontmatter.images.model_setup}
+        research_tags={post.frontmatter.research_tags}
+        title={post.frontmatter.title}
       />
     </Layout>
   )
 }
 
-export default Models
+export default ModelsPage
 export const Head = ({ data }) => (
   <PageHead title={data.markdownRemark.frontmatter.title}/>
 )
@@ -263,13 +270,33 @@ export const pageQuery = graphql`
       frontmatter {
         abstract
         animations {
-          alt
+          caption
           src {
             publicURL
           }
         }
+        associated_publication {
+          title
+          journal
+          publisher
+          doi
+          url
+        }
         authors {
           name
+          family_name
+          affiliation
+        }
+        compute_info {
+          computer_name
+          organisation
+          url
+        }
+        compute_tags
+        contributor {
+          name
+          family_name
+          affiliation
         }
         dataset {
           url
@@ -277,9 +304,25 @@ export const pageQuery = graphql`
           notes
         }
         date(formatString: "MMMM DD, YYYY")
+        for_codes
+        grants_funders {
+          funder_name
+          number_id
+        }
         images {
           graphic_abstract {
-            alt
+            caption
+            src {
+              childImageSharp {
+                gatsbyImageData(
+                  quality: 100
+                  layout: CONSTRAINED
+                )
+              }
+            }
+          }
+          landing_image {
+            caption
             src {
               childImageSharp {
                 gatsbyImageData(
@@ -290,7 +333,7 @@ export const pageQuery = graphql`
             }
           }
           model_setup {
-            alt
+            caption
             src {
               childImageSharp {
                 gatsbyImageData(
@@ -301,20 +344,22 @@ export const pageQuery = graphql`
             }
           }
         }
-        input_files {
-          url
-          notes
-        }
-        postprocessing_files {
-          url
-          notes
-        }
-        tags
-        title
-        uploader {
+        licence {
           name
-          email
+          licence_url
+          licence_image
         }
+        model_files {
+          url
+          notes
+        }
+        research_tags
+        software {
+          name
+          doi
+          url_source
+        }
+        title
       }
     }
   }

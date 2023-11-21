@@ -19,11 +19,12 @@ exports.createPages = ({ actions, graphql }) => {
             frontmatter {
               authors {
                 name
+                family_name
               }
               date(formatString: "MMMM DD, YYYY")
               images {
                 landing_image {
-                  alt
+                  caption
                   src {
                     childImageSharp {
                       gatsbyImageData(
@@ -34,12 +35,12 @@ exports.createPages = ({ actions, graphql }) => {
                   }
                 }
               }
-              software
               tags
               templateKey
               title
-              uploader {
+              contributor {
                 name
+                family_name
               }
             }
             id

@@ -101,7 +101,7 @@ animations:
     caption: "Alt text for animation 3"
 dataset:
   url:
-  doi:
+  doi: xxxx
   notes:
   file_tree:
 model_files:
