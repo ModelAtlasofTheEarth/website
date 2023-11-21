@@ -31,7 +31,7 @@ authors:
     affiliation: EarthByte Group, School of Geosciences, The University of Sydney
   - name: Mike
     family_name: Blum
-    ORCID: 
+    ORCID:
     affiliation:
   - name: Tristan
     family_name: Salles
@@ -62,11 +62,11 @@ authors:
     ORCID: 0000-0003-3685-174X
     affiliation: Australian National University, Canberra, ACT, AU
 associated_publication:
-  - title: The flexural isostatic response of climatically driven sea-level changes on continental-scale deltas
-    journal: EGUsphere
-    publisher: Copernicus Publications
-    doi: 10.5194/egusphere-2023-53
-    url: https://egusphere.copernicus.org/preprints/2023/egusphere-2023-53/
+  title: The flexural isostatic response of climatically driven sea-level changes on continental-scale deltas
+  journal: EGUsphere
+  publisher: Copernicus Publications
+  doi: 10.5194/egusphere-2023-53
+  url: https://egusphere.copernicus.org/preprints/2023/egusphere-2023-53/
 compute_info:
   computer_name:
   organisation:
@@ -104,10 +104,9 @@ images:
 dataset:
   url: https://doi.org/xxxx
   doi: xxxx
-  notes: >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ornare orci nunc, non rutrum velit elementum non. Suspendisse ac cursus nibh. Sed nec laoreet purus. Aliquam lobortis massa sit amet mi posuere, sed facilisis elit luctus. Donec eu vehicula augue. Mauris iaculis nisl in fringilla gravida. Nunc dictum felis quis mi tincidunt egestas. Duis mollis neque vitae elementum volutpat. Praesent leo augue, tempus ac diam nec, varius posuere libero. Cras vel finibus sapien. Nunc scelerisque ut nibh in faucibus. Praesent ut magna felis.
-    Etiam et sem at tortor volutpat vestibulum. Phasellus egestas mollis tempor. Donec ultrices, sapien faucibus porttitor lacinia, ligula ante interdum lectus, ac hendrerit nisi nunc sit amet magna. Maecenas pellentesque risus quis gravida fringilla. Pellentesque efficitur sed velit a molestie. Aliquam volutpat dictum consectetur. Nulla facilisi. Ut rutrum nec tellus sit amet lobortis. Suspendisse in arcu ut ipsum varius lacinia. Donec velit arcu, laoreet sed felis et, convallis tincidunt neque. Vestibulum non justo maximus, pulvinar enim non, tristique arcu. Nam fringilla suscipit est, id pretium urna dignissim id. Aenean interdum lacus quis eros molestie, eget eleifend massa rhoncus. Sed eu urna risus. Suspendisse commodo malesuada blandit.
+  notes: ""
+  file_tree:
 model_files:
   url: https://github.com/saraemp/egusphere-2023-53
-  notes:
+  notes: ""
 ---

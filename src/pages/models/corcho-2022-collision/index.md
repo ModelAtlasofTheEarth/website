@@ -48,11 +48,11 @@ authors:
     ORCID: 0000-0003-3685-174X
     affiliation: Research School of Earth Sciences, Australian National University
 associated_publication:
-  - title: The Role of Lithospheric-Deep Mantle Interactions on the Style and Stress Evolution of Arc-Continent Collision
-    journal: Geochemistry, Geophysics, Geosystems
-    publisher: American Geophysical Union
-    doi: 10.1029/2022GC010386
-    url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022GC010386
+  title: The Role of Lithospheric-Deep Mantle Interactions on the Style and Stress Evolution of Arc-Continent Collision
+  journal: Geochemistry, Geophysics, Geosystems
+  publisher: American Geophysical Union
+  doi: 10.1029/2022GC010386
+  url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022GC010386
 compute_info:
   computer_name: Nectar Research Cloud
   organisation: Australian Research Data Commons
@@ -79,7 +79,7 @@ grants_funders:
   - funder_name: University of Melbourne
   - funder_name: National Computational Infrastructure
   - funder_name: Ministerio de Ciencia, Tecnología e Innovación
-    number_id: 783
+    number_id: "783"
 abstract: >
   Continents grow by the successive accretion of material to their margins, mostly collision and accretion of intra-oceanic magmatic arcs. We investigate the effect of arc buoyancy and viscosity on the mode of collision, and the effects on the margin using a computer modeling approach. Our simulations show that upon collision, it is a small differential in density (3%) between the colliding arc and the continental margin that dictates whether subduction continues or stops after collision. In addition, our models show that arc buoyancy and viscosity drive lithospheric extension in the continental plate. Also, as the subducting slab reaches a mantle discontinuity at 660 km depth, it folds and causes strain and stress fluctuations on the margin.
 images:
@@ -101,17 +101,10 @@ animations:
     caption: "Alt text for animation 3"
 dataset:
   url:
-  doi: xxxx
-  notes: |
-    Here are some extra notes.
-    You can put anything you want in here.
+  doi:
+  notes:
   file_tree:
 model_files:
   url: https://github.com/dansand/corcho_2022_collision_test/tree/main/model_reproduction_files
   notes: ""
 ---
-Test content.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacinia varius magna ut dignissim. Nulla vitae tellus sed tortor ullamcorper pharetra. Nullam eleifend libero ut tempus mattis. Phasellus nisi lacus, feugiat egestas nisl nec, sollicitudin mattis diam. Curabitur sed massa rhoncus ante finibus hendrerit. Pellentesque imperdiet purus non scelerisque fermentum. Pellentesque congue augue ac tortor elementum, eu tincidunt elit blandit. Donec interdum euismod justo, eget fermentum metus dapibus sit amet. Praesent sit amet purus leo. Aliquam metus arcu, tincidunt eu eros at, tristique luctus ante. In non varius elit. Quisque elit nisl, ullamcorper in aliquet ac, tempor ac sem. Pellentesque elementum nisi eu tincidunt rhoncus.
-
-Fusce a neque non nibh porta porta sed quis nisi. Mauris semper gravida diam eget luctus. In eu imperdiet massa, sit amet facilisis nisi. Duis pharetra lacus non orci faucibus, sed finibus nisi ultrices. Fusce aliquam eros vitae orci pharetra porttitor. Aliquam aliquam elit justo, a dignissim arcu facilisis in. Quisque ultricies congue turpis eu pulvinar. Maecenas ornare neque quis placerat sodales. Sed iaculis sit amet elit sed bibendum.
