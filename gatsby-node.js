@@ -86,6 +86,12 @@ exports.createPages = ({ actions, graphql }) => {
       if (_.get(edge, `node.frontmatter.tags`)) {
         tags = tags.concat(edge.node.frontmatter.tags)
       }
+      if (_.get(edge, "node.frontmatter.compute_tags")) {
+        tags = tags.concat(edge.node.frontmatter.compute_tags)
+      }
+      if (_.get(edge, "node.frontmatter.research_tags")) {
+        tags = tags.concat(edge.node.frontmatter.research_tags)
+      }
     })
     // Eliminate duplicate tags
     tags = _.uniq(tags)

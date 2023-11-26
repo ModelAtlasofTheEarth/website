@@ -40,9 +40,9 @@ const ModelList = ({ posts }) => {
 const isValidModelListItem = (post) => (
   post.fields.slug &&
   post.frontmatter.title &&
-  post.frontmatter.uploader?.name &&
+  post.frontmatter.contributor?.name &&
   post.frontmatter.date &&
-  post.frontmatter.tags &&
+  // post.frontmatter.tags &&
   post.frontmatter.images.landing_image
 )
 
