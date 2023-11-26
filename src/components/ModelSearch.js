@@ -72,7 +72,9 @@ class ModelSearch extends Component {
     } = this.state
     const { models } = this.props
     for (const model of models) {
-      model.author_names = model.frontmatter.authors.map((author) => author.name)
+      model.author_names = model.frontmatter.authors.map((author) => (
+        author.name + " " + author.family_name
+      ))
     }
 
     const dataToSearch = new JsSearch.Search("id")
@@ -107,9 +109,12 @@ class ModelSearch extends Component {
     }
     if (indexByTags) {
       dataToSearch.addIndex(["frontmatter", "tags"])
+      dataToSearch.addIndex(["frontmatter", "compute_tags"])
+      dataToSearch.addIndex(["frontmatter", "research_tags"])
     }
     if (indexByUploader) {
-      dataToSearch.addIndex(["frontmatter", "uploader", "name"])
+      dataToSearch.addIndex(["frontmatter", "contributor", "name"])
+      dataToSearch.addIndex(["frontmatter", "contributor", "family_name"])
     }
     if (indexByAuthors) {
       dataToSearch.addIndex("author_names")
@@ -118,7 +123,7 @@ class ModelSearch extends Component {
       dataToSearch.addIndex(["frontmatter", "abstract"])
     }
     if (indexBySoftware) {
-      dataToSearch.addIndex(["frontmatter", "software"])
+      dataToSearch.addIndex(["frontmatter", "software", "name"])
     }
     if (indexByContent) {
       dataToSearch.addIndex(["internal", "content"])

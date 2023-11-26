@@ -21,6 +21,11 @@ exports.createPages = ({ actions, graphql }) => {
                 name
                 family_name
               }
+              compute_tags
+              contributor {
+                name
+                family_name
+              }
               date(formatString: "MMMM DD, YYYY")
               images {
                 landing_image {
@@ -35,13 +40,13 @@ exports.createPages = ({ actions, graphql }) => {
                   }
                 }
               }
+              research_tags
+              software {
+                name
+              }
               tags
               templateKey
               title
-              contributor {
-                name
-                family_name
-              }
             }
             id
             internal {
