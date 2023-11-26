@@ -12,6 +12,8 @@ $black: #2b2523
 
 $navbar-color: rgba(240, 248, 250, .85)
 
+$animation-height: 400px
+
 .navbar .navbar-menu
   box-shadow: none
 
@@ -316,9 +318,9 @@ $menu-label-color: $white-ter
       margin-bottom: 30px
 
 
-.react-player
+.react-player video
   aspect-ratio: 16/9
-  max-height: 600px
+  max-height: $animation-height
   width: auto
 
 .animation-container
@@ -326,6 +328,12 @@ $menu-label-color: $white-ter
   justify-content: center
   position: relative
   margin-bottom: 30px
+  max-height: $animation-height
+  overflow: hidden
+  & img
+    object-fit: contain !important
+  & video
+    object-fit: contain !important
 
 .badge
   padding: 2px 6px

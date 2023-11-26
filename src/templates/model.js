@@ -44,6 +44,11 @@ const ModelTemplate = ({
   const author_full_names = authors.map((author) => (
     author.name + " " + author.family_name
   ))
+  const animations_found = (
+    animations &&
+    animations.length > 0 &&
+    animations[0].src?.publicURL
+  )
 
   return (
     <section className="section">
@@ -53,14 +58,14 @@ const ModelTemplate = ({
             {title}
           </h1>
           {
-            (animations && animations.length > 0) &&
+            animations_found &&
             <Animation
               src={animations[0].src.publicURL}
               alt={animations[0].caption || "Animation | " + title}
             />
           }
           {
-            (!(animations && animations.length > 0) && landing_image.src) &&
+            (!animations_found) &&
             <div className="animation-container">
               <PreviewCompatibleImage
                 imageInfo={{
@@ -189,7 +194,7 @@ const ModelTemplate = ({
               )
             }
             {
-              (animations && animations.length > 0) &&
+              animations_found &&
               <>
                 <h3 style={{paddingBottom: "30px"}}>Animations</h3>
                 {
