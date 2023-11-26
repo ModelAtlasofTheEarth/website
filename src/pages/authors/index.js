@@ -29,7 +29,7 @@ class AuthorsPage extends React.Component {
         }
         let exists = false
         for (const i of authors) {
-          if (i.full_name == full_name) {
+          if (i.full_name === full_name) {
             exists = true
             break
           }

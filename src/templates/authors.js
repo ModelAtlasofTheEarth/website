@@ -16,7 +16,7 @@ class AuthorRoute extends React.Component {
           + " "
           + post_author.family_name
         )
-        if (post_author_name == full_name) {
+        if (post_author_name === full_name) {
           return true
         }
       }

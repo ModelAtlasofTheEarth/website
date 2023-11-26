@@ -3,7 +3,6 @@ import {
   get,
   kebabCase,
   toLower,
-  uniq,
   upperFirst,
   words,
 } from "lodash";
@@ -19,12 +18,6 @@ const TagsPage = ({
     },
   },
 }) => {
-  // const {
-  //   allMarkdownRemark: {edges},
-  //   site: {
-  //     siteMetadata: {title}
-  //   },
-  // } = data
   const tags = []
   const post_counts = {}
   for (const edge of edges) {
