@@ -100,29 +100,26 @@ exports.createPages = ({ actions, graphql }) => {
 
     // Author pages:
     let authors = []
-    posts.forEach((edge) => {
-      if (_.get(edge, `node.frontmatter.uploader.name`)) {
-        authors = authors.concat(edge.node.frontmatter.uploader.name)
-      }
-      if (_.get(edge, `node.frontmatter.authors`)) {
-        edge.node.frontmatter.authors.forEach((author) => {
-          if (_.get(author, `name`)) {
-            authors = authors.concat(author.name)
+    for (const edge of posts) {
+      if (_.get(edge, "node.frontmatter.authors")) {
+        for (const author of edge.node.frontmatter.authors) {
+          if (author?.name && author?.family_name) {
+            authors.push(author.name + " " + author.family_name)
           }
-        })
+        }
       }
-    })
+    }
     authors = _.uniq(authors)
-    authors.forEach((author) => {
-      const authorPath = `/authors/${_.kebabCase(author)}/`
+    for (const author of authors) {
+      const authorPath = `/authors/${_.kebabCase(author)}`
       createPage({
         path: authorPath,
-        component: path.resolve(`src/templates/authors.js`),
+        component: path.resolve("src/templates/authors.js"),
         context: {
           author,
-        },
+        }
       })
-    })
+    }
 
     // Search page
     let models_list = []
