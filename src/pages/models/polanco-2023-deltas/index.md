@@ -41,7 +41,7 @@ authors:
     family_name: Frederick
     ORCID: 0000-0001-6095-7689
     affiliation:
-  - name: Rebecca.
+  - name: Rebecca
     family_name: Farrington
     ORCID: 0000-0002-2594-6965
     affiliation: AuScope
