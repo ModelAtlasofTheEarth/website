@@ -10,4 +10,6 @@
 
 ## Staging server
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d4f730fc-398c-4226-9c25-7091734ab1e0/deploy-status)](https://app.netlify.com/sites/mate-science/deploys)
+
 For testing and demonstration purposes, the `main` branch of the website repository is currently hosted here: [https://mate-science.netlify.app](https://mate-science.netlify.app/)
