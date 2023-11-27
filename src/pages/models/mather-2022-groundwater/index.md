@@ -94,7 +94,7 @@ dataset:
   notes:
   file_tree:
 model_files:
-  url:
+  url: https://github.com/brmather/Sydney_Basin/tree/master
   notes:
   file_tree:
 ---
