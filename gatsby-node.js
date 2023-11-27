@@ -19,11 +19,17 @@ exports.createPages = ({ actions, graphql }) => {
             frontmatter {
               authors {
                 name
+                family_name
+              }
+              compute_tags
+              contributor {
+                name
+                family_name
               }
               date(formatString: "MMMM DD, YYYY")
               images {
                 landing_image {
-                  alt
+                  caption
                   src {
                     childImageSharp {
                       gatsbyImageData(
@@ -34,13 +40,13 @@ exports.createPages = ({ actions, graphql }) => {
                   }
                 }
               }
-              software
+              research_tags
+              software {
+                name
+              }
               tags
               templateKey
               title
-              uploader {
-                name
-              }
             }
             id
             internal {
@@ -80,6 +86,12 @@ exports.createPages = ({ actions, graphql }) => {
       if (_.get(edge, `node.frontmatter.tags`)) {
         tags = tags.concat(edge.node.frontmatter.tags)
       }
+      if (_.get(edge, "node.frontmatter.compute_tags")) {
+        tags = tags.concat(edge.node.frontmatter.compute_tags)
+      }
+      if (_.get(edge, "node.frontmatter.research_tags")) {
+        tags = tags.concat(edge.node.frontmatter.research_tags)
+      }
     })
     // Eliminate duplicate tags
     tags = _.uniq(tags)
@@ -99,29 +111,26 @@ exports.createPages = ({ actions, graphql }) => {
 
     // Author pages:
     let authors = []
-    posts.forEach((edge) => {
-      if (_.get(edge, `node.frontmatter.uploader.name`)) {
-        authors = authors.concat(edge.node.frontmatter.uploader.name)
-      }
-      if (_.get(edge, `node.frontmatter.authors`)) {
-        edge.node.frontmatter.authors.forEach((author) => {
-          if (_.get(author, `name`)) {
-            authors = authors.concat(author.name)
+    for (const edge of posts) {
+      if (_.get(edge, "node.frontmatter.authors")) {
+        for (const author of edge.node.frontmatter.authors) {
+          if (author?.name && author?.family_name) {
+            authors.push(author.name + " " + author.family_name)
           }
-        })
+        }
       }
-    })
+    }
     authors = _.uniq(authors)
-    authors.forEach((author) => {
-      const authorPath = `/authors/${_.kebabCase(author)}/`
+    for (const author of authors) {
+      const authorPath = `/authors/${_.kebabCase(author)}`
       createPage({
         path: authorPath,
-        component: path.resolve(`src/templates/authors.js`),
+        component: path.resolve("src/templates/authors.js"),
         context: {
           author,
-        },
+        }
       })
-    })
+    }
 
     // Search page
     let models_list = []

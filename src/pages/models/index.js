@@ -48,7 +48,7 @@ const fn = () => (
                 date(formatString: "MMMM DD, YYYY")
                 images {
                   landing_image {
-                    alt
+                    caption
                     src {
                       childImageSharp {
                         gatsbyImageData(
@@ -59,11 +59,15 @@ const fn = () => (
                     }
                   }
                 }
-                software
-                tags
+                software {
+                  name
+                }
+                research_tags
+                compute_tags
                 templateKey
                 title
-                uploader {
+                contributor {
+                  family_name
                   name
                 }
               }

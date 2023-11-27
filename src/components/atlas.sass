@@ -12,8 +12,10 @@ $black: #2b2523
 
 $navbar-color: rgba(240, 248, 250, .85)
 
+$animation-height: 400px
+
 .navbar .navbar-menu
-  box-shadow:none !important
+  box-shadow: none
 
 .content .taglist .authorlist
   list-style: none
@@ -118,10 +120,10 @@ $menu-label-color: $white-ter
 
 // blog roll
 .blog-list-item.is-featured
-  background-color: #d6400033;
+  background-color: #d6400033
 .blog-list-item header
-  display: flex;
-  margin-bottom: 1em;
+  display: flex
+  margin-bottom: 1em
 .blog-list-item .featured-thumbnail
   flex-basis: 35%
   min-width: 100px 
@@ -134,7 +136,7 @@ $menu-label-color: $white-ter
 // responsiveness
 +tablet-only
   .blog-list-item .featured-thumbnail
-    flex-basis: 50%;
+    flex-basis: 50%
 
 //+mobile
 @media screen and (max-width: 400px), (min-width: 900px) and (max-width: 1200px)
@@ -178,8 +180,8 @@ $menu-label-color: $white-ter
 .mc-card-container
   position: relative
   margin: auto
-  border: 1px solid #dadce0;
-  border-radius: 8px;
+  border: 1px solid #dadce0
+  border-radius: 8px
   padding: 0.75rem
   height: 100%
   display: flex
@@ -295,23 +297,46 @@ $menu-label-color: $white-ter
 
 .model-page
   text-align: left
+  font-size: 19px
+  & h2
+    font-size: 175%
+  & h3
+    font-size: 125%
+    padding-bottom: 15px
+    padding-top: 15px
+  & a
+    color: #2c8ec7
+  &-header
+    @extend .model-page
+    text-align: center
+    font-size: 22px
+    margin-bottom: 10px
+    & h1
+      margin-bottom: 15px
+      font-size: 200%
+      font-weight: 600
+      margin-bottom: 30px
 
-.model-page-header
-  @extend .model-page
-  text-align: center
-  font-size: 22px
 
-.model-page-header h1
-  font-size: 30px
-  font-weight: 600
-  margin-bottom: 30px
-
-.react-player
-  height: auto !important
+.react-player video
   aspect-ratio: 16/9
+  max-height: $animation-height
+  width: auto
+
+.animation-container
+  display: flex
+  justify-content: center
+  position: relative
+  margin-bottom: 30px
+  max-height: $animation-height
+  overflow: hidden
+  & img
+    object-fit: contain !important
+  & video
+    object-fit: contain !important
 
 .badge
-  padding: 3px 6px
+  padding: 2px 6px
   text-align: center
   border-radius: 5px
   white-space: nowrap
@@ -319,10 +344,11 @@ $menu-label-color: $white-ter
 
 .badge-tag
   @extend .badge
-  font-size: 14px
-  background-color: #007ec6
-  color: white
+  font-size: 15px
+  background-color: #2c8ec7
+  color: #eee
   margin: 2px
+  font-weight: 600
 
 .badge-doi-base
   @extend .badge
@@ -342,9 +368,10 @@ $menu-label-color: $white-ter
 .badge-author
   @extend .badge
   font-size: 16px
-  background-color: #007ec6
-  color: white
+  background-color: #2c8ec7
+  color: #eee
   margin: 2px
+  font-weight: 600
 
 .mc-card-container:hover .mc-card-overlay
   //bottom: 0
@@ -443,17 +470,17 @@ $menu-label-color: $white-ter
 
 .gp-header-info
   opacity: 1
-  -webkit-transition: opacity 5.5s ease-in-out;
-  -moz-transition: opacity 5.5s ease-in-out;
-  -ms-transition: opacity 5.5s ease-in-out;
-  -o-transition: opacity 5.5s ease-in-out;
+  -webkit-transition: opacity 5.5s ease-in-out
+  -moz-transition: opacity 5.5s ease-in-out
+  -ms-transition: opacity 5.5s ease-in-out
+  -o-transition: opacity 5.5s ease-in-out
 
 .gp-hidden-ctl:hover ~ .gp-header-info
   opacity: 0
   
 .gp-card
-  display: flex;
-  flex-direction: column;
+  display: flex
+  flex-direction: column
   text-align: center
   position: relative
   perspective: 1000px
@@ -581,8 +608,8 @@ body
   padding-left: 0
 
 .doc-list .icon
-  display: table-cell;
-  vertical-align: middle;
+  display: table-cell
+  vertical-align: middle
   border: none
   width: 7rem 
   
@@ -597,29 +624,29 @@ body
   border-radius: 10px
 
 div.download-box
-	background: #90ff80
-	font-size: 90%
-	padding-left: 1.1em
-	padding-right: 1.1em
-	padding-top: 0.1em 
+    background: #90ff80
+    font-size: 90%
+    padding-left: 1.1em
+    padding-right: 1.1em
+    padding-top: 0.1em 
 
 div.download-box a 
-	font-size: 150%
-	line-height: 120%
-	text-decoration: none
-	color: #0c5e00
+    font-size: 150%
+    line-height: 120%
+    text-decoration: none
+    color: #0c5e00
 
 div.download-box a:hover 
-	background: #90ff80
-	text-decoration: underline
-	color: #0c5e00
+    background: #90ff80
+    text-decoration: underline
+    color: #0c5e00
 
 div.download-box img.download-icon 
-	background: #90ff80
-	float: left
+    background: #90ff80
+    float: left
 
 div.download-box a:visited 
-	color: #0c5e00;
+    color: #0c5e00
 
 div.download-box table .icon
   width: 5rem 
@@ -731,5 +758,5 @@ div.download-box table .content
 .content h1,
 .content h2,
 .content h3,
-.content h4,
+.content h4
     scroll-margin-top: 100px

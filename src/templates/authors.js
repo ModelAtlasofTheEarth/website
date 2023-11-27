@@ -7,11 +7,26 @@ import ModelList from "../components/ModelList"
 class AuthorRoute extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges;
-    const name = this.props.pageContext.author
-    const totalCount = this.props.data.allMarkdownRemark.totalCount
+    const full_name = this.props.pageContext.author
+
+    const author_posts = posts.filter((post) => {
+      for (const post_author of post.node.frontmatter.authors) {
+        const post_author_name = (
+          post_author.name
+          + " "
+          + post_author.family_name
+        )
+        if (post_author_name === full_name) {
+          return true
+        }
+      }
+      return false
+    })
+    const totalCount = author_posts.length
+
     const authorHeader = `${totalCount} post${
       totalCount === 1 ? "" : "s"
-    } tagged with “${name}”`
+    } tagged with “${full_name}”`
 
     return (
       <Layout>
@@ -22,7 +37,7 @@ class AuthorRoute extends React.Component {
               style={{ marginBottom: "6rem" }}
             >
               <h3 className="title is-size-4 is-bold-light">{authorHeader}</h3>
-              <ModelList posts={posts}/>
+              <ModelList posts={author_posts}/>
               <p>
                 <Link to="/authors/">Browse all authors</Link>
               </p>
@@ -38,29 +53,30 @@ export default AuthorRoute
 export const Head = ({ pageContext }) => <PageHead title={pageContext.author}/>
 
 export const authorPageQuery = graphql`
-  query AuthorPage($author: String) {
+  query AuthorPage {
     allMarkdownRemark(
-      limit: 10
       sort: {frontmatter: {date: DESC}}
-      filter: {frontmatter: {authors: {elemMatch: {name: {eq: $author}}}}}
+      filter: {frontmatter: {authors: {elemMatch: {name: {ne: null}}}}}
     ) {
-      totalCount
       edges {
         node {
           fields {
             slug
           }
           frontmatter {
-            title
-            date(formatString: "MMMM DD, YYYY")
-            uploader {
-              name
-            }
             authors {
               name
+              family_name
             }
+            compute_tags
+            contributor {
+              name
+              family_name
+            }
+            date(formatString: "MMMM DD, YYYY")
             images {
               landing_image {
+                caption
                 src {
                   childImageSharp {
                     gatsbyImageData(
@@ -69,10 +85,13 @@ export const authorPageQuery = graphql`
                     )
                   }
                 }
-                alt
               }
             }
-            tags
+            research_tags
+            software {
+              name
+            }
+            title
           }
         }
       }

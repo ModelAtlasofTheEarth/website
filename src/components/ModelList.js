@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import React from "react"
+
 import {
   BadgeAuthor,
 //   BadgeTag,
@@ -23,11 +24,12 @@ const ModelList = ({ posts }) => {
           <ModelListItem
             slug={post.fields.slug}
             title={post.frontmatter.title}
-            author={post.frontmatter.uploader.name}
+            author={post.frontmatter.contributor}
             date={post.frontmatter.date}
-            tags={post.frontmatter.tags}
+            tags={post.frontmatter.research_tags.concat(post.frontmatter.compute_tags)}
             software={post.frontmatter.software}
             landing_image={post.frontmatter.images.landing_image}
+            key={post.fields.slug}
           />
         ))
       }
@@ -38,9 +40,9 @@ const ModelList = ({ posts }) => {
 const isValidModelListItem = (post) => (
   post.fields.slug &&
   post.frontmatter.title &&
-  post.frontmatter.uploader?.name &&
+  post.frontmatter.contributor?.name &&
   post.frontmatter.date &&
-  post.frontmatter.tags &&
+  // post.frontmatter.tags &&
   post.frontmatter.images.landing_image
 )
 
@@ -54,6 +56,12 @@ const ModelListItem = ({
   landing_image,
 }) => {
   const landing_gatsby_image = getImage(landing_image.src)
+  const full_name = (
+    author.family_name
+    ? author.name + " " + author.family_name
+    : author.name
+  )
+
   return (
     <table className="models-entry hover-shadow">
       <tr className="models-entry">
@@ -62,7 +70,7 @@ const ModelListItem = ({
             <GatsbyImage
               image={landing_gatsby_image}
               alt={
-                landing_image.alt ||
+                landing_image.caption ||
                 title
               }
             />
@@ -74,14 +82,14 @@ const ModelListItem = ({
           </Link>
           <p>
             <b>Uploaded by:</b>{" "}
-            <BadgeAuthor author={author}/>
+            <BadgeAuthor author={full_name}/>
           </p>
           <p><b>Uploaded:</b> {date}</p>
           {
-            software &&
+            software.name &&
             <p>
               <b>Software:</b>{" "}
-              {software}
+              {software.name}
             </p>
           }
           <p><b>Tags:</b></p>

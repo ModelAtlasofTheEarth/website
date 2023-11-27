@@ -6,30 +6,63 @@ import { ModelListItem, isValidModelListItem } from "../components/ModelList"
 
 class TagRoute extends React.Component {
   render() {
-    const posts = this.props.data.allMarkdownRemark.edges;
-    const postLinks = posts.map((post) => (
+    const tag = this.props.pageContext.tag
+    const all_posts = this.props.data.allMarkdownRemark.edges
+    const matches = all_posts.filter(post => (
+      post.node.frontmatter.tags?.includes(tag) ||
+      post.node.frontmatter.compute_tags?.includes(tag) ||
+      post.node.frontmatter.research_tags?.includes(tag)
+    ))
+
+    const postLinks = matches.map((post) => {
+      const post_tags = []
+      if (post.node.frontmatter.tags) {
+        for (const tag of post.node.frontmatter.tags) {
+          if (!post_tags.includes(tag)) {
+            post_tags.push(tag)
+          }
+        }
+      }
+      if (post.node.frontmatter.compute_tags) {
+        for (const tag of post.node.frontmatter.compute_tags) {
+          if (!post_tags.includes(tag)) {
+            post_tags.push(tag)
+          }
+        }
+      }
+      if (post.node.frontmatter.research_tags) {
+        for (const tag of post.node.frontmatter.research_tags) {
+          if (!post_tags.includes(tag)) {
+            post_tags.push(tag)
+          }
+        }
+      }
+      post_tags.sort()
+
+      return (
         isValidModelListItem(post.node) ?
         (
           <ModelListItem
             key={post.node.fields.slug}
             slug={post.node.fields.slug}
             title={post.node.frontmatter.title}
-            author={post.node.frontmatter.uploader.name}
+            author={post.node.frontmatter.contributor}
             date={post.node.frontmatter.date}
-            tags={post.node.frontmatter.tags}
+            tags={post_tags}
             landing_image={post.node.frontmatter.images.landing_image}
+            software={post.node.frontmatter.software}
           />
         ) :
         (
           <li key={post.node.fields.slug}>
-          <Link to={post.node.fields.slug}>
-            <h2 className="is-size-2">{post.node.frontmatter.title}</h2>
-          </Link>
+            <Link to={post.node.fields.slug}>
+              <h2 className="is-size-2">{post.node.frontmatter.title}</h2>
+            </Link>
           </li>
         )
-    ))
-    const tag = this.props.pageContext.tag;
-    const totalCount = this.props.data.allMarkdownRemark.totalCount;
+      )
+    })
+    const totalCount = matches.length
     const tagHeader = `${totalCount} post${
       totalCount === 1 ? "" : "s"
     } tagged with “${tag}”`;
@@ -61,7 +94,7 @@ export default TagRoute;
 export const Head = ({ pageContext }) => <PageHead title={pageContext.tag}/>
 
 export const tagPageQuery = graphql`
-  query TagPage($tag: String) {
+  query TagPage {
     site {
       siteMetadata {
         title
@@ -69,7 +102,6 @@ export const tagPageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { frontmatter: { date: DESC } }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount
       edges {
@@ -78,25 +110,31 @@ export const tagPageQuery = graphql`
             slug
           }
           frontmatter {
-            title
-            uploader {
+            compute_tags
+            contributor {
               name
+              family_name
             }
             date(formatString: "MMMM DD, YYYY")
-            tags
             images {
               landing_image {
-                alt
+                caption
                 src {
                   childImageSharp {
                     gatsbyImageData(
                       quality: 100
                       layout: CONSTRAINED
-                    )
+                      )
+                    }
                   }
                 }
               }
+            research_tags
+            software {
+              name
             }
+            tags
+            title
           }
         }
       }
