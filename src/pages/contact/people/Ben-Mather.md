@@ -21,8 +21,6 @@ tags:
   - python3
 ---
 
-![Ben Mather](./images/ben-mather-1200x650.jpg)
-
 Ben Mather is a computational geophysicist and developer of GPlately.
 
 Ben Mather's Sydney Uni page is at https://www.sydney.edu.au/science/about/our-people/academic-staff/ben-mather.html.
