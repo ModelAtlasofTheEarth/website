@@ -81,7 +81,7 @@ const Footer = class extends React.Component {
                     aria-labelledby="facebook"
                   ></object>
                 </a>
-                <a title="twitter" href="https://twitter.com/earthbytegroup">
+                <a title="twitter" href="https://twitter.com/AuScope">
                   <object
                     type="image/svg+xml"
                     data={twitter}
@@ -90,7 +90,7 @@ const Footer = class extends React.Component {
                 </a>
                 <a
                   title="instagram"
-                  href="https://www.instagram.com/explore/tags/earthbyte/top/"
+                  href="https://www.instagram.com/auscopetoolkit/"
                 >
                   <object
                     type="image/svg+xml"
@@ -100,7 +100,7 @@ const Footer = class extends React.Component {
                 </a>
                 <a
                   title="youtube"
-                  href="https://www.youtube.com/channel/UCa41IQEhmmuXmz9J6iMfsnA"
+                  href="https://www.youtube.com/@auscope"
                 >
                   <object
                     type="image/svg+xml"
@@ -134,7 +134,7 @@ const Footer = class extends React.Component {
             }}
           >
             <i>
-              Copyright © 2020-2023 The University of Sydney. All rights
+              Copyright © 2020-2023 AuScope. All rights
               reserved.
             </i>
           </div>
