@@ -77,7 +77,7 @@ images:
     src:
     caption:
 animations:
-  - src: ./graphics/alternative_model.mp4
+  - src: ./graphics/alternative_model.gif
     caption:
 dataset:
   url:
