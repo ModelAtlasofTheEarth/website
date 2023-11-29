@@ -99,6 +99,9 @@ animations:
     caption: "Alt text for animation 2"
   - src: ./graphics/animation_noArc.mp4
     caption: "Alt text for animation 3"
+model_setup_info:
+  url:
+  summary: blah blah blah
 dataset:
   url:
   doi: xxxx

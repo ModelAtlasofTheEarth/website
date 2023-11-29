@@ -30,6 +30,7 @@ const ModelTemplate = ({
   landing_image,
   model_files,
   model_setup,
+  model_setup_info,
   research_tags,
   title,
 }) => {
@@ -149,6 +150,13 @@ const ModelTemplate = ({
                 />
               </div>
             }
+            {
+              model_setup_info?.summary &&
+              <div>
+                <h3>Notes on model setup</h3>
+                <p>{model_setup_info.summary}</p>
+              </div>
+            }
           </TabPanel>
           <TabPanel key="model-files">
             {
@@ -254,6 +262,7 @@ const ModelsPage = ({ data }) => {
         graphic_abstract={post.frontmatter.images.graphic_abstract}
         landing_image={post.frontmatter.images.landing_image}
         model_files={post.frontmatter.model_files}
+        model_setup_info={post.frontmatter.model_setup_info}
         model_setup={post.frontmatter.images.model_setup}
         research_tags={post.frontmatter.research_tags}
         title={post.frontmatter.title}
@@ -357,6 +366,10 @@ export const pageQuery = graphql`
         model_files {
           url
           notes
+        }
+        model_setup_info {
+          url
+          summary
         }
         research_tags
         software {

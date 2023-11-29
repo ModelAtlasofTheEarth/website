@@ -88,6 +88,9 @@ images:
 animations:
   - src:
     caption:
+model_setup_info:
+  url:
+  summary: blah blah blah
 dataset:
   url:
   doi:

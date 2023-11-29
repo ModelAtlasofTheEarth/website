@@ -101,6 +101,9 @@ images:
   model_setup:
     src: ./graphics/fig2.png
     caption:
+model_setup_info:
+  url:
+  summary: blah blah blah
 dataset:
   url: https://doi.org/xxxx
   doi: xxxx
