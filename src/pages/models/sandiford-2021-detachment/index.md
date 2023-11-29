@@ -77,7 +77,7 @@ images:
     src:
     caption:
 animations:
-  - src: ./graphics/S1_reference_model.mp4
+  - src: ./graphics/alternative_model.mp4
     caption:
 dataset:
   url:
