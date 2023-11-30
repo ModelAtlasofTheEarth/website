@@ -16,11 +16,11 @@ class ContactPage extends React.Component {
       <Layout>
         <div class="image">
           {/*** An image to be hosted by GitHub */}
-          <img 
-          
+          <img
+
             src="https://github.com/GPlates/gplately/blob/master/Notebooks/NotebookFiles/pdoc_Files/docs_muller19_seed_points.gif?raw=true"
-            alt="Description" 
-            textAlign="center" 
+            alt="Description"
+            textAlign="center"
             style={{
               paddingTop: "-100px",
               top: "0",
@@ -31,7 +31,7 @@ class ContactPage extends React.Component {
               margin: "auto",
               backgroundPosition: "center center",
               display: "block",
- 
+
               zIndex: "-1"
             }}
           />
@@ -48,7 +48,7 @@ class ContactPage extends React.Component {
 
           <div class="header2">
             <h1>
-              Meet the MATE Team
+              Meet the M@TE Team
             </h1>
           </div>
 
@@ -56,7 +56,7 @@ class ContactPage extends React.Component {
             <br></br>
             <div className="bodytext column is-four-fifths ">
               <br></br>
-              <strong> The Model Atlas of the Earth </strong> is developed by an international team of 
+              <strong> Model Atlas of the Earth (M@TE) </strong> is developed by an international team of
               scientists and professional software developers at
               the EarthByte Group in the School of Geosciences at the University
               of Sydney with contributions from:
@@ -75,7 +75,7 @@ class ContactPage extends React.Component {
         </div>
 
         <div id="slide1" class="slide">
-        
+
             <div class="header3">
                 <h1>
                   EarthByte Group
@@ -89,36 +89,36 @@ class ContactPage extends React.Component {
                   className="is-parent column is-3"
                   key={post.id}
                   title={post.frontmatter.title}>
-                
+
                   <link rel='stylesheet' href= 'https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css'></link>
-                  
+
                   <div id="peoplebox" className="people">
 
-                    
+
                     <PreviewCompatibleImage
                       imageInfo={{
                         image: post.frontmatter.image,
                         alt: `photo thumbnail for  ${post.frontmatter.name}`,
                       }}
                     />
-                   
+
                     <h3 style={{ textAlign: "center", marginTop: "7px", fontWeight: "bold", fontSize: "20px" }}>
                       {post.frontmatter.name}
                     </h3>
                     <p style={{ textAlign: "center", marginTop: "5px", }}>
                       {post.frontmatter.title}
-                      
+
                     </p>
                     <br></br>
                     <Link to={post.fields.slug}>
                     <a href="" className="link-arrow button is-white"> Read more &nbsp; <p>&#10132;</p>
-                    
+
                     </a>
                     </Link>
                   </div>
                 </div>
               ))}
-              
+
           </div>
         </div>
 
@@ -138,7 +138,7 @@ class ContactPage extends React.Component {
 
 
 
-     
+
 
       </Layout>
     );

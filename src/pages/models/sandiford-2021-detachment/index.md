@@ -74,7 +74,7 @@ images:
     src: ./graphics/fig1.png
     caption:
   model_setup:
-    src: ./graphics/fig1.png
+    src: ./graphics/initialconds.png
     caption: "Test text here"
 animations:
   - src: ./graphics/alternative_model.gif

@@ -1,4 +1,4 @@
-# Model Atlas of the Earth (MATE) website
+# Model Atlas of the Earth (M@TE) website
 
 ## Setup Dev Env
 

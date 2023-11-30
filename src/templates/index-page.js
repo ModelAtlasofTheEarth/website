@@ -31,7 +31,7 @@ const IndexPageTemplate = ({
 }) => (
   <div>
     <h1 className="has-text-weight-bold is-size-2 is-size-1-widescreen gp-title">
-      MATE website
+      M@TE website
     </h1>
     <h1 className="has-text-weight-bold is-size-2 gp-title">Coming soon....!!!3!!!</h1>
     <div style={{ paddingTop: "2rem" }}>
