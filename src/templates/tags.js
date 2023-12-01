@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
+
 import PageHead from "../components/Head"
 import Layout from "../components/Layout";
 import { ModelListItem, isValidModelListItem } from "../components/ModelList"
@@ -91,7 +92,11 @@ class TagRoute extends React.Component {
 }
 
 export default TagRoute;
-export const Head = ({ pageContext }) => <PageHead title={pageContext.tag}/>
+export const Head = ({ pageContext }) => {
+  const tag = pageContext.tag
+  const title = tag.charAt(0).toUpperCase() + tag.slice(1)
+  return <PageHead title={title}/>
+}
 
 export const tagPageQuery = graphql`
   query TagPage {

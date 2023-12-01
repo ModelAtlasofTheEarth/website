@@ -13,9 +13,9 @@
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-fontawesome-css": "^1.2.0",
     "gatsby-plugin-image": "^3.8.0",
+    "gatsby-plugin-manifest": "^5.12.3",
     "gatsby-plugin-postcss": "^6.8.0",
     "gatsby-plugin-purgecss": "^6.2.1",
-    "gatsby-plugin-react-helmet": "^6.8.0",
     "gatsby-plugin-sass": "^6.8.0",
     "gatsby-plugin-sharp": "^5.8.1",
     "gatsby-remark-autolink-headers": "^6.8.0",
@@ -34,7 +34,6 @@
     "react": "^18.2.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
     "react-player": "^2.13.0",
     "react-tabs": "^6.0.2",
     "uuid": "^9.0.0"

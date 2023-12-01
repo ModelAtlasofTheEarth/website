@@ -6,9 +6,9 @@ import {
   upperFirst,
   words,
 } from "lodash";
-import { Helmet } from "react-helmet";
 import { Link, graphql } from "gatsby";
 import Layout from "../../components/Layout";
+import PageHead from "../../components/Head"
 
 const TagsPage = ({
   data: {
@@ -73,7 +73,6 @@ const TagsPage = ({
   return (
     <Layout>
       <section className="section">
-        <Helmet title={`Tags | ${title}`} />
         <div className="container content">
           <div className="columns">
             <div
@@ -120,3 +119,5 @@ export const tagPageQuery = graphql`
     }
   }
 `;
+
+export const Head = () => <PageHead title="Tags"/>

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
+import PageHead from "../components/Head"
 
 // The following import prevents a Font Awesome icon server-side rendering bug,
 // where the icons flash from a very large icon down to a properly sized one:
@@ -10,8 +11,6 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 // Prevent fontawesome from adding its CSS since we did it manually above:
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false; /* eslint-disable import/first */
-
-import AtlasIcon from "../img/atlas-icon.png";
 
 <head>
   <link rel="stylesheet" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/npm/Bulma@0.9.1/css/Bulma.min.css"></link>
@@ -126,3 +125,6 @@ export const pageQuery = graphql`
     }
   }
 `;
+export const Head = () => (
+  <PageHead title="Model Atlas of the Earth"/>
+)

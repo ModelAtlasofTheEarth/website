@@ -4,7 +4,6 @@ module.exports = {
     description: "Model Atlas of the Earth (M@TE).",
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-sass",
       sassOptions: { indentedSyntax: true },
@@ -59,6 +58,18 @@ module.exports = {
           },
         ],
       },
+    },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "Model Atlas of the Earth (M@TE)",
+        short_name: "M@TE",
+        start_url: "/",
+        background_color: "#fff",
+        theme_color: "#fff",
+        display: "standalone",
+        icon: "src/img/atlas-icon.svg",
+      }
     },
     {
       resolve: "gatsby-plugin-purgecss", // purges all unused/unreferenced css rules

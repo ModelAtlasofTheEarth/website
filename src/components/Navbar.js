@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import github from "../img/github-icon.svg";
-import logo from "../img/atlas-icon-transparent.png";
+import logo from "../img/atlas-icon.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGlobeAfrica,
@@ -55,7 +55,7 @@ const Navbar = class extends React.Component {
               <img
                 src={logo}
                 alt="M@TE"
-                style={{ width: "40px", maxHeight: "40px" }}
+                style={{ width: "40px", height: "40px", fillOpacity: 0 }}
               />
             </Link>
             {/* Hamburger menu */}

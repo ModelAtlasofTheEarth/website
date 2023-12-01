@@ -1,5 +1,6 @@
 import React from 'react'
 
+import PageHead from '../../components/Head'
 import Layout from '../../components/Layout'
 import NewsList from '../../components/NewsList'
 
@@ -24,3 +25,4 @@ export default class BlogIndexPage extends React.Component {
     )
   }
 }
+export const Head = () => <PageHead title="News"/>
