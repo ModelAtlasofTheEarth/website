@@ -4,7 +4,6 @@ module.exports = {
     description: "Model Atlas of the Earth (M@TE).",
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-sass",
       sassOptions: { indentedSyntax: true },
