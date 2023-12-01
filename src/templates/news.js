@@ -2,8 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
+
+import PageHead from '../components/Head'
 import Content, { HTMLContent } from '../components/Content'
+import Layout from '../components/Layout'
 
 const NewsTemplate = ({
   content,
@@ -103,3 +105,6 @@ export const pageQuery = graphql`
     }
   }
 `
+export const Head = ({ data }) => (
+  <PageHead title={data.markdownRemark.frontmatter.title}/>
+)

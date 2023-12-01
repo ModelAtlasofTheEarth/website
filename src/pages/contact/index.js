@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
 import PreviewCompatibleImage from "../../components/PreviewCompatibleImage";
 import "./index_styles.css";
-
+import PageHead from "../../components/Head"
 
 class ContactPage extends React.Component {
   render() {
@@ -194,3 +194,4 @@ const fn = () => (
 );
 
 export default fn;
+export const Head = () => <PageHead title="People"/>

@@ -13,6 +13,7 @@
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-fontawesome-css": "^1.2.0",
     "gatsby-plugin-image": "^3.8.0",
+    "gatsby-plugin-manifest": "^5.12.3",
     "gatsby-plugin-postcss": "^6.8.0",
     "gatsby-plugin-purgecss": "^6.2.1",
     "gatsby-plugin-react-helmet": "^6.8.0",

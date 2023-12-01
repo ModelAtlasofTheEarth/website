@@ -1,7 +1,8 @@
 import React from "react"
 
-import ModelSearch from "../components/ModelSearch"
+import PageHead from "../components/Head"
 import Layout from "../components/Layout"
+import ModelSearch from "../components/ModelSearch"
 
 const SearchTemplate = props => {
   const { pageContext } = props
@@ -22,3 +23,4 @@ const SearchTemplate = props => {
 }
 
 export default SearchTemplate
+export const Head = () => <PageHead title="Model Search"/>

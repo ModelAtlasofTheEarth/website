@@ -9,6 +9,7 @@ import {
 import { Helmet } from "react-helmet";
 import { Link, graphql } from "gatsby";
 import Layout from "../../components/Layout";
+import PageHead from "../../components/Head"
 
 const TagsPage = ({
   data: {
@@ -120,3 +121,5 @@ export const tagPageQuery = graphql`
     }
   }
 `;
+
+export const Head = () => <PageHead title="Tags"/>
