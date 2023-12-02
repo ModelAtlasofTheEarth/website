@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "./Carousel.css";
-import { ModelListItem } from "./ModelList";
+import { ModelCarouselItem } from "./ModelList";
 
 const responsive = {
   desktop: {
@@ -98,59 +98,20 @@ class WithScrollbar extends React.Component {
       >
         {
           models.map(model => (
-            <ModelListItem
-              title={model.node.frontmatter.title}
-              author={model.node.frontmatter.contributor}
-              slug={model.node.fields.slug}
-              date={model.node.frontmatter.date}
-              tags={model.node.frontmatter.research_tags}
-              software={model.node.frontmatter.software}
-              landing_image={model.node.frontmatter.images.landing_image}
-            />
+            <section className="image-container">
+              <ModelCarouselItem
+                title={model.node.frontmatter.title}
+                author={model.node.frontmatter.contributor}
+                slug={model.node.fields.slug}
+                date={model.node.frontmatter.date}
+                tags={model.node.frontmatter.research_tags}
+                software={model.node.frontmatter.software}
+                landing_image={model.node.frontmatter.images.landing_image}
+                key={model.node.fields.slug}
+              />
+            </section> 
           ))
         }
-        {/* <div class="image-container increase-size">
-          <div class="image-container-text">
-            <p>1</p>
-          </div>
-          <img
-            draggable={false}
-            style={{ width: "100%", cursor: "pointer" }}
-            src="https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-          />
-        </div>
-        <div class="increase-size">
-          <div class="image-container-text">
-            <p>2</p>
-          </div>
-          <img
-            draggable={false}
-            style={{ width: "100%", cursor: "pointer" }}
-            src="https://images.unsplash.com/photo-1549396535-c11d5c55b9df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-          />
-        </div>
-
-        <div class="image-container increase-size">
-          <div class="image-container-text">
-            <p>3</p>
-          </div>
-          <img
-            draggable={false}
-            style={{ width: "100%", cursor: "pointer" }}
-            src="https://images.unsplash.com/photo-1550133730-695473e544be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-          />
-        </div>
-
-        <div class="image-container increase-size">
-          <div class="image-container-text">
-            <p>4</p>
-          </div>
-          <img
-            draggable={false}
-            style={{ width: "100%", cursor: "pointer" }}
-            src="https://images.unsplash.com/photo-1550167164-1b67c2be3973?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-          />
-        </div> */}
       </Carousel>
     );
   }

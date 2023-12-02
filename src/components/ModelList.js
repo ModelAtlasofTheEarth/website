@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import React from "react"
+import React, { useState, useEffect } from 'react'
+import "./Carousel.css";
 
 import {
   BadgeAuthor,
@@ -92,13 +93,67 @@ const ModelListItem = ({
               {software.name}
             </p>
           }
-          <p><b>Tags:</b></p>
-          <p><TagsList tags={tags}/></p>
+            <p><b>Tags:</b></p>
+            <p><TagsList tags={tags}/></p>
         </th>
       </tr>
     </table>
   )
 }
 
+
+
+const ModelCarouselItem = ({
+  slug,
+  title,
+  author,
+  date,
+  tags,
+  software,
+  landing_image,
+}) => {
+  const landing_gatsby_image = getImage(landing_image.src)
+  const full_name = (
+    author.family_name
+    ? author.name + " " + author.family_name
+    : author.name
+  )
+  return (
+    <div className="grid">
+      <div className="item">
+        <Link to={slug} aria-labelledby="carouselimage">
+          <div className="carousel-image">
+            <GatsbyImage
+              image={landing_gatsby_image}
+              alt={landing_image.caption || title}
+            />
+          </div>
+        </Link>
+        <div className="item__overlay">
+          <h10 id="carouselimage" ariaHidden="true">
+            <Link id="modeltitle" className="carousel-text" to={slug}>
+              <h3>{title}</h3>
+            </Link>
+          </h10>
+          <div className="item__body">
+            <Link to="#0">Uploaded by:</Link>{" "}
+            <BadgeAuthor author={full_name}/>
+            <p><Link to="#0">Uploaded:</Link> {date}</p>
+            {
+              software.name &&
+              <p>
+                <Link to="#0">Software:</Link>{" "}
+                {software.name}
+              </p>
+            }
+            <p><Link to="#0">Tags:</Link></p>
+            <p><TagsList tags={tags}/></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );  
+}
+
 export default ModelList
-export { ModelListItem, isValidModelListItem }
+export { ModelListItem, isValidModelListItem, ModelCarouselItem}

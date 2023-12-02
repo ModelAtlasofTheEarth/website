@@ -6,6 +6,12 @@ import Layout from "../components/Layout";
 import "../pages/contact/index_styles.css";
 import Content, { HTMLContent } from "../components/Content";
 import WithScrollbar from "../components/CarouselScroll";
+import auscopeIcon from "../img/auscope-full-logo.png";
+import earthbyteIcon from "../img/earthbyte_logo.png";
+import earthbyteText from "../img/eb-textlogo.png";
+import landingPhoto from "../img/landing_photo.jpg";
+import gitIcon from "../img/github-icon.svg";
+import mateTrinity from "../img/mate_trinity.png";
 
 // The following import prevents a Font Awesome icon server-side rendering bug,
 // where the icons flash from a very large icon down to a properly sized one:
@@ -17,7 +23,6 @@ config.autoAddCss = false; /* eslint-disable import/first */
 import AtlasIcon from "../img/atlas-icon-transparent.png";
 import reconstructionImage from "../img/reconstruction-80Ma.png";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage"
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 
@@ -34,7 +39,7 @@ const responsive = {
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 3,
+    items: 2,
     slidesToSlide: 2, // optional, default to 1.
     partialVisibilityGutter: 40
   },
@@ -65,6 +70,110 @@ const IndexPageTemplate = ({
   return (
     
     <div>
+        <div class="image-container">
+        <img
+            src={landingPhoto}
+            alt="Description"
+            style={{
+              width: "100%",
+              height: "600px",
+              objectFit: "cover",
+              margin: "auto",
+              backgroundPosition: "center center",
+              display: "block",
+              zIndex: "-1"
+            }}
+          />
+          <div class="overlay-box">
+            <p class="overlay-text">
+
+            <div className="atlas-logo-responsive">
+              <img
+                src={AtlasIcon}
+                width="150"
+                height="150"
+                alt="Atlas Icon"
+                style={{filter: "invert(100%)"}}
+              />
+            </div>
+
+            <h1 className="mate-acronym" style={{color: "white", fontSize: "50px"}}>
+              M@TE
+            </h1>
+            <h1 className="mate-name" style={{ color: "white", fontSize: "60px" }}>
+              Model Atlas of the Earth
+            </h1>
+
+            <h1 className="gp-title" style={{color: "white", fontSize: "20px"}}> 
+                M@TE is an open-source collection of geological, geochemical and
+                geophysical research data developed <br></br>
+                by and for the global geoscience community. 
+                M@TE is committed to adopting the FAIR principles of data <br></br> 
+                Findability, Accessibility, Interoperability and Reusability.
+                <br></br>
+            </h1>
+
+            <h1 className=" gp-title" style={{color: "white", fontSize:"15px"}}> 
+              <br></br>
+              Powered by
+            </h1>
+
+            <a title="AuScope" href="https://www.auscope.org.au/">
+              <img
+                src={auscopeIcon}
+                alt="AuScope Logo"
+                style={{
+                  maxWidth: "200px",
+                  marginLeft: "5px",
+                  marginBottom: "0px",
+                  borderRadius: "15px",
+                  verticalAlign: "middle",
+                }}
+              />
+            </a>
+
+            <a title="EarthByte" href="https://www.earthbyte.org/">
+              <img
+                src={earthbyteIcon}
+                alt="EarthByte Logo"
+                style={{
+                  maxWidth: "60px",
+                  marginLeft: "5px",
+                  marginBottom: "0px",
+                  borderRadius: "15px",
+                  verticalAlign: "middle",
+                }}
+              />
+            </a>
+
+            <a title="EarthByte" href="https://www.earthbyte.org/">
+              <img
+                src={earthbyteText}
+                alt="EarthByte Logo"
+                style={{
+                  maxWidth: "160px",
+                  marginLeft: "5px",
+                  marginBottom: "0px",
+                  borderRadius: "15px",
+                  verticalAlign: "middle",
+                }}
+              />
+            </a>
+
+            </p>
+          </div>
+        </div>
+
+      <div style={{ position: 'relative', top: '-20px' }}>
+        <div className="about-us-box box" 
+        style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',  borderRadius: '0'}}>
+          <a href="https://www.earthbyte.org/" className="link-arrow gp-title"
+          style={{fontWeight: "bold", fontSize: "20px"}}>
+            Learn more &nbsp; <span>&#10132;</span>
+          </a> 
+        </div>
+      </div> 
+
 
       <h1 className="is-size-3 gp-title"> 
         <br></br>
@@ -74,50 +183,72 @@ const IndexPageTemplate = ({
 
       <WithScrollbar models={allModels}/>
 
-      <div id="slide1" class="slide">
-        <img src={AtlasIcon} width="200" height="200" style={{marginLeft: "auto", marginRight: "auto", display: "block"}}/>
-
-        <h1 className="gp-title has-text-weight-bold header6">
-          M@TE
-        </h1>
-        <h1 className="gp-title has-text-weight-bold is-size-2">
-          Model Atlas of the Earth
-        </h1>
-
-        <h1 className="is-size-4 gp-title"> 
-            <br></br>
-            M@TE is an open-source collection of geological, geochemical and geophysical research data developed by and for the global geoscience community.
-            <br></br>
-        </h1>
-
-        <h1 className="is-size-4 gp-title"> 
-        
-            <br></br>
-            M@TE is committed to adopting the FAIR principles of data Findability, Accessibility, Interoperability and Reusability.
-            <br></br>
-        </h1>
-      </div>
-
-      <img src={reconstructionImage} style={{width:"70%", marginLeft: "auto", marginRight: "auto", display: "block"}}/>
-
-      <div style={{ paddingTop: "2rem" }}>
-        {/*
-        <img
-          src={AtlasIcon}
-          alt="Atlas Icon"
+      
+      <div class="image-container">
+        <img 
+          src={mateTrinity}
+          alt="Description" 
           style={{
-            display: "block",
+            paddingTop: "100px",
+            paddingBottom: "100px",
             width: "50%",
-            margin: "auto",
-            cursor: "pointer",
+            display: "block",
+            marginLeft: "auto", // Push the image to the right
+            zIndex: "-1"
           }}
-          role="presentation"
-
-          has-text-weight-bold is-size-2 is-size-1-widescreen gp-title
         />
-        */}
-
       </div>
+
+      <div style={{ position: 'relative', top: '-800px' }}>
+        <div className="contribute-box box" 
+          style={{ justifyContent: 'center', alignItems: 'center',  borderRadius: '0'}}>
+          <h1 className="gp-title" style={{fontSize: "60px"}}>
+            Be our M@TE
+          </h1> 
+          <h1 style={{ fontSize: "20px", marginLeft: "40px" }}>
+            <br></br>
+            If you would like to contribute your work to the Model Atlas of the Earth...
+
+            <ul>
+              <br></br>
+              <li>1. Open the Model Atlas of the Earth's GitHub Repository
+
+                <a href="https://github.com/ModelAtlasofTheEarth">
+                  <img
+                    src={gitIcon}
+                    alt="GitHub Logo"
+                    style={{
+                      maxWidth: "30px",
+                      marginLeft: "5px",
+                      marginBottom: "0px",
+                      borderRadius: "15px",
+                      verticalAlign: "middle",
+                    }}
+                  />
+                </a>
+
+              </li>
+                <br></br>
+              <li>2. Create an issue from the Repository </li>
+                <br></br>
+              <li>3. Upload all image(s) and text files that showcase your work</li>
+                <br></br>
+              <li>4. Submit a Pull Request</li>
+            </ul>
+          </h1>
+
+          <div style={{ position: 'relative', top: '20px' }}>
+            <div className="about-us-box box" 
+            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',  borderRadius: '0'}}>
+              <a href="https://www.earthbyte.org/" className="link-arrow gp-title"
+              style={{fontWeight: "bold", fontSize: "20px"}}>
+                Further information &nbsp; <span>&#10132;</span>
+              </a> 
+            </div>
+          </div> 
+
+        </div>
+      </div> 
 
     </div>
   );
@@ -189,8 +320,11 @@ query MyQuery {
             landing_image {
               caption
               src {
-                childrenImageSharp {
-                  gatsbyImageData
+                childImageSharp {
+                  gatsbyImageData (
+                    quality: 100
+                    layout: CONSTRAINED
+                  )
                 }
               }
             }
@@ -200,6 +334,7 @@ query MyQuery {
             name
           }
           title
+          templateKey
         }
       }
     }
