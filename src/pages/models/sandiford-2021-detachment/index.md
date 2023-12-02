@@ -77,7 +77,7 @@ images:
     src: ./graphics/initialconds.png
     caption: "Test text here"
 animations:
-  - src: ./graphics/alternative_model.gif
+  - src: ./graphics/alternative_model.mp4
     caption:
 model_setup_info:
   url: https://github.com/dansand/odf_paper
