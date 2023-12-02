@@ -62,11 +62,47 @@ authors:
     ORCID: 0000-0003-3685-174X
     affiliation: Australian National University, Canberra, ACT, AU
 associated_publication:
-  title: The flexural isostatic response of climatically driven sea-level changes on continental-scale deltas
-  journal: EGUsphere
-  publisher: Copernicus Publications
-  doi: 10.5194/egusphere-2023-53
-  url: https://egusphere.copernicus.org/preprints/2023/egusphere-2023-53/
+  DOI: 10.5194/egusphere-2023-53
+  URL: http://dx.doi.org/10.5194/egusphere-2023-53
+  author:
+    - family: Polanco
+      given: Sara
+      sequence: first
+    - family: Blum
+      given: Mike
+      sequence: additional
+    - family: Salles
+      given: Tristan
+      sequence: additional
+    - family: Frederick
+      given: Bruce C.
+      sequence: additional
+    - family: Farrington
+      given: Rebecca
+      sequence: additional
+    - family: Ding
+      given: Xuesong
+      sequence: additional
+    - family: Mather
+      given: Ben
+      sequence: additional
+    - family: Mallard
+      given: Claire
+      sequence: additional
+    - family: Moresi
+      given: Louis
+      sequence: additional
+  container_title:
+    - "EGUsphere [preprint]"
+  issued:
+    date_parts:
+      - - 2023
+        - 3
+        - 3
+  title:
+    - The flexural isostatic response of climatically driven sea-level changes on continental-scale
+      deltas
+  type: journal-article
 compute_info:
   computer_name:
   organisation:

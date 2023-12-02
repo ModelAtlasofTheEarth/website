@@ -48,11 +48,39 @@ authors:
     ORCID: 0000-0003-3685-174X
     affiliation: Research School of Earth Sciences, Australian National University
 associated_publication:
-  title: The Role of Lithospheric-Deep Mantle Interactions on the Style and Stress Evolution of Arc-Continent Collision
-  journal: Geochemistry, Geophysics, Geosystems
-  publisher: American Geophysical Union
-  doi: 10.1029/2022GC010386
-  url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022GC010386
+  DOI: 10.1029/2022gc010386
+  URL: http://dx.doi.org/10.1029/2022gc010386
+  author:
+    - family: Rodríguez Corcho
+      given: Andrés Felipe
+      sequence: first
+    - family: Polanco
+      given: Sara
+      sequence: additional
+    - family: Farrington
+      given: Rebecca
+      sequence: additional
+    - family: Beucher
+      given: Romain
+      sequence: additional
+    - family: Montes
+      given: Camilo
+      sequence: additional
+    - family: Moresi
+      given: Louis
+      sequence: additional
+  container_title:
+    - Geochemistry, Geophysics, Geosystems
+  issue: '11'
+  issued:
+    date_parts:
+      - - 2022
+        - 11
+  title:
+    - The Role of Lithospheric‐Deep Mantle Interactions on the Style and Stress Evolution
+      of Arc‐Continent Collision
+  type: journal-article
+  volume: '23'
 compute_info:
   computer_name: Nectar Research Cloud
   organisation: Australian Research Data Commons
