@@ -68,23 +68,5 @@ function replaceDois({ html, style }) {
   return html;
 }
 
-const extractData = (data) => {
-  if (!data) {
-    return null
-  }
-  return {
-    author: data.author,
-    "container-title": data.journal,
-    DOI: data.doi,
-    issue: data.issue,
-    issued: {
-      "date-parts": [[data.year]]
-    },
-    title: data.title,
-    type: "article-journal",
-    volume: data.volume,
-  }
-}
-
 export default Citation
-export { extractData, getHtml, replaceDois, cleanData }
+export { getHtml, replaceDois, cleanData }
