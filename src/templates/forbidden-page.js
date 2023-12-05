@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-//import Content, { HTMLContent } from '../components/Content'
+import PageHead from '../components/Head'
 
 
 const FPage = ({ data }) => {
@@ -33,3 +33,4 @@ export const fPageQuery = graphql`
     }
   }
 `
+export const Head = () => <PageHead title="Forbidden Page"/>

@@ -24,24 +24,9 @@ const Footer = class extends React.Component {
                     </li>
                     <li>
                       <Link className="navbar-item" to="/news">
-                        News
+                        Project Info.
                       </Link>
                     </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="https://www.earthbyte.org"
-                      >
-                        EarthByte Group
-                      </a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-
-              <div className="column is-3">
-                <section>
-                  <ul className="menu-list">
                     <li>
                       <Link className="navbar-item" to="/contact">
                         Contact
@@ -74,14 +59,7 @@ const Footer = class extends React.Component {
               </div>
 
               <div className="column is-3 social">
-                <a title="facebook" href="https://www.facebook.com/earthbyte">
-                  <object
-                    type="image/svg+xml"
-                    data={facebook}
-                    aria-labelledby="facebook"
-                  ></object>
-                </a>
-                <a title="twitter" href="https://twitter.com/earthbytegroup">
+                <a title="twitter" href="https://twitter.com/AuScope">
                   <object
                     type="image/svg+xml"
                     data={twitter}
@@ -90,7 +68,7 @@ const Footer = class extends React.Component {
                 </a>
                 <a
                   title="instagram"
-                  href="https://www.instagram.com/explore/tags/earthbyte/top/"
+                  href="https://www.instagram.com/auscopetoolkit/"
                 >
                   <object
                     type="image/svg+xml"
@@ -100,7 +78,7 @@ const Footer = class extends React.Component {
                 </a>
                 <a
                   title="youtube"
-                  href="https://www.youtube.com/channel/UCa41IQEhmmuXmz9J6iMfsnA"
+                  href="https://www.youtube.com/@auscope"
                 >
                   <object
                     type="image/svg+xml"
@@ -134,7 +112,7 @@ const Footer = class extends React.Component {
             }}
           >
             <i>
-              Copyright © 2020-2023 The University of Sydney. All rights
+              Copyright © 2020-2023 AuScope. All rights
               reserved.
             </i>
           </div>

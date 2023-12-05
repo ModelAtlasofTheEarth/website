@@ -12,6 +12,7 @@ import earthbyteText from "../img/eb-textlogo.png";
 import landingPhoto from "../img/landing_photo.jpg";
 import gitIcon from "../img/github-icon.svg";
 import mateTrinity from "../img/mate_trinity.png";
+import PageHead from "../components/Head"
 
 // The following import prevents a Font Awesome icon server-side rendering bug,
 // where the icons flash from a very large icon down to a properly sized one:
@@ -20,7 +21,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false; /* eslint-disable import/first */
 
-import AtlasIcon from "../img/atlas-icon-transparent.png";
+import AtlasIcon from "../img/atlas-icon.svg";
 import reconstructionImage from "../img/reconstruction-80Ma.png";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage"
 import "react-multi-carousel/lib/styles.css";
@@ -364,3 +365,6 @@ query MyQuery {
   }
 }
 `;
+export const Head = () => (
+  <PageHead title="Model Atlas of the Earth"/>
+)

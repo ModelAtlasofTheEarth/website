@@ -52,11 +52,39 @@ authors:
     ORCID: 0000-0003-3685-174X
     affiliation: Research School of Earth Sciences, Australian National University
 associated_publication:
-  title: Scientific Reports
-  journal: Nature
-  publisher: Springer Nature
-  doi: 10.1038/s41598-022-08384-w
-  url: https://www.nature.com/articles/s41598-022-08384-w
+  DOI: 10.1038/s41598-022-08384-w
+  URL: http://dx.doi.org/10.1038/s41598-022-08384-w
+  author:
+    - family: Mather
+      given: Ben
+      sequence: first
+    - family: Müller
+      given: R. Dietmar
+      sequence: additional
+    - family: O’Neill
+      given: Craig
+      sequence: additional
+    - family: Beall
+      given: Adam
+      sequence: additional
+    - family: Vervoort
+      given: R. Willem
+      sequence: additional
+    - family: Moresi
+      given: Louis
+      sequence: additional
+  container_title:
+    - Scientific Reports
+  issue: '1'
+  issued:
+    date_parts:
+      - - 2022
+        - 3
+        - 16
+  title:
+    - Constraining the response of continental-scale groundwater flow to climate change
+  type: journal-article
+  volume: '12'
 compute_info:
   computer_name:
   organisation:
@@ -88,6 +116,9 @@ images:
 animations:
   - src:
     caption:
+model_setup_info:
+  url:
+  summary: blah blah blah
 dataset:
   url:
   doi:

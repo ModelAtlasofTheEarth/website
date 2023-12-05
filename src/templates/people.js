@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import Content, { HTMLContent } from "../components/Content";
-import "../pages/contact/index_styles.css";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { Link, StaticQuery } from "gatsby";
+
+import Content, { HTMLContent } from "../components/Content";
+import PageHead from "../components/Head"
+import Layout from "../components/Layout";
+import "../pages/contact/index_styles.css";
 
 
 function openTab(evt, tabName) {
@@ -37,13 +38,11 @@ const PeopleTemplate = ({
   twitter,
   twitterhandle,
   scholar,
-  helmet,
 }) => {
   const PostContent = contentComponent || Content;
   
   return (
     <section className="section">
-      {helmet || ""}
       {/*** Use Bulma's CSS sheet */}
       <link rel='stylesheet' href= 'https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css'></link>
 
@@ -263,7 +262,6 @@ PeopleTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  helmet: PropTypes.object,
   headerImage: PropTypes.arrayOf(PropTypes.object),
   contact: PropTypes.arrayOf(PropTypes.object),
   orcid: PropTypes.string,
@@ -283,15 +281,6 @@ const People = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        helmet={
-          <Helmet titleTemplate={"%s | " + post.frontmatter.title}>
-            <title>{`${post.frontmatter.name}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
-          </Helmet>
-        }
         tags={post.frontmatter.tags}
         name={post.frontmatter.name}
         title={post.frontmatter.title}
@@ -346,3 +335,6 @@ export const pageQuery = graphql`
     }
   }
 `;
+export const Head = ({ data }) => (
+  <PageHead title={data.markdownRemark.frontmatter.name}/>
+)
