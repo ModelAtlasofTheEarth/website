@@ -11,6 +11,7 @@ import {
   BadgeDoi,
   TagsList,
 } from "../components/Badges"
+import Citation from "../components/Citation"
 import Content, { HTMLContent } from "../components/Content"
 import PageHead from "../components/Head"
 import Layout from "../components/Layout"
@@ -31,6 +32,7 @@ const ModelTemplate = ({
   model_files,
   model_setup,
   model_setup_info,
+  publication,
   research_tags,
   title,
 }) => {
@@ -113,11 +115,25 @@ const ModelTemplate = ({
           <TabPanel key="overview">
             <h2>Abstract</h2>
             <p>{abstract}</p>
-            <h3>Tags</h3>
+            {
+              publication &&
+              <>
+                <h2>Publication</h2>
+                {
+                  publication.DOI &&
+                  <BadgeDoi
+                    doi={publication.DOI}
+                    style={{marginBottom: "10px"}}
+                  />
+                }
+                <Citation data={publication}/>
+              </>
+            }
+            <h2>Tags</h2>
             <p><TagsList tags={all_tags}/></p>
             {graphic_abstract &&
               <div>
-                <h3>Graphic abstract</h3>
+                <h2>Graphic abstract</h2>
                 <PreviewCompatibleImage
                   imageInfo={{
                   image: graphic_abstract.src,
@@ -138,7 +154,7 @@ const ModelTemplate = ({
             {
               model_setup?.src &&
               <div>
-                <h3>Model setup</h3>
+                <h2>Model setup</h2>
                 <PreviewCompatibleImage
                   imageInfo={{
                     image: model_setup.src,
@@ -148,6 +164,10 @@ const ModelTemplate = ({
                     ),
                   }}
                 />
+                {
+                  model_setup.caption &&
+                  <p>{model_setup.caption}</p>
+                }
               </div>
             }
             {
@@ -174,7 +194,7 @@ const ModelTemplate = ({
             {
               model_files?.notes &&
               <div>
-                <h3>Notes</h3>
+                <h3>Notes on model files</h3>
                 <p>{model_files.notes}</p>
               </div>
             }
@@ -207,12 +227,18 @@ const ModelTemplate = ({
                 <h3 style={{paddingBottom: "30px"}}>Animations</h3>
                 {
                   animations.map((animation, i) => (
-                    <Animation
-                      src={animation.src.publicURL}
-                      alt={animation.caption || "Animation | " + title}
-                      key={i}
-                      controls
-                    />
+                    <p>
+                      <Animation
+                        src={animation.src.publicURL}
+                        alt={animation.caption || "Animation | " + title}
+                        key={i}
+                        controls
+                      />
+                      {
+                        animation.caption &&
+                        <p>{animation.caption}</p>
+                      }
+                    </p>
                   ))
                 }
               </>
@@ -264,6 +290,7 @@ const ModelsPage = ({ data }) => {
         model_files={post.frontmatter.model_files}
         model_setup_info={post.frontmatter.model_setup_info}
         model_setup={post.frontmatter.images.model_setup}
+        publication={post.frontmatter.associated_publication}
         research_tags={post.frontmatter.research_tags}
         title={post.frontmatter.title}
       />
@@ -290,11 +317,21 @@ export const pageQuery = graphql`
           }
         }
         associated_publication {
+          DOI
+          URL
+          author {
+            given
+            family
+            sequence
+          }
+          container_title
+          issue
+          issued {
+            date_parts
+          }
           title
-          journal
-          publisher
-          doi
-          url
+          type
+          volume
         }
         authors {
           name
