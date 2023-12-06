@@ -35,6 +35,7 @@ const ModelTemplate = ({
   publication,
   research_tags,
   title,
+  slug,
 }) => {
   const PostContent = contentComponent || Content
   const dataset_url = (
@@ -293,6 +294,7 @@ const ModelsPage = ({ data }) => {
         publication={post.frontmatter.associated_publication}
         research_tags={post.frontmatter.research_tags}
         title={post.frontmatter.title}
+        slug={post.frontmatter.slug}
       />
     </Layout>
   )
