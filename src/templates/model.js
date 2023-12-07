@@ -183,20 +183,16 @@ const ModelTemplate = ({
           <TabPanel key="model-files">
 
          <h2>Model code</h2>
-
-         Model code will be added to the <strong>{slug}</strong> model on NCI GeoNetwork <a href="https://geonetwork.nci.org.au"> NCI GeoNetwork</a> on publication of the M@TE collection (early 2024)
-
-
-            {
-              (model_files?.url || model_files?.notes) &&
-            }
+         <p>
+         Model code will be added to the <strong>{slug}</strong> model, hosted as part of the M@TE collection on  <a href="https://geonetwork.nci.org.au"> NCI GeoNetwork</a>  (from early 2024)
+         </p>
             {
               model_files?.url &&
               <p>
-                A preliminary version of the model code can be downloaded here:{" "}
-                <a href={model_files.url}>{model_files.url}</a>
+                A preliminary version of the model code can be downloaded accessed <a href={model_files.url}> here</a>
               </p>
             }
+
             {/*
             {
               model_files?.notes &&
@@ -211,8 +207,17 @@ const ModelTemplate = ({
           <TabPanel key="model-outputs">
             <h2>Dataset access</h2>
             <p>
-              Output data will be added to the <strong>{slug}</strong> model on NCI GeoNetwork <a href="https://geonetwork.nci.org.au"> NCI GeoNetwork</a> on publication of the M@TE collection (early 2024)
+              Output data will be added to the <strong>{slug}</strong> model, hosted as part of the M@TE collection on  <a href="https://geonetwork.nci.org.au"> NCI GeoNetwork</a>  (from early 2024)
             </p>
+
+            {
+              dataset?.url &&
+              <p>
+                A preliminary version of the model output data can be accessed <a href={dataset.url}> here</a>
+              </p>
+            }
+
+            {/*
             {
               dataset?.doi &&
               <p>
@@ -221,7 +226,11 @@ const ModelTemplate = ({
               <a href={dataset_url}>{dataset_url}</a>
               </p>
             }
-            {/*
+
+
+
+
+
             {
               dataset.doi &&
               <p>

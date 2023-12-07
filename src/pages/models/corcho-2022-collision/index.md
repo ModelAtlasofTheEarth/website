@@ -131,8 +131,8 @@ model_setup_info:
   url:
   summary:
 dataset:
-  url:
-  doi: xxxx
+  url: https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/corcho-2022-collision/catalog.html
+  doi:
   notes:
   file_tree:
 model_files:

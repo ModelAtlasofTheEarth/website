@@ -120,12 +120,12 @@ model_setup_info:
   url:
   summary:
 dataset:
-  url:
+  url:  https://cloudstor.aarnet.edu.au/plus/s/kNwa6dN6nXxXs55 
   doi:
   notes:
   file_tree:
 model_files:
-  url:
-  notes:
+  url: https://github.com/brmather/Sydney_Basin
+  notes: In the Scripts folder, HL05 was used to run the optimisation problem and HL06 was used to take the maximum a posteriori model and run it at high resolution.
   file_tree:
 ---
