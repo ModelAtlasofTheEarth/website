@@ -3,6 +3,15 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
+import "../pages/contact/index_styles.css";
+import Content, { HTMLContent } from "../components/Content";
+import WithScrollbar from "../components/CarouselScroll";
+import auscopeIcon from "../img/auscope-full-logo.png";
+import earthbyteIcon from "../img/earthbyte_logo.png";
+import earthbyteText from "../img/eb-textlogo.png";
+import landingPhoto from "../img/landing_photo.jpg";
+import gitIcon from "../img/github-icon.svg";
+import mateTrinity from "../img/mate_trinity.png";
 import PageHead from "../components/Head"
 
 // The following import prevents a Font Awesome icon server-side rendering bug,
@@ -12,12 +21,40 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false; /* eslint-disable import/first */
 
+import AtlasIcon from "../img/atlas-icon.svg";
+import reconstructionImage from "../img/reconstruction-80Ma.png";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage"
+import "react-multi-carousel/lib/styles.css";
+
+
 <head>
   <link rel="stylesheet" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/npm/Bulma@0.9.1/css/Bulma.min.css"></link>
 </head>
 
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+    slidesToSlide: 3, // optional, default to 1.
+    partialVisibilityGutter: 40,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+    slidesToSlide: 2, // optional, default to 1.
+    partialVisibilityGutter: 40
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1, // optional, default to 1.
+    partialVisibilityGutter: 40
+  }
+};
+
 
 const IndexPageTemplate = ({
+  content,
   image,
   title,
   heading,
@@ -27,38 +64,196 @@ const IndexPageTemplate = ({
   intro,
   descMarkdown,
   reasons,
-}) => (
-  <div>
-    <h1 className="has-text-weight-bold is-size-2 is-size-1-widescreen gp-title">
-      M@TE website
-    </h1>
-    <h1 className="has-text-weight-bold is-size-2 gp-title">Coming soon....!!!3!!!</h1>
-    <div style={{ paddingTop: "2rem" }}>
-      {/*
-      <img
-        src={AtlasIcon}
-        alt="Atlas Icon"
-        style={{
-          display: "block",
-          width: "50%",
-          margin: "auto",
-          cursor: "pointer",
-        }}
-        role="presentation"
+  graphic_abstract,
+  allModels,
+}) => {
 
-        has-text-weight-bold is-size-2 is-size-1-widescreen gp-title
-      />
-      */}
+  return (
+    
+    <div>
+        <div class="image-container">
+        <img
+            src={landingPhoto}
+            alt="Description"
+            style={{
+              width: "100%",
+              height: "600px",
+              objectFit: "cover",
+              margin: "auto",
+              backgroundPosition: "center center",
+              display: "block",
+              zIndex: "-1"
+            }}
+          />
+          <div class="overlay-box">
+            <p class="overlay-text">
+
+            <div className="atlas-logo-responsive">
+              <img
+                src={AtlasIcon}
+                width="150"
+                height="150"
+                alt="Atlas Icon"
+                style={{filter: "invert(100%)"}}
+              />
+            </div>
+
+            <h1 className="mate-acronym" style={{color: "white", fontSize: "50px"}}>
+              M@TE
+            </h1>
+            <h1 className="mate-name" style={{ color: "white", fontSize: "60px" }}>
+              Model Atlas of the Earth
+            </h1>
+
+            <h1 className="gp-title" style={{color: "white", fontSize: "20px"}}> 
+                M@TE is an open-source collection of geological, geochemical and
+                geophysical research data developed <br></br>
+                by and for the global geoscience community. 
+                M@TE is committed to adopting the FAIR principles of data <br></br> 
+                Findability, Accessibility, Interoperability and Reusability.
+                <br></br>
+            </h1>
+
+            <h1 className=" gp-title" style={{color: "white", fontSize:"15px"}}> 
+              <br></br>
+              Powered by
+            </h1>
+
+            <a title="AuScope" href="https://www.auscope.org.au/">
+              <img
+                src={auscopeIcon}
+                alt="AuScope Logo"
+                style={{
+                  maxWidth: "200px",
+                  marginLeft: "5px",
+                  marginBottom: "0px",
+                  borderRadius: "15px",
+                  verticalAlign: "middle",
+                }}
+              />
+            </a>
+
+            <a title="EarthByte" href="https://www.earthbyte.org/">
+              <img
+                src={earthbyteIcon}
+                alt="EarthByte Logo"
+                style={{
+                  maxWidth: "60px",
+                  marginLeft: "5px",
+                  marginBottom: "0px",
+                  borderRadius: "15px",
+                  verticalAlign: "middle",
+                }}
+              />
+            </a>
+
+            <a title="EarthByte" href="https://www.earthbyte.org/">
+              <img
+                src={earthbyteText}
+                alt="EarthByte Logo"
+                style={{
+                  maxWidth: "160px",
+                  marginLeft: "5px",
+                  marginBottom: "0px",
+                  borderRadius: "15px",
+                  verticalAlign: "middle",
+                }}
+              />
+            </a>
+
+            </p>
+          </div>
+        </div>
+
+      <div style={{ position: 'relative', top: '-20px' }}>
+        <div className="about-us-box box" 
+        style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',  borderRadius: '0'}}>
+          <a href="https://www.earthbyte.org/" className="link-arrow gp-title"
+          style={{fontWeight: "bold", fontSize: "20px"}}>
+            Learn more &nbsp; <span>&#10132;</span>
+          </a> 
+        </div>
+      </div> 
+
+
+      <h1 className="is-size-3 gp-title"> 
+        <br></br>
+        Featured Models
+        <br></br>
+      </h1>
+
+      <WithScrollbar models={allModels}/>
+
+      
+      <div class="image-container">
+        <img 
+          src={mateTrinity}
+          alt="Description" 
+          style={{
+            paddingTop: "100px",
+            paddingBottom: "100px",
+            width: "50%",
+            display: "block",
+            marginLeft: "auto", // Push the image to the right
+            zIndex: "-1"
+          }}
+        />
+      </div>
+
+      <div style={{ position: 'relative', top: '-800px' }}>
+        <div className="contribute-box box" 
+          style={{ justifyContent: 'center', alignItems: 'center',  borderRadius: '0'}}>
+          <h1 className="gp-title" style={{fontSize: "60px"}}>
+            Be our M@TE
+          </h1> 
+          <h1 style={{ fontSize: "20px", marginLeft: "40px" }}>
+            <br></br>
+            If you would like to contribute your work to the Model Atlas of the Earth...
+
+            <ul>
+              <br></br>
+              <li>1. Open the Model Atlas of the Earth's GitHub Repository
+
+                <a href="https://github.com/ModelAtlasofTheEarth">
+                  <img
+                    src={gitIcon}
+                    alt="GitHub Logo"
+                    style={{
+                      maxWidth: "30px",
+                      marginLeft: "5px",
+                      marginBottom: "0px",
+                      borderRadius: "15px",
+                      verticalAlign: "middle",
+                    }}
+                  />
+                </a>
+
+              </li>
+                <br></br>
+              <li>2. Create an issue from the Repository </li>
+                <br></br>
+              <li>3. Upload all image(s) and text files that showcase your work</li>
+                <br></br>
+              <li>4. Submit a Pull Request</li>
+            </ul>
+          </h1>
+
+          <div style={{ position: 'relative', top: '20px' }}>
+            <div className="about-us-box box" 
+            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',  borderRadius: '0'}}>
+              <a href="https://www.earthbyte.org/" className="link-arrow gp-title"
+              style={{fontWeight: "bold", fontSize: "20px"}}>
+                Further information &nbsp; <span>&#10132;</span>
+              </a> 
+            </div>
+          </div> 
+
+        </div>
+      </div> 
 
     </div>
-
-    <video id="myVideo" loop muted playsInLine autoPlay>
-      <source src="https://mate.science/webdav/media/header-video.mp4" type="video/mp4"/>
-    </video>
-
-
-  </div>
-);
+  );
+};
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -69,10 +264,13 @@ IndexPageTemplate.propTypes = {
   description: PropTypes.string,
   descMarkdown: PropTypes.object,
   reasons: PropTypes.array,
+  graphic_abstract: PropTypes.object,
+  allModels: PropTypes.array,
 };
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
+  const allModels = data.allMarkdownRemark.edges;
 
   return (
     <Layout>
@@ -84,6 +282,8 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         descMarkdown={frontmatter.descMarkdown}
         reasons={frontmatter.reasons}
+        allModels={allModels}
+        graphic_abstract={allModels[0].node.frontmatter.images.graphic_abstract}
       />
     </Layout>
   );
@@ -100,30 +300,70 @@ IndexPage.propTypes = {
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      frontmatter {
-        title
-        image {
-          childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-          }
+query MyQuery {
+  allMarkdownRemark(
+    filter: { frontmatter: { templateKey: { eq: "model" } } }
+    sort: { frontmatter: { date: DESC } }
+  ) {
+    edges {
+      node {
+        fields {
+          slug
         }
-        heading
-        subheading
-        mainpitch {
+        frontmatter {
+          compute_tags
+          contributor {
+            name
+            family_name
+          }
+          date(formatString: "MMMM DD, YYYY")
+          images {
+            landing_image {
+              caption
+              src {
+                childImageSharp {
+                  gatsbyImageData (
+                    quality: 100
+                    layout: CONSTRAINED
+                  )
+                }
+              }
+            }
+          }
+          research_tags
+          software {
+            name
+          }
           title
-          description
+          templateKey
         }
-        descMarkdown {
-          childMarkdownRemark {
-            html
-          }
-        }
-        reasons
       }
     }
   }
+
+  markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+    frontmatter {
+      title
+      image {
+        childImageSharp {
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+        }
+      }
+      heading
+      subheading
+      mainpitch {
+        title
+        description
+      }
+      descMarkdown {
+        childMarkdownRemark {
+          html
+        }
+      }
+      reasons
+    }
+  }
+}
 `;
 export const Head = () => (
   <PageHead title="Model Atlas of the Earth"/>
