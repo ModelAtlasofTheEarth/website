@@ -118,7 +118,7 @@ animations:
     caption:
 model_setup_info:
   url:
-  summary: blah blah blah
+  summary:
 dataset:
   url:
   doi:

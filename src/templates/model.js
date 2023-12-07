@@ -102,14 +102,14 @@ const ModelTemplate = ({
         <Tabs className="model-page">
           <TabList>
             <Tab key="overview">Overview</Tab>
-            <Tab key="model-setup" disabled={!model_setup.src}>
+            <Tab key="model-setup">
               Model setup
             </Tab>
-            <Tab key="model-files" disabled={!model_files?.url}>
-              Model files
+            <Tab key="model-files">
+              Model code
             </Tab>
-            <Tab key="model-outputs" disabled={!dataset_url}>
-              Model outputs
+            <Tab key="model-outputs">
+              Output data
             </Tab>
           </TabList>
 
@@ -170,6 +170,7 @@ const ModelTemplate = ({
                   <p>{model_setup.caption}</p>
                 }
               </div>
+
             }
             {
               model_setup_info?.summary &&
@@ -180,18 +181,23 @@ const ModelTemplate = ({
             }
           </TabPanel>
           <TabPanel key="model-files">
+
+         <h2>Model code</h2>
+
+         Model code will be added to the <strong>{slug}</strong> model on NCI GeoNetwork <a href="https://geonetwork.nci.org.au"> NCI GeoNetwork</a> on publication of the M@TE collection (early 2024)
+
+
             {
               (model_files?.url || model_files?.notes) &&
-              <h2>Model files</h2>
             }
             {
               model_files?.url &&
               <p>
-                The input and/or post-processing files for this model
-                can be downloaded here:{" "}
+                A preliminary version of the model code can be downloaded here:{" "}
                 <a href={model_files.url}>{model_files.url}</a>
               </p>
             }
+            {/*
             {
               model_files?.notes &&
               <div>
@@ -199,9 +205,23 @@ const ModelTemplate = ({
                 <p>{model_files.notes}</p>
               </div>
             }
+          */}
+
           </TabPanel>
           <TabPanel key="model-outputs">
             <h2>Dataset access</h2>
+            <p>
+              Output data will be added to the <strong>{slug}</strong> model on NCI GeoNetwork <a href="https://geonetwork.nci.org.au"> NCI GeoNetwork</a> on publication of the M@TE collection (early 2024)
+            </p>
+            {
+              dataset?.doi &&
+              <p>
+              The output dataset for this model
+              can be downloaded here:{" "}
+              <a href={dataset_url}>{dataset_url}</a>
+              </p>
+            }
+            {/*
             {
               dataset.doi &&
               <p>
@@ -213,6 +233,7 @@ const ModelTemplate = ({
               can be downloaded here:{" "}
               <a href={dataset_url}>{dataset_url}</a>
             </p>
+             */}
             {
               dataset.notes &&
               (
@@ -222,6 +243,7 @@ const ModelTemplate = ({
                 </p>
               )
             }
+            {/*
             {
               animations_found &&
               <>
@@ -244,6 +266,7 @@ const ModelTemplate = ({
                 }
               </>
             }
+            */}
           </TabPanel>
         </Tabs>
 
@@ -312,6 +335,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         abstract
+        slug
         animations {
           caption
           src {

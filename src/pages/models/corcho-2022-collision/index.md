@@ -129,7 +129,7 @@ animations:
     caption: "Alt text for animation 3"
 model_setup_info:
   url:
-  summary: blah blah blah
+  summary:
 dataset:
   url:
   doi: xxxx
