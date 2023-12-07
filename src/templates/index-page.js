@@ -69,7 +69,7 @@ const IndexPageTemplate = ({
 }) => {
 
   return (
-    
+
     <div>
         <div class="image-container">
         <img
@@ -82,39 +82,30 @@ const IndexPageTemplate = ({
               margin: "auto",
               backgroundPosition: "center center",
               display: "block",
-              zIndex: "-1"
+              zIndex: "-1",
+              opacity: "80%"
             }}
           />
           <div class="overlay-box">
             <p class="overlay-text">
 
-            <div className="atlas-logo-responsive">
-              <img
-                src={AtlasIcon}
-                width="150"
-                height="150"
-                alt="Atlas Icon"
-                style={{filter: "invert(100%)"}}
-              />
-            </div>
 
-            <h1 className="mate-acronym" style={{color: "white", fontSize: "50px"}}>
-              M@TE
-            </h1>
+
             <h1 className="mate-name" style={{ color: "white", fontSize: "60px" }}>
-              Model Atlas of the Earth
+              Model Atlas of the Earth (M@TE)
             </h1>
 
-            <h1 className="gp-title" style={{color: "white", fontSize: "20px"}}> 
-                M@TE is an open-source collection of geological, geochemical and
-                geophysical research data developed <br></br>
-                by and for the global geoscience community. 
-                M@TE is committed to adopting the FAIR principles of data <br></br> 
-                Findability, Accessibility, Interoperability and Reusability.
-                <br></br>
+            <h1 className="gp-title" style={{color: "white", fontSize: "20px"}}>
+
+                M@TE is an open-source collection of computational models<br></br>
+                with a focus on tectonics, hydrogeology and surface processes. <br></br>
+                M@TE provides a range of digital infrastructure to support the <br></br>
+                FAIR principles: Findability, Accessibility, Interoperability and Reusability.
+
+
             </h1>
 
-            <h1 className=" gp-title" style={{color: "white", fontSize:"15px"}}> 
+            <h1 className=" gp-title" style={{color: "white", fontSize:"15px"}}>
               <br></br>
               Powered by
             </h1>
@@ -133,50 +124,26 @@ const IndexPageTemplate = ({
               />
             </a>
 
-            <a title="EarthByte" href="https://www.earthbyte.org/">
-              <img
-                src={earthbyteIcon}
-                alt="EarthByte Logo"
-                style={{
-                  maxWidth: "60px",
-                  marginLeft: "5px",
-                  marginBottom: "0px",
-                  borderRadius: "15px",
-                  verticalAlign: "middle",
-                }}
-              />
-            </a>
 
-            <a title="EarthByte" href="https://www.earthbyte.org/">
-              <img
-                src={earthbyteText}
-                alt="EarthByte Logo"
-                style={{
-                  maxWidth: "160px",
-                  marginLeft: "5px",
-                  marginBottom: "0px",
-                  borderRadius: "15px",
-                  verticalAlign: "middle",
-                }}
-              />
-            </a>
+
+
 
             </p>
           </div>
         </div>
 
       <div style={{ position: 'relative', top: '-20px' }}>
-        <div className="about-us-box box" 
+        <div className="about-us-box box"
         style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',  borderRadius: '0'}}>
-          <a href="https://www.earthbyte.org/" className="link-arrow gp-title"
+          <a href="https://mate.science/models/" className="link-arrow gp-title"
           style={{fontWeight: "bold", fontSize: "20px"}}>
             Learn more &nbsp; <span>&#10132;</span>
-          </a> 
+          </a>
         </div>
-      </div> 
+      </div>
 
 
-      <h1 className="is-size-3 gp-title"> 
+      <h1 className="is-size-3 gp-title">
         <br></br>
         Featured Models
         <br></br>
@@ -184,11 +151,11 @@ const IndexPageTemplate = ({
 
       <WithScrollbar models={allModels}/>
 
-      
+
       <div class="image-container">
-        <img 
+        <img
           src={mateTrinity}
-          alt="Description" 
+          alt="Description"
           style={{
             paddingTop: "100px",
             paddingBottom: "100px",
@@ -201,11 +168,11 @@ const IndexPageTemplate = ({
       </div>
 
       <div style={{ position: 'relative', top: '-800px' }}>
-        <div className="contribute-box box" 
+        <div className="contribute-box box"
           style={{ justifyContent: 'center', alignItems: 'center',  borderRadius: '0'}}>
           <h1 className="gp-title" style={{fontSize: "60px"}}>
             Be our M@TE
-          </h1> 
+          </h1>
           <h1 style={{ fontSize: "20px", marginLeft: "40px" }}>
             <br></br>
             If you would like to contribute your work to the Model Atlas of the Earth...
@@ -239,17 +206,17 @@ const IndexPageTemplate = ({
           </h1>
 
           <div style={{ position: 'relative', top: '20px' }}>
-            <div className="about-us-box box" 
+            <div className="about-us-box box"
             style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',  borderRadius: '0'}}>
               <a href="https://www.earthbyte.org/" className="link-arrow gp-title"
               style={{fontWeight: "bold", fontSize: "20px"}}>
                 Further information &nbsp; <span>&#10132;</span>
-              </a> 
+              </a>
             </div>
-          </div> 
+          </div>
 
         </div>
-      </div> 
+      </div>
 
     </div>
   );
