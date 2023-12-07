@@ -165,6 +165,17 @@ $menu-label-color: $white-ter
   boxShadow: 20px 20px 20px -20px rgba(0,0,0,0.57)
   borderRadius: 10px
 
+.hover-shadow
+  &:hover
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1)
+
+.hover-opacity
+  &:hover
+    filter: opacity(75%)
+
+.hover-darken
+  &:hover
+    filter: saturate(120%) contrast(120%) opacity(80%)
 
 .mc-card-overlay 
   position: absolute
@@ -249,18 +260,6 @@ $menu-label-color: $white-ter
   border-color: #eee
   border-collapse: separate
 
-.hover-shadow
-  &:hover
-    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1)
-
-.hover-opacity
-  &:hover
-    filter: opacity(75%)
-
-.hover-darken
-  &:hover
-    filter: saturate(120%) contrast(120%) opacity(80%)
-
 .models-image
   width: 25%
   min-width: 200px
@@ -298,6 +297,7 @@ $menu-label-color: $white-ter
 .model-page
   text-align: left
   font-size: 19px
+  margin-bottom: 20px
   & h2
     font-size: 175%
   & h3
@@ -316,6 +316,18 @@ $menu-label-color: $white-ter
       font-size: 200%
       font-weight: 600
       margin-bottom: 30px
+
+.read-more
+  @extend .model-page
+  & button
+    background-color: #2c8ec7
+    color: #eee
+    font-weight: 600
+    margin: 2px
+    font-size: 18px
+    border-radius: 5px
+    @extend .hover-opacity
+    @extend .hover-shadow
 
 .licence-content
   background-color: #fdfdfd

@@ -128,30 +128,6 @@ const ModelTemplate = ({
               <p>{abstract}</p>
             </section>
 
-            <section id="licence" className="model-page">
-              <h2>Licence</h2>
-              <PreviewCompatibleImage
-                imageInfo={{
-                  image: licence.licence_image,
-                  alt: licence.description || licence.name
-                }}
-                style={{ maxWidth: "100px" }}
-              />
-              <p>
-                <a href={licence.licence_url}>{licence.name}</a>
-                {
-                  licence.description &&
-                  `: ${licence.description}`
-                }
-              </p>
-              {
-                licence_content &&
-                <ReadMore>
-                  <div className="licence-content">{licence_content}</div>
-                </ReadMore>
-              }
-            </section>
-
             {
               publication &&
               <section id="publication" className="model-page">
@@ -190,6 +166,35 @@ const ModelTemplate = ({
                 }
               </section>
             }
+
+            <section id="licence" className="model-page">
+              <h2>Licence</h2>
+              <a href={licence.licence_url}>
+              <PreviewCompatibleImage
+                imageInfo={{
+                  image: licence.licence_image,
+                  alt: licence.description || licence.name
+                }}
+                style={{ maxWidth: "100px" }}
+              />
+              </a>
+              <p>
+                <a href={licence.licence_url}>{licence.name}</a>
+                {
+                  licence.description &&
+                  `: ${licence.description}`
+                }
+              </p>
+              {
+                licence_content &&
+                <ReadMore
+                  openHeader="Hide licence"
+                  closedHeader="Show licence"
+                >
+                  <div className="licence-content">{licence_content}</div>
+                </ReadMore>
+              }
+            </section>
           </TabPanel>
           <TabPanel key="model-setup">
             {
