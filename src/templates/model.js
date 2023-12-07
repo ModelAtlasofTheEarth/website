@@ -16,6 +16,7 @@ import Content, { HTMLContent } from "../components/Content"
 import PageHead from "../components/Head"
 import Layout from "../components/Layout"
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage"
+import ReadMore from "../components/ReadMore"
 
 const ModelTemplate = ({
   abstract,
@@ -29,6 +30,7 @@ const ModelTemplate = ({
   date,
   graphic_abstract,
   landing_image,
+  licence,
   model_files,
   model_setup,
   model_setup_info,
@@ -53,6 +55,13 @@ const ModelTemplate = ({
     animations.length > 0 &&
     animations[0].src?.publicURL
   )
+  let licence_content = null
+  if (licence.licence_file?.fields?.content) {
+    licence_content = licence.licence_file.fields.content
+    licence_content = licence_content.split("\n\n").map(p => (
+      <p>{p}</p>
+    ))
+  }
 
   return (
     <section className="section">
@@ -114,11 +123,38 @@ const ModelTemplate = ({
           </TabList>
 
           <TabPanel key="overview">
-            <h2>Abstract</h2>
-            <p>{abstract}</p>
+            <section id="abstract" className="model-page">
+              <h2>Abstract</h2>
+              <p>{abstract}</p>
+            </section>
+
+            <section id="licence" className="model-page">
+              <h2>Licence</h2>
+              <PreviewCompatibleImage
+                imageInfo={{
+                  image: licence.licence_image,
+                  alt: licence.description || licence.name
+                }}
+                style={{ maxWidth: "100px" }}
+              />
+              <p>
+                <a href={licence.licence_url}>{licence.name}</a>
+                {
+                  licence.description &&
+                  `: ${licence.description}`
+                }
+              </p>
+              {
+                licence_content &&
+                <ReadMore>
+                  <div className="licence-content">{licence_content}</div>
+                </ReadMore>
+              }
+            </section>
+
             {
               publication &&
-              <>
+              <section id="publication" className="model-page">
                 <h2>Publication</h2>
                 {
                   publication.DOI &&
@@ -128,12 +164,16 @@ const ModelTemplate = ({
                   />
                 }
                 <Citation data={publication}/>
-              </>
+              </section>
             }
-            <h2>Tags</h2>
-            <p><TagsList tags={all_tags}/></p>
+
+            <section id="tags" className="model-page">
+              <h2>Tags</h2>
+              <p><TagsList tags={all_tags}/></p>
+            </section>
+
             {graphic_abstract &&
-              <div>
+              <section id="graphic-abstract" className="model-page">
                 <h2>Graphic abstract</h2>
                 <PreviewCompatibleImage
                   imageInfo={{
@@ -148,7 +188,7 @@ const ModelTemplate = ({
                   graphic_abstract.caption &&
                   <p>{graphic_abstract.caption}</p>
                 }
-              </div>
+              </section>
             }
           </TabPanel>
           <TabPanel key="model-setup">
@@ -288,6 +328,7 @@ const ModelsPage = ({ data }) => {
         date={post.frontmatter.date}
         graphic_abstract={post.frontmatter.images.graphic_abstract}
         landing_image={post.frontmatter.images.landing_image}
+        licence={post.frontmatter.licence}
         model_files={post.frontmatter.model_files}
         model_setup_info={post.frontmatter.model_setup_info}
         model_setup={post.frontmatter.images.model_setup}
@@ -398,9 +439,19 @@ export const pageQuery = graphql`
           }
         }
         licence {
-          name
+          description
+          licence_file {
+            fields {
+              content
+            }
+          }
+          licence_image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
           licence_url
-          licence_image
+          name
         }
         model_files {
           url

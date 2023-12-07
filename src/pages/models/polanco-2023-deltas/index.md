@@ -15,10 +15,11 @@ software:
     doi: 10.5281/zenodo.1069573
     url_source: https://github.com/badlands-model/badlands
 licence:
-  name: cc-by-4.0
+  name: CC BY 4.0
   licence_url: https://creativecommons.org/licenses/by/4.0/
-  licence_image: https://creativecommons.org/wp-content/themes/vocabulary-theme/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo
-  description:
+  licence_image: ../../../img/licence/by.png
+  description: CC BY 4.0 DEED Attribution 4.0 International
+  licence_file: ./licence.txt
 contributor:
   name: Sara
   family_name: Polanco
