@@ -61,197 +61,105 @@ const PeopleTemplate = ({
         }}
       />
 
-      <div class="header4">
+      <div class="bodytext header4">
         <h1>{name}</h1>
       </div>
 
-      <div class="header5">
-        <h1>{title}</h1>
+      <div class="bodytext header5">
+        <h1>{title} </h1>
+
       </div>
-        
-      <nav class="tabs is-large">
-        
-        <ul>
-          <li 
-            class="tab is-active" 
-            onClick={(event) => openTab(event, 'Overv')}>
-              <a >Overview</a>
-          </li>
-          <li 
-            class="tab" 
-            onClick={(event) => openTab(event, 'Desc')}>
-              <a >Research</a>
-          </li>
-          <li 
-            class="tab" 
-            onClick={(event) => openTab(event, 'Other')}>
-              <a >Contact</a>
-          </li>
-        </ul>
-      
-      </nav>
-
-
-        {/*** Overv tab */}
-        <div id="Overv" className="content-tab" >
+  
           
-          <div className='columns is-mobile is-centered'>
+      <div className='peopleslide columns is-centered'>
 
-            <div class="column box is-one-fifth">
-              <p>
-                <strong>
-                  ORCID ID
-                </strong>
+        <div class="column peoplebox bodytext">
+          <p>
+            <strong>
+              ORCID ID
+            </strong>
 
-                <br />
+            <br />
 
-                  {orcid}
+              {orcid}
 
-                <br />
-                <br />
+            <br />
+            <br />
 
-                <strong>
-                  ResearchGate 
-                </strong>
+            <strong>
+              ResearchGate 
+            </strong>
 
-                <br />
+            <br />
 
-                <Link to={researchgate}>
-                  <a href={researchgate} 
-                    className="link-arrow button is-white"> 
-                    {name} &nbsp; 
-                    <p>
-                      &#10132;
-                    </p>
-                  </a>
-                </Link>
+            <Link to={researchgate}>
+              <a href={researchgate} 
+                className="link-arrow button is-white"> 
+                {name} &nbsp; 
+                <p>
+                  &#10132;
+                </p>
+              </a>
+            </Link>
 
-                <br />
-                <br />
+            <br />
+            <br />
 
-                <strong>Google Scholar</strong>
-                <br />
-                
-                  <Link to={scholar}>
-                    <a 
-                      href={scholar} 
-                      className="link-arrow button is-white"> 
-                      {name} &nbsp; 
-                      <p>
-                        &#10132;
-                      </p>
-                    </a>
-                  </Link>
-      
-                <br /><br />
+            <strong>Google Scholar</strong>
+            <br />
+            
+              <Link to={scholar}>
+                <a 
+                  href={scholar} 
+                  className="link-arrow button is-white"> 
+                  {name} &nbsp; 
+                  <p>
+                    &#10132;
+                  </p>
+                </a>
+              </Link>
+  
+            <br /><br />
 
-                <strong>
-                  Twitter
-                </strong>
+            <strong>
+              Twitter
+            </strong>
 
-                <br />
-                
-                <Link to={twitter}>
-                  <a 
-                    href={twitter} 
-                    className="link-arrow button is-white"> 
-                    {twitterhandle} &nbsp; 
-                    <p>
-                      &#10132;
-                    </p>
-                  </a>
-                </Link>
+            <br />
+            
+            <Link to={twitter}>
+              <a 
+                href={twitter} 
+                className="link-arrow button is-white"> 
+                {twitterhandle} &nbsp; 
+                <p>
+                  &#10132;
+                </p>
+              </a>
+            </Link>
 
 
-              </p>
-            </div>
-              
-            <div class="column auto">
-              {/*** All non-yaml contents of the people md file */}
-              <PostContent content={content} />
-
-              {/*tags && tags.length ? (
-                <div style={{ marginTop: `4rem` }}>
-                  <h4>Tags</h4>
-                  <ul className="taglist">
-                    {tags.map((tag) => (
-                      <li key={tag + `tag`}>
-                        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                    ) : null*/}
-            </div>
-          </div>
+          </p>
         </div>
-        {/*** end of Overv tab */}
-
-        {/*** Other tab */}
-        <div className='columns is-mobile is-centered content-tab' id="Other" style={{ display: 'none' }}>
           
-          <div class="box column">
-            <div class="content">
-              <p>
-                <strong>Description</strong> <br></br>
-                A set of 11 sandstone plugs from Kocurek Industries: Bandera Gray, Parker, Kirby, Bandera Brown, Berea Sister Gray, Berea Upper Gray, Berea, Castlegate, Buff Berea, Leopard and Bentheimer. Source: https://kocurekindustries.com/sandstone-cores.
+        <div class="column auto bodytext">
+          {/*** All non-yaml contents of the people md file */}
+          <PostContent content={content} />
 
-                All samples were subject to a combined experimental and computational analysis in order to estimate Porosity and Permeability.
-
-                For more details, please refer to: https://arxiv.org/abs/2010.10679.
-              </p>
+          {/*tags && tags.length ? (
+            <div style={{ marginTop: `4rem` }}>
+              <h4>Tags</h4>
+              <ul className="taglist">
+                {tags.map((tag) => (
+                  <li key={tag + `tag`}>
+                    <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
+                ) : null*/}
         </div>
-        {/*** end of Other tab */}
-
-        {/*** Desc tab */}
-        <div className="content-tab" id="Desc" style={{ display: 'none' }}>
-        <h1
-                    className="title is-size-2 has-text-weight-bold is-bold-light"
-                    style={{ textAlign: "left" }}
-                  >
-                    {orcid}
-                  </h1>
-                  <h1
-                    className="title is-size-4 has-text-weight-bold is-bold-light"
-                    style={{ textAlign: "center" }}
-                  >
-                    {title}
-                  </h1>
-          <div>
-            <div>
-              <a class="button">A Bulma Button</a>
-            </div>
-            <div>
-              <div class="control">
-                <div>
-                  <h1>
-                    Enter a name for your model here:
-                  </h1>
-                </div>
-
-                <input class="input is-success" type="text" placeholder="Write model name here..." />
-
-                <input type="radio" name="answer" /> Yes
-                <input type="radio" name="answer" /> No
-                <br />
-
-                <input type="checkbox" /> Check me!
-                <br />
-
-                <div class="select">
-                  <select>
-                    <option>option 1</option>
-                    <option>option 2</option>
-                    <option>option 3</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/*** end of Other tab */}
+      </div>
 
     </section>
   );
