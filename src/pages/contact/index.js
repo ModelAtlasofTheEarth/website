@@ -82,7 +82,7 @@ class ContactPage extends React.Component {
                 </h1>
             </div>
 
-          <div className="columns is-multiline">
+          <div className="columns is-multiline bodytext">
             {posts &&
               posts.map(({ node: post }) => (
                 <div
