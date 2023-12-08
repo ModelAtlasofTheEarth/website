@@ -2,9 +2,12 @@ import React from "react";
 import Layout from "../../components/Layout";
 import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
+import { ParallaxBanner, ParallaxBannerLayer, ParallaxProvider } from "react-scroll-parallax"
+
 import PreviewCompatibleImage from "../../components/PreviewCompatibleImage";
 import "./index_styles.css";
 import PageHead from "../../components/Head"
+import Animation from "../../components/Animation"
 
 class ContactPage extends React.Component {
   render() {
@@ -14,35 +17,19 @@ class ContactPage extends React.Component {
 
     return (
       <Layout>
-        <div class="image">
-          {/*** An image to be hosted by GitHub */}
-          <img
-
-            src="https://github.com/GPlates/gplately/blob/master/Notebooks/NotebookFiles/pdoc_Files/docs_muller19_seed_points.gif?raw=true"
-            alt="Description"
-            textAlign="center"
-            style={{
-              paddingTop: "-100px",
-              top: "0",
-              position: "fixed",
-              height: "100",
-              width: "100%",
-              display: "block",
-              margin: "auto",
-              backgroundPosition: "center center",
-              display: "block",
-
-              zIndex: "-1"
-            }}
-          />
-        </div>
-
-
-        <div class="staticslide">
-        </div>
-
-        <div class="slide header">
-        </div>
+        <ParallaxProvider>
+          <ParallaxBanner style={{ aspectRatio: '5 / 1' }}>
+            <ParallaxBannerLayer speed={-20}>
+              <Animation
+                src={data.file.publicURL}
+                playing
+                loop
+                muted
+                style={{marginTop: "85px", marginLeft: "-75px", objectFit: "cover"}}
+              />
+            </ParallaxBannerLayer>
+          </ParallaxBanner>
+        </ParallaxProvider>
 
         <div id="slide3" class="slide">
 
@@ -168,6 +155,9 @@ const fn = () => (
               }
             }
           }
+        }
+        file(base: {eq: "AFRC_Coupled_model_M@te_v3.mp4"}) {
+          publicURL
         }
       }
     `}
