@@ -16,15 +16,9 @@ body {
     font-size: 1.2em;
     line-height: 35px;
     color: #000;
-    font-family: "Archivo";
+    font-family: "IBM Plex Sans";
     display: block;
     padding: 20px;
-  }
-
-/* For the boxes with text */
-.peoplebox {
-    border-radius: 5px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, .7);
   }
 
 .slide {
@@ -80,6 +74,7 @@ body {
     color: #000;
     font-family: "Archivo";
     font-size: 6vh;
+    
   }
 
   .header5 {
@@ -256,4 +251,41 @@ a {
   background-color: rgba(244, 244, 244, 1); /* Adjust the background color and opacity */
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 1000px) {
+  contribute-box {
+    width: 40px; 
+  }
+}
+
+/* Default styles for the box */
+.peoplebox {
+  width: 100%; /* Set the initial width to 100% */
+  max-width: 300px; /* Set a maximum width for the box */
+  margin: 0 auto; /* Center the box horizontally */
+  background-color: white;
+  padding: 20px;
+  box-sizing: border-box; /* Include padding and border in the box's total width */
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+}
+
+
+/* Media query for screens with a width of 600 pixels or more */
+@media screen and (min-width: 600px) {
+  .peoplebox {
+    width: 400px; /* Set the width to 400px when the screen width is 600px or more */
+  }
+}
+
+.peopleslide {
+  position: relative;
+  padding: 5vh 10%;
+  padding-left: 0;
+  min-height: 50%;
+  width: 100vw;
+  box-sizing: border-box;
+  transform-style: inherit;
+
 }
