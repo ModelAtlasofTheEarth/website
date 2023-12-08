@@ -122,24 +122,6 @@ class ContactPage extends React.Component {
           </div>
         </div>
 
-        <div id="slide2" class="slide header3">
-          <h1>Sydney Informatics Hub</h1>
-        </div>
-
-
-        <div id="slide3" class="slide header3">
-          <h1>National Computational Infrastructure (NCI)</h1>
-        </div>
-
-        <div id="slide1" class="slide header3">
-          <h1>AuScope</h1>
-        </div>
-
-
-
-
-
-
       </Layout>
     );
   }
