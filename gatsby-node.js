@@ -1,6 +1,7 @@
 const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
+const fs = require("fs")
 //const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
 exports.createPages = ({ actions, graphql }) => {
@@ -180,5 +181,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value,
     })
+  }
+  if (node.internal.type === `File`) {
+    fs.readFile(node.absolutePath, undefined, (_err, buf) => {
+      createNodeField({ node, name: `content`, value: buf.toString()});
+    });
   }
 }

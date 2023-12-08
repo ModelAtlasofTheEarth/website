@@ -16,10 +16,11 @@ software:
     doi: 10.5281/zenodo.7455999
     url_source: https://zenodo.org/records/7455999
 licence:
-  name: cc-by-4.0
+  name: CC BY 4.0
   licence_url: https://creativecommons.org/licenses/by/4.0/
-  licence_image: https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png
+  licence_image: ../../../img/licence/by.png
   description: CC BY 4.0 DEED Attribution 4.0 International
+  licence_file: ./licence.txt
 contributor:
   name: Ben
   family_name: Mather
