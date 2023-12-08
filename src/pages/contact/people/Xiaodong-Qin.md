@@ -21,7 +21,6 @@ tags:
   - python3
 ---
 
-![Xiaodong Qin](./images/xiaodong-qin-1200x650.png)
 
 Xiaodong Qin is also known as Michael Chin.
 
