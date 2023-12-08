@@ -13,7 +13,7 @@ const Footer = class extends React.Component {
       <footer className="footer has-background-black has-text-white-ter">
         <div className="content has-text-centered has-background-black has-text-white-ter">
           <div className="container has-background-black has-text-white-ter">
-            <div style={{ maxWidth: "100vw" }} className="columns">
+            <div style={{ maxWidth: "100vw" }} className="columns is-centered">
               <div className="column is-3">
                 <section className="menu">
                   <ul className="menu-list">
