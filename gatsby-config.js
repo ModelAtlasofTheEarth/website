@@ -32,6 +32,18 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-plugin-google-gtag`,
+            options: {
+              trackingIds: [
+              "G-SW2X6STFYY", // Google Analytics / GA
+              ],
+              pluginConfig: {
+                // Puts tracking script in the head instead of the body
+                head: true
+              },
+            },
+          },
+          {
             resolve: "gatsby-remark-autolink-headers",
             options: {
               offsetY: "100",
