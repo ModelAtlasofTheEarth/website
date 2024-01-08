@@ -18,6 +18,10 @@ import Layout from "../components/Layout"
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage"
 import ReadMore from "../components/ReadMore"
 
+import Markdown from "react-markdown"
+import remarkMath from "remark-math"
+import rehypeMathjax from "rehype-mathjax/svg"
+
 const ModelTemplate = ({
   abstract,
   animations,
@@ -221,7 +225,14 @@ const ModelTemplate = ({
               model_setup_info?.summary &&
               <div>
                 <h3>Notes on model setup</h3>
-                <p>{model_setup_info.summary}</p>
+                <p>
+                  <Markdown
+                    remarkPlugins={[remarkMath]}
+                    rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
+                  >
+                    {model_setup_info.summary}
+                  </Markdown>
+                </p>
               </div>
             }
           </TabPanel>
