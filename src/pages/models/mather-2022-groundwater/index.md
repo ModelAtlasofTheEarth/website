@@ -119,7 +119,14 @@ animations:
     caption:
 model_setup_info:
   url:
-  summary: We populate a 3D model of basin architecture (as shown in figure) with initial thermal and hydraulic material properties described in Table 1 of Mather, et. al, 2022. The vertical spacing of layers has been exaggerated for visual clarity. Te model of the basin was rendered in 3D using Underworld. Groundwater recharge and discharge are driven by changes in hydraulic head. The hydraulic head prescribed to the top boundary surface is set to the height of the water table. The thermal boundary conditions include a constant temperature set to the top boundary (T0 = 18 C),which corresponds to the annual mean surface temperature. Te side walls are assigned zero fux and the bottom temperature boundary, T1, is an unknown variable that we invert from borehole temperature data within our Bayesian optimisation scheme.
+  summary: |
+    We populate a 3D model of basin architecture (as shown in figure) with initial thermal and hydraulic material properties described in Table 1 of Mather, et. al, 2022.
+    The vertical spacing of layers has been exaggerated for visual clarity.
+    The model of the basin was rendered in 3D using Underworld.
+    Groundwater recharge and discharge are driven by changes in hydraulic head.
+    The hydraulic head prescribed to the top boundary surface is set to the height of the water table.
+    The thermal boundary conditions include a constant temperature set to the top boundary $(T_0 = 18 \mathrm{\degree C})$, which corresponds to the annual mean surface temperature.
+    The side walls are assigned zero fux and the bottom temperature boundary, $T_1$, is an unknown variable that we invert from borehole temperature data within our Bayesian optimisation scheme.
 dataset:
   url:  https://cloudstor.aarnet.edu.au/plus/s/kNwa6dN6nXxXs55
   doi:
