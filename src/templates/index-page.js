@@ -132,7 +132,7 @@ const IndexPageTemplate = ({
           </div>
         </div>
 
-      <div style={{ position: 'relative', top: '-20px' }}>
+      <div style={{ position: 'relative', top: '-20px', }}>
         <div className="about-us-box box"
         style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',  borderRadius: '0'}}>
           <a href="https://mate.science/models/" className="link-arrow gp-title"
@@ -141,35 +141,19 @@ const IndexPageTemplate = ({
           </a>
         </div>
       </div>
-
-
       <h1 className="is-size-3 gp-title">
         <br></br>
         Featured Models
         <br></br>
       </h1>
-
       <WithScrollbar models={allModels}/>
 
 
-      <div class="image-container">
-        <img
-          src={mateTrinity}
-          alt="Description"
-          style={{
-            paddingTop: "100px",
-            paddingBottom: "100px",
-            width: "50%",
-            display: "block",
-            marginLeft: "auto", // Push the image to the right
-            zIndex: "-1"
-          }}
-        />
-      </div>
 
-      <div style={{ position: 'relative', top: '-800px' }}>
-        <div className="contribute-box box"
-          style={{ justifyContent: 'center', alignItems: 'center',  borderRadius: '0'}}>
+
+      <div className="be-our-mate" style={{ display: 'flex',  alignItems: 'center', marginTop: '100px' }}>
+        <div className="contribute-box" style={{ justifyContent: 'center', width: '100%', alignItems: 'center',marginRight: '20px', borderRadius: '0', maxWidth: '600px', marginBottom: '20px' }}>
+
           <h1 className="gp-title" style={{fontSize: "60px"}}>
             Be our M@TE
           </h1>
@@ -204,8 +188,7 @@ const IndexPageTemplate = ({
               <li>4. Submit a Pull Request</li>
             </ul>
           </h1>
-
-          <div style={{ position: 'relative', top: '20px' }}>
+          <div>
             <div className="about-us-box box"
             style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',  borderRadius: '0'}}>
               <a href="https://www.earthbyte.org/" className="link-arrow gp-title"
@@ -216,8 +199,23 @@ const IndexPageTemplate = ({
           </div>
 
         </div>
-      </div>
 
+        <div className="image-container" style={{ textAlign: 'center', maxWidth: '600px' }}>
+          <img
+            src={mateTrinity}
+            alt="Description"
+            style={{
+              paddingTop: "100px",
+              paddingBottom: "100px",
+              width: "90%",
+              display: "inline-block", // Use inline-block to center the image
+              margin: "0 auto", // Set left and right margin to auto for centering
+              zIndex: "-1"
+            }}
+          />
+        </div>
+      </div>
+      
     </div>
   );
 };
