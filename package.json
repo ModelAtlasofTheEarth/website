@@ -17,6 +17,7 @@
     "gatsby-plugin-google-gtag": "^5.12.3",
     "gatsby-plugin-image": "^3.8.0",
     "gatsby-plugin-manifest": "^5.12.3",
+    "gatsby-plugin-netlify": "^5.1.1",
     "gatsby-plugin-postcss": "^6.8.0",
     "gatsby-plugin-purgecss": "^6.2.1",
     "gatsby-plugin-sass": "^6.8.0",
@@ -38,10 +39,14 @@
     "react-animate-height": "^3.2.3",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
+    "react-markdown": "^8.0.7",
+    "react-mathjax": "^1.0.1",
     "react-multi-carousel": "^2.8.4",
     "react-player": "^2.13.0",
     "react-scroll-parallax": "^3.4.5",
     "react-tabs": "^6.0.2",
+    "rehype-mathjax": "^6.0.0",
+    "remark-math": "^6.0.0",
     "uuid": "^9.0.0"
   },
   "keywords": [

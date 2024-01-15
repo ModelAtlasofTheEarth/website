@@ -73,7 +73,6 @@ class WithScrollbar extends React.Component {
       );
     };
     const { models } = this.props
-    console.log(models)
     return (
       <Carousel
         autoPlay
