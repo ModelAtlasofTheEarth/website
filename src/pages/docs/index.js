@@ -8,8 +8,6 @@ class DocsIndexPage extends React.Component {
   render() {
     const data = this.props.data.allMarkdownRemark
     const posts = data.edges.map((edge) => edge.node)
-    console.log("posts:")
-    console.log(posts)
     return (
       <Layout>
         <div className="container docs-page">
