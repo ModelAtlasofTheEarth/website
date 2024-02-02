@@ -108,6 +108,9 @@ const Navbar = class extends React.Component {
                 </span>
                 <span>Search</span>
               </Link>
+              <Link className="navbar-item hover-darken" to="/docs">
+                <span>About</span>
+              </Link>
             </div>
             <div className="navbar-end has-text-centered">
               <a

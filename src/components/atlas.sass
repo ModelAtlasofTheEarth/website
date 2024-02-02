@@ -154,6 +154,7 @@ $menu-label-color: $white-ter
 @import "~bulma/sass/elements/button"
 @import "~bulma/sass/form/_all"
 @import "~@fortawesome/fontawesome-free/css/all.min.css"
+@import "~katex/dist/katex.min.css"
 
 .section
   padding: 1.5rem 0.75rem
@@ -381,6 +382,26 @@ $menu-label-color: $white-ter
   @extend .badge-doi-base
   background-color: #007ec6
   border-radius: 0px 5px 5px 0px
+
+.docs-page
+  & h1
+    text-align: center
+    font-size: 250%
+    font-weight: bold
+  & h2
+    text-align: left
+    font-size: 150%
+    font-weight: 600
+  & h3
+    text-align: left
+    font-size: 125%
+    font-weight: 600
+
+.katex
+  font-size: 1.05em
+  font-weight: normal
+  font-family: inherit
+  white-space: nowrap
 
 .badge-author
   @extend .badge

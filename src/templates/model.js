@@ -20,7 +20,7 @@ import ReadMore from "../components/ReadMore"
 
 import Markdown from "react-markdown"
 import remarkMath from "remark-math"
-import rehypeMathjax from "rehype-mathjax/svg"
+import rehypeKatex from "rehype-katex"
 
 const ModelTemplate = ({
   abstract,
@@ -228,7 +228,8 @@ const ModelTemplate = ({
                 <p>
                   <Markdown
                     remarkPlugins={[remarkMath]}
-                    rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
+                    rehypePlugins={[[rehypeKatex, {}]]}
+                    escapeHtml="false"
                   >
                     {model_setup_info.summary}
                   </Markdown>

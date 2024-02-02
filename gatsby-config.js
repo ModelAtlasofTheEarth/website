@@ -68,6 +68,12 @@ module.exports = {
               destinationDir: "static",
             },
           },
+          {
+            resolve: "gatsby-remark-katex",
+            options: {
+              strict: "ignore"
+            }
+          }
         ],
       },
     },
@@ -88,7 +94,10 @@ module.exports = {
       options: {
         develop: true, // Activates purging in npm run develop
         purgeOnly: ["/atlas.sass"],
-        printRejected: true
+        printRejected: true,
+        purgeCSSOptions: {
+          safelist: [/.*katex.*/]
+        }
       },
     }, // must be after other CSS plugins
     'gatsby-plugin-netlify', // make sure to keep it last in the array
