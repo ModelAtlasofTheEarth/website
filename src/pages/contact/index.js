@@ -18,14 +18,14 @@ class ContactPage extends React.Component {
     return (
       <Layout>
         <ParallaxProvider>
-          <ParallaxBanner style={{ aspectRatio: '5 / 1' }}>
+          <ParallaxBanner style={{ aspectRatio: '6 / 1' }}>
             <ParallaxBannerLayer speed={-20}>
               <Animation
                 src={data.file.publicURL}
                 playing
                 loop
                 muted
-                style={{marginTop: "85px", marginLeft: "-75px", objectFit: "cover"}}
+                style={{marginTop: "85px", marginLeft: "-75px", objectFit: "cover",}}
               />
             </ParallaxBannerLayer>
           </ParallaxBanner>
