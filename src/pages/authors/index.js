@@ -2,8 +2,13 @@ import { Link, graphql } from "gatsby"
 import { get, kebabCase } from "lodash"
 import React from "react"
 
-import Layout from "../../components/Layout"
 import PageHead from "../../components/Head"
+import Layout from "../../components/Layout"
+import {
+  authorEqual,
+  authorSort,
+  getAuthorSlug,
+} from "../../components/ModelList"
 
 export const Head = () => <PageHead title="Authors"/>
 
@@ -15,7 +20,7 @@ class AuthorsPage extends React.Component {
     const post_counts = {}
     for (const post of posts) {
       for (const author of post.node.frontmatter.authors) {
-        const full_name = author.name + " " + author.family_name
+        const full_name = `${author.name} ${author.family_name}`
         let post_count = 1
         if (get(post_counts, full_name)) {
           post_count = post_count + post_counts[full_name]
@@ -26,10 +31,11 @@ class AuthorsPage extends React.Component {
           full_name: full_name,
           name: author.name,
           family_name: author.family_name,
+          ORCID: author.ORCID,
         }
         let exists = false
         for (const i of authors) {
-          if (i.full_name === full_name) {
+          if (authorEqual(author, i)) {
             exists = true
             break
           }
@@ -39,7 +45,7 @@ class AuthorsPage extends React.Component {
         }
       }
     }
-    authors.sort((a, b) => a.family_name.localeCompare(b.family_name))
+    authors.sort(authorSort)
 
     return (
       <Layout>
@@ -53,13 +59,16 @@ class AuthorsPage extends React.Component {
                 <h1 className="title is-size-2 is-bold-light">Authors</h1>
                 <ul className="authorlist">
                   {
-                    authors.map((author) => (
-                      <li key={author.full_name}>
-                        <Link to={`/authors/${kebabCase(author.full_name)}`}>
-                          {author.family_name}, {author.name} ({post_counts[author.full_name]})
-                        </Link>
-                      </li>
-                    ))
+                    authors.map((author) => {
+                      const authorSlug = getAuthorSlug(author)
+                      return (
+                        <li key={authorSlug}>
+                          <Link to={`/authors/${authorSlug}`}>
+                            {author.family_name}, {author.name} ({post_counts[author.full_name]})
+                          </Link>
+                        </li>
+                      )
+                    })
                   }
                 </ul>
               </div>
@@ -85,6 +94,7 @@ export const authorsPageQuery = graphql`
             authors {
               name
               family_name
+              ORCID
             }
             date(formatString: "MMMM DD, YYYY")
           }

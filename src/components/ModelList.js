@@ -1,11 +1,11 @@
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { kebabCase } from "lodash"
 import React, { useState, useEffect } from 'react'
-import "./Carousel.css";
+import "./Carousel.css"
 
 import {
   BadgeAuthor,
-//   BadgeTag,
   TagsList,
 } from "./Badges"
 
@@ -83,7 +83,7 @@ const ModelListItem = ({
           </Link>
           <p>
             <b>Uploaded by:</b>{" "}
-            <BadgeAuthor author={full_name}/>
+            <BadgeAuthor author={author}/>
           </p>
           <p><b>Uploaded:</b> {date}</p>
           {
@@ -137,7 +137,7 @@ const ModelCarouselItem = ({
           </h10>
           <div className="item__body">
             <Link to="#0">Uploaded by:</Link>{" "}
-            <BadgeAuthor author={full_name}/>
+            <BadgeAuthor author={author}/>
             <p><Link to="#0">Uploaded:</Link> {date}</p>
             {
               software.name &&
@@ -155,5 +155,34 @@ const ModelCarouselItem = ({
   );  
 }
 
+const authorEqual = (author1, author2) => {
+  const useOrcid = author1.ORCID && author2.ORCID
+  if (useOrcid) {
+    return author1.ORCID == author2.ORCID
+  }
+  const name1 = `${author1.name} ${author1.full_name}`
+  const name2 = `${author2.name} ${author2.full_name}`
+  return name1 == name2
+}
+
+const authorSort = (author1, author2) => (
+  author1.family_name.localeCompare(author2.family_name)
+)
+
+const getAuthorSlug = (author) => (
+  kebabCase(
+    author.ORCID ?
+    author.ORCID :
+    `${author.name} ${author.family_name}`
+  )
+)
+
 export default ModelList
-export { ModelListItem, isValidModelListItem, ModelCarouselItem}
+export {
+  ModelListItem,
+  isValidModelListItem,
+  ModelCarouselItem,
+  authorEqual,
+  authorSort,
+  getAuthorSlug,
+}

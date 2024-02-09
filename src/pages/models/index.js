@@ -69,6 +69,7 @@ const fn = () => (
                 contributor {
                   family_name
                   name
+                  ORCID
                 }
               }
             }

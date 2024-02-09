@@ -7,7 +7,8 @@ import ModelList from "../components/ModelList"
 class AuthorRoute extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges;
-    const full_name = this.props.pageContext.author
+    const author = this.props.pageContext.author
+    const full_name = `${author.name} ${author.family_name}`
 
     const author_posts = posts.filter((post) => {
       for (const post_author of post.node.frontmatter.authors) {
@@ -67,11 +68,13 @@ export const authorPageQuery = graphql`
             authors {
               name
               family_name
+              ORCID
             }
             compute_tags
             contributor {
               name
               family_name
+              ORCID
             }
             date(formatString: "MMMM DD, YYYY")
             images {

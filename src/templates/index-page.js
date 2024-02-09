@@ -282,6 +282,7 @@ query MyQuery {
           contributor {
             name
             family_name
+            ORCID
           }
           date(formatString: "MMMM DD, YYYY")
           images {
