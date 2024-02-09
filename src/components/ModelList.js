@@ -21,18 +21,23 @@ const ModelList = ({ posts }) => {
   return (
     <section className="container models">
       {
-        posts_list.map((post) => (
-          <ModelListItem
-            slug={post.fields.slug}
-            title={post.frontmatter.title}
-            author={post.frontmatter.contributor}
-            date={post.frontmatter.date}
-            tags={post.frontmatter.research_tags.concat(post.frontmatter.compute_tags)}
-            software={post.frontmatter.software}
-            landing_image={post.frontmatter.images.landing_image}
-            key={post.fields.slug}
-          />
-        ))
+        posts_list.map((post) => {
+          const research_tags = (post.frontmatter?.research_tags || post.research_tags)
+          const compute_tags = (post.frontmatter?.compute_tags || post.compute_tags)
+          const tags = research_tags.concat(compute_tags)
+          return (
+            <ModelListItem
+              slug={post.fields?.slug || post.slug}
+              title={post.frontmatter?.title || post.title}
+              author={post.frontmatter?.contributor || post.contributor}
+              date={post.frontmatter?.date || post.date}
+              tags={tags}
+              software={post.frontmatter?.software || post.software}
+              landing_image={post.frontmatter?.images.landing_image || post.images.landing_image}
+              key={post.fields?.slug || post.slug}
+            />
+          )
+        })
       }
     </section>
   )

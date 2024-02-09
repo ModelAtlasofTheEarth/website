@@ -26,6 +26,12 @@ module.exports = {
     "gatsby-plugin-fontawesome-css",
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-transformer-json",
+      options: {
+        typeName: "Json"
+      }
+    },
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-transformer-remark",

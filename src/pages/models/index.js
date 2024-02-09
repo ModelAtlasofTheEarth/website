@@ -9,12 +9,14 @@ class ModelsPage extends React.Component {
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
+    const { edges: postsJson } = data.allJson
 
     return (
       <Layout>
         <div className="models">
           <h2>Available Models</h2>
-          <ModelList posts={posts}/>
+          {/* <ModelList posts={posts}/> */}
+          <ModelList posts={posts.concat(postsJson)}/>
         </div>
       </Layout>
     )
@@ -71,6 +73,43 @@ const fn = () => (
                   name
                   ORCID
                 }
+              }
+            }
+          }
+        }
+        allJson (
+          sort: { date: DESC }
+          filter: { templateKey: { eq: "model-json" } }
+        ) {
+          edges {
+            node {
+              id
+              slug
+              date(formatString: "MMMM DD, YYYY")
+              images {
+                landing_image {
+                  caption
+                  src {
+                    childImageSharp {
+                      gatsbyImageData(
+                        quality: 100
+                        layout: CONSTRAINED
+                      )
+                    }
+                  }
+                }
+              }
+              software {
+                name
+              }
+              research_tags
+              compute_tags
+              templateKey
+              title
+              contributor {
+                family_name
+                name
+                ORCID
               }
             }
           }

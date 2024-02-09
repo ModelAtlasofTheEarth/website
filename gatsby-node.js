@@ -57,6 +57,44 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
+      allJson {
+        edges {
+          node {
+            slug
+            authors {
+              name
+              family_name
+              ORCID
+            }
+            compute_tags
+            contributor {
+              name
+              family_name
+            }
+            date(formatString: "MMMM DD, YYYY")
+            images {
+              landing_image {
+                caption
+                src {
+                  childImageSharp {
+                    gatsbyImageData(
+                      quality: 100
+                      layout: CONSTRAINED
+                    )
+                  }
+                }
+              }
+            }
+            research_tags
+            software {
+              name
+            }
+            templateKey
+            title
+            id
+          }
+        }
+      }
     }
   `).then((result) => {
     if (result.errors) {
@@ -65,6 +103,7 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     const posts = result.data.allMarkdownRemark.edges
+    const jsonPosts = result.data.allJson.edges
 
     posts.forEach((edge) => {
       const id = edge.node.id
@@ -73,6 +112,21 @@ exports.createPages = ({ actions, graphql }) => {
         tags: edge.node.frontmatter.tags,
         component: path.resolve(
           `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+        ),
+        // additional data can be passed via context
+        context: {
+          id,
+        },
+      })
+    })
+
+    jsonPosts.forEach((edge) => {
+      const id = edge.node.id
+      createPage({
+        path: `models/${edge.node.slug}`,
+        tags: edge.node.tags,
+        component: path.resolve(
+          `src/templates/${String(edge.node.templateKey)}.js`
         ),
         // additional data can be passed via context
         context: {
