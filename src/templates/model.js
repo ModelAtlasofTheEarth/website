@@ -15,6 +15,7 @@ import Citation from "../components/Citation"
 import Content, { HTMLContent } from "../components/Content"
 import PageHead from "../components/Head"
 import Layout from "../components/Layout"
+import { getAuthorSlug } from "../components/ModelList"
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage"
 import ReadMore from "../components/ReadMore"
 
@@ -95,13 +96,16 @@ const ModelTemplate = ({
           <p className="model-page-header">
             <b>Authors:</b>{" "}
             {
-              author_full_names.map((author) => (
-                <BadgeAuthor
-                  author={author}
-                  style={{ fontSize: "20px" }}
-                  key={kebabCase(author)}
-                />
-              ))
+              authors.map((author) => {
+                const authorSlug = getAuthorSlug(author)
+                return (
+                  <BadgeAuthor
+                    author={author}
+                    style={{ fontSize: "20px" }}
+                    key={authorSlug}
+                  />
+                )
+              })
             }
           </p>
           <p className="model-page-header">
@@ -429,6 +433,7 @@ export const pageQuery = graphql`
           name
           family_name
           affiliation
+          ORCID
         }
         compute_info {
           computer_name

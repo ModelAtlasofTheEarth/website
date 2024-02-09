@@ -21,6 +21,7 @@ exports.createPages = ({ actions, graphql }) => {
               authors {
                 name
                 family_name
+                ORCID
               }
               compute_tags
               contributor {
@@ -116,14 +117,19 @@ exports.createPages = ({ actions, graphql }) => {
       if (_.get(edge, "node.frontmatter.authors")) {
         for (const author of edge.node.frontmatter.authors) {
           if (author?.name && author?.family_name) {
-            authors.push(author.name + " " + author.family_name)
+            authors.push(author)
           }
         }
       }
     }
     authors = _.uniq(authors)
     for (const author of authors) {
-      const authorPath = `/authors/${_.kebabCase(author)}`
+      const authorSlug = _.kebabCase(
+        author.ORCID ?
+        author.ORCID :
+        `${author.name} ${author.family_name}`
+      )
+      const authorPath = `/authors/${authorSlug}`
       createPage({
         path: authorPath,
         component: path.resolve("src/templates/authors.js"),

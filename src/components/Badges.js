@@ -2,10 +2,14 @@ import React from "react"
 import { Link } from "gatsby"
 import { kebabCase } from "lodash"
 
+import { getAuthorSlug } from "./ModelList"
+
 const BadgeAuthor = ({ author, style }) => {
+  const fullName = `${author.name} ${author.family_name}`
+  const authorSlug = getAuthorSlug(author)
   return (
-    <Link to={`/authors/${kebabCase(author)}`}>
-      <span className="badge-author hover-shadow hover-opacity" style={style}>{author}</span>
+    <Link to={`/authors/${authorSlug}`}>
+      <span className="badge-author hover-shadow hover-opacity" style={style}>{fullName}</span>
     </Link>
   )
 }

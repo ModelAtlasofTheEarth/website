@@ -107,6 +107,7 @@ export const tagPageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { frontmatter: { date: DESC } }
+      filter: { frontmatter: { templateKey: { eq: "model" } } }
     ) {
       totalCount
       edges {
