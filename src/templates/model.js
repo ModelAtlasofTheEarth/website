@@ -141,13 +141,13 @@ const ModelTemplate = ({
               <section id="publication" className="model-page">
                 <h2>Publication</h2>
                 {
-                  publication.DOI &&
+                  publication.doi &&
                   <BadgeDoi
-                    doi={publication.DOI}
+                    doi={publication.doi}
                     style={{marginBottom: "10px"}}
                   />
                 }
-                <Citation data={publication}/>
+                <Citation data={publication.doi}/>
               </section>
             }
 
@@ -413,21 +413,11 @@ export const pageQuery = graphql`
           }
         }
         associated_publication {
-          DOI
-          URL
-          author {
-            given
-            family
-            sequence
-          }
-          container_title
-          issue
-          issued {
-            date_parts
-          }
           title
-          type
-          volume
+          journal
+          publisher
+          doi
+          url
         }
         authors {
           name
