@@ -243,10 +243,9 @@ a {
 }
 
 .contribute-box {
-  position: absolute;
   top: 0;
   left: 0;
-  width: 800px;
+  width: 1000px;
   height: 600px;
   background-color: rgba(244, 244, 244, 1); /* Adjust the background color and opacity */
   justify-content: center;
@@ -254,8 +253,8 @@ a {
 }
 
 @media (max-width: 1000px) {
-  contribute-box {
-    width: 40px; 
+  .contribute-box {
+    width: 800px; 
   }
 }
 
@@ -288,4 +287,18 @@ a {
   box-sizing: border-box;
   transform-style: inherit;
 
+}
+
+.be-our-mate {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+
+@media (max-width: 800px) {
+  .be-our-mate {
+    flex-direction: column;
+  }
 }
