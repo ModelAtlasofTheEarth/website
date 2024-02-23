@@ -63,11 +63,11 @@ authors:
     ORCID: 0000-0003-3685-174X
     affiliation: Australian National University, Canberra, ACT, AU
 associated_publication:
-  title: The flexural isostatic response of climatically driven sea-level changes on continental-scale deltas
-  journal: EGUsphere
+  title: Flexural isostatic response of continental-scale deltas to climatically driven sea level changes
+  journal: Earth Surface Dynamics
   publisher: EGU
-  doi: 10.5194/egusphere-2023-53
-  url: http://dx.doi.org/10.5194/egusphere-2023-53
+  doi: 10.5194/esurf-12-301-2024
+  url: https://doi.org/10.5194/esurf-12-301-2024
 compute_info:
   computer_name:
   organisation:
