@@ -137,17 +137,17 @@ const ModelTemplate = ({
             </section>
 
             {
-              publication &&
+              publication.html &&
               <section id="publication" className="model-page">
                 <h2>Publication</h2>
                 {
-                  publication.DOI &&
+                  publication.doi &&
                   <BadgeDoi
-                    doi={publication.DOI}
+                    doi={publication.doi}
                     style={{marginBottom: "10px"}}
                   />
                 }
-                <Citation data={publication}/>
+                <Citation html={publication.html}/>
               </section>
             }
 
@@ -384,7 +384,7 @@ const ModelsPage = ({ data }) => {
         model_files={post.frontmatter.model_files}
         model_setup_info={post.frontmatter.model_setup_info}
         model_setup={post.frontmatter.images.model_setup}
-        publication={post.frontmatter.associated_publication}
+        publication={post.childCitation}
         research_tags={post.frontmatter.research_tags}
         title={post.frontmatter.title}
         slug={post.frontmatter.slug}
@@ -403,6 +403,10 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      childCitation {
+        html
+        doi
+      }
       frontmatter {
         abstract
         slug
@@ -411,23 +415,6 @@ export const pageQuery = graphql`
           src {
             publicURL
           }
-        }
-        associated_publication {
-          DOI
-          URL
-          author {
-            given
-            family
-            sequence
-          }
-          container_title
-          issue
-          issued {
-            date_parts
-          }
-          title
-          type
-          volume
         }
         authors {
           name

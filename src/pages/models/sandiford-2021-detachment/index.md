@@ -45,36 +45,11 @@ authors:
     ORCID: 0000-0002-3170-3935
     affiliation: Institute for Marine and Antarctic Studies University of Tasmania  Hobart TAS Australia
 associated_publication:
-  DOI: 10.1029/2021gc009681
-  URL: http://dx.doi.org/10.1029/2021gc009681
-  author:
-    - family: Sandiford
-      given: Dan
-      sequence: first
-    - family: Brune
-      given: Sascha
-      sequence: additional
-    - family: Glerum
-      given: Anne
-      sequence: additional
-    - family: Naliboff
-      given: John
-      sequence: additional
-    - family: Whittaker
-      given: Joanne M.
-      sequence: additional
-  container_title:
-    - Geochemistry, Geophysics, Geosystems
-  issue: '4'
-  issued:
-    date_parts:
-      - - 2021
-        - 4
-  title:
-    - 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block Rotation
-      and Apparent Unbending'
-  type: journal-article
-  volume: '22'
+  title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block Rotation and Apparent Unbending'
+  journal: Geochemistry, Geophysics, Geosystems
+  publisher: American Geophysical Union
+  doi: 10.1029/2021gc009681
+  url: http://dx.doi.org/10.1029/2021gc009681
 compute_info:
   computer_name: LISE
   organisation: Nationales Hochleistungsrechnen – NHR

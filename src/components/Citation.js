@@ -11,7 +11,7 @@ class Citation extends React.Component {
     } = this.props
     const __html = (
       html
-      ? html
+      ? replaceDois({ html: html })
       : getHtml(data)
     )
     return (
@@ -50,7 +50,7 @@ const cleanData = (data) => {
 
 // Taken from gatsby-source-publications
 // https://github.com/bacor/gatsby-source-publications/blob/main/gatsby-node.mjs#L12
-function replaceDois({ html, style }) {
+function replaceDois({ html, style = "apa" }) {
   if (style === "apa") {
     const regex = /(https\:\/\/doi\.org\/([^<]+)\<\/div\>)/gm;
     const match = html.match(regex);
