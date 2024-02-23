@@ -2,7 +2,9 @@ const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const fs = require("fs")
-//const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+const Cite = require("citation-js")
+require("@citation-js/plugin-csl")
+require("@citation-js/plugin-doi")
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
@@ -176,9 +178,33 @@ exports.createPages = ({ actions, graphql }) => {
   })
 }
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-  //fmImagesToRelative(node) // convert image paths for gatsby images
+exports.onCreateNode = ({
+  node,
+  actions,
+  getNode,
+  createNodeId,
+  createContentDigest,
+}) => {
+  const {
+    createNode,
+    createNodeField,
+    createParentChildLink,
+  } = actions
+
+  const transformObject = (obj, id, type) => {
+    const childNode = {
+      ...obj,
+      id,
+      children: [],
+      parent: node.id,
+      internal: {
+        contentDigest: createContentDigest(obj),
+        type,
+      }
+    }
+    createNode(childNode)
+    createParentChildLink({ parent: node, child: childNode })
+  }
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
@@ -187,7 +213,23 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value,
     })
+
+    const doi = node.frontmatter.associated_publication?.doi
+    if (doi) {
+      const citation = new Cite(doi)
+      const html = citation.format("bibliography", {format: "html", style: "apa"})
+      transformObject(
+        {
+          html,
+          doi,
+          data: citation.data[0]
+        },
+        citation.id ? citation.id : createNodeId(`${node.id} citation`),
+        _.upperFirst(_.camelCase(`citation`))
+      )
+    }
   }
+
   if (node.internal.type === `File`) {
     fs.readFile(node.absolutePath, undefined, (_err, buf) => {
       createNodeField({ node, name: `content`, value: buf.toString()});

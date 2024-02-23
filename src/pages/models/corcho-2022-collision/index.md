@@ -50,7 +50,7 @@ authors:
     affiliation: Research School of Earth Sciences, Australian National University
 associated_publication:
   title: The Role of Lithospheric‐Deep Mantle Interactions on the Style and Stress Evolution of Arc‐Continent Collision
-  publisher: Americal Geophysical Union
+  publisher: American Geophysical Union
   journal: Geochemistry, Geophysics, Geosystems
   doi: 10.1029/2022gc010386
   url: http://dx.doi.org/10.1029/2022gc010386
