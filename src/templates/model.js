@@ -43,6 +43,7 @@ const ModelTemplate = ({
   research_tags,
   title,
   slug,
+  doi,
 }) => {
   const PostContent = contentComponent || Content
   const dataset_url = (
@@ -132,9 +133,11 @@ const ModelTemplate = ({
 
           <TabPanel key="overview">
             <section id="abstract" className="model-page">
-              <h2>Abstract</h2>
+              <h2>Description</h2>
               <p>{abstract}</p>
             </section>
+
+
 
             {
               publication &&
@@ -174,6 +177,33 @@ const ModelTemplate = ({
                 }
               </section>
             }
+
+
+            {
+              doi &&
+              <section id="metadata" className="model-page">
+                <h2>Metadata & citation</h2>
+                {
+                  doi &&
+                  <BadgeDoi
+                    doi={doi}
+                    style={{marginBottom: "10px"}}
+                  />
+                }
+                <Citation data={doi}/>
+                {
+                  licence_content &&
+                  <ReadMore
+                    openHeader="Hide metadata"
+                    closedHeader="Show metadata"
+                  >
+                    <div className="licence-content">{licence_content}</div>
+                  </ReadMore>
+                }
+              </section>
+            }
+
+
 
             <section id="licence" className="model-page">
               <h2>Licence</h2>
@@ -388,6 +418,7 @@ const ModelsPage = ({ data }) => {
         research_tags={post.frontmatter.research_tags}
         title={post.frontmatter.title}
         slug={post.frontmatter.slug}
+        doi={post.frontmatter.doi}
       />
     </Layout>
   )
@@ -406,6 +437,7 @@ export const pageQuery = graphql`
       frontmatter {
         abstract
         slug
+        doi
         animations {
           caption
           src {

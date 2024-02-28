@@ -10,6 +10,7 @@ for_codes:
   - 0406
   - 040601
 status: completed
+doi: 10.5194/egusphere-2023-53
 software:
   - name: Badlands
     doi: 10.5281/zenodo.1069573
