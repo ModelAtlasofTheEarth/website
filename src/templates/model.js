@@ -114,6 +114,15 @@ const ModelTemplate = ({
           <p className="model-page-header">
             <b>Upload date:</b>{" "}{date}
           </p>
+          <p>
+            <BadgeDoi
+              doi={"Pending"}
+              style={{
+                marginBottom: "10px",
+                fontSize: "1.0em"
+              }}
+            />
+          </p>
         </div>
 
         <Tabs className="model-page">
@@ -131,6 +140,15 @@ const ModelTemplate = ({
           </TabList>
 
           <TabPanel key="overview">
+            <section id="model-doi" className="model-page">
+              <BadgeDoi
+                doi={"Pending"}
+                style={{
+                  marginBottom: "10px",
+                  fontSize: "1.0em"
+                }}
+              />
+            </section>
             <section id="abstract" className="model-page">
               <h2>Abstract</h2>
               <p>{abstract}</p>
