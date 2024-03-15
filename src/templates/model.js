@@ -33,6 +33,7 @@ const ModelTemplate = ({
   contributor,
   dataset,
   date,
+  doi,
   graphic_abstract,
   landing_image,
   licence,
@@ -116,10 +117,12 @@ const ModelTemplate = ({
           </p>
           <p>
             <BadgeDoi
-              doi={"Pending"}
+              doi={
+                doi || "Pending"
+              }
               style={{
                 marginBottom: "10px",
-                fontSize: "1.0em"
+                fontSize: "0.9em"
               }}
             />
           </p>
@@ -140,15 +143,6 @@ const ModelTemplate = ({
           </TabList>
 
           <TabPanel key="overview">
-            <section id="model-doi" className="model-page">
-              <BadgeDoi
-                doi={"Pending"}
-                style={{
-                  marginBottom: "10px",
-                  fontSize: "1.0em"
-                }}
-              />
-            </section>
             <section id="abstract" className="model-page">
               <h2>Abstract</h2>
               <p>{abstract}</p>
@@ -396,6 +390,7 @@ const ModelsPage = ({ data }) => {
         contributor={post.frontmatter.contributor}
         dataset={post.frontmatter.dataset}
         date={post.frontmatter.date}
+        doi={post.frontmatter.doi}
         graphic_abstract={post.frontmatter.images.graphic_abstract}
         landing_image={post.frontmatter.images.landing_image}
         licence={post.frontmatter.licence}
@@ -457,6 +452,7 @@ export const pageQuery = graphql`
           notes
         }
         date(formatString: "MMMM DD, YYYY")
+        doi
         for_codes
         grants_funders {
           funder_name
