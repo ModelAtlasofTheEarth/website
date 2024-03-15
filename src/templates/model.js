@@ -258,18 +258,21 @@ const ModelTemplate = ({
             }
             {
               compute_info?.computer_name && <>
+                <p>
+                  This model was originally run on {
+                    compute_info?.url ?
+                    <a href={compute_info.url}>{compute_info.computer_name}</a>
+                    : compute_info.computer_name
+                  }
+                  {
+                    compute_info?.organisation ?
+                    ` (${compute_info.organisation}).`
+                    : "."
+                  }
+                </p>
                 {
-                  compute_info?.computer_name && <p>
-                    This model was originally run on {
-                      compute_info?.url ?
-                      <a href={compute_info.url}>{compute_info.computer_name}</a>
-                      : compute_info.computer_name
-                    }
-                    {
-                      compute_info?.organisation ?
-                      ` (${compute_info.organisation}).`
-                      : "."
-                    }
+                  compute_info?.doi && <p>
+                    <BadgeDoi doi={compute_info.doi}/>
                   </p>
                 }
               </>
@@ -445,6 +448,7 @@ export const pageQuery = graphql`
         }
         compute_info {
           computer_name
+          doi
           organisation
           url
         }
