@@ -27,6 +27,7 @@ const ModelTemplate = ({
   abstract,
   animations,
   authors,
+  compute_info,
   compute_tags,
   content,
   contentComponent,
@@ -242,26 +243,48 @@ const ModelTemplate = ({
           </TabPanel>
           <TabPanel key="model-files">
 
-         <h2>Model code</h2>
-         <p>
-         Model code will be added to the <strong>{slug}</strong> model, hosted as part of the M@TE collection on  <a href="https://geonetwork.nci.org.au"> NCI GeoNetwork</a>  (from early 2024)
-         </p>
+            <h2>Model code</h2>
+            <p>
+              Model code will be added to the <strong>{slug}</strong> model,
+              hosted as part of the M@TE collection on{" "}
+              <a href="https://geonetwork.nci.org.au">NCI GeoNetwork</a> (from early 2024).
+            </p>
             {
               model_files?.url &&
               <p>
-                A preliminary version of the model code can be downloaded accessed <a href={model_files.url}> here</a>
+                A preliminary version of the model code can be accessed{" "}
+                <a href={model_files.url}>here</a>.
               </p>
             }
+            {
+              compute_info?.computer_name && <>
+                <p>
+                  This model was originally run on {
+                    compute_info?.url ?
+                    <a href={compute_info.url}>{compute_info.computer_name}</a>
+                    : compute_info.computer_name
+                  }
+                  {
+                    compute_info?.organisation ?
+                    ` (${compute_info.organisation}).`
+                    : "."
+                  }
+                </p>
+                {
+                  compute_info?.doi && <p>
+                    <BadgeDoi doi={compute_info.doi}/>
+                  </p>
+                }
+              </>
+            }
 
-            {/*
             {
               model_files?.notes &&
-              <div>
+              <>
                 <h3>Notes on model files</h3>
                 <p>{model_files.notes}</p>
-              </div>
+              </>
             }
-          */}
 
           </TabPanel>
           <TabPanel key="model-outputs">
@@ -372,6 +395,7 @@ const ModelsPage = ({ data }) => {
         abstract={post.frontmatter.abstract}
         animations={post.frontmatter.animations}
         authors={post.frontmatter.authors}
+        compute_info={post.frontmatter.compute_info}
         compute_tags={post.frontmatter.compute_tags}
         content={post.html}
         contentComponent={HTMLContent}
@@ -424,6 +448,7 @@ export const pageQuery = graphql`
         }
         compute_info {
           computer_name
+          doi
           organisation
           url
         }

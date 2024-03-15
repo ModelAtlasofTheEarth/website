@@ -53,7 +53,7 @@ associated_publication:
 compute_info:
   computer_name: LISE
   organisation: Nationales Hochleistungsrechnen – NHR
-  doi:
+  doi: ""
   url: https://nhr.zib.de
 research_tags:
   - tectonics
