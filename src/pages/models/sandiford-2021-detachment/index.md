@@ -9,6 +9,7 @@ for_codes:
   - 370604
 status: completed
 doi: ""
+metadataFile: ./ro-crate-metadata.json
 software:
   - name: ASPECT
     doi: 10.5281/zenodo.6903424
