@@ -34,6 +34,7 @@ const ModelTemplate = ({
   contributor,
   dataset,
   date,
+  doi,
   graphic_abstract,
   landing_image,
   licence,
@@ -114,6 +115,17 @@ const ModelTemplate = ({
           </p>
           <p className="model-page-header">
             <b>Upload date:</b>{" "}{date}
+          </p>
+          <p>
+            <BadgeDoi
+              doi={
+                doi || "Pending"
+              }
+              style={{
+                marginBottom: "10px",
+                fontSize: "0.9em"
+              }}
+            />
           </p>
         </div>
 
@@ -402,6 +414,7 @@ const ModelsPage = ({ data }) => {
         contributor={post.frontmatter.contributor}
         dataset={post.frontmatter.dataset}
         date={post.frontmatter.date}
+        doi={post.frontmatter.doi}
         graphic_abstract={post.frontmatter.images.graphic_abstract}
         landing_image={post.frontmatter.images.landing_image}
         licence={post.frontmatter.licence}
@@ -464,6 +477,7 @@ export const pageQuery = graphql`
           notes
         }
         date(formatString: "MMMM DD, YYYY")
+        doi
         for_codes
         grants_funders {
           funder_name
