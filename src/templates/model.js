@@ -204,7 +204,7 @@ const ModelTemplate = ({
                     openHeader="Hide metadata"
                     closedHeader="Show metadata"
                   >
-                    <div className="licence-content">
+                    <div className="read-more-content">
                       <pre>
                         {
                           JSON.stringify(JSON.parse(metadataFile.fields.content),
@@ -242,7 +242,7 @@ const ModelTemplate = ({
                   openHeader="Hide licence"
                   closedHeader="Show licence"
                 >
-                  <div className="licence-content">{licence_content}</div>
+                  <div className="read-more-content">{licence_content}</div>
                 </ReadMore>
               }
             </section>
