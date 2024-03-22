@@ -1,6 +1,6 @@
 ---
 templateKey: model
-slug: sandiford_2021_detachment-1
+slug: sandiford_2021_detachment
 title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block
   Rotation and Apparent Unbending'
 date: '2024-03-22T01:05:23.000Z'
@@ -11,21 +11,22 @@ status:
 doi: ''
 software:
   - name: 'geodynamics/aspect: ASPECT 2.5.0'
-    doi: https://doi.org/10.5281/zenodo.8200213
+    doi: 10.5281/zenodo.8200213
     url_source: ''
 licence:
   licence_url: https://creativecommons.org/licenses/by/4.0/legalcode
   licence_image: ../../../img/licence/by.png
   description: Creative Commons Attribution 4.0 International
-  licence_file: ''
+  licence_file: ./licence.txt
+  name: CC BY 4.0
 submitter:
   name: Dan
   family_name: Sandiford
-  ORCID: https://orcid.org/0000-0002-2207-6837
+  ORCID: 0000-0002-2207-6837
 associated_publication:
   authors:
     - '@type': Person
-      '@id': http://orcid.org/0000-0002-2207-6837
+      '@id': 0000-0002-2207-6837
       givenName: Dan
       familyName: Sandiford
       affiliation:
@@ -36,7 +37,7 @@ associated_publication:
           name: Helmholtz Centre Potsdam—German Research Centre for Geosciences (GFZ)  Potsdam
             Germany
     - '@type': Person
-      '@id': http://orcid.org/0000-0003-4985-1810
+      '@id': 0000-0003-4985-1810
       givenName: Sascha
       familyName: Brune
       affiliation:
@@ -46,7 +47,7 @@ associated_publication:
         - '@type': Organization
           name: Institute of Geosciences University of Potsdam  Potsdam Germany
     - '@type': Person
-      '@id': http://orcid.org/0000-0002-9481-1749
+      '@id': 0000-0002-9481-1749
       givenName: Anne
       familyName: Glerum
       affiliation:
@@ -54,7 +55,7 @@ associated_publication:
           name: Helmholtz Centre Potsdam—German Research Centre for Geosciences (GFZ)  Potsdam
             Germany
     - '@type': Person
-      '@id': http://orcid.org/0000-0002-5697-7203
+      '@id': 0000-0002-5697-7203
       givenName: John
       familyName: Naliboff
       affiliation:
@@ -62,7 +63,7 @@ associated_publication:
           name: Department of Earth and Environmental Science New Mexico Institute
             of Mining and Technology  Socorro NM USA
     - '@type': Person
-      '@id': http://orcid.org/0000-0002-3170-3935
+      '@id': 0000-0002-3170-3935
       givenName: Joanne M.
       familyName: Whittaker
       affiliation:
@@ -71,7 +72,7 @@ associated_publication:
             TAS Australia
   title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block
     Rotation and Apparent Unbending'
-  doi: http://dx.doi.org/10.1029/2021gc009681
+  doi: 10.1029/2021gc009681
   url: ''
   journal: Geochemistry, Geophysics, Geosystems
   publisher: American Geophysical Union (AGU)
@@ -80,7 +81,7 @@ compute_info:
   name: Gadi Supercomputer
   organisation: National Computational Infrastructure
   url: https://pid.nci.org.au/doi/f5966_0057_9267_4579
-  doi: https://doi.org/10.25914/608bfd1838db2
+  doi: 10.25914/608bfd1838db2
 research_tags:
   - tectonics
   - faulting
@@ -119,9 +120,9 @@ images:
   model_setup:
     src: ./graphics/initialconds.png
     caption: Initial conditions, showing mesh refinement.
-animation:
-  src: animation.mp4
-  caption: Animation for alternative model showing vorticity.
+animations:
+  - src: ./graphics/animation.mp4
+    caption: Animation for alternative model showing vorticity.
 model_setup_info:
   url: ''
   summary: The domain is $400 \; \mathrm{km}$ wide and $100 \; \mathrm{km}$ deep,
@@ -177,5 +178,5 @@ authors:
 contributor:
   name: Dan
   family_name: Sandiford
-  ORCID: https://orcid.org/0000-0002-2207-6837
+  ORCID: 0000-0002-2207-6837
 ---
