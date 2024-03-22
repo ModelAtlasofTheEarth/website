@@ -63,12 +63,6 @@ class ContactPage extends React.Component {
 
         <div id="slide1" class="slide">
 
-            <div class="header3">
-                <h1>
-                  EarthByte Group
-                </h1>
-            </div>
-
           <div className="columns is-multiline bodytext">
             {posts &&
               posts.map(({ node: post }) => (
