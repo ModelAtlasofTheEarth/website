@@ -88,9 +88,6 @@ images:
   model_setup:
     src: ./graphics/figure_2.png
     caption:
-animations:
-  - src:
-    caption:
 model_setup_info:
   url:
   summary: |
