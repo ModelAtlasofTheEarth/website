@@ -122,7 +122,7 @@ images:
     src: ./graphics/initialconds.png
     caption: Initial conditions, showing mesh refinement.
 animation:
-  src: animation.mp4
+  src: ./graphics/animation.mp4
   caption: Animation for alternative model showing vorticity.
 model_setup_info:
   url: ''

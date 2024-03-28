@@ -17,19 +17,20 @@ class Animation extends React.Component {
     } else {
       // Video
       internalElement = (
-        <ReactPlayer
+        <video
           className="react-player"
-          url={src}
-          playing={playing}
-          loop={loop}
-          width="100%"
-          height="100%"
-          {...this.props}
+          src={src}
+          preload="auto"
+          width="fit-content"
+          height="fit-content"
+          autoPlay
+          loop
+          muted
         />
       )
     }
 
-    return <div className="animation-container">{internalElement}</div>
+    return <div className="animation-container" alt={alt}>{internalElement}</div>
   }
 }
 

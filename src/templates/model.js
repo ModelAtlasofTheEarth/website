@@ -25,7 +25,7 @@ import rehypeMathjax from "rehype-mathjax/svg"
 
 const ModelTemplate = ({
   abstract,
-  animations,
+  animation,
   authors,
   compute_info,
   compute_tags,
@@ -58,11 +58,6 @@ const ModelTemplate = ({
   const author_full_names = authors.map((author) => (
     author.name + " " + author.family_name
   ))
-  const animations_found = (
-    animations &&
-    animations.length > 0 &&
-    animations[0].src?.publicURL
-  )
   let licence_content = null
   if (licence.licence_file?.fields?.content) {
     licence_content = licence.licence_file.fields.content
@@ -79,14 +74,14 @@ const ModelTemplate = ({
             {title}
           </h1>
           {
-            animations_found &&
+            animation?.src?.publicURL &&
             <Animation
-              src={animations[0].src.publicURL}
-              alt={animations[0].caption || "Animation | " + title}
+              src={animation.src.publicURL}
+              alt={animation.caption || "Animation | " + title}
             />
           }
           {
-            (!animations_found) &&
+            (!(animation?.src?.publicURL)) &&
             <div className="animation-container">
               <PreviewCompatibleImage
                 imageInfo={{
@@ -377,30 +372,6 @@ const ModelTemplate = ({
                 </p>
               )
             }
-            {/*
-            {
-              animations_found &&
-              <>
-                <h3 style={{paddingBottom: "30px"}}>Animations</h3>
-                {
-                  animations.map((animation, i) => (
-                    <p>
-                      <Animation
-                        src={animation.src.publicURL}
-                        alt={animation.caption || "Animation | " + title}
-                        key={i}
-                        controls
-                      />
-                      {
-                        animation.caption &&
-                        <p>{animation.caption}</p>
-                      }
-                    </p>
-                  ))
-                }
-              </>
-            }
-            */}
           </TabPanel>
         </Tabs>
 
@@ -423,7 +394,7 @@ ModelTemplate.propTypes = {
   uploader: PropTypes.string,
   email: PropTypes.string,
   dataset: PropTypes.objectOf(PropTypes.string),
-  animations: PropTypes.arrayOf(PropTypes.object),
+  animation: PropTypes.object,
   input_files: PropTypes.objectOf(PropTypes.string),
   postprocessing_files: PropTypes.objectOf(PropTypes.string),
 }
@@ -435,7 +406,7 @@ const ModelsPage = ({ data }) => {
     <Layout>
       <ModelTemplate
         abstract={post.frontmatter.abstract}
-        animations={post.frontmatter.animations}
+        animation={post.frontmatter.animation}
         authors={post.frontmatter.authors}
         compute_info={post.frontmatter.compute_info}
         compute_tags={post.frontmatter.compute_tags}
@@ -478,7 +449,7 @@ export const pageQuery = graphql`
       frontmatter {
         abstract
         slug
-        animations {
+        animation {
           caption
           src {
             publicURL
