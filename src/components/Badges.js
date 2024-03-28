@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { kebabCase } from "lodash"
 
-import { getAuthorSlug } from "./ModelList"
+import { getAuthorSlug, cleanDoi } from "./ModelList"
 
 const BadgeAuthor = ({ author, style }) => {
   const fullName = `${author.name} ${author.family_name}`
@@ -15,6 +15,7 @@ const BadgeAuthor = ({ author, style }) => {
 }
 
 const BadgeDoi = ({ doi, style }) => {
+  doi = cleanDoi(doi)
   return (
     <Link to={`https://doi.org/${doi}`}>
       <span className="hover-shadow hover-opacity">
