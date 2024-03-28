@@ -15,10 +15,11 @@ software:
     doi: https://doi.org/10.5281/zenodo.8200213
     url_source: ''
 licence:
+  name: CC BY 4.0
   licence_url: https://creativecommons.org/licenses/by/4.0/legalcode
   licence_image: ../../../img/licence/by.png
   description: Creative Commons Attribution 4.0 International
-  licence_file: ''
+  licence_file: ./licence.txt
 submitter:
   name: Dan
   family_name: Sandiford
