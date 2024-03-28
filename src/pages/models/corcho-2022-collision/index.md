@@ -56,7 +56,7 @@ associated_publication:
   doi: 10.1029/2022gc010386
   url: http://dx.doi.org/10.1029/2022gc010386
 compute_info:
-  computer_name: Nectar Research Cloud
+  name: Nectar Research Cloud
   organisation: Australian Research Data Commons
   url: https://ardc.edu.au/services/ardc-nectar-research-cloud/
 research_tags:

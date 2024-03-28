@@ -61,7 +61,7 @@ associated_publication:
   doi: 10.1038/s41598-022-08384-w
   url: http://dx.doi.org/10.1038/s41598-022-08384-w
 compute_info:
-  computer_name:
+  name:
   organisation:
   doi:
   url:

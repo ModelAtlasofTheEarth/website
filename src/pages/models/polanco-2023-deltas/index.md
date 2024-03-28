@@ -70,7 +70,7 @@ associated_publication:
   doi: 10.5194/esurf-12-301-2024
   url: https://doi.org/10.5194/esurf-12-301-2024
 compute_info:
-  computer_name:
+  name:
   organisation:
   doi:
   url:

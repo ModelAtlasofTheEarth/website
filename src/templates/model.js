@@ -294,12 +294,12 @@ const ModelTemplate = ({
               </p>
             }
             {
-              compute_info?.computer_name && <>
+              compute_info?.name && <>
                 <p>
                   This model was originally run on {
                     compute_info?.url ?
-                    <a href={compute_info.url}>{compute_info.computer_name}</a>
-                    : compute_info.computer_name
+                    <a href={compute_info.url}>{compute_info.name}</a>
+                    : compute_info.name
                   }
                   {
                     compute_info?.organisation ?
@@ -462,8 +462,8 @@ export const pageQuery = graphql`
           ORCID
         }
         compute_info {
-          computer_name
           doi
+          name
           organisation
           url
         }
