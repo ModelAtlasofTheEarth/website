@@ -15,7 +15,7 @@ import Citation from "../components/Citation"
 import Content, { HTMLContent } from "../components/Content"
 import PageHead from "../components/Head"
 import Layout from "../components/Layout"
-import { getAuthorSlug } from "../components/ModelList"
+import { getAuthorSlug, cleanDoi } from "../components/ModelList"
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage"
 import ReadMore from "../components/ReadMore"
 
@@ -49,7 +49,7 @@ const ModelTemplate = ({
   const PostContent = contentComponent || Content
   const dataset_url = (
     (!dataset.url && dataset.doi)
-    ? "https://doi.org/" + dataset.doi
+    ? "https://doi.org/" + cleanDoi(dataset.doi)
     : dataset.url
   )
   const all_tags = research_tags.concat(compute_tags)
