@@ -38,6 +38,7 @@ const ModelTemplate = ({
   graphic_abstract,
   landing_image,
   licence,
+  metadataFile,
   model_files,
   model_setup,
   model_setup_info,
@@ -188,16 +189,45 @@ const ModelTemplate = ({
               </section>
             }
 
+            {
+              metadataFile?.publicURL &&
+              <section id="metadata" className="model-page">
+                <h2>Model metadata</h2>
+                <p>
+                  <a href={metadataFile?.publicURL} download>
+                    Download model metadata in RO-Crate format
+                  </a>
+                </p>
+                {
+                  metadataFile?.fields?.content &&
+                  <ReadMore
+                    openHeader="Hide metadata"
+                    closedHeader="Show metadata"
+                  >
+                    <div className="read-more-content">
+                      <pre>
+                        {
+                          JSON.stringify(JSON.parse(metadataFile.fields.content),
+                                         null,
+                                         2)
+                        }
+                      </pre>
+                    </div>
+                  </ReadMore>
+                }
+              </section>
+            }
+
             <section id="licence" className="model-page">
               <h2>Licence</h2>
               <a href={licence.licence_url}>
-              <PreviewCompatibleImage
-                imageInfo={{
-                  image: licence.licence_image,
-                  alt: licence.description || licence.name
-                }}
-                style={{ maxWidth: "100px" }}
-              />
+                <PreviewCompatibleImage
+                  imageInfo={{
+                    image: licence.licence_image,
+                    alt: licence.description || licence.name
+                  }}
+                  style={{ maxWidth: "100px" }}
+                />
               </a>
               <p>
                 <a href={licence.licence_url}>{licence.name}</a>
@@ -212,7 +242,7 @@ const ModelTemplate = ({
                   openHeader="Hide licence"
                   closedHeader="Show licence"
                 >
-                  <div className="licence-content">{licence_content}</div>
+                  <div className="read-more-content">{licence_content}</div>
                 </ReadMore>
               }
             </section>
@@ -418,6 +448,7 @@ const ModelsPage = ({ data }) => {
         graphic_abstract={post.frontmatter.images.graphic_abstract}
         landing_image={post.frontmatter.images.landing_image}
         licence={post.frontmatter.licence}
+        metadataFile={post.frontmatter.metadataFile}
         model_files={post.frontmatter.model_files}
         model_setup_info={post.frontmatter.model_setup_info}
         model_setup={post.frontmatter.images.model_setup}
@@ -532,6 +563,12 @@ export const pageQuery = graphql`
           }
           licence_url
           name
+        }
+        metadataFile {
+          fields {
+            content
+          }
+          publicURL
         }
         model_files {
           url

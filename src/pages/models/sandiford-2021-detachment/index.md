@@ -9,6 +9,7 @@ for_codes:
   - 370401
 status:
 doi: ''
+metadataFile: ./ro-crate-metadata.json
 software:
   - name: 'geodynamics/aspect: ASPECT 2.5.0'
     doi: https://doi.org/10.5281/zenodo.8200213
