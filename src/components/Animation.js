@@ -1,5 +1,4 @@
 import React from "react"
-import ReactPlayer from "react-player/file"
 
 class Animation extends React.Component {
   render() {
@@ -18,7 +17,7 @@ class Animation extends React.Component {
       // Video
       internalElement = (
         <video
-          className="react-player"
+          className="animation"
           src={src}
           preload="auto"
           width="fit-content"
