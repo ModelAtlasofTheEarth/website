@@ -47,7 +47,7 @@ class TagRoute extends React.Component {
             key={post.node.fields.slug}
             slug={post.node.fields.slug}
             title={post.node.frontmatter.title}
-            author={post.node.frontmatter.contributor}
+            author={post.node.frontmatter.submitter}
             date={post.node.frontmatter.date}
             tags={post_tags}
             landing_image={post.node.frontmatter.images.landing_image}
@@ -117,10 +117,6 @@ export const tagPageQuery = graphql`
           }
           frontmatter {
             compute_tags
-            contributor {
-              name
-              family_name
-            }
             date(formatString: "MMMM DD, YYYY")
             images {
               landing_image {
@@ -138,6 +134,10 @@ export const tagPageQuery = graphql`
             research_tags
             software {
               name
+            }
+            submitter {
+              name
+              family_name
             }
             tags
             title

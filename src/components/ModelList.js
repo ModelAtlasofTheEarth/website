@@ -25,7 +25,7 @@ const ModelList = ({ posts }) => {
           <ModelListItem
             slug={post.fields.slug}
             title={post.frontmatter.title}
-            author={post.frontmatter.contributor}
+            author={post.frontmatter.submitter}
             date={post.frontmatter.date}
             tags={post.frontmatter.research_tags.concat(post.frontmatter.compute_tags)}
             software={post.frontmatter.software}
@@ -41,7 +41,7 @@ const ModelList = ({ posts }) => {
 const isValidModelListItem = (post) => (
   post.fields.slug &&
   post.frontmatter.title &&
-  post.frontmatter.contributor?.name &&
+  post.frontmatter.submitter?.name &&
   post.frontmatter.date &&
   // post.frontmatter.tags &&
   post.frontmatter.images.landing_image

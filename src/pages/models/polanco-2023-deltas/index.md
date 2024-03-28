@@ -21,7 +21,7 @@ licence:
   licence_image: ../../../img/licence/by.png
   description: CC BY 4.0 DEED Attribution 4.0 International
   licence_file: ./licence.txt
-contributor:
+submitter:
   name: Sara
   family_name: Polanco
   ORCID: 0000-0002-1270-4377

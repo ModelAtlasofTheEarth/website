@@ -176,8 +176,4 @@ authors:
   - name: Joanne M.
     family_name: Whittaker
     ORCID: 0000-0002-3170-3935
-contributor:
-  name: Dan
-  family_name: Sandiford
-  ORCID: https://orcid.org/0000-0002-2207-6837
 ---

@@ -23,7 +23,7 @@ licence:
   licence_image: ../../../img/licence/by.png
   description: CC BY 4.0 DEED Attribution 4.0 International
   licence_file: ./licence.txt
-contributor:
+submitter:
   name: Ben
   family_name: Mather
   ORCID: 0000-0003-3566-1557

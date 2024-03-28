@@ -114,8 +114,8 @@ class ModelSearch extends Component {
       dataToSearch.addIndex(["frontmatter", "research_tags"])
     }
     if (indexByUploader) {
-      dataToSearch.addIndex(["frontmatter", "contributor", "name"])
-      dataToSearch.addIndex(["frontmatter", "contributor", "family_name"])
+      dataToSearch.addIndex(["frontmatter", "submitter", "name"])
+      dataToSearch.addIndex(["frontmatter", "submitter", "family_name"])
     }
     if (indexByAuthors) {
       dataToSearch.addIndex("author_names")

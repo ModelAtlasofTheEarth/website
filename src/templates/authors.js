@@ -71,11 +71,6 @@ export const authorPageQuery = graphql`
               ORCID
             }
             compute_tags
-            contributor {
-              name
-              family_name
-              ORCID
-            }
             date(formatString: "MMMM DD, YYYY")
             images {
               landing_image {
@@ -93,6 +88,11 @@ export const authorPageQuery = graphql`
             research_tags
             software {
               name
+            }
+            submitter {
+              name
+              family_name
+              ORCID
             }
             title
           }

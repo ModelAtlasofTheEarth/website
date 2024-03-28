@@ -31,7 +31,6 @@ const ModelTemplate = ({
   compute_tags,
   content,
   contentComponent,
-  contributor,
   dataset,
   date,
   doi,
@@ -46,6 +45,7 @@ const ModelTemplate = ({
   research_tags,
   title,
   slug,
+  submitter,
 }) => {
   const PostContent = contentComponent || Content
   const dataset_url = (
@@ -54,7 +54,7 @@ const ModelTemplate = ({
     : dataset.url
   )
   const all_tags = research_tags.concat(compute_tags)
-  const contributor_full_name = contributor.name + " " + contributor.family_name
+  const submitter_full_name = submitter.name + " " + submitter.family_name
   const author_full_names = authors.map((author) => (
     author.name + " " + author.family_name
   ))
@@ -107,10 +107,10 @@ const ModelTemplate = ({
             }
           </p>
           <p className="model-page-header">
-            <b>Uploaded by:</b>{" "}{contributor_full_name}
+            <b>Submitted by:</b>{" "}{submitter_full_name}
           </p>
           <p className="model-page-header">
-            <b>Upload date:</b>{" "}{date}
+            <b>Submission date:</b>{" "}{date}
           </p>
           <p>
             <BadgeDoi
@@ -391,7 +391,6 @@ ModelTemplate.propTypes = {
   date: PropTypes.string,
   abstract: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string),
-  uploader: PropTypes.string,
   email: PropTypes.string,
   dataset: PropTypes.objectOf(PropTypes.string),
   animation: PropTypes.object,
@@ -412,7 +411,6 @@ const ModelsPage = ({ data }) => {
         compute_tags={post.frontmatter.compute_tags}
         content={post.html}
         contentComponent={HTMLContent}
-        contributor={post.frontmatter.contributor}
         dataset={post.frontmatter.dataset}
         date={post.frontmatter.date}
         doi={post.frontmatter.doi}
@@ -427,6 +425,7 @@ const ModelsPage = ({ data }) => {
         research_tags={post.frontmatter.research_tags}
         title={post.frontmatter.title}
         slug={post.frontmatter.slug}
+        submitter={post.frontmatter.submitter}
       />
     </Layout>
   )
@@ -468,11 +467,6 @@ export const pageQuery = graphql`
           url
         }
         compute_tags
-        contributor {
-          name
-          family_name
-          affiliation
-        }
         dataset {
           url
           doi
@@ -554,6 +548,11 @@ export const pageQuery = graphql`
           name
           doi
           url_source
+        }
+        submitter {
+          name
+          family_name
+          affiliation
         }
         title
       }
