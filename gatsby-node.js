@@ -126,11 +126,18 @@ exports.createPages = ({ actions, graphql }) => {
     }
     authors = _.uniq(authors)
     for (const author of authors) {
-      const authorSlug = _.kebabCase(
-        author.ORCID ?
-        author.ORCID :
-        `${author.name} ${author.family_name}`
-      )
+      let orcid = author.ORCID
+      if (orcid) {
+        // Remove URL components if necessary
+        const orcid_split = orcid.toString().toLowerCase().split("/")
+        if (orcid_split[orcid_split.length - 1] === "") {
+          orcid_split.pop()
+        }
+        orcid = orcid_split.pop()
+      }
+      const authorSlug = _.kebabCase(orcid ?
+                                     orcid :
+                                     `${author.name} ${author.family_name}`)
       const authorPath = `/authors/${authorSlug}`
       createPage({
         path: authorPath,

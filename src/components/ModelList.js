@@ -155,27 +155,36 @@ const ModelCarouselItem = ({
   );  
 }
 
-const authorEqual = (author1, author2) => {
-  const useOrcid = author1.ORCID && author2.ORCID
-  if (useOrcid) {
-    return author1.ORCID == author2.ORCID
-  }
-  const name1 = `${author1.name} ${author1.full_name}`
-  const name2 = `${author2.name} ${author2.full_name}`
-  return name1 == name2
-}
+const authorEqual = (author1, author2) => (
+  getAuthorSlug(author1) === getAuthorSlug(author2)
+)
 
 const authorSort = (author1, author2) => (
   author1.family_name.localeCompare(author2.family_name)
 )
 
-const getAuthorSlug = (author) => (
-  kebabCase(
-    author.ORCID ?
-    author.ORCID :
-    `${author.name} ${author.family_name}`
-  )
-)
+const getAuthorSlug = (author) => {
+  let orcid = author.ORCID
+  return kebabCase(orcid ?
+                   cleanOrcid(orcid) :
+                   `${author.name} ${author.family_name}`)
+}
+
+const cleanOrcid = (orcid) => {
+  const orcid_split = orcid.toString().toLowerCase().split("/")
+  if (orcid_split[orcid_split.length - 1] === "") {
+    orcid_split.pop()
+  }
+  return orcid_split.pop()
+}
+
+const cleanDoi = (doi) => {
+  const doi_split = doi.toString().toLowerCase().split("/")
+  if (doi_split[doi_split.length - 1] === "") {
+    doi_split.pop()
+  }
+  return doi_split.slice(doi_split.length - 2).join("/")
+}
 
 export default ModelList
 export {
@@ -184,5 +193,7 @@ export {
   ModelCarouselItem,
   authorEqual,
   authorSort,
+  cleanDoi,
+  cleanOrcid,
   getAuthorSlug,
 }
