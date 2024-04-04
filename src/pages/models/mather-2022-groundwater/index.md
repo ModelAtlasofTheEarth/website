@@ -28,7 +28,7 @@ submitter:
   family_name: Mather
   ORCID: 0000-0003-3566-1557
   affiliation: University of Sydney
-authors:
+creators:
   - name: Ben
     family_name: Mather
     email: ben.mather@sydney.edu.au

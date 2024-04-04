@@ -20,12 +20,12 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
-              authors {
+              compute_tags
+              creators {
                 name
                 family_name
                 ORCID
               }
-              compute_tags
               date(formatString: "MMMM DD, YYYY")
               images {
                 landing_image {
@@ -113,20 +113,20 @@ exports.createPages = ({ actions, graphql }) => {
       })
     })
 
-    // Author pages:
-    let authors = []
+    // Creator pages:
+    let creators = []
     for (const edge of posts) {
-      if (_.get(edge, "node.frontmatter.authors")) {
-        for (const author of edge.node.frontmatter.authors) {
-          if (author?.name && author?.family_name) {
-            authors.push(author)
+      if (_.get(edge, "node.frontmatter.creators")) {
+        for (const creator of edge.node.frontmatter.creators) {
+          if (creator?.name && creator?.family_name) {
+            creators.push(creator)
           }
         }
       }
     }
-    authors = _.uniq(authors)
-    for (const author of authors) {
-      let orcid = author.ORCID
+    creators = _.uniq(creators)
+    for (const creator of creators) {
+      let orcid = creator.ORCID
       if (orcid) {
         // Remove URL components if necessary
         const orcid_split = orcid.toString().toLowerCase().split("/")
@@ -135,15 +135,15 @@ exports.createPages = ({ actions, graphql }) => {
         }
         orcid = orcid_split.pop()
       }
-      const authorSlug = _.kebabCase(orcid ?
+      const creatorSlug = _.kebabCase(orcid ?
                                      orcid :
-                                     `${author.name} ${author.family_name}`)
-      const authorPath = `/authors/${authorSlug}`
+                                     `${creator.name} ${creator.family_name}`)
+      const creatorPath = `/creators/${creatorSlug}`
       createPage({
-        path: authorPath,
-        component: path.resolve("src/templates/authors.js"),
+        path: creatorPath,
+        component: path.resolve("src/templates/creators.js"),
         context: {
-          author,
+          creator,
         }
       })
     }
@@ -169,7 +169,7 @@ exports.createPages = ({ actions, graphql }) => {
               TitleIndex: true,
               TagsIndex: true,
               UploaderIndex: true,
-              AuthorsIndex: true,
+              CreatorsIndex: true,
               AbstractIndex: true,
               SoftwareIndex: true,
               ContentIndex: true,

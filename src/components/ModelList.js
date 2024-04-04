@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react'
 import "./Carousel.css"
 
 import {
-  BadgeAuthor,
+  BadgeCreator,
   TagsList,
 } from "./Badges"
 
@@ -25,7 +25,7 @@ const ModelList = ({ posts }) => {
           <ModelListItem
             slug={post.fields.slug}
             title={post.frontmatter.title}
-            author={post.frontmatter.submitter}
+            creator={post.frontmatter.submitter}
             date={post.frontmatter.date}
             tags={post.frontmatter.research_tags.concat(post.frontmatter.compute_tags)}
             software={post.frontmatter.software}
@@ -50,7 +50,7 @@ const isValidModelListItem = (post) => (
 const ModelListItem = ({
   slug,
   title,
-  author,
+  creator,
   date,
   tags,
   software,
@@ -58,9 +58,9 @@ const ModelListItem = ({
 }) => {
   const landing_gatsby_image = getImage(landing_image.src)
   const full_name = (
-    author.family_name
-    ? author.name + " " + author.family_name
-    : author.name
+    creator.family_name
+    ? creator.name + " " + creator.family_name
+    : creator.name
   )
 
   return (
@@ -83,7 +83,7 @@ const ModelListItem = ({
           </Link>
           <p>
             <b>Uploaded by:</b>{" "}
-            <BadgeAuthor author={author}/>
+            <BadgeCreator creator={creator}/>
           </p>
           <p><b>Uploaded:</b> {date}</p>
           {
@@ -106,7 +106,7 @@ const ModelListItem = ({
 const ModelCarouselItem = ({
   slug,
   title,
-  author,
+  creator,
   date,
   tags,
   software,
@@ -114,9 +114,9 @@ const ModelCarouselItem = ({
 }) => {
   const landing_gatsby_image = getImage(landing_image.src)
   const full_name = (
-    author.family_name
-    ? author.name + " " + author.family_name
-    : author.name
+    creator.family_name
+    ? creator.name + " " + creator.family_name
+    : creator.name
   )
   return (
     <div className="grid">
@@ -137,7 +137,7 @@ const ModelCarouselItem = ({
           </h10>
           <div className="item__body">
             <Link to="#0">Uploaded by:</Link>{" "}
-            <BadgeAuthor author={author}/>
+            <BadgeCreator creator={creator}/>
             <p><Link to="#0">Uploaded:</Link> {date}</p>
             {
               software.name &&
@@ -155,19 +155,19 @@ const ModelCarouselItem = ({
   );  
 }
 
-const authorEqual = (author1, author2) => (
-  getAuthorSlug(author1) === getAuthorSlug(author2)
+const personEqual = (person1, person2) => (
+  getCreatorSlug(person1) === getCreatorSlug(person2)
 )
 
-const authorSort = (author1, author2) => (
-  author1.family_name.localeCompare(author2.family_name)
+const personSort = (person1, person2) => (
+  person1.family_name.localeCompare(person2.family_name)
 )
 
-const getAuthorSlug = (author) => {
-  let orcid = author.ORCID
+const getCreatorSlug = (creator) => {
+  let orcid = creator.ORCID
   return kebabCase(orcid ?
                    cleanOrcid(orcid) :
-                   `${author.name} ${author.family_name}`)
+                   `${creator.name} ${creator.family_name}`)
 }
 
 const cleanOrcid = (orcid) => {
@@ -191,9 +191,9 @@ export {
   ModelListItem,
   isValidModelListItem,
   ModelCarouselItem,
-  authorEqual,
-  authorSort,
+  personEqual,
+  personSort,
   cleanDoi,
   cleanOrcid,
-  getAuthorSlug,
+  getCreatorSlug,
 }

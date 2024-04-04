@@ -4,28 +4,28 @@ import PageHead from "../components/Head"
 import Layout from "../components/Layout"
 import ModelList from "../components/ModelList"
 
-class AuthorRoute extends React.Component {
+class CreatorRoute extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges;
-    const author = this.props.pageContext.author
-    const full_name = `${author.name} ${author.family_name}`
+    const creator = this.props.pageContext.creator
+    const full_name = `${creator.name} ${creator.family_name}`
 
-    const author_posts = posts.filter((post) => {
-      for (const post_author of post.node.frontmatter.authors) {
-        const post_author_name = (
-          post_author.name
+    const creator_posts = posts.filter((post) => {
+      for (const post_creator of post.node.frontmatter.creators) {
+        const post_creator_name = (
+          post_creator.name
           + " "
-          + post_author.family_name
+          + post_creator.family_name
         )
-        if (post_author_name === full_name) {
+        if (post_creator_name === full_name) {
           return true
         }
       }
       return false
     })
-    const totalCount = author_posts.length
+    const totalCount = creator_posts.length
 
-    const authorHeader = `${totalCount} post${
+    const creatorHeader = `${totalCount} post${
       totalCount === 1 ? "" : "s"
     } tagged with “${full_name}”`
 
@@ -37,10 +37,10 @@ class AuthorRoute extends React.Component {
               className="column is-10 is-offset-1"
               style={{ marginBottom: "6rem" }}
             >
-              <h3 className="title is-size-4 is-bold-light">{authorHeader}</h3>
-              <ModelList posts={author_posts}/>
+              <h3 className="title is-size-4 is-bold-light">{creatorHeader}</h3>
+              <ModelList posts={creator_posts}/>
               <p>
-                <Link to="/authors/">Browse all authors</Link>
+                <Link to="/creators/">Browse all creators</Link>
               </p>
             </div>
           </div>
@@ -50,14 +50,14 @@ class AuthorRoute extends React.Component {
   }
 }
 
-export default AuthorRoute
-export const Head = ({ pageContext }) => <PageHead title={pageContext.author}/>
+export default CreatorRoute
+export const Head = ({ pageContext }) => <PageHead title={pageContext.creator}/>
 
-export const authorPageQuery = graphql`
-  query AuthorPage {
+export const creatorPageQuery = graphql`
+  query CreatorPage {
     allMarkdownRemark(
       sort: {frontmatter: {date: DESC}}
-      filter: {frontmatter: {authors: {elemMatch: {name: {ne: null}}}}}
+      filter: {frontmatter: {creators: {elemMatch: {name: {ne: null}}}}}
     ) {
       edges {
         node {
@@ -65,12 +65,12 @@ export const authorPageQuery = graphql`
             slug
           }
           frontmatter {
-            authors {
+            compute_tags
+            creators {
               name
               family_name
               ORCID
             }
-            compute_tags
             date(formatString: "MMMM DD, YYYY")
             images {
               landing_image {

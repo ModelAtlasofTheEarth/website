@@ -7,7 +7,7 @@ import "react-tabs/style/react-tabs.css"
 
 import Animation from "../components/Animation"
 import {
-  BadgeAuthor,
+  BadgeCreator,
   BadgeDoi,
   TagsList,
 } from "../components/Badges"
@@ -15,7 +15,7 @@ import Citation from "../components/Citation"
 import Content, { HTMLContent } from "../components/Content"
 import PageHead from "../components/Head"
 import Layout from "../components/Layout"
-import { getAuthorSlug, cleanDoi } from "../components/ModelList"
+import { getCreatorSlug, cleanDoi } from "../components/ModelList"
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage"
 import ReadMore from "../components/ReadMore"
 
@@ -26,11 +26,11 @@ import rehypeMathjax from "rehype-mathjax/svg"
 const ModelTemplate = ({
   abstract,
   animation,
-  authors,
   compute_info,
   compute_tags,
   content,
   contentComponent,
+  creators,
   dataset,
   date,
   doi,
@@ -55,8 +55,8 @@ const ModelTemplate = ({
   )
   const all_tags = research_tags.concat(compute_tags)
   const submitter_full_name = submitter.name + " " + submitter.family_name
-  const author_full_names = authors.map((author) => (
-    author.name + " " + author.family_name
+  const creator_full_names = creators.map((creator) => (
+    creator.name + " " + creator.family_name
   ))
   let licence_content = null
   if (licence.licence_file?.fields?.content) {
@@ -92,15 +92,15 @@ const ModelTemplate = ({
             </div>
           }
           <p className="model-page-header">
-            <b>Authors:</b>{" "}
+            <b>Created by:</b>{" "}
             {
-              authors.map((author) => {
-                const authorSlug = getAuthorSlug(author)
+              creators.map((creator) => {
+                const creatorSlug = getCreatorSlug(creator)
                 return (
-                  <BadgeAuthor
-                    author={author}
+                  <BadgeCreator
+                    creator={creator}
                     style={{ fontSize: "20px" }}
-                    key={authorSlug}
+                    key={creatorSlug}
                   />
                 )
               })
@@ -406,11 +406,11 @@ const ModelsPage = ({ data }) => {
       <ModelTemplate
         abstract={post.frontmatter.abstract}
         animation={post.frontmatter.animation}
-        authors={post.frontmatter.authors}
         compute_info={post.frontmatter.compute_info}
         compute_tags={post.frontmatter.compute_tags}
         content={post.html}
         contentComponent={HTMLContent}
+        creators={post.frontmatter.creators}
         dataset={post.frontmatter.dataset}
         date={post.frontmatter.date}
         doi={post.frontmatter.doi}
@@ -454,12 +454,6 @@ export const pageQuery = graphql`
             publicURL
           }
         }
-        authors {
-          name
-          family_name
-          affiliation
-          ORCID
-        }
         compute_info {
           doi
           name
@@ -467,6 +461,12 @@ export const pageQuery = graphql`
           url
         }
         compute_tags
+        creators {
+          name
+          family_name
+          affiliation
+          ORCID
+        }
         dataset {
           url
           doi

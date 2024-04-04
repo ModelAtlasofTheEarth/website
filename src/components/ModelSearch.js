@@ -12,7 +12,7 @@ class ModelSearch extends Component {
     indexByTitle: false,
     indexByTags: false,
     indexByUploader: false,
-    indexByAuthors: false,
+    indexByCreators: false,
     indexByAbstract: false,
     indexBySoftware: false,
     indexByContent: false,
@@ -30,7 +30,7 @@ class ModelSearch extends Component {
         indexByTitle: engine.TitleIndex,
         indexByTags: engine.TagsIndex,
         indexByUploader: engine.UploaderIndex,
-        indexByAuthors: engine.AuthorsIndex,
+        indexByCreators: engine.CreatorsIndex,
         indexByAbstract: engine.AbstractIndex,
         indexBySoftware: engine.SoftwareIndex,
         indexByContent: engine.ContentIndex,
@@ -61,7 +61,7 @@ class ModelSearch extends Component {
       indexByTitle,
       indexByTags,
       indexByUploader,
-      indexByAuthors,
+      indexByCreators,
       indexByAbstract,
       indexBySoftware,
       indexByContent,
@@ -72,8 +72,8 @@ class ModelSearch extends Component {
     } = this.state
     const { models } = this.props
     for (const model of models) {
-      model.author_names = model.frontmatter.authors.map((author) => (
-        author.name + " " + author.family_name
+      model.creator_names = model.frontmatter.creators.map((creator) => (
+        creator.name + " " + creator.family_name
       ))
       model.software_names = model.frontmatter.software.map(i => i.name)
     }
@@ -117,8 +117,8 @@ class ModelSearch extends Component {
       dataToSearch.addIndex(["frontmatter", "submitter", "name"])
       dataToSearch.addIndex(["frontmatter", "submitter", "family_name"])
     }
-    if (indexByAuthors) {
-      dataToSearch.addIndex("author_names")
+    if (indexByCreators) {
+      dataToSearch.addIndex("creator_names")
     }
     if (indexByAbstract) {
       dataToSearch.addIndex(["frontmatter", "abstract"])
@@ -138,7 +138,7 @@ class ModelSearch extends Component {
     const key = e.target.id
     const {
       indexByTitle,
-      indexByAuthors,
+      indexByCreators,
       indexByTags,
       indexByAbstract,
       indexByUploader,
@@ -146,7 +146,7 @@ class ModelSearch extends Component {
     } = this.state
     const num_true = [
       indexByTitle,
-      indexByAuthors,
+      indexByCreators,
       indexByTags,
       indexByAbstract,
       indexByUploader,
@@ -169,7 +169,7 @@ class ModelSearch extends Component {
   getSearchKeys = () => {
     const {
       indexByTitle,
-      indexByAuthors,
+      indexByCreators,
       indexByTags,
       indexByAbstract,
       indexByUploader,
@@ -177,7 +177,7 @@ class ModelSearch extends Component {
     } = this.state
     const arr = []
     if (indexByTitle) {arr.push("title")}
-    if (indexByAuthors) {arr.push("authors")}
+    if (indexByCreators) {arr.push("creators")}
     if (indexByTags) {arr.push("tags")}
     if (indexByAbstract) {arr.push("abstract")}
     if (indexByUploader) {arr.push("uploader")}
@@ -220,16 +220,16 @@ class ModelSearch extends Component {
               </label>
               <label
                 className="checkbox models-search"
-                for="indexByAuthors"
+                for="indexByCreators"
               >
                 <input
-                  id="indexByAuthors"
+                  id="indexByCreators"
                   name="searchindex"
                   type="checkbox"
-                  checked={this.state.indexByAuthors}
+                  checked={this.state.indexByCreators}
                   onChange={this.handleCheckbox}
                 />
-                Authors
+                Creators
               </label>
               <label
                 className="checkbox models-search"

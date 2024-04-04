@@ -26,7 +26,7 @@ submitter:
   family_name: Polanco
   ORCID: 0000-0002-1270-4377
   affiliation: EarthByte Group, School of Geosciences, The University of Sydney
-authors:
+creators:
   - name: Sara
     family_name: Polanco
     ORCID: 0000-0002-1270-4377
