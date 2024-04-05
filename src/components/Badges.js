@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import { kebabCase } from "lodash"
 
 import { getCreatorSlug, cleanDoi } from "./ModelList"
 
@@ -27,8 +26,9 @@ const BadgeDoi = ({ doi, style }) => {
 }
 
 const BadgeTag = ({ tag, style }) => {
+  const slug = tag.toString().toLowerCase().split(/\s/).join("-")
   return (
-    <Link to={`/tags/${kebabCase(tag)}`}>
+    <Link to={`/tags/${slug}`}>
       <span className="badge-tag hover-shadow hover-opacity" style={style}>{tag}</span>
     </Link>
   )

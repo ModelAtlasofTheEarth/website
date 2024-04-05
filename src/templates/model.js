@@ -1,5 +1,4 @@
 import { graphql } from "gatsby"
-import { kebabCase } from "lodash"
 import PropTypes from "prop-types"
 import React from "react"
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
