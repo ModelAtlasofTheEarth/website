@@ -3,27 +3,41 @@ templateKey: model
 slug: sandiford_2021_detachment-1
 title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block
   Rotation and Apparent Unbending'
-date: '2024-03-22T01:05:23.000Z'
+date: '2024-04-04T03:03:08.000Z'
 featuredpost:
 for_codes:
   - 370401
 status:
 doi: ''
-metadataFile: ./ro-crate-metadata.json
 software:
   - name: 'geodynamics/aspect: ASPECT 2.5.0'
     doi: https://doi.org/10.5281/zenodo.8200213
     url_source: ''
 licence:
-  name: CC BY 4.0
   licence_url: https://creativecommons.org/licenses/by/4.0/legalcode
   licence_image: ../../../img/licence/by.png
   description: Creative Commons Attribution 4.0 International
-  licence_file: ./licence.txt
+  licence_file: ''
 submitter:
   name: Dan
   family_name: Sandiford
   ORCID: https://orcid.org/0000-0002-2207-6837
+creators:
+  - name: Dan
+    family_name: Sandiford
+    ORCID: 0000-0002-2207-6837
+  - name: Sascha
+    family_name: Brune
+    ORCID: 0000-0003-4985-1810
+  - name: Anne
+    family_name: Glerum
+    ORCID: 0000-0002-9481-1749
+  - name: John
+    family_name: Naliboff
+    ORCID: 0000-0002-5697-7203
+  - name: Joanne M.
+    family_name: Whittaker
+    ORCID: 0000-0002-3170-3935
 associated_publication:
   authors:
     - '@type': Person
@@ -160,20 +174,4 @@ dataset:
   url: ''
   notes: ''
   doi: ''
-creators:
-  - name: Dan
-    family_name: Sandiford
-    ORCID: 0000-0002-2207-6837
-  - name: Sascha
-    family_name: Brune
-    ORCID: 0000-0003-4985-1810
-  - name: Anne
-    family_name: Glerum
-    ORCID: 0000-0002-9481-1749
-  - name: John
-    family_name: Naliboff
-    ORCID: 0000-0002-5697-7203
-  - name: Joanne M.
-    family_name: Whittaker
-    ORCID: 0000-0002-3170-3935
 ---
