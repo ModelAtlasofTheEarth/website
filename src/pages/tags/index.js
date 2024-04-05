@@ -1,7 +1,6 @@
 import React from "react";
 import {
   get,
-  kebabCase,
   toLower,
   upperFirst,
   words,
@@ -83,7 +82,7 @@ const TagsPage = ({
               <ul className="taglist">
                 {tags.map((tag) => (
                   <li key={tag}>
-                    <Link to={`/tags/${kebabCase(tag)}/`}>
+                    <Link to={`/tags/${tag.toString().toLowerCase().split(/\s/).join("-")}/`}>
                       {tag} ({post_counts[tag]})
                     </Link>
                   </li>

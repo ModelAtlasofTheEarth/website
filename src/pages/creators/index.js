@@ -1,5 +1,5 @@
 import { Link, graphql } from "gatsby"
-import { get, kebabCase } from "lodash"
+import { get } from "lodash"
 import React from "react"
 
 import PageHead from "../../components/Head"
