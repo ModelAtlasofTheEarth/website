@@ -21,12 +21,12 @@ licence:
   licence_image: ../../../img/licence/by.png
   description: CC BY 4.0 DEED Attribution 4.0 International
   licence_file: ./licence.txt
-contributor:
+submitter:
   name: Sara
   family_name: Polanco
   ORCID: 0000-0002-1270-4377
   affiliation: EarthByte Group, School of Geosciences, The University of Sydney
-authors:
+creators:
   - name: Sara
     family_name: Polanco
     ORCID: 0000-0002-1270-4377
@@ -70,7 +70,7 @@ associated_publication:
   doi: 10.5194/esurf-12-301-2024
   url: https://doi.org/10.5194/esurf-12-301-2024
 compute_info:
-  computer_name:
+  name:
   organisation:
   doi:
   url:

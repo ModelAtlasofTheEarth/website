@@ -7,7 +7,7 @@ import "react-tabs/style/react-tabs.css"
 
 import Animation from "../components/Animation"
 import {
-  BadgeAuthor,
+  BadgeCreator,
   BadgeDoi,
   TagsList,
 } from "../components/Badges"
@@ -15,7 +15,7 @@ import Citation from "../components/Citation"
 import Content, { HTMLContent } from "../components/Content"
 import PageHead from "../components/Head"
 import Layout from "../components/Layout"
-import { getAuthorSlug, cleanDoi } from "../components/ModelList"
+import { getCreatorSlug, cleanDoi } from "../components/ModelList"
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage"
 import ReadMore from "../components/ReadMore"
 
@@ -26,12 +26,11 @@ import rehypeMathjax from "rehype-mathjax/svg"
 const ModelTemplate = ({
   abstract,
   animation,
-  authors,
   compute_info,
   compute_tags,
   content,
   contentComponent,
-  contributor,
+  creators,
   dataset,
   date,
   doi,
@@ -46,6 +45,7 @@ const ModelTemplate = ({
   research_tags,
   title,
   slug,
+  submitter,
 }) => {
   const PostContent = contentComponent || Content
   const dataset_url = (
@@ -54,9 +54,9 @@ const ModelTemplate = ({
     : dataset.url
   )
   const all_tags = research_tags.concat(compute_tags)
-  const contributor_full_name = contributor.name + " " + contributor.family_name
-  const author_full_names = authors.map((author) => (
-    author.name + " " + author.family_name
+  const submitter_full_name = submitter.name + " " + submitter.family_name
+  const creator_full_names = creators.map((creator) => (
+    creator.name + " " + creator.family_name
   ))
   let licence_content = null
   if (licence.licence_file?.fields?.content) {
@@ -92,25 +92,25 @@ const ModelTemplate = ({
             </div>
           }
           <p className="model-page-header">
-            <b>Authors:</b>{" "}
+            <b>Created by:</b>{" "}
             {
-              authors.map((author) => {
-                const authorSlug = getAuthorSlug(author)
+              creators.map((creator) => {
+                const creatorSlug = getCreatorSlug(creator)
                 return (
-                  <BadgeAuthor
-                    author={author}
+                  <BadgeCreator
+                    creator={creator}
                     style={{ fontSize: "20px" }}
-                    key={authorSlug}
+                    key={creatorSlug}
                   />
                 )
               })
             }
           </p>
           <p className="model-page-header">
-            <b>Uploaded by:</b>{" "}{contributor_full_name}
+            <b>Submitted by:</b>{" "}{submitter_full_name}
           </p>
           <p className="model-page-header">
-            <b>Upload date:</b>{" "}{date}
+            <b>Submission date:</b>{" "}{date}
           </p>
           <p>
             <BadgeDoi
@@ -294,12 +294,12 @@ const ModelTemplate = ({
               </p>
             }
             {
-              compute_info?.computer_name && <>
+              compute_info?.name && <>
                 <p>
                   This model was originally run on {
                     compute_info?.url ?
-                    <a href={compute_info.url}>{compute_info.computer_name}</a>
-                    : compute_info.computer_name
+                    <a href={compute_info.url}>{compute_info.name}</a>
+                    : compute_info.name
                   }
                   {
                     compute_info?.organisation ?
@@ -391,7 +391,6 @@ ModelTemplate.propTypes = {
   date: PropTypes.string,
   abstract: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string),
-  uploader: PropTypes.string,
   email: PropTypes.string,
   dataset: PropTypes.objectOf(PropTypes.string),
   animation: PropTypes.object,
@@ -407,12 +406,11 @@ const ModelsPage = ({ data }) => {
       <ModelTemplate
         abstract={post.frontmatter.abstract}
         animation={post.frontmatter.animation}
-        authors={post.frontmatter.authors}
         compute_info={post.frontmatter.compute_info}
         compute_tags={post.frontmatter.compute_tags}
         content={post.html}
         contentComponent={HTMLContent}
-        contributor={post.frontmatter.contributor}
+        creators={post.frontmatter.creators}
         dataset={post.frontmatter.dataset}
         date={post.frontmatter.date}
         doi={post.frontmatter.doi}
@@ -427,6 +425,7 @@ const ModelsPage = ({ data }) => {
         research_tags={post.frontmatter.research_tags}
         title={post.frontmatter.title}
         slug={post.frontmatter.slug}
+        submitter={post.frontmatter.submitter}
       />
     </Layout>
   )
@@ -455,23 +454,18 @@ export const pageQuery = graphql`
             publicURL
           }
         }
-        authors {
-          name
-          family_name
-          affiliation
-          ORCID
-        }
         compute_info {
-          computer_name
           doi
+          name
           organisation
           url
         }
         compute_tags
-        contributor {
+        creators {
           name
           family_name
           affiliation
+          ORCID
         }
         dataset {
           url
@@ -554,6 +548,11 @@ export const pageQuery = graphql`
           name
           doi
           url_source
+        }
+        submitter {
+          name
+          family_name
+          affiliation
         }
         title
       }

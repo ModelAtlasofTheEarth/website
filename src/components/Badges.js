@@ -2,14 +2,14 @@ import React from "react"
 import { Link } from "gatsby"
 import { kebabCase } from "lodash"
 
-import { getAuthorSlug, cleanDoi } from "./ModelList"
+import { getCreatorSlug, cleanDoi } from "./ModelList"
 
-const BadgeAuthor = ({ author, style }) => {
-  const fullName = `${author.name} ${author.family_name}`
-  const authorSlug = getAuthorSlug(author)
+const BadgeCreator = ({ creator, style }) => {
+  const fullName = `${creator.name} ${creator.family_name}`
+  const creatorSlug = getCreatorSlug(creator)
   return (
-    <Link to={`/authors/${authorSlug}`}>
-      <span className="badge-author hover-shadow hover-opacity" style={style}>{fullName}</span>
+    <Link to={`/creators/${creatorSlug}`}>
+      <span className="badge-creator hover-shadow hover-opacity" style={style}>{fullName}</span>
     </Link>
   )
 }
@@ -44,7 +44,7 @@ const TagsList = ({ tags, style }) => {
 }
 
 export {
-  BadgeAuthor,
+  BadgeCreator,
   BadgeDoi,
   BadgeTag,
   TagsList,

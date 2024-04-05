@@ -277,11 +277,6 @@ query MyQuery {
         }
         frontmatter {
           compute_tags
-          contributor {
-            name
-            family_name
-            ORCID
-          }
           date(formatString: "MMMM DD, YYYY")
           images {
             landing_image {
@@ -299,6 +294,11 @@ query MyQuery {
           research_tags
           software {
             name
+          }
+          submitter {
+            name
+            family_name
+            ORCID
           }
           title
           templateKey

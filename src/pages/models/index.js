@@ -66,7 +66,7 @@ const fn = () => (
                 compute_tags
                 templateKey
                 title
-                contributor {
+                submitter {
                   family_name
                   name
                   ORCID

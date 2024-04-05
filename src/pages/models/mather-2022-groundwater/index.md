@@ -23,12 +23,12 @@ licence:
   licence_image: ../../../img/licence/by.png
   description: CC BY 4.0 DEED Attribution 4.0 International
   licence_file: ./licence.txt
-contributor:
+submitter:
   name: Ben
   family_name: Mather
   ORCID: 0000-0003-3566-1557
   affiliation: University of Sydney
-authors:
+creators:
   - name: Ben
     family_name: Mather
     email: ben.mather@sydney.edu.au
@@ -61,7 +61,7 @@ associated_publication:
   doi: 10.1038/s41598-022-08384-w
   url: http://dx.doi.org/10.1038/s41598-022-08384-w
 compute_info:
-  computer_name:
+  name:
   organisation:
   doi:
   url:

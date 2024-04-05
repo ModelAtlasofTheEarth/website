@@ -100,7 +100,7 @@ class WithScrollbar extends React.Component {
             <section className="image-container">
               <ModelCarouselItem
                 title={model.node.frontmatter.title}
-                author={model.node.frontmatter.contributor}
+                creator={model.node.frontmatter.submitter}
                 slug={model.node.fields.slug}
                 date={model.node.frontmatter.date}
                 tags={model.node.frontmatter.research_tags}

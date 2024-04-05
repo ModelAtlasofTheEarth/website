@@ -19,12 +19,12 @@ licence:
   licence_image: ../../../img/licence/by.png
   description: CC BY 4.0 DEED Attribution 4.0 International
   licence_file: ./licence.txt
-contributor:
+submitter:
   name: Andrés Felipe
   family_name: Rodríguez Corcho
   ORCID: 0000-0002-1521-7910
   affiliation: EarthByte Group, School of Geosciences, The University of Sydney
-authors:
+creators:
   - name: Andrés Felipe
     family_name: Rodríguez Corcho
     ORCID: 0000-0002-1521-7910
@@ -56,7 +56,7 @@ associated_publication:
   doi: 10.1029/2022gc010386
   url: http://dx.doi.org/10.1029/2022gc010386
 compute_info:
-  computer_name: Nectar Research Cloud
+  name: Nectar Research Cloud
   organisation: Australian Research Data Commons
   url: https://ardc.edu.au/services/ardc-nectar-research-cloud/
 research_tags:

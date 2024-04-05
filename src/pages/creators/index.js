@@ -5,47 +5,47 @@ import React from "react"
 import PageHead from "../../components/Head"
 import Layout from "../../components/Layout"
 import {
-  authorEqual,
-  authorSort,
-  getAuthorSlug,
+  personEqual,
+  personSort,
+  getCreatorSlug,
 } from "../../components/ModelList"
 
-export const Head = () => <PageHead title="Authors"/>
+export const Head = () => <PageHead title="Creators"/>
 
-class AuthorsPage extends React.Component {
+class CreatorsPage extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges
 
-    const authors = []
+    const creators = []
     const post_counts = {}
     for (const post of posts) {
-      for (const author of post.node.frontmatter.authors) {
-        const full_name = `${author.name} ${author.family_name}`
+      for (const creator of post.node.frontmatter.creators) {
+        const full_name = `${creator.name} ${creator.family_name}`
         let post_count = 1
         if (get(post_counts, full_name)) {
           post_count = post_count + post_counts[full_name]
         }
         post_counts[full_name] = post_count
 
-        const author_obj = {
+        const creator_obj = {
           full_name: full_name,
-          name: author.name,
-          family_name: author.family_name,
-          ORCID: author.ORCID,
+          name: creator.name,
+          family_name: creator.family_name,
+          ORCID: creator.ORCID,
         }
         let exists = false
-        for (const i of authors) {
-          if (authorEqual(author, i)) {
+        for (const i of creators) {
+          if (personEqual(creator, i)) {
             exists = true
             break
           }
         }
         if (!exists) {
-          authors.push(author_obj)
+          creators.push(creator_obj)
         }
       }
     }
-    authors.sort(authorSort)
+    creators.sort(personSort)
 
     return (
       <Layout>
@@ -56,15 +56,15 @@ class AuthorsPage extends React.Component {
                 className="column is-10 is-offset-1"
                 style={{ marginBottom: "6rem" }}
               >
-                <h1 className="title is-size-2 is-bold-light">Authors</h1>
-                <ul className="authorlist">
+                <h1 className="title is-size-2 is-bold-light">Creators</h1>
+                <ul className="creatorlist">
                   {
-                    authors.map((author) => {
-                      const authorSlug = getAuthorSlug(author)
+                    creators.map((creator) => {
+                      const creatorSlug = getCreatorSlug(creator)
                       return (
-                        <li key={authorSlug}>
-                          <Link to={`/authors/${authorSlug}`}>
-                            {author.family_name}, {author.name} ({post_counts[author.full_name]})
+                        <li key={creatorSlug}>
+                          <Link to={`/creators/${creatorSlug}`}>
+                            {creator.family_name}, {creator.name} ({post_counts[creator.full_name]})
                           </Link>
                         </li>
                       )
@@ -80,18 +80,18 @@ class AuthorsPage extends React.Component {
   }
 }
 
-export default AuthorsPage
+export default CreatorsPage
 
-export const authorsPageQuery = graphql`
-  query AuthorsQuery {
+export const creatorsPageQuery = graphql`
+  query CreatorsQuery {
     allMarkdownRemark(
       sort: {frontmatter: {date: DESC}}
-      filter: {frontmatter: {authors: {elemMatch: {name: {ne: null}}}}}
+      filter: {frontmatter: {creators: {elemMatch: {name: {ne: null}}}}}
     ) {
       edges {
         node {
           frontmatter {
-            authors {
+            creators {
               name
               family_name
               ORCID
