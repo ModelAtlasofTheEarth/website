@@ -51,7 +51,11 @@ class CreatorRoute extends React.Component {
 }
 
 export default CreatorRoute
-export const Head = ({ pageContext }) => <PageHead title={pageContext.creator}/>
+export const Head = ({ pageContext }) => {
+  const creator = pageContext.creator
+  const fullName = `${creator.name} ${creator.family_name}`
+  return <PageHead title={fullName}/>
+}
 
 export const creatorPageQuery = graphql`
   query CreatorPage {
