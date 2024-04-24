@@ -474,8 +474,9 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         doi
         for_codes
-        grants_funders {
-          funder_name
+        funding {
+          name
+          doi
           number_id
         }
         images {

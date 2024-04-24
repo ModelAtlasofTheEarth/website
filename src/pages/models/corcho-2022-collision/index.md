@@ -70,18 +70,32 @@ research_tags:
 compute_tags:
   - C
   - Python
-grants_funders:
-  - funder_name: Asociación Colombiana de Geólogos y Geofísicos del Petróleo
+funder:
+  - name: Asociación Colombiana de Geólogos y Geofísicos del Petróleo
+    doi: ''
+  - name: Australian Research Council
+    doi:  https://ror.org/05mmh0f86
+  - name: Ministerio de Ciencia, Tecnología e Innovación
+    doi:  https://ror.org/03fd5ne08
+  - name: Nectar Research Cloud
+    doi:  https://ardc.edu.au/services/ardc-nectar-research-cloud/
+  - name: University of Melbourne
+    doi:  https://ror.org/01ej9dk98
+  - name: National Computational Infrastructure
+    doi:  https://ror.org/04yx6dh41
+funding:
+  - name: Asociación Colombiana de Geólogos y Geofísicos del Petróleo
     number_id: XVIII
-  - funder_name: Australian Research Council
+    doi: ''
+  - name: Australian Research Council
     number_id: IH130200012
-  - funder_name: Australian Research Council
+    doi: ''
+  - name: Australian Research Council
     number_id: DP150102887
-  - funder_name: Nectar Research Cloud
-  - funder_name: University of Melbourne
-  - funder_name: National Computational Infrastructure
-  - funder_name: Ministerio de Ciencia, Tecnología e Innovación
+    doi: ''
+  - name: Ministerio de Ciencia, Tecnología e Innovación
     number_id: "783"
+    doi: ''
 abstract: >
   Continents grow by the successive accretion of material to their margins, mostly collision and accretion of intra-oceanic magmatic arcs. We investigate the effect of arc buoyancy and viscosity on the mode of collision, and the effects on the margin using a computer modeling approach. Our simulations show that upon collision, it is a small differential in density (3%) between the colliding arc and the continental margin that dictates whether subduction continues or stops after collision. In addition, our models show that arc buoyancy and viscosity drive lithospheric extension in the continental plate. Also, as the subducting slab reaches a mantle discontinuity at 660 km depth, it folds and causes strain and stress fluctuations on the margin.
 images:

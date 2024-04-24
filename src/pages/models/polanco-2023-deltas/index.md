@@ -84,11 +84,16 @@ research_tags:
 compute_tags:
   - Python
   - Badlands
-grants_funders:
-  - funder_name: Australian Research Council
+funder:
+  - name: Australian Research Council
+    doi: https://ror.org/05mmh0f86
+funding:
+  - name: Australian Research Council
+    doi: https://ror.org/05mmh0f86
     number_id: IH130200012
     doi:
-  - funder_name: University of Melbourne
+  - name: University of Melbourne
+    doi: https://ror.org/01ej9dk98
     number_id:
     doi:
 abstract: >

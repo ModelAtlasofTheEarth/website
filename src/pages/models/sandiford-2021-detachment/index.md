@@ -92,11 +92,17 @@ compute_tags:
   - finite-element
   - mesh-refinement
 funder:
-  - funder_name: Australian Research Council
-grants_funder:
-  doi: ''
-  number_id: ''
-  url: ''
+  - name: Australian Research Council
+    doi: https://ror.org/05mmh0f86
+  - name: ''
+    doi: https://www.helmholtz.de/
+funding:
+  - name: Australian Research Council
+    doi: https://ror.org/05mmh0f86
+    number_id: DP180102280
+  - name: ''
+    doi: https://www.helmholtz.de/
+    number_id: VH-NG-1132
 abstract: Seafloor spreading at slow rates can be accommodated on large‐offset oceanic
   detachment faults (ODFs), that exhume lower crustal and mantle rocks in footwall
   domes termed oceanic core complexes (OCCs). Footwall rocks experience large rotation
