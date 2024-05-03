@@ -190,13 +190,13 @@ const ModelTemplate = ({
             }
 
             <h2>Model metadata</h2>
+            <section id="tags" className="model-page">
+              <h3>Tags</h3>
+              <p><TagsList tags={all_tags}/></p>
+            </section>
             {
               metadataFile?.publicURL &&
               <section id="metadata" className="model-page">
-                <section id="tags" className="model-page">
-                  <h3>Tags</h3>
-                  <p><TagsList tags={all_tags}/></p>
-                </section>
                 <h3>Metadata file</h3>
                 <p>
                   Download{" "}
