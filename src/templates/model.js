@@ -72,24 +72,17 @@ const ModelTemplate = ({
           <h1>
             {title}
           </h1>
-          {
-            animation?.src?.publicURL &&
-            <Animation
-              src={animation.src.publicURL}
-              alt={animation.caption || "Animation | " + title}
+          <p>
+            <BadgeDoi
+              doi={
+                doi || "Pending"
+              }
+              style={{
+                marginBottom: "10px",
+                fontSize: "0.9em"
+              }}
             />
-          }
-          {
-            (!(animation?.src?.publicURL)) &&
-            <div className="animation-container">
-              <PreviewCompatibleImage
-                imageInfo={{
-                  image: landing_image.src,
-                  alt: landing_image.caption || title,
-                }}
-              />
-            </div>
-          }
+          </p>
           <p className="model-page-header">
             <b>Created by:</b>{" "}
             {
@@ -105,63 +98,59 @@ const ModelTemplate = ({
               })
             }
           </p>
-          <p className="model-page-header">
-            <b>Submitted by:</b>{" "}{submitter_full_name}
-          </p>
-          <p className="model-page-header">
-            <b>Submission date:</b>{" "}{date}
-          </p>
-          <p>
-            <BadgeDoi
-              doi={
-                doi || "Pending"
-              }
-              style={{
-                marginBottom: "10px",
-                fontSize: "0.9em"
-              }}
-            />
-          </p>
         </div>
 
         <Tabs className="model-page">
           <TabList>
+            <Tab key="snapshot">Snapshot</Tab>
             <Tab key="overview">Overview</Tab>
-            <Tab key="model-setup">
-              Model setup
-            </Tab>
-            <Tab key="model-files">
-              Model code
-            </Tab>
-            <Tab key="model-outputs">
-              Output data
-            </Tab>
+            <Tab key="metadata">Details</Tab>
+            <Tab key="model-setup">Setup</Tab>
+            <Tab key="model-files">Code and outputs</Tab>
           </TabList>
+
+          <TabPanel key="snapshot">
+            <section id="snapshot" className="model-page">
+              <h2>Model snapshot</h2>
+              <p>
+                <BadgeDoi
+                  doi={
+                    doi || "Pending"
+                  }
+                  style={{
+                    marginBottom: "10px",
+                    fontSize: "0.9em"
+                  }}
+                />
+              </p>
+              <p>
+                Model submitted by <b>{submitter_full_name}</b> on <b>{date}</b>.
+              </p>
+            </section>
+            {
+              animation?.src?.publicURL &&
+              <Animation
+                src={animation.src.publicURL}
+                alt={animation.caption || "Animation | " + title}
+              />
+            }
+            {
+              (!(animation?.src?.publicURL)) &&
+              <div className="animation-container">
+                <PreviewCompatibleImage
+                  imageInfo={{
+                    image: landing_image.src,
+                    alt: landing_image.caption || title,
+                  }}
+                />
+              </div>
+            }
+          </TabPanel>
 
           <TabPanel key="overview">
             <section id="abstract" className="model-page">
               <h2>Abstract</h2>
               <p>{abstract}</p>
-            </section>
-
-            {
-              publication.html &&
-              <section id="publication" className="model-page">
-                <h2>Publication</h2>
-                {
-                  publication.doi &&
-                  <BadgeDoi
-                    doi={publication.doi}
-                    style={{marginBottom: "10px"}}
-                  />
-                }
-                <Citation html={publication.html}/>
-              </section>
-            }
-
-            <section id="tags" className="model-page">
-              <h2>Tags</h2>
-              <p><TagsList tags={all_tags}/></p>
             </section>
 
             {graphic_abstract &&
@@ -182,15 +171,42 @@ const ModelTemplate = ({
                 }
               </section>
             }
+          </TabPanel>
 
+          <TabPanel key="metadata">
+            {
+              publication.html &&
+              <section id="publication" className="model-page">
+                <h2>Model publication</h2>
+                {
+                  publication.doi &&
+                  <BadgeDoi
+                    doi={publication.doi}
+                    style={{marginBottom: "10px"}}
+                  />
+                }
+                <Citation html={publication.html}/>
+              </section>
+            }
+
+            <h2>Model metadata</h2>
+            <section id="tags" className="model-page">
+              <h3>Tags</h3>
+              <p><TagsList tags={all_tags}/></p>
+            </section>
             {
               metadataFile?.publicURL &&
               <section id="metadata" className="model-page">
-                <h2>Model metadata</h2>
+                <h3>Metadata file</h3>
                 <p>
+                  Download{" "}
                   <a href={metadataFile?.publicURL} download>
-                    Download model metadata in RO-Crate format
+                    model metadata file
                   </a>
+                  {" "}in{" "}
+                  <a href="https://www.researchobject.org/ro-crate/">
+                    RO-Crate format
+                  </a>.
                 </p>
                 {
                   metadataFile?.fields?.content &&
@@ -213,7 +229,7 @@ const ModelTemplate = ({
             }
 
             <section id="licence" className="model-page">
-              <h2>Licence</h2>
+              <h3>Licence</h3>
               <a href={licence.licence_url}>
                 <PreviewCompatibleImage
                   imageInfo={{
@@ -241,10 +257,11 @@ const ModelTemplate = ({
               }
             </section>
           </TabPanel>
+
           <TabPanel key="model-setup">
             {
               model_setup?.src &&
-              <div>
+              <>
                 <h2>Model setup</h2>
                 <PreviewCompatibleImage
                   imageInfo={{
@@ -259,24 +276,22 @@ const ModelTemplate = ({
                   model_setup.caption &&
                   <p>{model_setup.caption}</p>
                 }
-              </div>
+              </>
 
             }
             {
               model_setup_info?.summary &&
-              <div>
-                <h3>Notes on model setup</h3>
-                <p>
-                  <Markdown
-                    remarkPlugins={[remarkMath]}
-                    rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
-                  >
-                    {model_setup_info.summary}
-                  </Markdown>
-                </p>
-              </div>
+              <p>
+                <Markdown
+                  remarkPlugins={[remarkMath]}
+                  rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
+                >
+                  {model_setup_info.summary}
+                </Markdown>
+              </p>
             }
           </TabPanel>
+
           <TabPanel key="model-files">
 
             <h2>Model code</h2>
@@ -322,8 +337,6 @@ const ModelTemplate = ({
               </>
             }
 
-          </TabPanel>
-          <TabPanel key="model-outputs">
             <h2>Dataset access</h2>
             <p>
               Output data will be added to the <strong>{slug}</strong> model, hosted as part of the M@TE collection on  <a href="https://geonetwork.nci.org.au"> NCI GeoNetwork</a>  (from early 2024)
@@ -335,33 +348,6 @@ const ModelTemplate = ({
                 A preliminary version of the model output data can be accessed <a href={dataset.url}> here</a>
               </p>
             }
-
-            {/*
-            {
-              dataset?.doi &&
-              <p>
-              The output dataset for this model
-              can be downloaded here:{" "}
-              <a href={dataset_url}>{dataset_url}</a>
-              </p>
-            }
-
-
-
-
-
-            {
-              dataset.doi &&
-              <p>
-                <BadgeDoi doi={dataset.doi}/>
-              </p>
-            }
-            <p>
-              The output dataset for this model
-              can be downloaded here:{" "}
-              <a href={dataset_url}>{dataset_url}</a>
-            </p>
-             */}
             {
               dataset.notes &&
               (
