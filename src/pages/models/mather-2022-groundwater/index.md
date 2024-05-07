@@ -4,6 +4,7 @@ slug: 'mather-2022-groundwater'
 title: 'Constraining the response of continental‐scale groundwater flow to climate change'
 date: 2023-08-28T17:04:10.000Z
 featuredpost: false
+doi:
 for_codes:
   - 0406
   - 0403
@@ -129,11 +130,14 @@ model_setup_info:
     The side walls are assigned zero fux and the bottom temperature boundary, $T_1$, is an unknown variable that we invert from borehole temperature data within our Bayesian optimisation scheme.
 dataset:
   url:  https://cloudstor.aarnet.edu.au/plus/s/kNwa6dN6nXxXs55
-  doi:
   notes:
   file_tree:
+  existing_identifier:
+  nci_file_path:
 model_files:
   url: https://github.com/brmather/Sydney_Basin
   notes: In the Scripts folder, HL05 was used to run the optimisation problem and HL06 was used to take the maximum a posteriori model and run it at high resolution.
   file_tree:
+  existing_identifier:
+  nci_file_path:
 ---

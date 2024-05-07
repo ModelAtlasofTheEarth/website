@@ -42,11 +42,13 @@ const ModelTemplate = ({
   research_tags,
   title,
   slug,
+  submitter,
+  doi,
 }) => {
   const PostContent = contentComponent || Content
   const dataset_url = (
-    (!dataset.url && dataset.doi)
-    ? "https://doi.org/" + dataset.doi
+    (!dataset.url && doi)
+    ? "https://doi.org/" + doi
     : dataset.url
   )
   const all_tags = research_tags.concat(compute_tags)
@@ -137,9 +139,9 @@ const ModelTemplate = ({
               <section id="publication" className="model-page">
                 <h2>Publication</h2>
                 {
-                  publication.DOI &&
+                  publication.doi &&
                   <BadgeDoi
-                    doi={publication.DOI}
+                    doi={publication.doi}
                     style={{marginBottom: "10px"}}
                   />
                 }
@@ -403,6 +405,7 @@ export const pageQuery = graphql`
       frontmatter {
         abstract
         slug
+        doi
         animations {
           caption
           src {
@@ -410,8 +413,8 @@ export const pageQuery = graphql`
           }
         }
         associated_publication {
-          DOI
-          URL
+          doi
+          url
           author {
             given
             family
@@ -444,8 +447,9 @@ export const pageQuery = graphql`
         }
         dataset {
           url
-          doi
           notes
+          existing_identifier
+          nci_file_path
         }
         date(formatString: "MMMM DD, YYYY")
         for_codes
@@ -506,6 +510,8 @@ export const pageQuery = graphql`
         model_files {
           url
           notes
+          existing_identifier
+          nci_file_path
         }
         model_setup_info {
           url

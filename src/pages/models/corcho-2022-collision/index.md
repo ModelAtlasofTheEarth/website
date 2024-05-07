@@ -4,6 +4,7 @@ slug: 'corcho-2022-collision'
 title: 'The Role of Lithospheric-Deep Mantle Interactions on the Style and Stress Evolution of Arc-Continent Collision'
 date: 2023-08-28T15:04:10.000Z
 featuredpost: false
+doi:
 for_codes:
   - 3706
   - 370604
@@ -133,10 +134,13 @@ model_setup_info:
   summary: We solve the Stokes equation to balance buoyancy forces, viscous stresses, and pressure gradients using the particle-in-cell, finite element code Underworld2/UWGeodynamics version 2.9.6. The models simulate arc-continent collision in a two-dimensional box, 3,600 km long and 800 km deep. The models comprise a 100–150 km-thick lithosphere, a 660 km-thick isoviscous upper mantle (asthenosphere), and a 140 km-thick isoviscous lower mantle. Our 3,600 × 800 km arc-continent collision models have a resolution of 296 (length) by 160 (depth) elements, which results in cells with a spatial resolution of 10.8 km (length) and 5 km (depth). This spatial resolution enables our models to account for the differences in thickness and composition between the crust and the lithosphere (Figures 1b–1e) in oceanic-continental plates and remnant intra-oceanic arcs. In our models, there are no imposed velocity boundary conditions. Therefore, subduction, mantle flow, arc-continent collision, and lithospheric deformation emerge entirely from buoyancy forces. We impose free-slip in all boundaries of the model except the bottom one, where we imposed no-slip.
 dataset:
   url: https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/corcho-2022-collision/catalog.html
-  doi:
   notes:
   file_tree:
+  existing_identifier:
+  nci_file_path:
 model_files:
   url: https://github.com/dansand/corcho_2022_collision_test/tree/main/model_reproduction_files
   notes: ""
+  existing_identifier:
+  nci_file_path:
 ---

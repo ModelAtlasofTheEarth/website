@@ -4,6 +4,7 @@ slug: sandiford-2021-detachment
 title: "Kinematics of footwall exhumation at oceanic detachment faults: solid‐block rotation and apparent unbending"
 date: 2023-08-28T17:04:10.000Z
 featuredpost: false
+doi:
 for_codes:
   - 3706
   - 370604
@@ -114,10 +115,13 @@ model_files:
   url: https://github.com/dansand/odf_paper
   notes:
   file_tree:
+  existing_identifier:
+  nci_file_path:
 dataset:
   url:
-  doi:
   notes:
   file_tree:
+  existing_identifier:
+  nci_file_path:
 
 ---

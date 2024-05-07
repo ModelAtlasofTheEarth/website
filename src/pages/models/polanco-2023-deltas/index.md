@@ -4,6 +4,7 @@ slug: 'polanco-2023-deltas'
 title: 'The flexural isostatic response of climatically driven sea-level changes  on continental-scale deltas'
 date: 2023-08-28T17:04:10.000Z
 featuredpost: false
+doi:
 for_codes:
   - 3706
   - 370604
@@ -143,10 +144,13 @@ model_setup_info:
   summary: We use BADLANDS (Salles and Hardiman, 2016; Salles et al., 2018) to explore how the interplay between climate-forced sea-level change, erosion/deposition and flexural adjustments in deep time can impact the morphology, architecture and stratigraphic evolution of continental scale deltaic depocenters. BADLANDS links landscape and basin dynamics through simulation of erosion, landscape evolution, and sedimentation. The flexural isostatic response of changes in water and sediment load is calculated using a two-way coupling between BADLANDS and gFlex. The initial configuration of the modeling domain resembles the topography of a natural source-to-sink system with 3400 m elevation in the headwaters, a length of 4500 km, a downstream-decreasing fluvial channel slope, and successive inflections in gradient associated with the coastal-plain to continental shelf and shelf to slope transitions. S1). To ensure that our simulated drainage basin produces a point-source for sediment input to the marine domain we imposed a longitudinal topographic low in the middle of the model. The three-dimensional spatial mesh size and temporal resolution were chosen to adequately reproduce the first-order geomorphological and architectural evolution of deltaic systems. Details about boundary conditions and input parameters used in modeling simulations can be found in Table 1 of Polanco, et al., 2022, and the data repository.
 dataset:
   url: https://doi.org/xxxx
-  doi: xxxx
   notes: ""
   file_tree:
+  existing_identifier:
+  nci_file_path:
 model_files:
   url: https://github.com/saraemp/egusphere-2023-53
   notes: ""
+  existing_identifier:
+  nci_file_path:
 ---
