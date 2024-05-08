@@ -48,8 +48,8 @@ const ModelTemplate = ({
 }) => {
   const PostContent = contentComponent || Content
   const dataset_url = (
-    (!dataset.url && dataset.doi)
-    ? "https://doi.org/" + cleanDoi(dataset.doi)
+    (!dataset.url && doi)
+    ? "https://doi.org/" + cleanDoi(doi)
     : dataset.url
   )
   const all_tags = research_tags.concat(compute_tags)
@@ -294,17 +294,23 @@ const ModelTemplate = ({
 
           <TabPanel key="model-files">
 
-            <h2>Model code</h2>
+            <h2>Model code & inputs</h2>
+
+            <h3>Access:</h3>
+
+
+
+
             <p>
               Model code will be added to the <strong>{slug}</strong> model,
               hosted as part of the M@TE collection on{" "}
               <a href="https://geonetwork.nci.org.au">NCI GeoNetwork</a> (from early 2024).
             </p>
             {
-              model_files?.url &&
+              model_files?.existing_identifier &&
               <p>
-                A preliminary version of the model code can be accessed{" "}
-                <a href={model_files.url}>here</a>.
+                An existing version of the model code can be accessed{" "}
+                <a href={model_files.existing_identifier}>here</a>.
               </p>
             }
             {
@@ -332,27 +338,31 @@ const ModelTemplate = ({
             {
               model_files?.notes &&
               <>
-                <h3>Notes on model files</h3>
+                <h3>Notes:</h3>
                 <p>{model_files.notes}</p>
               </>
             }
 
-            <h2>Dataset access</h2>
+
+            <h2>Model output data</h2>
+
+            <h3>Access:</h3>
+
             <p>
               Output data will be added to the <strong>{slug}</strong> model, hosted as part of the M@TE collection on  <a href="https://geonetwork.nci.org.au"> NCI GeoNetwork</a>  (from early 2024)
             </p>
 
             {
-              dataset?.url &&
+              dataset?.existing_identifier &&
               <p>
-                A preliminary version of the model output data can be accessed <a href={dataset.url}> here</a>
+                A preliminary version of the model output data can be accessed <a href={dataset.existing_identifier}> here</a>
               </p>
             }
             {
               dataset.notes &&
               (
                 <p>
-                  <h3>Notes</h3>
+                  <h3>Notes:</h3>
                   <p>{dataset.notes}</p>
                 </p>
               )
@@ -456,8 +466,10 @@ export const pageQuery = graphql`
         }
         dataset {
           url
-          doi
           notes
+          existing_identifier
+          nci_file_path
+          include
         }
         date(formatString: "MMMM DD, YYYY")
         doi
@@ -526,6 +538,9 @@ export const pageQuery = graphql`
         model_files {
           url
           notes
+          existing_identifier
+          nci_file_path
+          include
         }
         model_setup_info {
           url
