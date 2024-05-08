@@ -410,6 +410,7 @@ const ModelsPage = ({ data }) => {
         research_tags={post.frontmatter.research_tags}
         title={post.frontmatter.title}
         slug={post.frontmatter.slug}
+        doi={post.frontmatter.doi}
         submitter={post.frontmatter.submitter}
       />
     </Layout>
@@ -433,6 +434,7 @@ export const pageQuery = graphql`
       frontmatter {
         abstract
         slug
+        doi
         animation {
           caption
           src {
