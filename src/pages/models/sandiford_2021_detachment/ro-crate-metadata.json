@@ -35,7 +35,7 @@
                 "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370401"
             },
             "abstract": "Seafloor spreading at slow rates can be accommodated on large\u2010offset oceanic detachment faults (ODFs), that exhume lower crustal and mantle rocks in footwall domes termed oceanic core complexes (OCCs). Footwall rocks experience large rotation during exhumation, yet important aspects of the kinematics\u2014particularly the relative roles of solid\u2010block rotation and flexure\u2014are not clearly understood. Using a high\u2010resolution numerical model, we explore the exhumation kinematics in the footwall beneath an emergent ODF/OCC. A key feature of the models is that footwall motion is dominated by solid\u2010block rotation, accommodated by the nonplanar, concave\u2010down fault interface. A consequence is that curvature measured along the ODF is representative of a neutral stress configuration, rather than a \u201cbent\u201d one. Instead, it is in the subsequent process of \u201capparent unbending\u201d that significant flexural stresses are developed in the model footwall. The brittle strain associated with apparent unbending is produced dominantly in extension, beneath the OCC, consistent with earthquake clustering observed in the Trans\u2010Atlantic Geotraverse at the Mid\u2010Atlantic Ridge.",
-            "alternateName": "sandiford_2021_detachment",
+            "alternateName": "sandiford-2021-detachment",
             "citation": {
                 "@id": "http://dx.doi.org/10.1029/2021gc009681"
             },
@@ -107,7 +107,7 @@
             ],
             "spatialCoverage": "",
             "temporalCoverage": "",
-            "url": "dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford_2021_detachment/catalog.html",
+            "url": "dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment/catalog.html",
             "version": "",
             "funding": [
                 {
