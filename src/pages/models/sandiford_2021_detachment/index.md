@@ -1,6 +1,6 @@
 ---
 templateKey: model
-slug: sandiford_2021_detachment
+slug: sandiford-2021-detachment
 title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block
   Rotation and Apparent Unbending'
 date: '2024-05-10T03:01:09.000Z'
@@ -193,7 +193,7 @@ model_files:
   file_tree: ''
   existing_identifier: https://github.com/dansand/odf_paper
   nci_file_path: 
-    dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford_2021_detachment/catalog.html/model_code_inputs
+    dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment/catalog.html/model_code_inputs
   include: true
 dataset:
   url: ''
@@ -207,6 +207,6 @@ dataset:
     These can be opened with Paraview using the solution.pvd file in the top level.'
   existing_identifier: ''
   nci_file_path: 
-    dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford_2021_detachment/catalog.html/model_output_data
+    dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment/catalog.html/model_output_data
   include: true
 ---
