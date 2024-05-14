@@ -19,7 +19,7 @@ licence:
   licence_url: https://creativecommons.org/licenses/by/4.0/legalcode
   licence_image: ../../../img/licence/by.png
   description: Creative Commons Attribution 4.0 International
-  licence_file: ./licence.txt
+  licence_file: ./LICENSE
 submitter:
   name: Dan
   family_name: Sandiford

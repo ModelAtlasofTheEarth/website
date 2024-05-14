@@ -20,7 +20,7 @@ licence:
   licence_url: https://creativecommons.org/licenses/by/4.0/
   licence_image: ../../../img/licence/by.png
   description: CC BY 4.0 DEED Attribution 4.0 International
-  licence_file: ./licence.txt
+  licence_file: ./LICENSE
 submitter:
   name: Sara
   family_name: Polanco
