@@ -8,7 +8,7 @@ featuredpost:
 for_codes:
   - 370401
 status:
-doi: ''
+doi: https://doi.org/10.25914/r3ya-bg54
 metadataFile: ./ro-crate-metadata.json
 software:
   - name: 'geodynamics/aspect: ASPECT 2.5.0'
@@ -160,12 +160,26 @@ model_setup_info:
     lithosphere occurs.
 model_files:
   url: ''
-  notes: ''
+  notes: ASPECT Input files for model. Input file has been updated for compatibility
+    with more recent ASPECT versions. Input file tested on  ASPECT version 2.6.0-pre
+    (fix_stresses_elasticity, 621dd61f2), using deal.II 9.4.2.
   file_tree: ''
+  existing_identifier: https://github.com/dansand/odf_paper
+  nci_file_path: /g/data/nm08/MATE/sandiford_2021_detachment/model_code_inputs
+  include: true
 dataset:
   url: ''
-  notes: ''
-  doi: ''
+  notes: 'Data directory contains output data for 2 simulations stored in the following
+    directories: ref_model_hires, alt_model_hires. Top level contains typical ASPECT
+    output files, including log.txt and restart files. Topography and mesh variables
+    were output at 100 Kyr intervals. Model end time is 5 Myr. Main output data consists
+    of of plain text files representing model topography (e.g. topography.00000),
+    vtu files (in the ./solution sub-directory) representing model output fields (e.g.
+    solution-00000.0000.vtu). At each output step, there are 16 vtu files written.
+    These can be opened with Paraview using the solution.pvd file in the top level.'
+  existing_identifier: ''
+  nci_file_path: /g/data/nm08/MATE/sandiford_2021_detachment/model_output_data
+  include: true
 creators:
   - name: Dan
     family_name: Sandiford
