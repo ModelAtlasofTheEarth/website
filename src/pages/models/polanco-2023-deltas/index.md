@@ -10,7 +10,7 @@ for_codes:
   - 0406
   - 040601
 status: completed
-doi: https://doi.org/10.25914/r3ya-bg54
+doi:
 software:
   - name: Badlands
     doi: 10.5281/zenodo.1069573
