@@ -126,8 +126,8 @@ description: This model was developed in order to study groundwater flow on a co
   groundwater management policies
 images:
   landing_image:
-    src: ''
-    caption: ''
+    src: ./graphics/fig1.png
+    caption: "Coupled heat-groundwater flow model of the Sydney–Gunnedah–Bowen Basin."
   graphic_abstract:
     src: ./graphics/fig1.png
     caption: "Coupled heat-groundwater flow model of the Sydney–Gunnedah–Bowen Basin
