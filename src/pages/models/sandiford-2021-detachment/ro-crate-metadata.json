@@ -1,1 +1,492 @@
-{"@context": "https://w3id.org/ro/crate/1.1/context", "@graph": [{"@type": "CreativeWork", "@id": "ro-crate-metadata.json", "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"}, "about": {"@id": "./"}, "description": "RO-Crate Metadata File Descriptor (this file)"}, {"@id": "./", "identifier": [], "@type": "Dataset", "name": "Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid\u2010Block Rotation and Apparent Unbending", "alternateName": "sandiford_2021_detachment-1", "datePublished": "2024-03-22T01:05:23.000Z", "description": "Seafloor spreading at slow rates can be accommodated on large\u2010offset oceanic detachment faults (ODFs), that exhume lower crustal and mantle rocks in footwall domes termed oceanic core complexes (OCCs). Footwall rocks experience large rotation during exhumation, yet important aspects of the kinematics\u2014particularly the relative roles of solid\u2010block rotation and flexure\u2014are not clearly understood. Using a high\u2010resolution numerical model, we explore the exhumation kinematics in the footwall beneath an emergent ODF/OCC. A key feature of the models is that footwall motion is dominated by solid\u2010block rotation, accommodated by the nonplanar, concave\u2010down fault interface. A consequence is that curvature measured along the ODF is representative of a neutral stress configuration, rather than a \u201cbent\u201d one. Instead, it is in the subsequent process of \u201capparent unbending\u201d that significant flexural stresses are developed in the model footwall. The brittle strain associated with apparent unbending is produced dominantly in extension, beneath the OCC, consistent with earthquake clustering observed in the Trans\u2010Atlantic Geotraverse at the Mid\u2010Atlantic Ridge.", "creator": [{"@type": "Person", "@id": "https://orcid.org/0000-0002-2207-6837", "givenName": "Dan", "familyName": "Sandiford"}], "contributor": "", "citation": {"@type": "ScholarlyArticle", "@id": "http://dx.doi.org/10.1029/2021gc009681", "name": "Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid\u2010Block Rotation and Apparent Unbending", "author": [{"@type": "Person", "@id": "http://orcid.org/0000-0002-2207-6837", "givenName": "Dan", "familyName": "Sandiford"}, {"@type": "Person", "@id": "http://orcid.org/0000-0003-4985-1810", "givenName": "Sascha", "familyName": "Brune"}, {"@type": "Person", "@id": "http://orcid.org/0000-0002-9481-1749", "givenName": "Anne", "familyName": "Glerum"}, {"@type": "Person", "@id": "http://orcid.org/0000-0002-5697-7203", "givenName": "John", "familyName": "Naliboff"}, {"@type": "Person", "@id": "http://orcid.org/0000-0002-3170-3935", "givenName": "Joanne M.", "familyName": "Whittaker"}], "abstract": "Seafloor spreading at slow rates can be accommodated on large\u2010offset oceanic detachment faults (ODFs), that exhume lower crustal and mantle rocks in footwall domes termed oceanic core complexes (OCCs). Footwall rocks experience large rotation during exhumation, yet important aspects of the kinematics\u2014particularly the relative roles of solid\u2010block rotation and flexure\u2014are not clearly understood. Using a high\u2010resolution numerical model, we explore the exhumation kinematics in the footwall beneath an emergent ODF/OCC. A key feature of the models is that footwall motion is dominated by solid\u2010block rotation, accommodated by the nonplanar, concave\u2010down fault interface. A consequence is that curvature measured along the ODF is representative of a neutral stress configuration, rather than a \u201cbent\u201d one. Instead, it is in the subsequent process of \u201capparent unbending\u201d that significant flexural stresses are developed in the model footwall. The brittle strain associated with apparent unbending is produced dominantly in extension, beneath the OCC, consistent with earthquake clustering observed in the Trans\u2010Atlantic Geotraverse at the Mid\u2010Atlantic Ridge.", "identifier": ["10.1029/2021GC009681"]}, "publisher": {"@type": "Organization", "@id": "https://ror.org/04yx6dh41", "name": "National Computational Infrastructure"}, "license": {"@type": "CreativeWork", "@id": "https://creativecommons.org/licenses/by/4.0/legalcode", "description": "Creative Commons Attribution 4.0 International", "website_path": "../../../img/licence/by.png", "url": " https://creativecommons.org/licenses/by/4.0/legalcode.txt"}, "keywords": ["tectonics", "faulting", "detachment faults"], "about": {"@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370401", "@type": "DefinedTerm", "name": "Computational modelling and simulation in earth sciences", "termCode": "370401"}, "funder": [{"@type": "Organization", "@id": "https://ror.org/05mmh0f86", "name": "Australian Research Council"}], "version": "", "temporalCoverage": "", "spatialCoverage": "", "isBasedOn": [], "isPartOf": ["http://dx.doi.org/10.25914/yrzp-g882"], "creativeWorkStatus": "", "hasPart": [{"@id": "model_inputs"}, {"@id": "model_outputs"}, {"@id": "website_material"}, {"@id": "#datasetCreation"}]}, {"@id": "model_inputs", "identifier": ["https://github.com/dansand/odf_paper"], "@type": ["Dataset", "SoftwareSourceCode"], "description": "Code and inputs for computational model", "creator": [{"@type": "Person", "@id": "https://orcid.org/0000-0002-2207-6837", "givenName": "Dan", "familyName": "Sandiford"}], "version": "", "programmingLanguage": "", "keywords": "", "runtimePlatform": "", "memoryRequirements": "", "processorRequirements": "", "storageRequirements": ""}, {"@id": "model_outputs", "@type": ["Dataset"], "identifier": [], "description": "", "creator": [{"@type": "Person", "@id": "https://orcid.org/0000-0002-2207-6837", "givenName": "Dan", "familyName": "Sandiford"}], "fileFormat": "", "owl:sameAs": []}, {"@id": "website_material", "@type": ["Dataset", "CreativeWork"], "description": "material for m@te website", "creator": [{"@type": "Person", "@id": "https://orcid.org/0000-0002-2207-6837", "givenName": "Dan", "familyName": "Sandiford"}], "fileFormat": ""}, {"@id": "#datasetCreation", "@type": "CreateAction", "agent": [{"@type": "Person", "@id": "https://orcid.org/0000-0002-2207-6837", "givenName": "Dan", "familyName": "Sandiford"}], "description": "Running the computational model", "startTime": "", "endTime": "", "instrument": [{"@type": "SoftwareSourceCode", "@id": "https://doi.org/10.5281/zenodo.8200213", "identifier": {"@type": "PropertyValue", "propertyID": "URL", "value": "https://zenodo.org/record/8200213"}, "url": "https://zenodo.org/record/8200213", "name": "geodynamics/aspect: ASPECT 2.5.0", "author": [{"givenName": "Wolfgang", "familyName": "Bangerth", "@type": "Person", "@id": "https://orcid.org/0000-0003-2311-9402"}, {"givenName": "Juliane", "familyName": "Dannberg", "@type": "Person", "@id": "https://orcid.org/0000-0003-0357-7115"}, {"givenName": "Menno", "familyName": "Fraters", "@type": "Person", "@id": "https://orcid.org/0000-0003-0035-7723"}, {"givenName": "Rene", "familyName": "Gassmoeller", "@type": "Person", "@id": "https://orcid.org/0000-0001-7098-8198"}, {"givenName": "Anne", "familyName": "Glerum", "@type": "Person", "@id": "https://orcid.org/0000-0002-9481-1749"}, {"givenName": "Timo", "familyName": "Heister", "@type": "Person", "@id": "https://orcid.org/0000-0002-8137-3903"}, {"givenName": "Robert", "familyName": "Myhill", "@type": "Person", "@id": "https://orcid.org/0000-0001-9489-5236"}, {"givenName": "John", "familyName": "Naliboff", "@type": "Person", "@id": "https://orcid.org/0000-0002-5697-7203"}], "license": ["https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html", "info:eu-repo/semantics/openAccess"], "version": "v2.5.0"}, {"@context": "http://schema.org", "@type": "Service", "@id": "https://doi.org/10.25914/608bfd1838db2", "url": "https://pid.nci.org.au/doi/f5966_0057_9267_4579", "name": "Gadi Supercomputer", "author": {"name": "National Computational Infrastructure", "@type": "Organization", "@id": "https://ror.org/04yx6dh41"}, "inLanguage": "en", "datePublished": "2021", "schemaVersion": "http://datacite.org/schema/kernel-4", "publisher": {"@type": "Organization", "name": "NCI Australia"}, "provider": {"@type": "Organization", "name": "datacite"}}], "object": {"@id": "model_inputs"}, "result": {"@id": "model_outputs"}}]}
+{
+    "@context": [
+        "https://www.researchobject.org/ro-crate/1.1/context.jsonld",
+        "https://raw.githubusercontent.com/codemeta/codemeta/master/codemeta.jsonld"
+    ],
+    "@graph": [
+        {
+            "@id": "#datasetCreation",
+            "@type": "CreateAction",
+            "agent": {
+                "@id": "https://orcid.org/0000-0002-2207-6837"
+            },
+            "description": "Running the computational model",
+            "endTime": "",
+            "instrument": [
+                {
+                    "@id": "https://doi.org/10.5281/zenodo.8200213"
+                },
+                {
+                    "@id": "https://doi.org/10.25914/608bfd1838db2"
+                }
+            ],
+            "object": {
+                "@id": "model_inputs"
+            },
+            "result": {
+                "@id": "model_outputs"
+            },
+            "startTime": ""
+        },
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "about": {
+                "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370401"
+            },
+            "abstract": "Seafloor spreading at slow rates can be accommodated on large\u2010offset oceanic detachment faults (ODFs), that exhume lower crustal and mantle rocks in footwall domes termed oceanic core complexes (OCCs). Footwall rocks experience large rotation during exhumation, yet important aspects of the kinematics\u2014particularly the relative roles of solid\u2010block rotation and flexure\u2014are not clearly understood. Using a high\u2010resolution numerical model, we explore the exhumation kinematics in the footwall beneath an emergent ODF/OCC. A key feature of the models is that footwall motion is dominated by solid\u2010block rotation, accommodated by the nonplanar, concave\u2010down fault interface. A consequence is that curvature measured along the ODF is representative of a neutral stress configuration, rather than a \u201cbent\u201d one. Instead, it is in the subsequent process of \u201capparent unbending\u201d that significant flexural stresses are developed in the model footwall. The brittle strain associated with apparent unbending is produced dominantly in extension, beneath the OCC, consistent with earthquake clustering observed in the Trans\u2010Atlantic Geotraverse at the Mid\u2010Atlantic Ridge.",
+            "alternateName": "sandiford-2021-detachment-1",
+            "citation": {
+                "@id": "http://dx.doi.org/10.1029/2021gc009681"
+            },
+            "contributor": "",
+            "creativeWorkStatus": "",
+            "creator": [
+                {
+                    "@id": "http://orcid.org/0000-0002-2207-6837"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0003-4985-1810"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-9481-1749"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-5697-7203"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-3170-3935"
+                }
+            ],
+            "datePublished": "2024-05-17T01:55:42.000Z",
+            "description": "This model was developed in order to study the rotation of footwall rocks beneath oceanic detachment faults (ODFs). It showed that solid-block rotation dominates beneath a concave-down fault, while significant flexural stresses form later during \"apparent unbending,\" causing both compression and extension-related brittle strain within oceanic core complexes (OCCs).",
+            "funder": [
+                {
+                    "@id": "https://ror.org/05mmh0f86"
+                },
+                {
+                    "@id": "https://www.helmholtz.de/"
+                }
+            ],
+            "hasPart": [
+                {
+                    "@id": "model_inputs"
+                },
+                {
+                    "@id": "model_outputs"
+                },
+                {
+                    "@id": "website_material"
+                },
+                {
+                    "@id": "metadata_trail"
+                },
+                {
+                    "@id": "#datasetCreation"
+                }
+            ],
+            "identifier": [
+                "https://doi.org/10.25914/10.25914/r3ya-bg54"
+            ],
+            "isBasedOn": [],
+            "isPartOf": "http://dx.doi.org/10.25914/yrzp-g882",
+            "keywords": [
+                "tectonics",
+                "faulting",
+                "detachment faults"
+            ],
+            "license": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "name": "Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid\u2010Block Rotation and Apparent Unbending",
+            "publisher": [
+                {
+                    "@id": "https://ror.org/04s1m4564"
+                },
+                {
+                    "@id": "https://ror.org/04yx6dh41"
+                }
+            ],
+            "spatialCoverage": "",
+            "temporalCoverage": "",
+            "url": [
+                "https://mate.science/models/sandiford-2021-detachment-1/",
+                "https://github.com/ModelAtlasofTheEarth/sandiford-2021-detachment-1/"
+            ],
+            "version": "",
+            "funding": [
+                {
+                    "@id": "_:b0"
+                },
+                {
+                    "@id": "_:b1"
+                }
+            ],
+            "creditText": [
+                "Sandiford, D., Brune, S., Glerum, A., Naliboff, J., & Whittaker, J. (2024). Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid\u2010Block Rotation and Apparent Unbending [Data set]. AuScope, National Computational Infrastructure. https://doi.org/r3ya-bg54"
+            ]
+        },
+        {
+            "@id": "_:b0",
+            "@type": "Grant",
+            "funder": {
+                "@id": "https://ror.org/05mmh0f86"
+            },
+            "identifier": "DP180102280"
+        },
+        {
+            "@id": "_:b1",
+            "@type": "Grant",
+            "funder": {
+                "@id": "https://www.helmholtz.de/"
+            },
+            "identifier": "VH-NG-1132"
+        },
+        {
+            "@id": "_:b2",
+            "@type": "PropertyValue",
+            "propertyID": "URL",
+            "value": "https://zenodo.org/record/8200213"
+        },
+        {
+            "@id": "_:b3",
+            "@type": "Organization",
+            "name": "datacite"
+        },
+        {
+            "@id": "_:b4",
+            "@type": "Organization",
+            "name": "NCI Australia"
+        },
+        {
+            "@id": "http://dx.doi.org/10.1029/2021gc009681",
+            "@type": "ScholarlyArticle",
+            "abstract": "Seafloor spreading at slow rates can be accommodated on large\u2010offset oceanic detachment faults (ODFs), that exhume lower crustal and mantle rocks in footwall domes termed oceanic core complexes (OCCs). Footwall rocks experience large rotation during exhumation, yet important aspects of the kinematics\u2014particularly the relative roles of solid\u2010block rotation and flexure\u2014are not clearly understood. Using a high\u2010resolution numerical model, we explore the exhumation kinematics in the footwall beneath an emergent ODF/OCC. A key feature of the models is that footwall motion is dominated by solid\u2010block rotation, accommodated by the nonplanar, concave\u2010down fault interface. A consequence is that curvature measured along the ODF is representative of a neutral stress configuration, rather than a \u201cbent\u201d one. Instead, it is in the subsequent process of \u201capparent unbending\u201d that significant flexural stresses are developed in the model footwall. The brittle strain associated with apparent unbending is produced dominantly in extension, beneath the OCC, consistent with earthquake clustering observed in the Trans\u2010Atlantic Geotraverse at the Mid\u2010Atlantic Ridge.",
+            "author": [
+                {
+                    "@id": "http://orcid.org/0000-0002-2207-6837"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0003-4985-1810"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-9481-1749"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-5697-7203"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-3170-3935"
+                }
+            ],
+            "identifier": "10.1029/2021GC009681",
+            "name": "Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid\u2010Block Rotation and Apparent Unbending"
+        },
+        {
+            "@id": "http://orcid.org/0000-0002-2207-6837",
+            "@type": "Person",
+            "familyName": "Sandiford",
+            "givenName": "Dan"
+        },
+        {
+            "@id": "http://orcid.org/0000-0002-3170-3935",
+            "@type": "Person",
+            "familyName": "Whittaker",
+            "givenName": "Joanne M."
+        },
+        {
+            "@id": "http://orcid.org/0000-0002-5697-7203",
+            "@type": "Person",
+            "familyName": "Naliboff",
+            "givenName": "John"
+        },
+        {
+            "@id": "http://orcid.org/0000-0002-9481-1749",
+            "@type": "Person",
+            "familyName": "Glerum",
+            "givenName": "Anne"
+        },
+        {
+            "@id": "http://orcid.org/0000-0003-4985-1810",
+            "@type": "Person",
+            "familyName": "Brune",
+            "givenName": "Sascha"
+        },
+        {
+            "@id": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "@type": "CreativeWork",
+            "description": "Creative Commons Attribution 4.0 International",
+            "name": "CC-BY-4.0",
+            "url": " https://creativecommons.org/licenses/by/4.0/legalcode.txt"
+        },
+        {
+            "@id": "https://doi.org/10.25914/608bfd1838db2",
+            "@type": "Service",
+            "author": [
+                {
+                    "@id": "https://ror.org/04yx6dh41"
+                }
+            ],
+            "inLanguage": "en",
+            "name": "Gadi Supercomputer",
+            "provider": {
+                "@id": "_:b3"
+            },
+            "publisher": {
+                "@id": "_:b4"
+            },
+            "url": "https://pid.nci.org.au/doi/f5966_0057_9267_4579"
+        },
+        {
+            "@id": "https://doi.org/10.5281/zenodo.8200213",
+            "@type": "SoftwareSourceCode",
+            "author": [
+                {
+                    "@id": "https://orcid.org/0000-0003-2311-9402"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-0357-7115"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-0035-7723"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0001-7098-8198"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-9481-1749"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-8137-3903"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0001-9489-5236"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-5697-7203"
+                }
+            ],
+            "identifier": "_:b2",
+            "license": [
+                "https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+                "info:eu-repo/semantics/openAccess"
+            ],
+            "name": "geodynamics/aspect: ASPECT 2.5.0",
+            "url": "https://zenodo.org/record/8200213"
+        },
+        {
+            "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370401",
+            "@type": "DefinedTerm",
+            "name": "Computational modelling and simulation in earth sciences",
+            "termCode": "370401"
+        },
+        {
+            "@id": "https://orcid.org/0000-0001-7098-8198",
+            "@type": "Person",
+            "familyName": "Gassmoeller",
+            "givenName": "Rene"
+        },
+        {
+            "@id": "https://orcid.org/0000-0001-9489-5236",
+            "@type": "Person",
+            "familyName": "Myhill",
+            "givenName": "Robert"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-2207-6837",
+            "@type": "Person",
+            "familyName": "Sandiford",
+            "givenName": "Dan"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-5697-7203",
+            "@type": "Person",
+            "familyName": "Naliboff",
+            "givenName": "John"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-8137-3903",
+            "@type": "Person",
+            "familyName": "Heister",
+            "givenName": "Timo"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-9481-1749",
+            "@type": "Person",
+            "familyName": "Glerum",
+            "givenName": "Anne"
+        },
+        {
+            "@id": "https://orcid.org/0000-0003-0035-7723",
+            "@type": "Person",
+            "familyName": "Fraters",
+            "givenName": "Menno"
+        },
+        {
+            "@id": "https://orcid.org/0000-0003-0357-7115",
+            "@type": "Person",
+            "familyName": "Dannberg",
+            "givenName": "Juliane"
+        },
+        {
+            "@id": "https://orcid.org/0000-0003-2311-9402",
+            "@type": "Person",
+            "familyName": "Bangerth",
+            "givenName": "Wolfgang"
+        },
+        {
+            "@id": "https://ror.org/04s1m4564",
+            "@type": "Organization",
+            "name": "AuScope"
+        },
+        {
+            "@id": "https://ror.org/04yx6dh41",
+            "@type": "Organization",
+            "name": "National Computational Infrastructure"
+        },
+        {
+            "@id": "https://ror.org/05mmh0f86",
+            "@type": "Organization",
+            "name": "Australian Research Council"
+        },
+        {
+            "@id": "https://www.helmholtz.de/",
+            "@type": "Organization",
+            "name": ""
+        },
+        {
+            "@id": "metadata_trail",
+            "@type": "Dataset",
+            "hasPart": [
+                {
+                    "@id": "metadata_trail/issue_body.md"
+                },
+                {
+                    "@id": "metadata_trail/issue_dict.json"
+                },
+                {
+                    "@id": "metadata_trail/nci_iso.csv"
+                },
+                {
+                    "@id": "metadata_trail/ro-crate-metadata-nested.json"
+                }
+            ],
+            "name": "metadata_trail"
+        },
+        {
+            "@id": "metadata_trail/issue_body.md",
+            "@type": "CreativeWork",
+            "description": "Markdown document showing the original github issue body associated with the model submission.",
+            "encodingFormat": "text/markdown",
+            "name": "Issue Body"
+        },
+        {
+            "@id": "metadata_trail/issue_dict.json",
+            "@type": "CreativeWork",
+            "description": "json file representing the dictionary that is constructured by model_submission/.github/scripts/parse_issue.py",
+            "encodingFormat": "application/json",
+            "name": "Issue Dictionary"
+        },
+        {
+            "@id": "metadata_trail/nci_iso.csv",
+            "@type": "CreativeWork",
+            "description": "Simple crosswalk of metadata into ISO 19115 format/schema compatible with NCI GeoNwtework",
+            "encodingFormat": "text/csv",
+            "name": "NCI ISO Crosswalk"
+        },
+        {
+            "@id": "metadata_trail/ro-crate-metadata-nested.json",
+            "@type": "CreativeWork",
+            "description": "Nested version of RO-Crate, hasn't been flattenened.",
+            "encodingFormat": "application/json",
+            "name": "Nested version of RO-Crate"
+        },
+        {
+            "@id": "model_inputs",
+            "@type": [
+                "Dataset",
+                "SoftwareSourceCode"
+            ],
+            "contentSize": "",
+            "creator": [
+                {
+                    "@id": "http://orcid.org/0000-0002-2207-6837"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0003-4985-1810"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-9481-1749"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-5697-7203"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-3170-3935"
+                }
+            ],
+            "description": "Code and inputs for computational model",
+            "identifier": [
+                "https://doi.org/10.25914/10.25914/r3ya-bg54",
+                "https://github.com/dansand/odf_paper"
+            ],
+            "keywords": "",
+            "memoryRequirements": "./",
+            "processorRequirements": "",
+            "programmingLanguage": "",
+            "runtimePlatform": "",
+            "storageRequirements": "./",
+            "url": "https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment-1/catalog.html",
+            "version": ""
+        },
+        {
+            "@id": "model_outputs",
+            "@type": "Dataset",
+            "contentSize": 11811160064,
+            "creator": {
+                "@id": "https://orcid.org/0000-0002-2207-6837"
+            },
+            "description": "Data directory contains output data for 2 simulations stored in the following directories: ref_model_hires, alt_model_hires. Top level contains typical ASPECT output files, including log.txt and restart files. Topography and mesh variables were output at 100 Kyr intervals. Model end time is 5 Myr. Main output data consists of of plain text files representing model topography (e.g. topography.00000), vtu files (in the ./solution sub-directory) representing model output fields (e.g. solution-00000.0000.vtu). At each output step, there are 16 vtu files written. These can be opened with Paraview using the solution.pvd file in the top level.",
+            "fileFormat": "./",
+            "identifier": [
+                "https://doi.org/10.25914/10.25914/r3ya-bg54"
+            ],
+            "url": "https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment-1/catalog.html"
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "conformsTo": {
+                "@id": "https://w3id.org/ro/crate/1.1"
+            },
+            "about": {
+                "@id": "./"
+            },
+            "description": "RO-Crate Metadata File Descriptor (this file)"
+        },
+        {
+            "@id": "website_material",
+            "@type": [
+                "Dataset",
+                "CreativeWork"
+            ],
+            "creator": [
+                {
+                    "@id": "http://orcid.org/0000-0002-2207-6837"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0003-4985-1810"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-9481-1749"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-5697-7203"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-3170-3935"
+                }
+            ],
+            "description": "material for m@te website",
+            "fileFormat": "./"
+        }
+    ]
+}
