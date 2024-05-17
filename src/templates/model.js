@@ -44,6 +44,7 @@ const ModelTemplate = ({
   research_tags,
   title,
   slug,
+  description,
   submitter,
 }) => {
   const PostContent = contentComponent || Content
@@ -113,19 +114,11 @@ const ModelTemplate = ({
             <section id="snapshot" className="model-page">
               <h2>Model snapshot</h2>
               <p>
-                <BadgeDoi
-                  doi={
-                    doi || "Pending"
-                  }
-                  style={{
-                    marginBottom: "10px",
-                    fontSize: "0.9em"
-                  }}
-                />
-              </p>
-              <p>
                 Model submitted by <b>{submitter_full_name}</b> on <b>{date}</b>.
               </p>
+              <section id="description" className="model-page">
+                <p>{description}</p>
+              </section>
             </section>
             {
               animation?.src?.publicURL &&
@@ -153,7 +146,7 @@ const ModelTemplate = ({
               <p>{abstract}</p>
             </section>
 
-            {graphic_abstract &&
+            {graphic_abstract.src &&
               <section id="graphic-abstract" className="model-page">
                 <h2>Graphic abstract</h2>
                 <PreviewCompatibleImage
@@ -349,7 +342,7 @@ const ModelTemplate = ({
             <h3>Access:</h3>
 
             <p>
-              Output data will be added to the <strong>{slug}</strong> model, hosted as part of the M@TE collection on  <a href="https://geonetwork.nci.org.au"> NCI GeoNetwork</a>  (from early 2024)
+              Output data will be added to the <strong>{slug}</strong> model, hosted as part of the M@TE collection on  <a href="https://geonetwork.nci.org.au"> NCI GeoNetwork</a>  (from early 2024).
             </p>
 
             {
@@ -358,6 +351,16 @@ const ModelTemplate = ({
                 A preliminary version of the model output data can be accessed <a href={dataset.existing_identifier}> here</a>
               </p>
             }
+
+            {
+              dataset?.nci_file_path &&
+              <p>
+                Data can be downloaded from <a href={dataset.nci_file_path}> this URL </a>
+              </p>
+            }
+
+
+
             {
               dataset.notes &&
               (
@@ -408,6 +411,7 @@ const ModelsPage = ({ data }) => {
         creators={post.frontmatter.creators}
         dataset={post.frontmatter.dataset}
         date={post.frontmatter.date}
+        description={post.frontmatter.description}
         doi={post.frontmatter.doi}
         graphic_abstract={post.frontmatter.images.graphic_abstract}
         landing_image={post.frontmatter.images.landing_image}
@@ -445,6 +449,7 @@ export const pageQuery = graphql`
         abstract
         slug
         doi
+        description
         animation {
           caption
           src {

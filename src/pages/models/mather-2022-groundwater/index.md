@@ -1,116 +1,185 @@
 ---
-templateKey: 'model'
-slug: 'mather-2022-groundwater'
-title: 'Constraining the response of continental‐scale groundwater flow to climate change'
-date: 2023-08-28T17:04:10.000Z
-featuredpost: false
+templateKey: model
+slug: mather-2022-groundwater
+title: Constraining the response of continental-scale groundwater flow to climate
+  change
+date: '2024-05-17T01:15:16.000Z'
+featuredpost:
 for_codes:
-  - 0406
-  - 0403
-  - 040603
-  - 040601
-  - 040301
-status: completed
-doi: https://doi.org/10.25914/r3ya-bg54
-metadataFile: ./ro-crate-metadata.json
+  - 370401
+status:
+doi: ''
+url: ''
+creditText: ''
 software:
-  - name: Underworld2
-    doi: 10.5281/zenodo.7455999
-    url_source: https://zenodo.org/records/7455999
+  - name: 'Underworld2: Python Geodynamics Modelling for Desktop, HPC and Cloud'
+    doi: https://doi.org/10.5281/zenodo.7455999
+    url_source: https://github.com/underworldcode/underworld2
 licence:
-  name: CC BY 4.0
-  licence_url: https://creativecommons.org/licenses/by/4.0/
+  licence_url: https://creativecommons.org/licenses/by/4.0/legalcode
   licence_image: ../../../img/licence/by.png
-  description: CC BY 4.0 DEED Attribution 4.0 International
-  licence_file: ./licence.txt
+  description: Creative Commons Attribution 4.0 International
+  licence_file: license.txt
 submitter:
-  name: Ben
-  family_name: Mather
-  ORCID: 0000-0003-3566-1557
-  affiliation: University of Sydney
+  name: Dan
+  family_name: Sandiford
+  ORCID: https://orcid.org/0000-0002-2207-6837
 creators:
   - name: Ben
     family_name: Mather
-    email: ben.mather@sydney.edu.au
     ORCID: 0000-0003-3566-1557
-    affiliation: University of Sydney
   - name: Dietmar
     family_name: Müller
     ORCID: 0000-0002-3334-5764
-    affiliation: University of Sydney
   - name: Craig
-    family_name: O’Neill
+    family_name: O'Neill
     ORCID: 0000-0002-6034-1881
-    affiliation: Queensland University of Technology
   - name: Adam
     family_name: Beall
     ORCID: 0000-0002-7182-1864
-    affiliation: School of Earth and Environmental Sciences, Cardiff University
-  - name: Willem
+  - name: R.Willem
     family_name: Vervoort
     ORCID: 0000-0002-6557-0237
-    affiliation: University of Sydney
-  - name: Louis
+  - name: Louis-Noel
     family_name: Moresi
     ORCID: 0000-0003-3685-174X
-    affiliation: Research School of Earth Sciences, Australian National University
 associated_publication:
-  title: Constraining the response of continental-scale groundwater flow to climate change
+  authors:
+    - '@type': Person
+      givenName: Ben
+      familyName: Mather
+    - '@type': Person
+      givenName: R. Dietmar
+      familyName: Müller
+    - '@type': Person
+      givenName: Craig
+      familyName: O’Neill
+    - '@type': Person
+      givenName: Adam
+      familyName: Beall
+    - '@type': Person
+      givenName: R. Willem
+      familyName: Vervoort
+    - '@type': Person
+      givenName: Louis
+      familyName: Moresi
+  title: Constraining the response of continental-scale groundwater flow to climate
+    change
+  doi: http://dx.doi.org/10.1038/s41598-022-08384-w
+  url: ''
   journal: Scientific Reports
-  publisher: Nature
-  doi: 10.1038/s41598-022-08384-w
-  url: http://dx.doi.org/10.1038/s41598-022-08384-w
+  publisher: Springer Science and Business Media LLC
+  date: 2022-3-16
 compute_info:
-  name:
-  organisation:
-  doi:
-  url:
+  name: National Computational Infrastructure
+  organisation: ''
+  url: https://ror.org/04yx6dh41
+  doi: https://ror.org/04yx6dh41
 research_tags:
   - groundwater
-  - basins
-  - Darcy
-  - Climate Change
+  - thermal-hydraulic
+  - Bayesian
+  - water-management
+  - Python
+  - C
+  - finite element
+  - heat equation
+  - advection-diffusion
 compute_tags:
   - Python
+  - C
+  - finite element
+  - heat equation
+  - advection-diffusion
 funder:
-  - name: National Collaborative Research Infrastructure Strategy
-    doi: https://www.education.gov.au/ncris
-funding:
-  - name: National Collaborative Research Infrastructure Strategy, NCRIS
-    number_id: ''
+  - name: NSW Department of Industry
     doi: ''
-abstract: >
-  Numerical models of groundwater flow play a critical role for water management scenarios under climate extremes. Large-scale models play a key role in determining long range flow pathways from continental interiors to the oceans, yet struggle to simulate the local flow patterns ofered by small-scale models. We have developed a highly scalable numerical framework to model continental groundwater flow which capture the intricate flow pathways between deep aquifers and the near-surface. The coupled thermal-hydraulic basin structure is inferred from hydraulic head measurements, recharge estimates from geochemical proxies, and borehole temperature data using a Bayesian framework. We use it to model the deep groundwater flow beneath the Sydney–Gunnedah–Bowen Basin, part of Australia’s largest aquifer system. Coastal aquifers have flow rates of up to 0.3 m/ day, and a corresponding groundwater residence time of just 2,000 years. In contrast, our model predicts slow flow rates of 0.005 m/day for inland aquifers, resulting in a groundwater residence time of ∼400,000 years. Perturbing the model to account for a drop in borehole water levels since 2000, we fnd that lengthened inland flow pathways depart signifcantly from pre-2000 streamlines as groundwater is drawn further from recharge zones in a drying climate. Our results illustrate that progressively increasing water extraction from inland aquifers may permanently alter long-range flow pathways. Our open-source modelling approach can be extended to any basin and may help inform policies on the sustainable management of groundwater.
+  - name: AuScope
+    doi: https://ror.org/04s1m4564
+abstract: Numerical models of groundwater flow play a critical role for water management
+  scenarios under climate extremes. Large-scale models play a key role in determining
+  long range flow pathways from continental interiors to the oceans, yet struggle
+  to simulate the local flow patterns offered by small-scale models. We have developed
+  a highly scalable numerical framework to model continental groundwater flow which
+  capture the intricate flow pathways between deep aquifers and the near-surface.
+  The coupled thermal-hydraulic basin structure is inferred from hydraulic head measurements,
+  recharge estimates from geochemical proxies, and borehole temperature data using
+  a Bayesian framework. We use it to model the deep groundwater flow beneath the Sydney–Gunnedah–Bowen
+  Basin, part of Australia’s largest aquifer system. Coastal aquifers have flow rates
+  of up to 0.3 m/day, and a corresponding groundwater residence time of just 2,000
+  years. In contrast, our model predicts slow flow rates of 0.005 m/day for inland
+  aquifers, resulting in a groundwater residence time of 400,000 years. Perturbing
+  the model to account for a drop in borehole water levels since 2000, we find that
+  lengthened inland flow pathways depart significantly from pre-2000 streamlines as
+  groundwater is drawn further from recharge zones in a drying climate. Our results
+  illustrate that progressively increasing water extraction from inland aquifers may
+  permanently alter long-range flow pathways. Our open-source modelling approach can
+  be extended to any basin and may help inform policies on the sustainable management
+  of groundwater.
+description: This model was developed in order to study groundwater flow on a continental
+  scale, focusing on the Sydney–Gunnedah–Bowen Basin in Australia. Using data such
+  as hydraulic head measurements and borehole temperatures, it predicts how water
+  moves through deep aquifers to the surface. Coastal aquifers show fast water flow,
+  while inland aquifers have much slower flow. The study shows that increased water
+  extraction from inland areas could permanently change water flow patterns. This
+  open-source model can be used for other regions and aims to support sustainable
+  groundwater management policies
 images:
   landing_image:
-    src: ./graphics/fig1.png
-    caption:
+    src: ''
+    caption: ''
   graphic_abstract:
     src: ./graphics/fig1.png
-    caption:
+    caption: "Coupled heat-groundwater flow model of the Sydney–Gunnedah–Bowen Basin
+      based on the MAP estimate of material properties and boundary conditions. (A)
+      Groundwater velocity field with coal seams outlined in grey overlain with temperature
+      gradients measured in boreholes. This visualisation of the velocity field obtained
+      from our model was rendered in 3D using Paraview 5.9 (https://www.paraview.org/).
+      (B) temperature field overlain with heat flux vectors. The 2D slice was generated
+      from our models using Matplotlib 3.4 (https://matplotlib.org/).\n"
   model_setup:
     src: ./graphics/figure_2.png
-    caption:
+    caption: 3D stratigraphy of the Sydney–Gunnedah–Bowen Basin. The vertical spacing
+      of layers has been exaggerated for visual clarity. The model of the basin was
+      rendered in 3D using Underworld.
+animation:
+  src: ./graphics/
+  caption: ''
 model_setup_info:
-  url:
-  summary: |
-    We populate a 3D model of basin architecture (as shown in figure) with initial thermal and hydraulic material properties described in Table 1 of Mather, et. al, 2022.
-    The vertical spacing of layers has been exaggerated for visual clarity.
-    The model of the basin was rendered in 3D using Underworld.
-    Groundwater recharge and discharge are driven by changes in hydraulic head.
-    The hydraulic head prescribed to the top boundary surface is set to the height of the water table.
-    The thermal boundary conditions include a constant temperature set to the top boundary $(T_0 = 18 \mathrm{\degree C})$, which corresponds to the annual mean surface temperature.
-    The side walls are assigned zero fux and the bottom temperature boundary, $T_1$, is an unknown variable that we invert from borehole temperature data within our Bayesian optimisation scheme.
-dataset:
-  url:  https://cloudstor.aarnet.edu.au/plus/s/kNwa6dN6nXxXs55
-  notes:
-  file_tree:
-  existing_identifier: ''
-  nci_file_path: ''
+  url: ''
+  summary: In this paper, we apply our numerical framework to the  Sydney–Gunnedah–Bowen
+    (SGB) Basin in eastern Australia. The SGB Basin  covers about 1.5 million square
+    kilometers, and we model it in  high-resolution 3D, using over 10 million cells
+    (or 6 x 6 x 0.6 km, in the x, y, z directions, respectively)  to detail flow patterns
+    down to 12 km beneath the crust.  By adjusting the model to match real-world data,
+    it provides accurate insights into water and heat movement through deep aquifers
+    in  large areas. Temperature advection due to groundwater flow is described  by
+    the advection-diffusion equation. Darcy flux is calculated from the groundwater
+    flow equation. Groundwater recharge and discharge  are driven by changes in hydraulic
+    head, which is set to the height of  the water table at the top boundary surface.
+    The thermal boundary conditions include a constant temperature set to  the top
+    boundary, which corresponds to the annual mean surface  temperature. The side
+    walls are assigned zero flux, and the bottom  temperature boundary is an unknown
+    variable that we invert from borehole temperature data within our Bayesian optimization
+    scheme.
 model_files:
-  url: https://github.com/brmather/Sydney_Basin
-  notes: In the Scripts folder, HL05 was used to run the optimisation problem and HL06 was used to take the maximum a posteriori model and run it at high resolution.
-  file_tree:
+  url: ''
+  notes: In the Scripts folder, HL05 was used to run the optimisation problem and
+    HL06 was used to take the maximum a posteriori model and run it at high resolution.
+  file_tree: ''
+  existing_identifier: https://github.com/brmather/Sydney_Basin/tree/master
+  nci_file_path:
+    https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/mather-2022-groundwater/catalog.html
+  include: true
+dataset:
+  url: ''
+  notes: "model_output_data contains the following file types:\r\n\r\n.h5 - Underworld2
+    data files\r\n.xdmf- Underworld2 xdmf header files\r\n.csv - Various data in csv
+    format\r\n.npz - data on numpy binary format\r\n.png - image files\r\n.pvsm -
+    Paraview state files\r\n.txt - data in .txt format"
   existing_identifier: ''
-  nci_file_path: ''
+  nci_file_path:
+    https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/mather-2022-groundwater/catalog.html
+  include: true
+metadataFile: ro-crate-metadata.json
 ---

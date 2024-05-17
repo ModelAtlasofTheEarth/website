@@ -1,29 +1,48 @@
 ---
 templateKey: model
-slug: sandiford_2021_detachment-1
+slug: sandiford-2021-detachment
 title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block
   Rotation and Apparent Unbending'
-date: '2024-03-22T01:05:23.000Z'
+date: '2024-05-10T03:01:09.000Z'
 featuredpost:
 for_codes:
   - 370401
 status:
 doi: https://doi.org/10.25914/r3ya-bg54
-metadataFile: ./ro-crate-metadata.json
+url: ''
+creditText: 'Sandiford, D., Brune, S., Glerum, A., Naliboff, J., & Whittaker, J. (2024).
+  Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block Rotation
+  and Apparent Unbending [Data set]. AuScope, National Computational Infrastructure.
+  https://doi.org/r3ya-bg54'
 software:
   - name: 'geodynamics/aspect: ASPECT 2.5.0'
     doi: https://doi.org/10.5281/zenodo.8200213
     url_source: ''
 licence:
-  name: CC BY 4.0
   licence_url: https://creativecommons.org/licenses/by/4.0/legalcode
   licence_image: ../../../img/licence/by.png
   description: Creative Commons Attribution 4.0 International
-  licence_file: ./licence.txt
+  licence_file: ''
 submitter:
   name: Dan
   family_name: Sandiford
-  ORCID: https://orcid.org/0000-0002-2207-6837
+  ORCID: 0000-0002-2207-6837
+creators:
+  - name: Dan
+    family_name: Sandiford
+    ORCID: 0000-0002-2207-6837
+  - name: Sascha
+    family_name: Brune
+    ORCID: 0000-0003-4985-1810
+  - name: Anne
+    family_name: Glerum
+    ORCID: 0000-0002-9481-1749
+  - name: John
+    family_name: Naliboff
+    ORCID: 0000-0002-5697-7203
+  - name: Joanne M.
+    family_name: Whittaker
+    ORCID: 0000-0002-3170-3935
 associated_publication:
   authors:
     - '@type': Person
@@ -87,6 +106,9 @@ research_tags:
   - tectonics
   - faulting
   - detachment faults
+  - C++
+  - finite-element
+  - mesh-refinement
 compute_tags:
   - C++
   - finite-element
@@ -117,6 +139,11 @@ abstract: Seafloor spreading at slow rates can be accommodated on large‐offset
   in the model footwall. The brittle strain associated with apparent unbending is
   produced dominantly in extension, beneath the OCC, consistent with earthquake clustering
   observed in the Trans‐Atlantic Geotraverse at the Mid‐Atlantic Ridge.
+description: This model was developed in order to study the rotation of footwall rocks
+  beneath oceanic detachment faults (ODFs). It showed that solid-block rotation dominates
+  beneath a concave-down fault, while significant flexural stresses form later during
+  "apparent unbending," causing both compression and extension-related brittle strain
+  within oceanic core complexes (OCCs).
 images:
   landing_image:
     src: ./graphics/fig1.png
@@ -165,7 +192,8 @@ model_files:
     (fix_stresses_elasticity, 621dd61f2), using deal.II 9.4.2.
   file_tree: ''
   existing_identifier: https://github.com/dansand/odf_paper
-  nci_file_path: /g/data/nm08/MATE/sandiford_2021_detachment/model_code_inputs
+  nci_file_path:
+    https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment/catalog.html/model_code_inputs
   include: true
 dataset:
   url: ''
@@ -178,22 +206,7 @@ dataset:
     solution-00000.0000.vtu). At each output step, there are 16 vtu files written.
     These can be opened with Paraview using the solution.pvd file in the top level.'
   existing_identifier: ''
-  nci_file_path: /g/data/nm08/MATE/sandiford_2021_detachment/model_output_data
+  nci_file_path:
+    https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment/catalog.html/model_output_data
   include: true
-creators:
-  - name: Dan
-    family_name: Sandiford
-    ORCID: 0000-0002-2207-6837
-  - name: Sascha
-    family_name: Brune
-    ORCID: 0000-0003-4985-1810
-  - name: Anne
-    family_name: Glerum
-    ORCID: 0000-0002-9481-1749
-  - name: John
-    family_name: Naliboff
-    ORCID: 0000-0002-5697-7203
-  - name: Joanne M.
-    family_name: Whittaker
-    ORCID: 0000-0002-3170-3935
 ---

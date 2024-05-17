@@ -8,7 +8,7 @@ for_codes:
   - 3706
   - 370604
 status: completed
-doi: https://doi.org/10.25914/r3ya-bg54
+doi: 
 software:
   - name: UWGeodynamics
     doi: 10.5281/zenodo.5606117
