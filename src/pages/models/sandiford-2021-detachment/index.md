@@ -1,14 +1,14 @@
 ---
 templateKey: model
-slug: sandiford-2021-detachment
+slug: sandiford-2021-detachment-1
 title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block
   Rotation and Apparent Unbending'
-date: '2024-05-10T03:01:09.000Z'
+date: '2024-05-17T01:55:42.000Z'
 featuredpost:
 for_codes:
   - 370401
 status:
-doi: https://doi.org/10.25914/r3ya-bg54
+doi: https://doi.org/10.25914/10.25914/r3ya-bg54
 url: ''
 creditText: 'Sandiford, D., Brune, S., Glerum, A., Naliboff, J., & Whittaker, J. (2024).
   Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block Rotation
@@ -22,11 +22,11 @@ licence:
   licence_url: https://creativecommons.org/licenses/by/4.0/legalcode
   licence_image: ../../../img/licence/by.png
   description: Creative Commons Attribution 4.0 International
-  licence_file: ''
+  licence_file: license.txt
 submitter:
   name: Dan
   family_name: Sandiford
-  ORCID: 0000-0002-2207-6837
+  ORCID: https://orcid.org/0000-0002-2207-6837
 creators:
   - name: Dan
     family_name: Sandiford
@@ -106,9 +106,6 @@ research_tags:
   - tectonics
   - faulting
   - detachment faults
-  - C++
-  - finite-element
-  - mesh-refinement
 compute_tags:
   - C++
   - finite-element
@@ -146,17 +143,23 @@ description: This model was developed in order to study the rotation of footwall
   within oceanic core complexes (OCCs).
 images:
   landing_image:
-    src: ./graphics/fig1.png
-    caption: Deviatoric stresses and vorticity in reference model.
+    src: ''
+    caption: "![fig1](https://github.com/ModelAtlasofTheEarth/Model_Submission/assets/10967872/7f203806-1aed-4952-9b12-63e3b76ddd3d)\n
+      Deviatoric stresses and vorticity in reference model."
   graphic_abstract:
-    src: ./graphics/fig4.png
-    caption: fig4.png
+    src: ''
+    caption: "![fig4](https://github.com/ModelAtlasofTheEarth/Model_Submission/assets/10967872/ca7dd23e-aa3b-4809-9a35-b2b9c26dbf89)\n
+      Schematic showing the stress state that would be generated assuming elastic
+      constitutive response of the ODF footwall (top). Bottom shows the strain-rate
+      due to \"advective\" component of the curvature rate."
   model_setup:
-    src: ./graphics/initialconds.png
-    caption: Initial conditions, showing mesh refinement.
+    src: ''
+    caption: "![initialconds](https://github.com/ModelAtlasofTheEarth/Model_Submission/assets/10967872/bbc016ba-3da5-4135-b0e8-594d6fac89d0)\n
+      Initial conditions, showing mesh refinement."
 animation:
-  src: ./graphics/animation.mp4
-  caption: Animation for alternative model showing vorticity.
+  src: ./graphics/
+  caption: "https://github.com/ModelAtlasofTheEarth/Model_Submission/assets/10967872/1f89632e-53ee-4b34-8eaf-2f8a8ce351a4\n
+    Animation for alternative model showing vorticity."
 model_setup_info:
   url: ''
   summary: The domain is $400 \; \mathrm{km}$ wide and $100 \; \mathrm{km}$ deep,
@@ -192,8 +195,8 @@ model_files:
     (fix_stresses_elasticity, 621dd61f2), using deal.II 9.4.2.
   file_tree: ''
   existing_identifier: https://github.com/dansand/odf_paper
-  nci_file_path:
-    https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment/catalog.html/model_code_inputs
+  nci_file_path: 
+    https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment-1/catalog.html
   include: true
 dataset:
   url: ''
@@ -206,7 +209,8 @@ dataset:
     solution-00000.0000.vtu). At each output step, there are 16 vtu files written.
     These can be opened with Paraview using the solution.pvd file in the top level.'
   existing_identifier: ''
-  nci_file_path:
-    https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment/catalog.html/model_output_data
+  nci_file_path: 
+    https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment-1/catalog.html
   include: true
+metadataFile: ro-crate-metadata.json
 ---
