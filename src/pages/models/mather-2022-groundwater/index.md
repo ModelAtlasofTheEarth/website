@@ -129,7 +129,7 @@ description: This model was developed in order to study groundwater flow on a co
   groundwater management policies
 images:
   landing_image:
-    src: ''
+    src: ./graphics/fig1.png
     caption: ''
   graphic_abstract:
     src: ./graphics/fig1.png
