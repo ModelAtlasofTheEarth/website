@@ -83,11 +83,6 @@ research_tags:
   - thermal-hydraulic
   - Bayesian
   - water-management
-  - Python
-  - C
-  - finite element
-  - heat equation
-  - advection-diffusion
 compute_tags:
   - Python
   - C
