@@ -3,14 +3,17 @@ templateKey: model
 slug: mather-2022-groundwater
 title: Constraining the response of continental-scale groundwater flow to climate
   change
-date: '2024-05-17T01:15:16.000Z'
+date: '2024-05-20T02:00:54.000Z'
 featuredpost:
 for_codes:
   - 370401
 status:
-doi: ''
+doi: https://doi.org/10.25914/10.25914/t2mn-bk81
 url: ''
-creditText: ''
+creditText: Mather, B., Müller, R. Dietmar., ['O’Neill', "O'Neill"], C., Beall, A.,
+  Vervoort, R. Willem., & Moresi, Louis. (2024). Constraining the response of continental-scale
+  groundwater flow to climate change [Data set]. AuScope, National Computational Infrastructure.
+  https://doi.org/t2mn-bk81
 software:
   - name: 'Underworld2: Python Geodynamics Modelling for Desktop, HPC and Cloud'
     doi: https://doi.org/10.5281/zenodo.7455999
@@ -80,6 +83,11 @@ research_tags:
   - thermal-hydraulic
   - Bayesian
   - water-management
+  - Python
+  - C
+  - finite element
+  - heat equation
+  - advection-diffusion
 compute_tags:
   - Python
   - C
@@ -121,8 +129,8 @@ description: This model was developed in order to study groundwater flow on a co
   groundwater management policies
 images:
   landing_image:
-    src: ./graphics/fig1.png
-    caption: "Coupled heat-groundwater flow model of the Sydney–Gunnedah–Bowen Basin."
+    src: ''
+    caption: ''
   graphic_abstract:
     src: ./graphics/fig1.png
     caption: "Coupled heat-groundwater flow model of the Sydney–Gunnedah–Bowen Basin
@@ -163,7 +171,7 @@ model_files:
     HL06 was used to take the maximum a posteriori model and run it at high resolution.
   file_tree: ''
   existing_identifier: https://github.com/brmather/Sydney_Basin/tree/master
-  nci_file_path:
+  nci_file_path: 
     https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/mather-2022-groundwater/catalog.html
   include: true
 dataset:
@@ -173,7 +181,7 @@ dataset:
     format\r\n.npz - data on numpy binary format\r\n.png - image files\r\n.pvsm -
     Paraview state files\r\n.txt - data in .txt format"
   existing_identifier: ''
-  nci_file_path:
+  nci_file_path: 
     https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/mather-2022-groundwater/catalog.html
   include: true
 metadataFile: ro-crate-metadata.json
