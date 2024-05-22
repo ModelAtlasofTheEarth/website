@@ -9,7 +9,7 @@ for_codes:
   - 370401
 status:
 doi: https://doi.org/10.25914/r3ya-bg54
-url: ''
+url: https://mate.science/models/sandiford-2021-detachment
 creditText: 'Sandiford, D., Brune, S., Glerum, A., Naliboff, J., & Whittaker, J. (2024).
   Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block Rotation
   and Apparent Unbending [Data set]. AuScope, National Computational Infrastructure.
