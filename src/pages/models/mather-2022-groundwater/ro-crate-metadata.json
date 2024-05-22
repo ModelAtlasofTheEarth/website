@@ -106,7 +106,7 @@
                 }
             ],
             "identifier": [
-                "https://doi.org/10.25914/10.25914/t2mn-bk81"
+                "https://doi.org/10.25914/t2mn-bk81"
             ],
             "isBasedOn": [],
             "isPartOf": "http://dx.doi.org/10.25914/yrzp-g882",
@@ -501,7 +501,7 @@
             ],
             "description": "Code and inputs for computational model",
             "identifier": [
-                "https://doi.org/10.25914/10.25914/t2mn-bk81",
+                "https://doi.org/10.25914/t2mn-bk81",
                 "https://github.com/brmather/Sydney_Basin/tree/master"
             ],
             "keywords": "",
@@ -510,7 +510,7 @@
             "programmingLanguage": "",
             "runtimePlatform": "",
             "storageRequirements": "./",
-            "url": "https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/mather-2022-groundwater/catalog.html",
+            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/mather-2022-groundwater/catalog.html",
             "version": ""
         },
         {
@@ -540,9 +540,9 @@
             "description": "model_output_data contains the following file types:\r\n\r\n.h5 - Underworld2 data files\r\n.xdmf- Underworld2 xdmf header files\r\n.csv - Various data in csv format\r\n.npz - data on numpy binary format\r\n.png - image files\r\n.pvsm - Paraview state files\r\n.txt - data in .txt format",
             "fileFormat": "./",
             "identifier": [
-                "https://doi.org/10.25914/10.25914/t2mn-bk81"
+                "https://doi.org/10.25914/t2mn-bk81"
             ],
-            "url": "https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/mather-2022-groundwater/catalog.html"
+            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/mather-2022-groundwater/catalog.html"
         },
         {
             "@id": "ro-crate-metadata.json",
