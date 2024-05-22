@@ -35,7 +35,7 @@
                 "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370401"
             },
             "abstract": "Seafloor spreading at slow rates can be accommodated on large\u2010offset oceanic detachment faults (ODFs), that exhume lower crustal and mantle rocks in footwall domes termed oceanic core complexes (OCCs). Footwall rocks experience large rotation during exhumation, yet important aspects of the kinematics\u2014particularly the relative roles of solid\u2010block rotation and flexure\u2014are not clearly understood. Using a high\u2010resolution numerical model, we explore the exhumation kinematics in the footwall beneath an emergent ODF/OCC. A key feature of the models is that footwall motion is dominated by solid\u2010block rotation, accommodated by the nonplanar, concave\u2010down fault interface. A consequence is that curvature measured along the ODF is representative of a neutral stress configuration, rather than a \u201cbent\u201d one. Instead, it is in the subsequent process of \u201capparent unbending\u201d that significant flexural stresses are developed in the model footwall. The brittle strain associated with apparent unbending is produced dominantly in extension, beneath the OCC, consistent with earthquake clustering observed in the Trans\u2010Atlantic Geotraverse at the Mid\u2010Atlantic Ridge.",
-            "alternateName": "sandiford-2021-detachment-1",
+            "alternateName": "sandiford-2021-detachment",
             "citation": {
                 "@id": "http://dx.doi.org/10.1029/2021gc009681"
             },
@@ -86,7 +86,7 @@
                 }
             ],
             "identifier": [
-                "https://doi.org/10.25914/10.25914/r3ya-bg54"
+                "https://doi.org/10.25914/r3ya-bg54"
             ],
             "isBasedOn": [],
             "isPartOf": "http://dx.doi.org/10.25914/yrzp-g882",
@@ -108,8 +108,8 @@
             "spatialCoverage": "",
             "temporalCoverage": "",
             "url": [
-                "https://mate.science/models/sandiford-2021-detachment-1/",
-                "https://github.com/ModelAtlasofTheEarth/sandiford-2021-detachment-1/"
+                "https://mate.science/models/sandiford-2021-detachment/",
+                "https://github.com/ModelAtlasofTheEarth/sandiford-2021-detachment/"
             ],
             "version": "",
             "funding": [
@@ -425,7 +425,7 @@
             ],
             "description": "Code and inputs for computational model",
             "identifier": [
-                "https://doi.org/10.25914/10.25914/r3ya-bg54",
+                "https://doi.org/10.25914/r3ya-bg54",
                 "https://github.com/dansand/odf_paper"
             ],
             "keywords": "",
@@ -434,7 +434,7 @@
             "programmingLanguage": "",
             "runtimePlatform": "",
             "storageRequirements": "./",
-            "url": "https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment-1/catalog.html",
+            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment/catalog.html",
             "version": ""
         },
         {
@@ -447,9 +447,9 @@
             "description": "Data directory contains output data for 2 simulations stored in the following directories: ref_model_hires, alt_model_hires. Top level contains typical ASPECT output files, including log.txt and restart files. Topography and mesh variables were output at 100 Kyr intervals. Model end time is 5 Myr. Main output data consists of of plain text files representing model topography (e.g. topography.00000), vtu files (in the ./solution sub-directory) representing model output fields (e.g. solution-00000.0000.vtu). At each output step, there are 16 vtu files written. These can be opened with Paraview using the solution.pvd file in the top level.",
             "fileFormat": "./",
             "identifier": [
-                "https://doi.org/10.25914/10.25914/r3ya-bg54"
+                "https://doi.org/10.25914/r3ya-bg54"
             ],
-            "url": "https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment-1/catalog.html"
+            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment/catalog.html"
         },
         {
             "@id": "ro-crate-metadata.json",
