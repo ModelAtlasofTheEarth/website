@@ -9,7 +9,7 @@ for_codes:
   - 370401
 status:
 doi: https://doi.org/10.25914/t2mn-bk81
-url: ''
+url: https://mate.science/models/mather-2022-groundwater
 creditText: Mather, B., Müller, R. Dietmar., ['O’Neill', "O'Neill"], C., Beall, A.,
   Vervoort, R. Willem., & Moresi, Louis. (2024). Constraining the response of continental-scale
   groundwater flow to climate change [Data set]. AuScope, National Computational Infrastructure.
