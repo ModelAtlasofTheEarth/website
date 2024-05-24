@@ -10,6 +10,7 @@ import {
   BadgeDoi,
   TagsList,
 } from "../components/Badges"
+import Catalog from "../components/Catalog"
 import Citation from "../components/Citation"
 import Content, { HTMLContent } from "../components/Content"
 import PageHead from "../components/Head"
@@ -286,14 +287,15 @@ const ModelTemplate = ({
           </TabPanel>
 
           <TabPanel key="model-files">
-
             <h2>Model code & inputs</h2>
-
+            {
+              model_files?.nci_file_path &&
+              <>
+                <h3>File catalogue:</h3>
+                <Catalog url={model_files.nci_file_path}/>
+              </>
+            }
             <h3>Access:</h3>
-
-
-
-
             <p>
               Model code will be added to the <strong>{slug}</strong> model,
               hosted as part of the M@TE collection on{" "}
