@@ -1,0 +1,451 @@
+{
+    "@context": [
+        "https://www.researchobject.org/ro-crate/1.1/context.jsonld",
+        "https://raw.githubusercontent.com/codemeta/codemeta/master/codemeta.jsonld"
+    ],
+    "@graph": [
+        {
+            "@id": "#datasetCreation",
+            "@type": "CreateAction",
+            "agent": [
+                {
+                    "@id": "http://orcid.org/0000-0002-2207-6837"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0003-2198-9172"
+                }
+            ],
+            "description": "Running the computational model",
+            "endTime": "",
+            "instrument": [
+                {
+                    "@id": "https://doi.org/10.5281/zenodo.6903424"
+                },
+                {
+                    "@id": "https://doi.org/10.25914/608bfd1838db2"
+                }
+            ],
+            "object": {
+                "@id": "model_inputs"
+            },
+            "result": {
+                "@id": "model_outputs"
+            },
+            "startTime": ""
+        },
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "about": {
+                "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370401"
+            },
+            "abstract": "This study investigates the dynamics and constitutive behaviour of the oceanic lithosphere as it bends and yields during subduction. Two main observational constraints are considered: the maximum bending moment that can be supported by the lithosphere, and the inferred neutral plane depth in bending. We particularly focus on regions of old lithosphere where the \u2018apparent\u2019 neutral plane depth is about 30\u00a0km. We use subduction modelling approaches to investigate these flexural characteristics. We reassess bending moment estimates from a range of previous studies, and show a significant convergence towards what we call the \u2018intermediate\u2019 range of lithosphere strength: weaker than some classical models predict, but stronger than recent inferences at seamounts. We consider the non-uniqueness that arises due to the trade-offs in strength as well background (tectonic) stress state. We outline this problem with several end-member models, which differ in regard to relative strength in the brittle and ductile regimes. We evaluate the consistency of these models in terms of a range of constraints, primarily the seismic expression of the outer rise. We show that a 30\u00a0km neutral plane depth implies that net slab pull is not greater than about 2 TN\u2009m\u22121. In contrast, models with low brittle strength imply that regions with a 30\u00a0km neutral plane depth are under moderate net axial compression. Under these conditions, reverse faulting is predicted beneath the neutral plane at depths &amp;gt;30\u00a0km. We show that moderate variations in background stress have a large impact on the predicted anelastic dissipation. We suggest brittle reverse faulting is a marginal phenomenon which may be inhibited by moderate changes in background stress.",
+            "alternateName": "sandifordcraig-2023-subduction-1",
+            "citation": {
+                "@id": "http://dx.doi.org/10.1093/gji/ggad230"
+            },
+            "contributor": "",
+            "creativeWorkStatus": "None",
+            "creator": [
+                {
+                    "@id": "http://orcid.org/0000-0002-2207-6837"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0003-2198-9172"
+                }
+            ],
+            "datePublished": "2024-05-27T05:10:28.000Z",
+            "description": "Tectonic plates are recycled into the mantle through subduction, where they bend and deform in various ways, such as brittle failure. This process creates deep sea trenches and results in characteristic earthquake patterns and gravity anomalies. In this study, we used a numerical model to investigate plate bending dynamics, complementing simpler approaches like flexural yield strength envelopes. We focused on the competition between bending stress and sources of net in-plane stress, such as slab pull, which influences the plate's neutral plane depth. It is difficult to reconcile the 'apparent' neutral plane depth with a net slab pull force greater than about 2 TN/m. Deviatoric compression in subducting plates more easily explains reverse earthquakes at depths of 20-50 km in the bending plate.",
+            "funder": [
+                {
+                    "@id": "https://ror.org/05mmh0f86"
+                },
+                {
+                    "@id": "https://ror.org/03wnrjx87"
+                },
+                {
+                    "@id": "https://ror.org/02b5d8509"
+                }
+            ],
+            "hasPart": [
+                {
+                    "@id": "model_inputs"
+                },
+                {
+                    "@id": "model_outputs"
+                },
+                {
+                    "@id": "website_material"
+                },
+                {
+                    "@id": "metadata_trail"
+                },
+                {
+                    "@id": "#datasetCreation"
+                }
+            ],
+            "identifier": [
+                "https://doi.org/10.25914/t13d-0r63"
+            ],
+            "isBasedOn": [],
+            "isPartOf": "http://dx.doi.org/10.25914/yrzp-g882",
+            "keywords": [
+                "Dynamics of lithosphere",
+                "Lithospheric flexure",
+                "Subduction",
+                "Earthquakes"
+            ],
+            "license": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "name": "Plate bending earthquakes and the strength distribution of the lithosphere",
+            "publisher": [
+                {
+                    "@id": "https://ror.org/04s1m4564"
+                },
+                {
+                    "@id": "https://ror.org/04yx6dh41"
+                }
+            ],
+            "spatialCoverage": "",
+            "temporalCoverage": "",
+            "url": [
+                "https://mate.science/models/sandifordcraig-2023-subduction-1/",
+                "https://github.com/ModelAtlasofTheEarth/sandifordcraig-2023-subduction-1/"
+            ],
+            "version": "",
+            "funding": [
+                {
+                    "@id": "_:b0"
+                },
+                {
+                    "@id": "_:b1"
+                }
+            ],
+            "creditText": [
+                "Sandiford, D., & Craig, T. (2024). Plate bending earthquakes and the strength distribution of the lithosphere [Data set]. AuScope, National Computational Infrastructure. https://doi.org/t13d-0r63"
+            ]
+        },
+        {
+            "@id": "_:b0",
+            "@type": "Grant",
+            "funder": {
+                "@id": "https://ror.org/05mmh0f86"
+            },
+            "identifier": "DP150102887"
+        },
+        {
+            "@id": "_:b1",
+            "@type": "Grant",
+            "funder": {
+                "@id": "https://ror.org/03wnrjx87"
+            },
+            "identifier": "URF\\R1\\180088"
+        },
+        {
+            "@id": "_:b2",
+            "@type": "Person",
+            "familyName": "Fraters",
+            "givenName": "Menno"
+        },
+        {
+            "@id": "_:b3",
+            "@type": "Person",
+            "familyName": "Glerum",
+            "givenName": "Anne"
+        },
+        {
+            "@id": "_:b4",
+            "@type": "Person",
+            "familyName": "Myhill",
+            "givenName": "Robert"
+        },
+        {
+            "@id": "_:b5",
+            "@type": "Person",
+            "familyName": "Naliboff",
+            "givenName": "John"
+        },
+        {
+            "@id": "_:b6",
+            "@type": "PropertyValue",
+            "propertyID": "URL",
+            "value": "https://zenodo.org/record/6903424"
+        },
+        {
+            "@id": "_:b7",
+            "@type": "Organization",
+            "name": "datacite"
+        },
+        {
+            "@id": "_:b8",
+            "@type": "Organization",
+            "name": "NCI Australia"
+        },
+        {
+            "@id": "http://dx.doi.org/10.1093/gji/ggad230",
+            "@type": "ScholarlyArticle",
+            "abstract": "This study investigates the dynamics and constitutive behaviour of the oceanic lithosphere as it bends and yields during subduction. Two main observational constraints are considered: the maximum bending moment that can be supported by the lithosphere, and the inferred neutral plane depth in bending. We particularly focus on regions of old lithosphere where the \u2018apparent\u2019 neutral plane depth is about 30\u00a0km. We use subduction modelling approaches to investigate these flexural characteristics. We reassess bending moment estimates from a range of previous studies, and show a significant convergence towards what we call the \u2018intermediate\u2019 range of lithosphere strength: weaker than some classical models predict, but stronger than recent inferences at seamounts. We consider the non-uniqueness that arises due to the trade-offs in strength as well background (tectonic) stress state. We outline this problem with several end-member models, which differ in regard to relative strength in the brittle and ductile regimes. We evaluate the consistency of these models in terms of a range of constraints, primarily the seismic expression of the outer rise. We show that a 30\u00a0km neutral plane depth implies that net slab pull is not greater than about 2 TN\u2009m\u22121. In contrast, models with low brittle strength imply that regions with a 30\u00a0km neutral plane depth are under moderate net axial compression. Under these conditions, reverse faulting is predicted beneath the neutral plane at depths &amp;gt;30\u00a0km. We show that moderate variations in background stress have a large impact on the predicted anelastic dissipation. We suggest brittle reverse faulting is a marginal phenomenon which may be inhibited by moderate changes in background stress.",
+            "author": [
+                {
+                    "@id": "http://orcid.org/0000-0002-2207-6837"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0003-2198-9172"
+                }
+            ],
+            "name": "Plate bending earthquakes and the strength distribution of the lithosphere"
+        },
+        {
+            "@id": "http://orcid.org/0000-0002-2207-6837",
+            "@type": "Person",
+            "familyName": "Sandiford",
+            "givenName": "Dan"
+        },
+        {
+            "@id": "http://orcid.org/0000-0003-2198-9172",
+            "@type": "Person",
+            "familyName": "Craig",
+            "givenName": "Timothy J"
+        },
+        {
+            "@id": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "@type": "CreativeWork",
+            "description": "Creative Commons Attribution 4.0 International",
+            "name": "CC-BY-4.0",
+            "url": " https://creativecommons.org/licenses/by/4.0/legalcode.txt"
+        },
+        {
+            "@id": "https://doi.org/10.25914/608bfd1838db2",
+            "@type": "Service",
+            "author": [
+                {
+                    "@id": "https://ror.org/04yx6dh41"
+                }
+            ],
+            "inLanguage": "en",
+            "name": "Gadi Supercomputer",
+            "provider": {
+                "@id": "_:b7"
+            },
+            "publisher": {
+                "@id": "_:b8"
+            },
+            "url": "https://pid.nci.org.au/doi/f5966_0057_9267_4579"
+        },
+        {
+            "@id": "https://doi.org/10.5281/zenodo.6903424",
+            "@type": "SoftwareSourceCode",
+            "author": [
+                {
+                    "@id": "https://orcid.org/0000-0003-2311-9402"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-0357-7115"
+                },
+                {
+                    "@id": "_:b2"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0001-7098-8198"
+                },
+                {
+                    "@id": "_:b3"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-8137-3903"
+                },
+                {
+                    "@id": "_:b4"
+                },
+                {
+                    "@id": "_:b5"
+                }
+            ],
+            "codeRepository": "https://github.com/geodynamics/aspect",
+            "identifier": "_:b6",
+            "license": [
+                "https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+                "info:eu-repo/semantics/openAccess"
+            ],
+            "name": "ASPECT v2.4.0",
+            "url": "https://zenodo.org/record/6903424"
+        },
+        {
+            "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370401",
+            "@type": "DefinedTerm",
+            "name": "Computational modelling and simulation in earth sciences",
+            "termCode": "370401"
+        },
+        {
+            "@id": "https://orcid.org/0000-0001-7098-8198",
+            "@type": "Person",
+            "familyName": "Gassmoeller",
+            "givenName": "Rene"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-8137-3903",
+            "@type": "Person",
+            "familyName": "Heister",
+            "givenName": "Timo"
+        },
+        {
+            "@id": "https://orcid.org/0000-0003-0357-7115",
+            "@type": "Person",
+            "familyName": "Dannberg",
+            "givenName": "Juliane"
+        },
+        {
+            "@id": "https://orcid.org/0000-0003-2311-9402",
+            "@type": "Person",
+            "familyName": "Bangerth",
+            "givenName": "Wolfgang"
+        },
+        {
+            "@id": "https://ror.org/02b5d8509",
+            "@type": "Organization",
+            "name": "Natural Environment Research Council"
+        },
+        {
+            "@id": "https://ror.org/03wnrjx87",
+            "@type": "Organization",
+            "name": "Royal Society"
+        },
+        {
+            "@id": "https://ror.org/04s1m4564",
+            "@type": "Organization",
+            "name": "AuScope"
+        },
+        {
+            "@id": "https://ror.org/04yx6dh41",
+            "@type": "Organization",
+            "name": "National Computational Infrastructure"
+        },
+        {
+            "@id": "https://ror.org/05mmh0f86",
+            "@type": "Organization",
+            "name": "Australian Research Council"
+        },
+        {
+            "@id": "metadata_trail",
+            "@type": "Dataset",
+            "hasPart": [
+                {
+                    "@id": "metadata_trail/issue_body.md"
+                },
+                {
+                    "@id": "metadata_trail/issue_dict.json"
+                },
+                {
+                    "@id": "metadata_trail/nci_iso.csv"
+                },
+                {
+                    "@id": "metadata_trail/ro-crate-metadata-nested.json"
+                }
+            ],
+            "name": "metadata_trail"
+        },
+        {
+            "@id": "metadata_trail/issue_body.md",
+            "@type": "CreativeWork",
+            "description": "Markdown document showing the original github issue body associated with the model submission.",
+            "encodingFormat": "text/markdown",
+            "name": "Issue Body"
+        },
+        {
+            "@id": "metadata_trail/issue_dict.json",
+            "@type": "CreativeWork",
+            "description": "json file representing the dictionary that is constructured by model_submission/.github/scripts/parse_issue.py",
+            "encodingFormat": "application/json",
+            "name": "Issue Dictionary"
+        },
+        {
+            "@id": "metadata_trail/nci_iso.csv",
+            "@type": "CreativeWork",
+            "description": "Simple crosswalk of metadata into ISO 19115 format/schema compatible with NCI GeoNwtework",
+            "encodingFormat": "text/csv",
+            "name": "NCI ISO Crosswalk"
+        },
+        {
+            "@id": "metadata_trail/ro-crate-metadata-nested.json",
+            "@type": "CreativeWork",
+            "description": "Nested version of RO-Crate, hasn't been flattenened.",
+            "encodingFormat": "application/json",
+            "name": "Nested version of RO-Crate"
+        },
+        {
+            "@id": "model_inputs",
+            "@type": [
+                "Dataset",
+                "SoftwareSourceCode"
+            ],
+            "contentSize": "",
+            "creator": [
+                {
+                    "@id": "http://orcid.org/0000-0002-2207-6837"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0003-2198-9172"
+                }
+            ],
+            "description": "Code and inputs for computational model",
+            "identifier": [
+                "https://doi.org/10.25914/t13d-0r63",
+                "https://github.com/dansand/subduction_GJI2022"
+            ],
+            "keywords": "",
+            "memoryRequirements": "./",
+            "processorRequirements": "",
+            "programmingLanguage": "",
+            "runtimePlatform": "",
+            "storageRequirements": "./",
+            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/sandifordcraig-2023-subduction-1/catalog.html",
+            "version": ""
+        },
+        {
+            "@id": "model_outputs",
+            "@type": "Dataset",
+            "contentSize": 50465865728,
+            "creator": [
+                {
+                    "@id": "http://orcid.org/0000-0002-2207-6837"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0003-2198-9172"
+                }
+            ],
+            "description": "Computations were done using the ASPECT code version 2.4.0. ASPECT output data from 2 simulations are included with this model. The reference model is the same model setup/data described in Sandiford and Craig, (2023). An alternative model is included in which the over-riding plate is welded to the left sidewall at the start of the simulation (whereas the initial temperature field in the reference model has a ridge). Note that both simulations develop a short-wavelength instability in the free surface of the over-riding plate, which begins approximately 3 Ma after the start of the simulation. The top level directories contains typical ASPECT output files, including log.txt and restart files. The primary output data consists of:\r\n\r\n-  plain text files representing model topography (e.g. topography.00000)\r\n- a range of \"field\" data, in .vtu format in the `./solution` sub-directory (e.g. solution-00000.0000.vtu). At each output step, there are 48 vtu files written. These can be opened with Paraview using the solution.pvd file in the top level. Quantities generally have SI units. Velocities are output as meters/year. \r\n-  particle information stored as .vtu files (16 per timestep). Particles were used to track the 2-km-thick weak entrained layer that facilitates the plate interface decoupling zone.",
+            "fileFormat": "./",
+            "identifier": [
+                "https://doi.org/10.25914/t13d-0r63"
+            ],
+            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/sandifordcraig-2023-subduction-1/catalog.html"
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "conformsTo": {
+                "@id": "https://w3id.org/ro/crate/1.1"
+            },
+            "about": {
+                "@id": "./"
+            },
+            "description": "RO-Crate Metadata File Descriptor (this file)"
+        },
+        {
+            "@id": "website_material",
+            "@type": [
+                "Dataset",
+                "CreativeWork"
+            ],
+            "creator": [
+                {
+                    "@id": "http://orcid.org/0000-0002-2207-6837"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0003-2198-9172"
+                }
+            ],
+            "description": "material for m@te website",
+            "fileFormat": "./"
+        }
+    ]
+}
