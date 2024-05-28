@@ -61,6 +61,8 @@ const fn = () => (
                 }
                 software {
                   name
+                  doi
+                  url_source
                 }
                 research_tags
                 compute_tags

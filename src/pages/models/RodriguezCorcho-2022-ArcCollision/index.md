@@ -16,9 +16,9 @@ creditText: Rodríguez Corcho, A., Polanco, S., Farrington, R., Beucher, R., Mon
   Style and Stress Evolution of Arc-Continent Collision [Data set]. AuScope, National
   Computational Infrastructure. https://doi.org/xy60-b940
 software:
-  - name: Underworld2
-    doi: https://zenodo.org/records/3996738
-    url_source: https://github.com/underworldcode/UWGeodynamics
+  name: Underworld2
+  doi: https://zenodo.org/records/3996738
+  url_source: https://github.com/underworldcode/UWGeodynamics
 licence:
   licence_url: https://creativecommons.org/licenses/by/4.0/legalcode
   licence_image: ../../../img/licence/by.png
@@ -220,7 +220,7 @@ model_files:
     and also the script used for post-processing.
   file_tree: ''
   existing_identifier: https://github.com/andresrcorcho/Dynamics-of-Arc-Continent-Collision
-  nci_file_path: 
+  nci_file_path:
     https://thredds.nci.org.au/thredds/catalog/nm08/MATE/RodriguezCorcho-2022-ArcCollision/catalog.html
   include: true
 dataset:
@@ -228,7 +228,7 @@ dataset:
   notes: The output consists of xdmf and h5 files. There is one xdmf file per time
     step (every 0.5 Myr) and a set of h5 files that contain the distinct model properties.
   existing_identifier: ''
-  nci_file_path: 
+  nci_file_path:
     https://thredds.nci.org.au/thredds/catalog/nm08/MATE/RodriguezCorcho-2022-ArcCollision/catalog.html
   include: true
 metadataFile: ro-crate-metadata.json

@@ -15,9 +15,9 @@ creditText: Mather, B., Müller, R. Dietmar., ['O’Neill', "O'Neill"], C., Beal
   groundwater flow to climate change [Data set]. AuScope, National Computational Infrastructure.
   https://doi.org/t2mn-bk81
 software:
-  - name: 'Underworld2: Python Geodynamics Modelling for Desktop, HPC and Cloud'
-    doi: https://doi.org/10.5281/zenodo.7455999
-    url_source: https://github.com/underworldcode/underworld2
+  name: 'Underworld2: Python Geodynamics Modelling for Desktop, HPC and Cloud'
+  doi: https://doi.org/10.5281/zenodo.7455999
+  url_source: https://github.com/underworldcode/underworld2
 licence:
   licence_url: https://creativecommons.org/licenses/by/4.0/legalcode
   licence_image: ../../../img/licence/by.png
@@ -141,8 +141,8 @@ images:
       of layers has been exaggerated for visual clarity. The model of the basin was
       rendered in 3D using Underworld.
 animation:
-  src: ./graphics/
-  caption: ''
+  src:
+  caption:
 model_setup_info:
   url: ''
   summary: In this paper, we apply our numerical framework to the  Sydney–Gunnedah–Bowen
@@ -166,7 +166,7 @@ model_files:
     HL06 was used to take the maximum a posteriori model and run it at high resolution.
   file_tree: ''
   existing_identifier: https://github.com/brmather/Sydney_Basin/tree/master
-  nci_file_path: 
+  nci_file_path:
     https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/mather-2022-groundwater/catalog.html
   include: true
 dataset:
@@ -176,7 +176,7 @@ dataset:
     format\r\n.npz - data on numpy binary format\r\n.png - image files\r\n.pvsm -
     Paraview state files\r\n.txt - data in .txt format"
   existing_identifier: ''
-  nci_file_path: 
+  nci_file_path:
     https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/mather-2022-groundwater/catalog.html
   include: true
 metadataFile: ro-crate-metadata.json

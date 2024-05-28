@@ -46,6 +46,7 @@ const ModelTemplate = ({
   slug,
   description,
   submitter,
+  software,
 }) => {
   const PostContent = contentComponent || Content
   const dataset_url = (
@@ -367,6 +368,7 @@ const ModelTemplate = ({
                 <p>
                   <h3>Notes:</h3>
                   <p>{dataset.notes}</p>
+                  <p>{software.doi}</p>
                 </p>
               )
             }
@@ -426,6 +428,7 @@ const ModelsPage = ({ data }) => {
         slug={post.frontmatter.slug}
         doi={post.frontmatter.doi}
         submitter={post.frontmatter.submitter}
+        software={post.frontmatter.software}
       />
     </Layout>
   )
@@ -558,6 +561,7 @@ export const pageQuery = graphql`
         submitter {
           name
           family_name
+          ORCID
         }
         title
       }

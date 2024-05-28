@@ -43,6 +43,8 @@ exports.createPages = ({ actions, graphql }) => {
               research_tags
               software {
                 name
+                doi
+                url_source
               }
               submitter {
                 name
