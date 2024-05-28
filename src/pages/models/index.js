@@ -59,9 +59,6 @@ const fn = () => (
                     }
                   }
                 }
-                software {
-                  name
-                }
                 research_tags
                 compute_tags
                 templateKey

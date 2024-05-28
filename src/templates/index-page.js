@@ -215,7 +215,7 @@ const IndexPageTemplate = ({
           />
         </div>
       </div>
-      
+
     </div>
   );
 };
@@ -292,9 +292,6 @@ query MyQuery {
             }
           }
           research_tags
-          software {
-            name
-          }
           submitter {
             name
             family_name

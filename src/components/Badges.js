@@ -34,6 +34,7 @@ const BadgeTag = ({ tag, style }) => {
   )
 }
 
+
 const TagsList = ({ tags, style }) => {
   const tags_sorted = [...tags].sort()
   return (

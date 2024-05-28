@@ -16,9 +16,9 @@ creditText: Polanco, S., Blum, M., Salles, T., Frederick, B., Farrington, R., Di
   continental-scale deltas to climatically driven sea level changes [Data set]. AuScope,
   National Computational Infrastructure. https://doi.org/4m82-y773
 software:
-  - name: Badlands
-    doi: https://doi.org/10.5281/zenodo.1069573
-    url_source: https://github.com/badlands-model/badlands
+  name: Badlands
+  doi: https://doi.org/10.5281/zenodo.1069573
+  url_source: https://github.com/badlands-model/badlands
 licence:
   licence_url: https://creativecommons.org/licenses/by/4.0/legalcode
   licence_image: ../../../img/licence/by.png
@@ -198,7 +198,7 @@ model_files:
     experiment and perform some pre or post-processing tasks."
   file_tree: ''
   existing_identifier: ''
-  nci_file_path: 
+  nci_file_path:
     https://thredds.nci.org.au/thredds/catalog/nm08/MATE/polanco-2024-deltas/catalog.html
   include: true
 dataset:
@@ -211,7 +211,7 @@ dataset:
     \n\r\n- two **.xdmf** files for the surface (**tin_series.xdmf**) and the flow
     network (**flow_series.xdmf**) that read the **xmf** files through time."
   existing_identifier: ''
-  nci_file_path: 
+  nci_file_path:
     https://thredds.nci.org.au/thredds/catalog/nm08/MATE/polanco-2024-deltas/catalog.html
   include: true
 metadataFile: ro-crate-metadata.json

@@ -51,7 +51,6 @@ class TagRoute extends React.Component {
             date={post.node.frontmatter.date}
             tags={post_tags}
             landing_image={post.node.frontmatter.images.landing_image}
-            software={post.node.frontmatter.software}
           />
         ) :
         (
@@ -132,9 +131,6 @@ export const tagPageQuery = graphql`
                 }
               }
             research_tags
-            software {
-              name
-            }
             submitter {
               name
               family_name

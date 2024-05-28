@@ -90,9 +90,6 @@ export const creatorPageQuery = graphql`
               }
             }
             research_tags
-            software {
-              name
-            }
             submitter {
               name
               family_name
