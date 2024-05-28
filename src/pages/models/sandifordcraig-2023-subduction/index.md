@@ -142,7 +142,7 @@ images:
       here as the mean ridge height) down to a reference depth (taken here as 150
       km beneath the reference height). In the main panel, the black line shows the
       horizontal variation in the vertically integrated deviatoric stress difference
-      ($\tau_{xx} - \tau_{zz}$).  Positive values indicate a state of deviatoric tension.
+      ($\tau_{xx} - \tau_{yy}$).  Positive values indicate a state of deviatoric tension.
       The dashed blue line shows the horizontal variation in the vertically integrated
       vertical normal stress ($\sigma_{yy}$)  (or the GPE). Strictly speaking, this
       quantity is only equal to the GPE when the vertical normal stress is lithostatic,
@@ -190,7 +190,7 @@ model_files:
     in the associated publication as well as the `model_code_inputs/README.md` directory.
   file_tree: ''
   existing_identifier: https://github.com/dansand/subduction_GJI2022
-  nci_file_path: 
+  nci_file_path:
     https://thredds.nci.org.au/thredds/catalog/nm08/MATE/sandifordcraig-2023-subduction/catalog.html
   include: true
 dataset:
@@ -213,7 +213,7 @@ dataset:
     used to track the 2-km-thick weak entrained layer that facilitates the plate interface
     decoupling zone."
   existing_identifier: ''
-  nci_file_path: 
+  nci_file_path:
     https://thredds.nci.org.au/thredds/catalog/nm08/MATE/sandifordcraig-2023-subduction/catalog.html
   include: true
 metadataFile: ro-crate-metadata.json
