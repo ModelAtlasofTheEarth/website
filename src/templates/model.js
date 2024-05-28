@@ -53,7 +53,7 @@ const ModelTemplate = ({
     ? "https://doi.org/" + cleanDoi(doi)
     : dataset.url
   )
-  const all_tags = research_tags.concat(compute_tags)
+  const all_tags = (research_tags || []).concat(compute_tags || []);
   const submitter_full_name = submitter.name + " " + submitter.family_name
   const creator_full_names = creators.map((creator) => (
     creator.name + " " + creator.family_name
