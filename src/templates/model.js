@@ -290,10 +290,10 @@ const ModelTemplate = ({
             <h2>Model code & inputs</h2>
             {
               model_files?.nci_file_path &&
-              <>
-                <h3>File catalogue:</h3>
+              <section id="nci-catalog">
+                <h3>NCI file catalogue preview:</h3>
                 <Catalog url={model_files.nci_file_path}/>
-              </>
+              </section>
             }
             <h3>Access:</h3>
             <p>

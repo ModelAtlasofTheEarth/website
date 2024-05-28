@@ -63,45 +63,77 @@ class Catalog extends React.Component {
       )
     }
     const datasets = data.dataset?.catalogRef.concat(data.dataset?.dataset)
+    const dateFormat = new Intl.DateTimeFormat(navigator.language)
     return(
       <div className={className}>
-        <ul>
+        <table>
+          <tr>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Size</th>
+            <th>Last Modified</th>
+          </tr>
           {
-            datasets.map(i => <li>{renderItem(i, url)}</li>)
+            datasets.map(i => renderItem(i, url, dateFormat))
           }
-        </ul>
+        </table>
       </div>
     )
   }
 }
 
-const renderItem = (data, url) => {
+const renderItem = (data, url, dateFormat) => {
   const keys = Object.keys(data)
   if (keys.indexOf("@_xlink:href") !== -1) {
     return renderDirectory(data, url)
   }
-  return renderFile(data, url)
+  return renderFile(data, url, dateFormat)
 }
 
 const renderDirectory = (data, url) => {
-  return <>
-    <FontAwesomeIcon icon={faFolder} aria-hidden fixedWidth/>
-    &nbsp;
-    <a href={url + "/" + data["@_xlink:title"] + "/catalog.html"}>
-      {data["@_xlink:title"] + "/"}
-    </a>
-  </>
+  return <tr>
+    <td>
+      <FontAwesomeIcon icon={faFolder} aria-hidden fixedWidth/>
+      &nbsp; Directory
+    </td>
+    <td>
+      <a target="_blank" href={url + "/" + data["@_xlink:title"] + "/catalog.html"}>
+        {data["@_xlink:title"] + "/"}
+      </a>
+    </td>
+    <td>--</td>
+    <td>--</td>
+  </tr>
 }
 
-const renderFile = (data, url) => {
-  console.log(data)
-  return <>
-    <FontAwesomeIcon icon={faFile} aria-hidden fixedWidth/>
-    &nbsp;
-    <a href={url + "/catalog.html?dataset=" + data["@_ID"]}>
-      {data["@_name"]}
-    </a>
-  </>
+const renderFile = (data, url, dateFormat) => {
+  const dataSize = (
+    data?.dataSize
+    ? `${data.dataSize["#text"]} ${data.dataSize["@_units"]}`
+    : "--"
+  )
+  if (!dateFormat) {
+    dateFormat = new Intl.DateTimeFormat(navigator.language)
+  }
+  const date = (
+    data?.date
+    ? dateFormat.format(Date.parse(data.date["#text"]))
+    : "--"
+  )
+
+  return <tr>
+    <td>
+      <FontAwesomeIcon icon={faFile} aria-hidden fixedWidth/>
+      &nbsp; File
+    </td>
+    <td>
+      <a target="_blank" href={url + "/catalog.html?dataset=" + data["@_ID"]}>
+        {data["@_name"]}{" "}
+      </a>
+    </td>
+    <td>{dataSize}</td>
+    <td>{date}</td>
+  </tr>
 }
 
 export default Catalog
