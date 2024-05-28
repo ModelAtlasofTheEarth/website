@@ -466,7 +466,6 @@ export const pageQuery = graphql`
         creators {
           name
           family_name
-          affiliation
           ORCID
         }
         dataset {
@@ -532,7 +531,6 @@ export const pageQuery = graphql`
             }
           }
           licence_url
-          name
         }
         metadataFile {
           fields {
@@ -560,7 +558,6 @@ export const pageQuery = graphql`
         submitter {
           name
           family_name
-          affiliation
         }
         title
       }
