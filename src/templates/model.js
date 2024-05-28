@@ -10,7 +10,7 @@ import {
   BadgeDoi,
   TagsList,
 } from "../components/Badges"
-import Citation from "../components/Citation"
+import Citation, { replaceDois } from "../components/Citation"
 import Content, { HTMLContent } from "../components/Content"
 import PageHead from "../components/Head"
 import Layout from "../components/Layout"
@@ -30,6 +30,7 @@ const ModelTemplate = ({
   content,
   contentComponent,
   creators,
+  creditText,
   dataset,
   date,
   doi,
@@ -167,6 +168,18 @@ const ModelTemplate = ({
           </TabPanel>
 
           <TabPanel key="metadata">
+            {
+              creditText &&
+              <section id="how-to-cite" className="model-page">
+                <h2>Cite this model</h2>
+                {
+                  doi &&
+                  <BadgeDoi doi={doi} style={{marginBottom: "10px"}}/>
+                }
+                <p dangerouslySetInnerHTML={{__html: replaceDois({html: creditText})}}></p>
+              </section>
+            }
+
             {
               publication.html &&
               <section id="publication" className="model-page">
@@ -409,6 +422,7 @@ const ModelsPage = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         creators={post.frontmatter.creators}
+        creditText={post.frontmatter.creditText}
         dataset={post.frontmatter.dataset}
         date={post.frontmatter.date}
         description={post.frontmatter.description}
@@ -424,7 +438,6 @@ const ModelsPage = ({ data }) => {
         research_tags={post.frontmatter.research_tags}
         title={post.frontmatter.title}
         slug={post.frontmatter.slug}
-        doi={post.frontmatter.doi}
         submitter={post.frontmatter.submitter}
       />
     </Layout>
@@ -468,6 +481,7 @@ export const pageQuery = graphql`
           family_name
           ORCID
         }
+        creditText
         dataset {
           url
           notes

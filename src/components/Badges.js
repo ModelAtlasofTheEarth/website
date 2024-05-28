@@ -16,12 +16,12 @@ const BadgeCreator = ({ creator, style }) => {
 const BadgeDoi = ({ doi, style }) => {
   doi = cleanDoi(doi)
   return (
-    <Link to={`https://doi.org/${doi}`}>
+    <a href={`https://doi.org/${doi}`} target="_blank">
       <span className="hover-shadow hover-opacity">
         <span className="badge-doi-left" style={style}>DOI</span>
         <span className="badge-doi-right" style={style}>{doi}</span>
       </span>
-    </Link>
+    </a>
   )
 }
 
