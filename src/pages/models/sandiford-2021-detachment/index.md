@@ -44,22 +44,6 @@ creators:
     family_name: Whittaker
     ORCID: 0000-0002-3170-3935
 associated_publication:
-  authors:
-    - ORCID: http://orcid.org/0000-0002-2207-6837
-      givenName: Dan
-      familyName: Sandiford
-    - ORCID: http://orcid.org/0000-0003-4985-1810
-      givenName: Sascha
-      familyName: Brune
-    - ORCID: http://orcid.org/0000-0002-9481-1749
-      givenName: Anne
-      familyName: Glerum
-    - ORCID: http://orcid.org/0000-0002-5697-7203
-      givenName: John
-      familyName: Naliboff
-    - ORCID: http://orcid.org/0000-0002-3170-3935
-      givenName: Joanne M.
-      familyName: Whittaker
   title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block Rotation and Apparent Unbending'
   doi: http://dx.doi.org/10.1029/2021gc009681
   url: ''
