@@ -15,9 +15,9 @@ creditText: 'Sandiford, D., Brune, S., Glerum, A., Naliboff, J., & Whittaker, J.
   and Apparent Unbending [Data set]. AuScope, National Computational Infrastructure.
   https://doi.org/r3ya-bg54'
 software:
-  - name: 'geodynamics/aspect: ASPECT 2.5.0'
-    doi: https://doi.org/10.5281/zenodo.8200213
-    url_source: ''
+  name: 'geodynamics/aspect: ASPECT 2.5.0'
+  doi: https://doi.org/10.5281/zenodo.8200213
+  url_source: ''
 licence:
   licence_url: https://creativecommons.org/licenses/by/4.0/legalcode
   licence_image: ../../../img/licence/by.png
