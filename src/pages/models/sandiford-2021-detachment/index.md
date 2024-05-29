@@ -9,7 +9,7 @@ for_codes:
   - 370401
 status:
 doi: https://doi.org/10.25914/10.25914/r3ya-bg54
-url: 
+url:
 creditText: 'Sandiford, D., Brune, S., Glerum, A., Naliboff, J., & Whittaker, J. (2024).
   Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block Rotation
   and Apparent Unbending [Data set]. AuScope, National Computational Infrastructure.
@@ -92,7 +92,7 @@ associated_publication:
             TAS Australia
   title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block
     Rotation and Apparent Unbending'
-  doi: 10.1029/2021gc009681
+  doi: http://dx.doi.org/10.1029/2021gc009681
   url:
   journal: Geochemistry, Geophysics, Geosystems
   publisher: American Geophysical Union (AGU)

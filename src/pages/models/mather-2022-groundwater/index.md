@@ -9,7 +9,7 @@ for_codes:
   - 370401
 status:
 doi: https://doi.org/10.25914/10.25914/t2mn-bk81
-url: 
+url:
 creditText: Mather, B., Müller, R. Dietmar., ['O’Neill', "O'Neill"], C., Beall, A.,
   Vervoort, R. Willem., & Moresi, Louis. (2024). Constraining the response of continental-scale
   groundwater flow to climate change [Data set]. AuScope, National Computational Infrastructure.
@@ -68,7 +68,7 @@ associated_publication:
       familyName: Moresi
   title: Constraining the response of continental-scale groundwater flow to climate
     change
-  doi: 10.1038/s41598-022-08384-w
+  doi: http://dx.doi.org/10.1038/s41598-022-08384-w
   url:
   journal: Scientific Reports
   publisher: Springer Science and Business Media LLC
