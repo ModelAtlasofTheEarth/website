@@ -95,7 +95,7 @@ associated_publication:
   title: Flexural isostatic response of continental-scale deltas to climatically driven
     sea level changes
   doi: 10.5194/esurf-12-301-2024
-  url: 
+  url:
   journal: Earth Surface Dynamics
   publisher: Copernicus GmbH
   date: 2024-2-1
@@ -174,7 +174,7 @@ images:
     src: ./graphics/fig_setup.png
     caption:
 animation:
-  src: ./graphics/animation
+  src: ./graphics/animation.mp4
   caption: The animation shows the surface and stratigraphic evolution of our simulated
     continental-scale deltas. We let each simulation initialize and run for 2 Myr
     without any sea-level fluctuations so that the delta can reach dynamic equilibrium
