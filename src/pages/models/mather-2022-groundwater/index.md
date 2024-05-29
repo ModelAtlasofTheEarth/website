@@ -121,8 +121,8 @@ images:
       of layers has been exaggerated for visual clarity. The model of the basin was
       rendered in 3D using Underworld.
 animation:
-  src: ''
-  caption: ''
+  src:
+  caption:
 model_setup_info:
   url: ''
   summary: In this paper, we apply our numerical framework to the  Sydney–Gunnedah–Bowen
