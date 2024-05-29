@@ -184,7 +184,7 @@ images:
     src: ./graphics/model_setup.jpg
     caption: ''
 animation:
-  src: ./graphics/animation
+  src: ./graphics/animation.mp4
   caption: "Evolution of less buoyant arc-continent collision. This style of collision
     results in arc transference to the continental overriding plate.\n"
 model_setup_info:
