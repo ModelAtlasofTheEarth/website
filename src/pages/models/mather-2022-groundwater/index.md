@@ -47,32 +47,11 @@ creators:
     family_name: Moresi
     ORCID: 0000-0003-3685-174X
 associated_publication:
-  authors:
-    - '@type': Person
-      givenName: Ben
-      familyName: Mather
-    - '@type': Person
-      givenName: R. Dietmar
-      familyName: Müller
-    - '@type': Person
-      givenName: Craig
-      familyName: O’Neill
-    - '@type': Person
-      givenName: Adam
-      familyName: Beall
-    - '@type': Person
-      givenName: R. Willem
-      familyName: Vervoort
-    - '@type': Person
-      givenName: Louis
-      familyName: Moresi
-  title: Constraining the response of continental-scale groundwater flow to climate
-    change
-  doi: http://dx.doi.org/10.1038/s41598-022-08384-w
-  url:
+  title: Constraining the response of continental-scale groundwater flow to climate change
+  doi: 10.1038/s41598-022-08384-w
+  url: http://dx.doi.org/10.1038/s41598-022-08384-w
   journal: Scientific Reports
   publisher: Springer Science and Business Media LLC
-  date: 2022-3-16
 compute_info:
   name: National Computational Infrastructure
   organisation:

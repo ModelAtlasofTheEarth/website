@@ -57,48 +57,11 @@ creators:
     family_name: Moresi
     ORCID: 0000-0003-3685-174X
 associated_publication:
-  authors:
-    - '@type': Person
-      '@id': http://orcid.org/0000-0002-1270-4377
-      givenName: Sara
-      familyName: Polanco
-    - '@type': Person
-      givenName: Mike
-      familyName: Blum
-    - '@type': Person
-      '@id': http://orcid.org/0000-0001-6095-7689
-      givenName: Tristan
-      familyName: Salles
-    - '@type': Person
-      givenName: Bruce C.
-      familyName: Frederick
-    - '@type': Person
-      '@id': http://orcid.org/0000-0002-2594-6965
-      givenName: Rebecca
-      familyName: Farrington
-    - '@type': Person
-      '@id': http://orcid.org/0000-0003-3693-932X
-      givenName: Xuesong
-      familyName: Ding
-    - '@type': Person
-      '@id': http://orcid.org/0000-0003-3566-1557
-      givenName: Ben
-      familyName: Mather
-    - '@type': Person
-      '@id': http://orcid.org/0000-0003-2595-2414
-      givenName: Claire
-      familyName: Mallard
-    - '@type': Person
-      '@id': http://orcid.org/0000-0003-3685-174X
-      givenName: Louis
-      familyName: Moresi
-  title: Flexural isostatic response of continental-scale deltas to climatically driven
-    sea level changes
-  doi: http://dx.doi.org/10.5194/esurf-12-301-2024
-  url:
+  title: Flexural isostatic response of continental-scale deltas to climatically driven sea level changes
+  doi: 10.5194/esurf-12-301-2024
+  url: http://dx.doi.org/10.5194/esurf-12-301-2024
   journal: Earth Surface Dynamics
   publisher: Copernicus GmbH
-  date: 2024-2-1
 compute_info:
   name:
   organisation:
