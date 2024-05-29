@@ -9,7 +9,7 @@ for_codes:
   - 370401
 status:
 doi: https://doi.org/10.25914/10.25914/t2mn-bk81
-url: ''
+url: 
 creditText: Mather, B., Müller, R. Dietmar., ['O’Neill', "O'Neill"], C., Beall, A.,
   Vervoort, R. Willem., & Moresi, Louis. (2024). Constraining the response of continental-scale
   groundwater flow to climate change [Data set]. AuScope, National Computational Infrastructure.
@@ -69,13 +69,13 @@ associated_publication:
   title: Constraining the response of continental-scale groundwater flow to climate
     change
   doi: 10.1038/s41598-022-08384-w
-  url: ''
+  url:
   journal: Scientific Reports
   publisher: Springer Science and Business Media LLC
   date: 2022-3-16
 compute_info:
   name: National Computational Infrastructure
-  organisation: ''
+  organisation:
   url: https://ror.org/04yx6dh41
   doi: https://ror.org/04yx6dh41
 research_tags:
@@ -91,7 +91,7 @@ compute_tags:
   - advection-diffusion
 funder:
   - name: NSW Department of Industry
-    doi: ''
+    doi:
   - name: AuScope
     doi: https://ror.org/04s1m4564
 abstract: Numerical models of groundwater flow play a critical role for water management
@@ -125,7 +125,7 @@ description: This model was developed in order to study groundwater flow on a co
 images:
   landing_image:
     src: ./graphics/fig1.png
-    caption: ''
+    caption:
   graphic_abstract:
     src: ./graphics/fig1.png
     caption: "Coupled heat-groundwater flow model of the Sydney–Gunnedah–Bowen Basin
@@ -144,7 +144,7 @@ animation:
   src:
   caption:
 model_setup_info:
-  url: ''
+  url:
   summary: In this paper, we apply our numerical framework to the  Sydney–Gunnedah–Bowen
     (SGB) Basin in eastern Australia. The SGB Basin  covers about 1.5 million square
     kilometers, and we model it in  high-resolution 3D, using over 10 million cells
@@ -161,21 +161,21 @@ model_setup_info:
     variable that we invert from borehole temperature data within our Bayesian optimization
     scheme.
 model_files:
-  url: ''
+  url:
   notes: In the Scripts folder, HL05 was used to run the optimisation problem and
     HL06 was used to take the maximum a posteriori model and run it at high resolution.
-  file_tree: ''
+  file_tree:
   existing_identifier: https://github.com/brmather/Sydney_Basin/tree/master
   nci_file_path:
     https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/mather-2022-groundwater/catalog.html
   include: true
 dataset:
-  url: ''
+  url:
   notes: "model_output_data contains the following file types:\r\n\r\n.h5 - Underworld2
     data files\r\n.xdmf- Underworld2 xdmf header files\r\n.csv - Various data in csv
     format\r\n.npz - data on numpy binary format\r\n.png - image files\r\n.pvsm -
     Paraview state files\r\n.txt - data in .txt format"
-  existing_identifier: ''
+  existing_identifier:
   nci_file_path:
     https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/mather-2022-groundwater/catalog.html
   include: true

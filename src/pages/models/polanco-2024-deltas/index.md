@@ -95,15 +95,15 @@ associated_publication:
   title: Flexural isostatic response of continental-scale deltas to climatically driven
     sea level changes
   doi: 10.5194/esurf-12-301-2024
-  url: ''
+  url: 
   journal: Earth Surface Dynamics
   publisher: Copernicus GmbH
   date: 2024-2-1
 compute_info:
-  name: ''
-  organisation: ''
-  url: ''
-  doi: ''
+  name:
+  organisation:
+  url:
+  doi:
 research_tags:
   - Flexural isostasy
   - Glacial isostatic adjustment (GIA)
@@ -112,14 +112,14 @@ research_tags:
 compute_tags: []
 funder:
   - name: Australian Research Council
-    doi: ''
+    doi:
   - name: Australian–American Fulbright Commission
-    doi: ''
+    doi:
   - name: The University of Melbourne
-    doi: ''
+    doi:
 funding:
   - name: Australian Research Council
-    doi: ''
+    doi:
     number_id: IH130200012
 abstract: "Abstract. The interplay between climate-forced sea level change, erosional
   and depositional processes, and flexural isostasy in deep time on passive margin
@@ -172,7 +172,7 @@ images:
       NF = non-flexural, F = flexural, IH = icehouse, and GH = greenhouse."
   model_setup:
     src: ./graphics/fig_setup.png
-    caption: ''
+    caption:
 animation:
   src: ./graphics/animation
   caption: The animation shows the surface and stratigraphic evolution of our simulated
@@ -180,7 +180,7 @@ animation:
     without any sea-level fluctuations so that the delta can reach dynamic equilibrium
     without any disturbances in base level, then impose climate-forced sea-level changes.
 model_setup_info:
-  url: ''
+  url:
   summary: Planview of model setup (top) and cross-section in the middle of the modeling
     domain. The initial configuration of the modeling domain resembles the topography
     of a natural source-to-sink system with 3400 m elevation in the headwaters, a
@@ -190,19 +190,19 @@ model_setup_info:
     a point-source for sediment input to the marine domain we imposed a longitudinal
     topographic low in the middle of the model.
 model_files:
-  url: ''
+  url:
   notes: "The input and boundary conditions for the model are structured as follows:\r
     \nan input XML file where the initial and boundary conditions are set\r\na data
     folder containing the initial surface and the boundary conditions, in this case
     different sea-level scenarios\r\na series of IPython Notebooks used to run the
     experiment and perform some pre or post-processing tasks."
-  file_tree: ''
-  existing_identifier: ''
+  file_tree:
+  existing_identifier:
   nci_file_path:
     https://thredds.nci.org.au/thredds/catalog/nm08/MATE/polanco-2024-deltas/catalog.html
   include: true
 dataset:
-  url: ''
+  url:
   notes: "The model output data is stored in a hdf5 format. You will see a h5 folder
     and a series of xdmf files. \r\n- **h5** folder contains the **hdf5** data, all
     the information computed by the model are stored in these files. You will have
@@ -210,7 +210,7 @@ dataset:
     *sed* (stratigraphy) data if the stratal structure is computed in your simulation.\r
     \n\r\n- two **.xdmf** files for the surface (**tin_series.xdmf**) and the flow
     network (**flow_series.xdmf**) that read the **xmf** files through time."
-  existing_identifier: ''
+  existing_identifier:
   nci_file_path:
     https://thredds.nci.org.au/thredds/catalog/nm08/MATE/polanco-2024-deltas/catalog.html
   include: true

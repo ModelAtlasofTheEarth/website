@@ -53,7 +53,7 @@ associated_publication:
             Environment, University of Leeds , Leeds LS29JT, UK
   title: Plate bending earthquakes and the strength distribution of the lithosphere
   doi: 10.1093/gji/ggad230
-  url: ''
+  url:
   journal: Geophysical Journal International
   publisher: Oxford University Press (OUP)
   date: 2023-5-27
@@ -166,7 +166,7 @@ animation:
     of the over-riding plate, which begins approximately 3 Ma after the start of the
     simulation.'
 model_setup_info:
-  url: ''
+  url:
   summary: The subduction model comprises a rectangular domain with a depth of 2900
     km, and an aspect ratio of 4. The initial conditions comprise an adiabatic mantle
     with a potential temperature of 1350 C and two plates, whose age and thermal structure
@@ -184,17 +184,17 @@ model_setup_info:
     stress that varies between between about 10 - 20 MPa throughout the plate interface
     domain. See the included model input file (.prm) for further details.
 model_files:
-  url: ''
+  url:
   notes: Model setup is provided by an ASPECT input file and a WorldBuilder file (https://github.com/GeodynamicWorldBuilder/WorldBuilder).
     Minor modifications to the ASPECT source code were implemented and are discussed
     in the associated publication as well as the `model_code_inputs/README.md` directory.
-  file_tree: ''
+  file_tree:
   existing_identifier: https://github.com/dansand/subduction_GJI2022
   nci_file_path:
     https://thredds.nci.org.au/thredds/catalog/nm08/MATE/sandifordcraig-2023-subduction/catalog.html
   include: true
 dataset:
-  url: ''
+  url:
   notes: "Computations were done using the ASPECT code version 2.4.0. ASPECT output
     data from 2 simulations are included with this model. The reference model is the
     same model setup/data described in Sandiford and Craig, (2023). An alternative
@@ -212,7 +212,7 @@ dataset:
     -  particle information stored as .vtu files (16 per timestep). Particles were
     used to track the 2-km-thick weak entrained layer that facilitates the plate interface
     decoupling zone."
-  existing_identifier: ''
+  existing_identifier:
   nci_file_path:
     https://thredds.nci.org.au/thredds/catalog/nm08/MATE/sandifordcraig-2023-subduction/catalog.html
   include: true
