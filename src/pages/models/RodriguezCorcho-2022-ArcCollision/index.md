@@ -100,7 +100,7 @@ associated_publication:
             ACT Australia
   title: The Role of Lithospheric‐Deep Mantle Interactions on the Style and Stress
     Evolution of Arc‐Continent Collision
-  doi: http://dx.doi.org/10.1029/2022gc010386
+  doi: 10.1029/2022gc010386
   url: ''
   journal: Geochemistry, Geophysics, Geosystems
   publisher: American Geophysical Union (AGU)

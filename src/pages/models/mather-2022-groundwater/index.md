@@ -68,7 +68,7 @@ associated_publication:
       familyName: Moresi
   title: Constraining the response of continental-scale groundwater flow to climate
     change
-  doi: http://dx.doi.org/10.1038/s41598-022-08384-w
+  doi: 10.1038/s41598-022-08384-w
   url: ''
   journal: Scientific Reports
   publisher: Springer Science and Business Media LLC

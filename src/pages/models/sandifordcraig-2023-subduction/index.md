@@ -52,7 +52,7 @@ associated_publication:
           name: COMET, Institute of Geophysics and Tectonics, School of Earth and
             Environment, University of Leeds , Leeds LS29JT, UK
   title: Plate bending earthquakes and the strength distribution of the lithosphere
-  doi: http://dx.doi.org/10.1093/gji/ggad230
+  doi: 10.1093/gji/ggad230
   url: ''
   journal: Geophysical Journal International
   publisher: Oxford University Press (OUP)

@@ -92,7 +92,7 @@ associated_publication:
             TAS Australia
   title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block
     Rotation and Apparent Unbending'
-  doi: http://dx.doi.org/10.1029/2021gc009681
+  doi: 10.1029/2021gc009681
   url: ''
   journal: Geochemistry, Geophysics, Geosystems
   publisher: American Geophysical Union (AGU)

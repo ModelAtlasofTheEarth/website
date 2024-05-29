@@ -94,7 +94,7 @@ associated_publication:
       familyName: Moresi
   title: Flexural isostatic response of continental-scale deltas to climatically driven
     sea level changes
-  doi: http://dx.doi.org/10.5194/esurf-12-301-2024
+  doi: 10.5194/esurf-12-301-2024
   url: ''
   journal: Earth Surface Dynamics
   publisher: Copernicus GmbH
