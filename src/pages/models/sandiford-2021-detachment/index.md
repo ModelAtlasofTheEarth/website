@@ -8,16 +8,16 @@ featuredpost:
 for_codes:
   - 370401
 status:
-doi: https://doi.org/10.25914/10.25914/r3ya-bg54
-url:
+doi: https://doi.org/10.25914/r3ya-bg54
+url: https://mate.science/models/sandiford-2021-detachment
 creditText: 'Sandiford, D., Brune, S., Glerum, A., Naliboff, J., & Whittaker, J. (2024).
   Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block Rotation
   and Apparent Unbending [Data set]. AuScope, National Computational Infrastructure.
   https://doi.org/r3ya-bg54'
 software:
-  name: 'geodynamics/aspect: ASPECT 2.5.0'
-  doi: https://doi.org/10.5281/zenodo.8200213
-  url_source:
+  - name: 'geodynamics/aspect: ASPECT 2.5.0'
+    doi: https://doi.org/10.5281/zenodo.8200213
+    url_source: ''
 licence:
   licence_url: https://creativecommons.org/licenses/by/4.0/legalcode
   licence_image: ../../../img/licence/by.png
@@ -44,11 +44,59 @@ creators:
     family_name: Whittaker
     ORCID: 0000-0002-3170-3935
 associated_publication:
-  title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block Rotation and Apparent Unbending'
-  doi: 10.1029/2021gc009681
-  url: http://dx.doi.org/10.1029/2021gc009681
+  authors:
+    - '@type': Person
+      '@id': http://orcid.org/0000-0002-2207-6837
+      givenName: Dan
+      familyName: Sandiford
+      affiliation:
+        - '@type': Organization
+          name: Institute for Marine and Antarctic Studies University of Tasmania  Hobart
+            TAS Australia
+        - '@type': Organization
+          name: Helmholtz Centre Potsdam—German Research Centre for Geosciences (GFZ)  Potsdam
+            Germany
+    - '@type': Person
+      '@id': http://orcid.org/0000-0003-4985-1810
+      givenName: Sascha
+      familyName: Brune
+      affiliation:
+        - '@type': Organization
+          name: Helmholtz Centre Potsdam—German Research Centre for Geosciences (GFZ)  Potsdam
+            Germany
+        - '@type': Organization
+          name: Institute of Geosciences University of Potsdam  Potsdam Germany
+    - '@type': Person
+      '@id': http://orcid.org/0000-0002-9481-1749
+      givenName: Anne
+      familyName: Glerum
+      affiliation:
+        - '@type': Organization
+          name: Helmholtz Centre Potsdam—German Research Centre for Geosciences (GFZ)  Potsdam
+            Germany
+    - '@type': Person
+      '@id': http://orcid.org/0000-0002-5697-7203
+      givenName: John
+      familyName: Naliboff
+      affiliation:
+        - '@type': Organization
+          name: Department of Earth and Environmental Science New Mexico Institute
+            of Mining and Technology  Socorro NM USA
+    - '@type': Person
+      '@id': http://orcid.org/0000-0002-3170-3935
+      givenName: Joanne M.
+      familyName: Whittaker
+      affiliation:
+        - '@type': Organization
+          name: Institute for Marine and Antarctic Studies University of Tasmania  Hobart
+            TAS Australia
+  title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block
+    Rotation and Apparent Unbending'
+  doi: http://dx.doi.org/10.1029/2021gc009681
+  url: ''
   journal: Geochemistry, Geophysics, Geosystems
   publisher: American Geophysical Union (AGU)
+  date: 2021-4
 compute_info:
   name: Gadi Supercomputer
   organisation: National Computational Infrastructure
@@ -65,13 +113,13 @@ compute_tags:
 funder:
   - name: Australian Research Council
     doi: https://ror.org/05mmh0f86
-  - name:
+  - name: ''
     doi: https://www.helmholtz.de/
 funding:
   - name: Australian Research Council
     doi: https://ror.org/05mmh0f86
     number_id: DP180102280
-  - name:
+  - name: ''
     doi: https://www.helmholtz.de/
     number_id: VH-NG-1132
 abstract: Seafloor spreading at slow rates can be accommodated on large‐offset oceanic
@@ -109,7 +157,7 @@ animation:
   src: ./graphics/animation.mp4
   caption: Animation for alternative model showing vorticity.
 model_setup_info:
-  url:
+  url: ''
   summary: The domain is $400 \; \mathrm{km}$ wide and $100 \; \mathrm{km}$ deep,
     and includes five levels of mesh refinement, as shown in the figure. The model
     is initialised with a symmetric temperature structure, defined by a transient
@@ -137,17 +185,17 @@ model_setup_info:
     the thermal structure is not in steady state and some cooling of the off-axis
     lithosphere occurs.
 model_files:
-  url:
+  url: ''
   notes: ASPECT Input files for model. Input file has been updated for compatibility
     with more recent ASPECT versions. Input file tested on  ASPECT version 2.6.0-pre
     (fix_stresses_elasticity, 621dd61f2), using deal.II 9.4.2.
-  file_tree:
+  file_tree: ''
   existing_identifier: https://github.com/dansand/odf_paper
   nci_file_path:
-    https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment/catalog.html
+    https://thredds.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment/catalog.html
   include: true
 dataset:
-  url:
+  url: ''
   notes: 'Data directory contains output data for 2 simulations stored in the following
     directories: ref_model_hires, alt_model_hires. Top level contains typical ASPECT
     output files, including log.txt and restart files. Topography and mesh variables
@@ -156,9 +204,9 @@ dataset:
     vtu files (in the ./solution sub-directory) representing model output fields (e.g.
     solution-00000.0000.vtu). At each output step, there are 16 vtu files written.
     These can be opened with Paraview using the solution.pvd file in the top level.'
-  existing_identifier:
+  existing_identifier: ''
   nci_file_path:
-    https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment/catalog.html
+    https://thredds.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment/catalog.html
   include: true
 metadataFile: ro-crate-metadata.json
 ---
