@@ -71,7 +71,7 @@ compute_tags:
   - Particle-in-cell
 funder:
   - name: Australian Research Council's ITRH Project
-    doi: 
+    doi:
   - name: Colombian Government PhD Scholarship
     doi:
   - name: Colombian Association of Petroleum Geologists and Geophysicists
@@ -132,7 +132,7 @@ images:
     src: ./graphics/model_setup.jpg
     caption:
 animation:
-  src: ./graphics/animation
+  src: ./graphics/animation.mp4
   caption: "Evolution of less buoyant arc-continent collision. This style of collision
     results in arc transference to the continental overriding plate.\n"
 model_setup_info:

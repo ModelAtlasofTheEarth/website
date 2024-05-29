@@ -44,8 +44,7 @@ class ContactPage extends React.Component {
             <div className="bodytext column is-four-fifths ">
               <br></br>
               <strong> Model Atlas of the Earth (M@TE) </strong> is developed by an international team of
-              scientists and professional software developers at
-              the EarthByte Group in the School of Geosciences at the University
+              scientists and professional software developers in the School of Geosciences at the University
               of Sydney with contributions from:
               <li>
                 The Sydney Informatics Hub
@@ -62,12 +61,6 @@ class ContactPage extends React.Component {
         </div>
 
         <div id="slide1" class="slide">
-
-            <div class="header3">
-                <h1>
-                  EarthByte Group
-                </h1>
-            </div>
 
           <div className="columns is-multiline bodytext">
             {posts &&
