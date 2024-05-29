@@ -15,9 +15,9 @@ creditText: 'Sandiford, D., Brune, S., Glerum, A., Naliboff, J., & Whittaker, J.
   and Apparent Unbending [Data set]. AuScope, National Computational Infrastructure.
   https://doi.org/r3ya-bg54'
 software:
-  - name: 'geodynamics/aspect: ASPECT 2.5.0'
-    doi: https://doi.org/10.5281/zenodo.8200213
-    url_source: ''
+  name: 'geodynamics/aspect: ASPECT 2.5.0'
+  doi: https://doi.org/10.5281/zenodo.8200213
+  url_source: ''
 licence:
   licence_url: https://creativecommons.org/licenses/by/4.0/legalcode
   licence_image: ../../../img/licence/by.png
@@ -45,58 +45,26 @@ creators:
     ORCID: 0000-0002-3170-3935
 associated_publication:
   authors:
-    - '@type': Person
-      '@id': http://orcid.org/0000-0002-2207-6837
+    - ORCID: http://orcid.org/0000-0002-2207-6837
       givenName: Dan
       familyName: Sandiford
-      affiliation:
-        - '@type': Organization
-          name: Institute for Marine and Antarctic Studies University of Tasmania  Hobart
-            TAS Australia
-        - '@type': Organization
-          name: Helmholtz Centre Potsdam—German Research Centre for Geosciences (GFZ)  Potsdam
-            Germany
-    - '@type': Person
-      '@id': http://orcid.org/0000-0003-4985-1810
+    - ORCID: http://orcid.org/0000-0003-4985-1810
       givenName: Sascha
       familyName: Brune
-      affiliation:
-        - '@type': Organization
-          name: Helmholtz Centre Potsdam—German Research Centre for Geosciences (GFZ)  Potsdam
-            Germany
-        - '@type': Organization
-          name: Institute of Geosciences University of Potsdam  Potsdam Germany
-    - '@type': Person
-      '@id': http://orcid.org/0000-0002-9481-1749
+    - ORCID: http://orcid.org/0000-0002-9481-1749
       givenName: Anne
       familyName: Glerum
-      affiliation:
-        - '@type': Organization
-          name: Helmholtz Centre Potsdam—German Research Centre for Geosciences (GFZ)  Potsdam
-            Germany
-    - '@type': Person
-      '@id': http://orcid.org/0000-0002-5697-7203
+    - ORCID: http://orcid.org/0000-0002-5697-7203
       givenName: John
       familyName: Naliboff
-      affiliation:
-        - '@type': Organization
-          name: Department of Earth and Environmental Science New Mexico Institute
-            of Mining and Technology  Socorro NM USA
-    - '@type': Person
-      '@id': http://orcid.org/0000-0002-3170-3935
+    - ORCID: http://orcid.org/0000-0002-3170-3935
       givenName: Joanne M.
       familyName: Whittaker
-      affiliation:
-        - '@type': Organization
-          name: Institute for Marine and Antarctic Studies University of Tasmania  Hobart
-            TAS Australia
-  title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block
-    Rotation and Apparent Unbending'
+  title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block Rotation and Apparent Unbending'
   doi: http://dx.doi.org/10.1029/2021gc009681
   url: ''
   journal: Geochemistry, Geophysics, Geosystems
   publisher: American Geophysical Union (AGU)
-  date: 2021-4
 compute_info:
   name: Gadi Supercomputer
   organisation: National Computational Infrastructure
