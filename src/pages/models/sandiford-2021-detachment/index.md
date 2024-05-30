@@ -17,7 +17,7 @@ creditText: 'Sandiford, D., Brune, S., Glerum, A., Naliboff, J., & Whittaker, J.
 software:
   name: 'geodynamics/aspect: ASPECT 2.5.0'
   doi: https://doi.org/10.5281/zenodo.8200213
-  url_source: ''
+  url_source: https://github.com/geodynamics/aspect
 licence:
   licence_url: https://creativecommons.org/licenses/by/4.0/legalcode
   licence_image: ../../../img/licence/by.png
@@ -120,7 +120,7 @@ images:
     caption: Initial conditions, showing mesh refinement.
 animation:
   src: ./graphics/animation.mp4
-  caption: Animation for alternative model showing vorticity.
+  caption: Animation for alternative model (see publication) showing vorticity. Velocity vectors are shown in hangingwall reference frame. Dark regions show the acccumulation of plastic strain. 
 model_setup_info:
   url: ''
   summary: The domain is $400 \; \mathrm{km}$ wide and $100 \; \mathrm{km}$ deep,

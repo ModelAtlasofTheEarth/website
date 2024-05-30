@@ -112,9 +112,9 @@ const ModelTemplate = ({
           <TabList>
             <Tab key="snapshot">Snapshot</Tab>
             <Tab key="overview">Science overview</Tab>
-            <Tab key="metadata">Metadata & license</Tab>
-            <Tab key="model-setup">Model setup</Tab>
-            <Tab key="model-files">Model code & data</Tab>
+            <Tab key="model-setup">Software and setup</Tab>
+            <Tab key="model-files">Code & data availability</Tab>
+            <Tab key="metadata">Metadata</Tab>
           </TabList>
 
 
@@ -127,6 +127,10 @@ const ModelTemplate = ({
                 <p>{description}</p>
               </section>
             </section>
+
+            {/* Adding a horizontal line and extra spacing */}
+            <hr style={{ margin: '20px 0' }} />
+
             {
               animation?.src?.publicURL &&
               <Animation
@@ -221,15 +225,194 @@ const ModelTemplate = ({
 
           </TabPanel>
 
-          <TabPanel key="metadata">
 
-            <h2>Model metadata</h2>
+
+          <TabPanel key="model-setup">
+
+            {
+              software.doi  &&
+              <section id="publication" className="model-page">
+              <h2>Software framework</h2>
+              <p>This model was developed with <b>{software.name}</b></p>
+              <p>PID for this release:
+                {
+                  <BadgeDoi
+                    doi={software.doi}
+                    style={{marginBottom: "10px"}}
+                  />
+                }
+              </p>
+                {software.url_source && (
+          <p>
+            Source code is hosted at{' '}
+            <a href={software.url_source} target="_blank" rel="noopener noreferrer">
+              <b>{software.url_source}</b>
+            </a>
+          </p>
+        )}
+
+        {
+              compute_info.name  &&
+              <section id="publication" className="model-page">
+              <h2>Computation</h2>
+              <p>Computation was performed on: <b>{compute_info.name}</b></p>
+              {compute_info.doi && (
+
+
+              <p>PID for this resource:
+                {
+                  <BadgeDoi
+                    doi={compute_info.doi}
+                    style={{marginBottom: "10px"}}
+                  />
+                }
+              </p>
+                     )}
+
+              </section>
+            }
+
+              </section>
+            }
+
+
+            {
+              model_setup?.src &&
+              <>
+                <h2>Model setup</h2>
+                <PreviewCompatibleImage
+                  imageInfo={{
+                    image: model_setup.src,
+                    alt: (
+                      model_setup.caption ||
+                      "Model setup | " + title
+                    ),
+                  }}
+                />
+
+
+                {
+                model_setup.caption &&
+                <p className="cool-caption">
+                  <Markdown
+                    remarkPlugins={[remarkMath]}
+                    rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
+                  >
+                  {model_setup_info.summary && typeof model_setup_info.summary === 'string'
+                  ? `${model_setup.caption} ${model_setup_info.summary}`
+                  : model_setup.caption}
+                  </Markdown>
+                </p>
+                }
+
+
+              </>
+
+            }
+
+          </TabPanel>
+
+
+
+
+
+          <TabPanel key="model-files">
+
+            <h2>Code and data availability</h2>
+
+
+            <p>
+              Model code and model output data are available as part of the
+              <a href={'http://dx.doi.org/10.25914/yrzp-g882'} style={{ fontWeight: 'bold', color: '#007acc', backgroundColor: '#f0f8ff', padding: '5px 10px', borderRadius: '5px', textDecoration: 'none' }}>M@TE collection on NCI</a>
+
+            </p>
+
+            {
+              model_files?.nci_file_path &&
+              <p>
+                Model code and model output data are publically available through{" "}
+                <a href={model_files?.nci_file_path} style={{ fontWeight: 'bold', color: '#007acc', backgroundColor: '#f0f8ff', padding: '5px 10px', borderRadius: '5px', textDecoration: 'none' }}>this Thredds Server Link</a>
+              </p>
+            }
+
+
+            <p>
+            The catalogue record for this model can be accessed through the Model DOI near the top of the page.
+            </p>
+
+
+            <h2>Notes</h2>
+
+            {
+              model_files?.notes &&
+              <>
+                <h3>Model code & inputs: </h3>
+                <p className="cool-caption">
+                  <Markdown
+                    remarkPlugins={[remarkMath]}
+                    rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
+                  >
+                    {model_files.notes}
+                  </Markdown>
+                </p>
+              </>
+            }
+
+            {/* Adding a horizontal line and extra spacing */}
+            <hr style={{ margin: '20px 0' }} />
+
+            {
+              dataset?.notes &&
+              <>
+              <h3>Model output data: </h3>
+              <p className="cool-caption">
+                <Markdown
+                  remarkPlugins={[remarkMath]}
+                  rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
+                >
+                  {dataset.notes}
+                </Markdown>
+              </p>
+              </>
+            }
+
+
+
+            {
+            (model_files?.existing_identifier || dataset?.existing_identifier) && (
+              <h2>Existing records</h2>
+            )
+            }
+
+
+            {
+              model_files?.existing_identifier &&
+              <p>
+                An existing version of the model code & inputs can be accessed{" "}
+                <a href={model_files.existing_identifier} style={{ fontWeight: 'bold', color: '#007acc', backgroundColor: '#f0f8ff', padding: '5px 10px', borderRadius: '5px', textDecoration: 'none' }}>via this link</a>
+              </p>
+            }
+
+            {
+              dataset?.existing_identifier &&
+              <p>
+                An existing version of the model output data can be accessed{" "}
+                <a href={dataset.existing_identifier} style={{ fontWeight: 'bold', color: '#007acc', backgroundColor: '#f0f8ff', padding: '5px 10px', borderRadius: '5px', textDecoration: 'none' }}>via this link</a>
+              </p>
+            }
+
+
+
+
+          </TabPanel>
+
+  <TabPanel key="metadata">
 
 
             {
               metadataFile?.publicURL &&
               <section id="metadata" className="model-page">
-                <h3>Metadata file</h3>
+                <h2>Model metadata</h2>
                 <p>
                   Download{" "}
                   <a href={metadataFile?.publicURL} download>
@@ -263,7 +446,7 @@ const ModelTemplate = ({
 
 
             <section id="licence" className="model-page">
-              <h3>Licence</h3>
+              <h2>Licence</h2>
               <a href={licence.licence_url}>
                 <PreviewCompatibleImage
                   imageInfo={{
@@ -291,6 +474,18 @@ const ModelTemplate = ({
               }
             </section>
 
+            {
+              creditText &&
+              <section id="how-to-cite" className="model-page">
+                <h2>Cite this model</h2>
+                {
+                  doi &&
+                  <BadgeDoi doi={doi} style={{marginBottom: "10px"}}/>
+                }
+                <p dangerouslySetInnerHTML={{__html: replaceDois({html: creditText})}}></p>
+              </section>
+            }
+
 
             <p>
               Model submitted by <b>{submitter_full_name}</b> on <b>{date}</b>.
@@ -298,122 +493,7 @@ const ModelTemplate = ({
 
           </TabPanel>
 
-          <TabPanel key="model-setup">
-            {
-              model_setup?.src &&
-              <>
-                <h2>Model setup</h2>
-                <PreviewCompatibleImage
-                  imageInfo={{
-                    image: model_setup.src,
-                    alt: (
-                      model_setup.caption ||
-                      "Model setup | " + title
-                    ),
-                  }}
-                />
 
-
-                {
-                model_setup.caption &&
-                <p className="cool-caption">
-                  <Markdown
-                    remarkPlugins={[remarkMath]}
-                    rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
-                  >
-                    {model_setup.caption}
-                  </Markdown>
-                </p>
-                }
-
-
-              </>
-
-            }
-            {
-              model_setup_info?.summary &&
-              <p>
-                <h2>Details:</h2>
-                <Markdown
-                  remarkPlugins={[remarkMath]}
-                  rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
-                >
-                  {model_setup_info.summary}
-                </Markdown>
-              </p>
-            }
-          </TabPanel>
-
-
-
-
-
-          <TabPanel key="model-files">
-
-            <h2>Model code & inputs</h2>
-
-            <h3>Access:</h3>
-
-
-
-
-            <p>
-              Model code will be added to the <strong>{slug}</strong> model,
-              hosted as part of the M@TE collection on{" "}
-              <a href="https://geonetwork.nci.org.au">NCI GeoNetwork</a> (from early 2024).
-            </p>
-            {
-              model_files?.existing_identifier &&
-              <p>
-                An existing version of the model code can be accessed{" "}
-                <a href={model_files.existing_identifier}>here</a>.
-              </p>
-            }
-
-
-            {
-              model_files?.notes &&
-              <>
-                <h3>Notes:</h3>
-                <p>{model_files.notes}</p>
-              </>
-            }
-
-
-            <h2>Model output data</h2>
-
-            <h3>Access:</h3>
-
-            <p>
-              Output data will be added to the <strong>{slug}</strong> model, hosted as part of the M@TE collection on  <a href="https://geonetwork.nci.org.au"> NCI GeoNetwork</a>  (from early 2024).
-            </p>
-
-            {
-              dataset?.existing_identifier &&
-              <p>
-                A preliminary version of the model output data can be accessed <a href={dataset.existing_identifier}> here</a>
-              </p>
-            }
-
-            {
-              dataset?.nci_file_path &&
-              <p>
-                Data can be downloaded from <a href={dataset.nci_file_path}> this URL </a>
-              </p>
-            }
-
-
-
-            {
-              dataset.notes &&
-              (
-                <p>
-                  <h3>Notes:</h3>
-                  <p>{dataset.notes}</p>
-                </p>
-              )
-            }
-          </TabPanel>
         </Tabs>
 
       </div>
