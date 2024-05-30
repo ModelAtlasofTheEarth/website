@@ -44,11 +44,24 @@ creators:
     family_name: Whittaker
     ORCID: 0000-0002-3170-3935
 associated_publication:
-  title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block Rotation and Apparent Unbending'
-  doi: http://dx.doi.org/10.1029/2021gc009681
-  url: ''
-  journal: Geochemistry, Geophysics, Geosystems
+  title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block
+    Rotation and Apparent Unbending'
+  url: http://dx.doi.org/10.1029/2021gc009681
+  doi: 10.1029/2021gc009681
   publisher: American Geophysical Union (AGU)
+  journal: Geochemistry, Geophysics, Geosystems
+  date: 2021-4
+  authors:
+    - name: Dan
+      family_name: Sandiford
+    - name: Sascha
+      family_name: Brune
+    - name: Anne
+      family_name: Glerum
+    - name: John
+      family_name: Naliboff
+    - name: Joanne M.
+      family_name: Whittaker
 compute_info:
   name: Gadi Supercomputer
   organisation: National Computational Infrastructure

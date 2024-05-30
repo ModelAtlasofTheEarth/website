@@ -58,10 +58,30 @@ creators:
     ORCID: 0000-0003-3685-174X
 associated_publication:
   title: Flexural isostatic response of continental-scale deltas to climatically driven sea level changes
-  doi: 10.5194/esurf-12-301-2024
   url: http://dx.doi.org/10.5194/esurf-12-301-2024
-  journal: Earth Surface Dynamics
+  doi: 10.5194/esurf-12-301-2024
   publisher: Copernicus GmbH
+  journal: Earth Surface Dynamics
+  date: 2024-2-1
+  authors:
+    - name: Sara
+      family_name: Polanco
+    - name: Mike
+      family_name: Blum
+    - name: Tristan
+      family_name: Salles
+    - name: Bruce C.
+      family_name: Frederick
+    - name: Rebecca
+      family_name: Farrington
+    - name: Xuesong
+      family_name: Ding
+    - name: Ben
+      family_name: Mather
+    - name: Claire
+      family_name: Mallard
+    - name: Louis
+      family_name: Moresi
 compute_info:
   name:
   organisation:

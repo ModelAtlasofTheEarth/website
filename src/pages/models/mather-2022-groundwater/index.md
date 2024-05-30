@@ -48,10 +48,24 @@ creators:
     ORCID: 0000-0003-3685-174X
 associated_publication:
   title: Constraining the response of continental-scale groundwater flow to climate change
-  doi: 10.1038/s41598-022-08384-w
   url: http://dx.doi.org/10.1038/s41598-022-08384-w
-  journal: Scientific Reports
+  doi: 10.1038/s41598-022-08384-w
   publisher: Springer Science and Business Media LLC
+  journal: Scientific Reports
+  date: 2022-3-16
+  authors:
+    - name: Ben
+      family_name: Mather
+    - name: R. Dietmar
+      family_name: Müller
+    - name: Craig
+      family_name: O’Neill
+    - name: Adam
+      family_name: Beall
+    - name: R. Willem
+      family_name: Vervoort
+    - name: Louis
+      family_name: Moresi
 compute_info:
   name: National Computational Infrastructure
   organisation: ''

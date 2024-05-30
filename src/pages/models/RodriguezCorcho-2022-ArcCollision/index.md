@@ -49,10 +49,24 @@ creators:
     ORCID: 0000-0003-3685-174X
 associated_publication:
   title: The Role of Lithospheric‐Deep Mantle Interactions on the Style and Stress Evolution of Arc‐Continent Collision
-  doi: 10.1029/2022gc010386
   url: http://dx.doi.org/10.1029/2022gc010386
-  journal: Geochemistry, Geophysics, Geosystems
+  doi: 10.1029/2022gc010386
   publisher: American Geophysical Union (AGU)
+  journal: Geochemistry, Geophysics, Geosystems
+  date: 2022-11
+  authors:
+    - name: Andrés Felipe
+      family_name: Rodríguez Corcho
+    - name: Sara
+      family_name: Polanco
+    - name: Rebecca
+      family_name: Farrington
+    - name: Romain
+      family_name: Beucher
+    - name: Camilo
+      family_name: Montes
+    - name: Louis
+      family_name: Moresi
 compute_info:
   name:
   organisation:
