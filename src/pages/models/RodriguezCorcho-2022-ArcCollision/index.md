@@ -109,24 +109,7 @@ funding:
   - name: National Computational Infrastructure
     doi:
     number_id: projects m18 and mw52
-abstract: We investigate how the mechanical properties of intra-oceanic arcs affect
-  the collision style and associated stress-strain evolution with buoyancy-driven
-  models of subduction that accurately reproduce the dynamic interaction of the lithosphere
-  and mantle. We performed a series of simulations only varying the effective arc
-  thickness as it controls the buoyancy of intra-oceanic arcs. Our simulations spontaneously
-  evolve into two contrasting styles of collision that are controlled by a 3% density
-  contrast between the arc and the continental plate. In simulations with less buoyant
-  arcs (15–31 km; effective thickness), we observe arc-transference to the overriding
-  plate and slab-anchoring and folding at the 660 km transition zone that result in
-  fluctuations in the slab dip, strain-stress regime, surface kinematics, and viscous
-  dissipation. After slab-folding occurs, the gravitational potential energy is dissipated
-  in the form of lithospheric flow causing lithospheric extension in the overriding
-  plate. Conversely, simulations with more buoyant arcs (32–35 km; effective thickness)
-  do not lead to arc-transference and result in slab break-off, which causes an asymptotic
-  trend in surface kinematics, viscous dissipation and strain-stress regime, and lithospheric
-  extension in the overriding plate. The results of our numerical modeling highlight
-  the importance of slab-anchoring and folding in the 660 km transition zone on increasing
-  the mechanical coupling of the subduction system.
+abstract: We investigate how the mechanical properties of intra-oceanic arcs affect the collision style and associated stress-strain evolution with buoyancy-driven models of subduction that accurately reproduce the dynamic interaction of the lithosphere and mantle. We performed a series of simulations only varying the effective arc thickness as it controls the buoyancy of intra-oceanic arcs. Our simulations spontaneously evolve into two contrasting styles of collision that are controlled by a 3% density contrast between the arc and the continental plate. In simulations with less buoyant arcs (15–31 km; effective thickness), we observe arc-transference to the overriding plate and slab-anchoring and folding at the 660 km transition zone that result in fluctuations in the slab dip, strain-stress regime, surface kinematics, and viscous dissipation. After slab-folding occurs, the gravitational potential energy is dissipated in the form of lithospheric flow causing lithospheric extension in the overriding plate. Conversely, simulations with more buoyant arcs (32–35 km; effective thickness) do not lead to arc-transference and result in slab break-off, which causes an asymptotic trend in surface kinematics, viscous dissipation and strain-stress regime, and lithospheric extension in the overriding plate. The results of our numerical modeling highlight the importance of slab-anchoring and folding in the 660 km transition zone on increasing the mechanical coupling of the subduction system.
 description: The model is designed to investigate the role of buoyancy contrasts in
   determining the style of arc-continent collision and the stress and strain evolution
   in the continental plate
