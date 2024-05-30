@@ -1,9 +1,9 @@
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 import "react-tabs/style/react-tabs.css"
-
+import '../styles/customStyles.css'; // Adjust the path as needed
 import Animation from "../components/Animation"
 import {
   BadgeCreator,
@@ -21,6 +21,7 @@ import ReadMore from "../components/ReadMore"
 import Markdown from "react-markdown"
 import remarkMath from "remark-math"
 import rehypeMathjax from "rehype-mathjax/svg"
+
 
 const ModelTemplate = ({
   abstract,
@@ -68,6 +69,10 @@ const ModelTemplate = ({
     ))
   }
 
+
+
+
+
   return (
     <section className="section">
       <div className="container content model-page">
@@ -106,18 +111,18 @@ const ModelTemplate = ({
         <Tabs className="model-page">
           <TabList>
             <Tab key="snapshot">Snapshot</Tab>
-            <Tab key="overview">Overview</Tab>
-            <Tab key="metadata">Details</Tab>
-            <Tab key="model-setup">Setup</Tab>
-            <Tab key="model-files">Code and outputs</Tab>
+            <Tab key="overview">Science overview</Tab>
+            <Tab key="metadata">Metadata & license</Tab>
+            <Tab key="model-setup">Model setup</Tab>
+            <Tab key="model-files">Model code & data</Tab>
           </TabList>
+
 
           <TabPanel key="snapshot">
             <section id="snapshot" className="model-page">
-              <h2>Model snapshot</h2>
-              <p>
-                Model submitted by <b>{submitter_full_name}</b> on <b>{date}</b>.
-              </p>
+
+
+              <h2>Plain language summary</h2>
               <section id="description" className="model-page">
                 <p>{description}</p>
               </section>
@@ -140,9 +145,44 @@ const ModelTemplate = ({
                 />
               </div>
             }
+            {
+            animation.caption &&
+            <p className="cool-caption">
+              <Markdown
+                remarkPlugins={[remarkMath]}
+                rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
+              >
+                {animation.caption}
+              </Markdown>
+            </p>
+            }
+
+            <p>
+              Model submitted by <b>{submitter_full_name}</b> on <b>{date}</b>.
+            </p>
+
           </TabPanel>
 
           <TabPanel key="overview">
+
+          <h2>Tags</h2>
+          <p><TagsList tags={research_tags} style={{ backgroundColor: 'green', color: '#fff' }}/></p>
+
+            {
+              publication.html &&
+              <section id="publication" className="model-page">
+                <h2>Associated publication</h2>
+                {
+                  publication.doi &&
+                  <BadgeDoi
+                    doi={publication.doi}
+                    style={{marginBottom: "10px"}}
+                  />
+                }
+                <Citation html={publication.html}/>
+              </section>
+            }
+
             <section id="abstract" className="model-page">
               <h2>Abstract</h2>
               <p>{abstract}</p>
@@ -162,45 +202,30 @@ const ModelTemplate = ({
                 />
                 {
                   graphic_abstract.caption &&
-                  <p>{graphic_abstract.caption}</p>
+                  <p className="cool-caption">
+                    <Markdown
+                      remarkPlugins={[remarkMath]}
+                      rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
+                    >
+                      {graphic_abstract.caption}
+                    </Markdown>
+                  </p>
                 }
+
+
               </section>
             }
+            <p>
+              Model submitted by <b>{submitter_full_name}</b> on <b>{date}</b>.
+            </p>
+
           </TabPanel>
 
           <TabPanel key="metadata">
-            {
-              creditText &&
-              <section id="how-to-cite" className="model-page">
-                <h2>Cite this model</h2>
-                {
-                  doi &&
-                  <BadgeDoi doi={doi} style={{marginBottom: "10px"}}/>
-                }
-                <p dangerouslySetInnerHTML={{__html: replaceDois({html: creditText})}}></p>
-              </section>
-            }
-
-            {
-              publication.html &&
-              <section id="publication" className="model-page">
-                <h2>Model publication</h2>
-                {
-                  publication.doi &&
-                  <BadgeDoi
-                    doi={publication.doi}
-                    style={{marginBottom: "10px"}}
-                  />
-                }
-                <Citation html={publication.html}/>
-              </section>
-            }
 
             <h2>Model metadata</h2>
-            <section id="tags" className="model-page">
-              <h3>Tags</h3>
-              <p><TagsList tags={all_tags}/></p>
-            </section>
+
+
             {
               metadataFile?.publicURL &&
               <section id="metadata" className="model-page">
@@ -235,6 +260,8 @@ const ModelTemplate = ({
               </section>
             }
 
+
+
             <section id="licence" className="model-page">
               <h3>Licence</h3>
               <a href={licence.licence_url}>
@@ -263,6 +290,12 @@ const ModelTemplate = ({
                 </ReadMore>
               }
             </section>
+
+
+            <p>
+              Model submitted by <b>{submitter_full_name}</b> on <b>{date}</b>.
+            </p>
+
           </TabPanel>
 
           <TabPanel key="model-setup">
@@ -279,16 +312,28 @@ const ModelTemplate = ({
                     ),
                   }}
                 />
+
+
                 {
-                  model_setup.caption &&
-                  <p>{model_setup.caption}</p>
+                model_setup.caption &&
+                <p className="cool-caption">
+                  <Markdown
+                    remarkPlugins={[remarkMath]}
+                    rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
+                  >
+                    {model_setup.caption}
+                  </Markdown>
+                </p>
                 }
+
+
               </>
 
             }
             {
               model_setup_info?.summary &&
               <p>
+                <h2>Details:</h2>
                 <Markdown
                   remarkPlugins={[remarkMath]}
                   rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
@@ -298,6 +343,10 @@ const ModelTemplate = ({
               </p>
             }
           </TabPanel>
+
+
+
+
 
           <TabPanel key="model-files">
 
@@ -320,27 +369,7 @@ const ModelTemplate = ({
                 <a href={model_files.existing_identifier}>here</a>.
               </p>
             }
-            {
-              compute_info?.name && <>
-                <p>
-                  This model was originally run on {
-                    compute_info?.url ?
-                    <a href={compute_info.url}>{compute_info.name}</a>
-                    : compute_info.name
-                  }
-                  {
-                    compute_info?.organisation ?
-                    ` (${compute_info.organisation}).`
-                    : "."
-                  }
-                </p>
-                {
-                  compute_info?.doi && <p>
-                    <BadgeDoi doi={compute_info.doi}/>
-                  </p>
-                }
-              </>
-            }
+
 
             {
               model_files?.notes &&
@@ -381,7 +410,6 @@ const ModelTemplate = ({
                 <p>
                   <h3>Notes:</h3>
                   <p>{dataset.notes}</p>
-                  <p>{software.doi}</p>
                 </p>
               )
             }
