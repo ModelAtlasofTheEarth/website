@@ -157,12 +157,8 @@ const ModelCarouselItem = ({
               </p>
             }
             <p><Link to="#0">Tags:</Link></p>
-            {tags && tags.length > 0 && (
-              <>
-                <p><b>Tags:</b></p>
-                <p><TagsList tags={tags} style={{ backgroundColor: 'green', color: '#fff' }}/></p>
-              </>
-            )}
+            <p><TagsList tags={tags} style={{ backgroundColor: 'green', color: '#fff' }}/></p>
+
           </div>
         </div>
       </div>
