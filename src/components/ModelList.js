@@ -96,8 +96,15 @@ const ModelListItem = ({
             </p>
           }
             <p><b>Tags:</b></p>
-            <p><TagsList tags={tags} style={{ backgroundColor: 'green', color: '#fff' }}/></p>
-            <p><TagsList tags={compute_tags}/></p>
+            {tags && tags.length > 0 && (
+              <>
+                <p><b>Tags:</b></p>
+                <p><TagsList tags={tags} style={{ backgroundColor: 'green', color: '#fff' }}/></p>
+              </>
+            )}
+            {compute_tags && compute_tags.length > 0 && (
+              <p><TagsList tags={compute_tags}/></p>
+            )}
         </th>
       </tr>
     </table>
@@ -150,7 +157,12 @@ const ModelCarouselItem = ({
               </p>
             }
             <p><Link to="#0">Tags:</Link></p>
-            <p><TagsList tags={tags}/></p>
+            {tags && tags.length > 0 && (
+              <>
+                <p><b>Tags:</b></p>
+                <p><TagsList tags={tags} style={{ backgroundColor: 'green', color: '#fff' }}/></p>
+              </>
+            )}
           </div>
         </div>
       </div>

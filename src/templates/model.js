@@ -169,8 +169,12 @@ const ModelTemplate = ({
 
           <TabPanel key="overview">
 
-          <h2>Tags</h2>
-          <p><TagsList tags={research_tags} style={{ backgroundColor: 'green', color: '#fff' }}/></p>
+          {research_tags && research_tags.length > 0 && (
+            <>
+              <h2>Tags</h2>
+              <p><TagsList tags={research_tags} style={{ backgroundColor: 'green', color: '#fff' }}/></p>
+            </>
+          )}
 
             {
               publication.html &&
@@ -228,6 +232,13 @@ const ModelTemplate = ({
 
 
           <TabPanel key="model-setup">
+
+          {compute_tags && compute_tags.length > 0 && (
+            <>
+              <h2>Tags</h2>
+              <p><TagsList tags={compute_tags}/></p>
+            </>
+          )}
 
             {
               software.doi  &&
