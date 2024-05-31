@@ -134,6 +134,8 @@ export const tagPageQuery = graphql`
             research_tags
             software {
               name
+              doi
+              url_source
             }
             submitter {
               name

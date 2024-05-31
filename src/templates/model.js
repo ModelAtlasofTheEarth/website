@@ -1,9 +1,11 @@
+import Cite from "citation-js"
+import "@citation-js/plugin-csl"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 import "react-tabs/style/react-tabs.css"
-
+import '../styles/customStyles.css'; // Adjust the path as needed
 import Animation from "../components/Animation"
 import {
   BadgeCreator,
@@ -11,7 +13,11 @@ import {
   TagsList,
 } from "../components/Badges"
 import Catalog from "../components/Catalog"
-import Citation from "../components/Citation"
+import Citation, {
+  cleanDOI,
+  toCSL,
+  replaceDois,
+} from "../components/Citation"
 import Content, { HTMLContent } from "../components/Content"
 import PageHead from "../components/Head"
 import Layout from "../components/Layout"
@@ -23,6 +29,7 @@ import Markdown from "react-markdown"
 import remarkMath from "remark-math"
 import rehypeMathjax from "rehype-mathjax/svg"
 
+
 const ModelTemplate = ({
   abstract,
   animation,
@@ -31,6 +38,7 @@ const ModelTemplate = ({
   content,
   contentComponent,
   creators,
+  creditText,
   dataset,
   date,
   doi,
@@ -47,6 +55,7 @@ const ModelTemplate = ({
   slug,
   description,
   submitter,
+  software,
 }) => {
   const PostContent = contentComponent || Content
   const dataset_url = (
@@ -54,7 +63,7 @@ const ModelTemplate = ({
     ? "https://doi.org/" + cleanDoi(doi)
     : dataset.url
   )
-  const all_tags = research_tags.concat(compute_tags)
+  const all_tags = (research_tags || []).concat(compute_tags || []);
   const submitter_full_name = submitter.name + " " + submitter.family_name
   const creator_full_names = creators.map((creator) => (
     creator.name + " " + creator.family_name
@@ -66,6 +75,12 @@ const ModelTemplate = ({
       <p>{p}</p>
     ))
   }
+
+  let citation = (
+    publication &&
+    new Cite(toCSL(publication)).format("bibliography",
+                                        {format: "html", style: "apa"})
+  )
 
   return (
     <section className="section">
@@ -105,22 +120,26 @@ const ModelTemplate = ({
         <Tabs className="model-page">
           <TabList>
             <Tab key="snapshot">Snapshot</Tab>
-            <Tab key="overview">Overview</Tab>
-            <Tab key="metadata">Details</Tab>
-            <Tab key="model-setup">Setup</Tab>
-            <Tab key="model-files">Code and outputs</Tab>
+            <Tab key="overview">Science overview</Tab>
+            <Tab key="model-setup">Software and setup</Tab>
+            <Tab key="model-files">Code & data availability</Tab>
+            <Tab key="metadata">Metadata</Tab>
           </TabList>
+
 
           <TabPanel key="snapshot">
             <section id="snapshot" className="model-page">
-              <h2>Model snapshot</h2>
-              <p>
-                Model submitted by <b>{submitter_full_name}</b> on <b>{date}</b>.
-              </p>
+
+
+              <h2>Plain language summary</h2>
               <section id="description" className="model-page">
                 <p>{description}</p>
               </section>
             </section>
+
+            {/* Adding a horizontal line and extra spacing */}
+            <hr style={{ margin: '20px 0' }} />
+
             {
               animation?.src?.publicURL &&
               <Animation
@@ -139,9 +158,48 @@ const ModelTemplate = ({
                 />
               </div>
             }
+            {
+            animation.caption &&
+            <p className="cool-caption">
+              <Markdown
+                remarkPlugins={[remarkMath]}
+                rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
+              >
+                {animation.caption}
+              </Markdown>
+            </p>
+            }
+
+            <p>
+              Model submitted by <b>{submitter_full_name}</b> on <b>{date}</b>.
+            </p>
+
           </TabPanel>
 
           <TabPanel key="overview">
+
+          {research_tags && research_tags.length > 0 && (
+            <>
+              <h2>Tags</h2>
+              <p><TagsList tags={research_tags} style={{ backgroundColor: 'green', color: '#fff' }}/></p>
+            </>
+          )}
+
+            {
+              citation &&
+              <section id="publication" className="model-page">
+                <h2>Associated publication</h2>
+                {
+                  publication.doi &&
+                  <BadgeDoi
+                    doi={publication.doi}
+                    style={{marginBottom: "10px"}}
+                  />
+                }
+                <Citation html={citation}/>
+              </section>
+            }
+
             <section id="abstract" className="model-page">
               <h2>Abstract</h2>
               <p>{abstract}</p>
@@ -161,37 +219,227 @@ const ModelTemplate = ({
                 />
                 {
                   graphic_abstract.caption &&
-                  <p>{graphic_abstract.caption}</p>
+                  <p className="cool-caption">
+                    <Markdown
+                      remarkPlugins={[remarkMath]}
+                      rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
+                    >
+                      {graphic_abstract.caption}
+                    </Markdown>
+                  </p>
                 }
+
+
               </section>
             }
+            <p>
+              Model submitted by <b>{submitter_full_name}</b> on <b>{date}</b>.
+            </p>
+
           </TabPanel>
 
-          <TabPanel key="metadata">
+
+
+          <TabPanel key="model-setup">
+
+          {compute_tags && compute_tags.length > 0 && (
+            <>
+              <h2>Tags</h2>
+              <p><TagsList tags={compute_tags}/></p>
+            </>
+          )}
+
             {
-              publication.html &&
+              software.doi  &&
               <section id="publication" className="model-page">
-                <h2>Model publication</h2>
+              <h2>Software framework</h2>
+              <p>This model was developed with <b>{software.name}</b></p>
+              <p>PID for this release:
                 {
-                  publication.doi &&
                   <BadgeDoi
-                    doi={publication.doi}
+                    doi={software.doi}
                     style={{marginBottom: "10px"}}
                   />
                 }
-                <Citation html={publication.html}/>
+              </p>
+                {software.url_source && (
+          <p>
+            Source code is hosted at{' '}
+            <a href={software.url_source} target="_blank" rel="noopener noreferrer">
+              <b>{software.url_source}</b>
+            </a>
+          </p>
+        )}
+
+        {
+              compute_info.name  &&
+              <section id="publication" className="model-page">
+              <h2>Computation</h2>
+              <p>Computation was performed on: <b>{compute_info.name}</b></p>
+              {compute_info.doi && (
+
+
+              <p>PID for this resource:
+                {
+                  <BadgeDoi
+                    doi={compute_info.doi}
+                    style={{marginBottom: "10px"}}
+                  />
+                }
+              </p>
+                     )}
+
               </section>
             }
 
-            <h2>Model metadata</h2>
-            <section id="tags" className="model-page">
-              <h3>Tags</h3>
-              <p><TagsList tags={all_tags}/></p>
-            </section>
+              </section>
+            }
+
+
+            {
+              model_setup?.src &&
+              <>
+                <h2>Model setup</h2>
+                <PreviewCompatibleImage
+                  imageInfo={{
+                    image: model_setup.src,
+                    alt: (
+                      model_setup.caption ||
+                      "Model setup | " + title
+                    ),
+                  }}
+                />
+
+
+                {
+                model_setup.caption &&
+                <p className="cool-caption">
+                  <Markdown
+                    remarkPlugins={[remarkMath]}
+                    rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
+                  >
+                  {model_setup_info.summary && typeof model_setup_info.summary === 'string'
+                  ? `${model_setup.caption} ${model_setup_info.summary}`
+                  : model_setup.caption}
+                  </Markdown>
+                </p>
+                }
+
+
+              </>
+
+            }
+
+          </TabPanel>
+
+
+
+
+
+          <TabPanel key="model-files">
+
+            <h2>Code and data availability</h2>
+
+
+            <p>
+              Model code and model output data are available as part of the
+              <a href={'http://dx.doi.org/10.25914/yrzp-g882'} style={{ fontWeight: 'bold', color: '#007acc', backgroundColor: '#f0f8ff', padding: '5px 10px', borderRadius: '5px', textDecoration: 'none' }}>M@TE collection on NCI</a>
+
+            </p>
+
+            {
+              model_files?.nci_file_path &&
+              <p>
+                Model code and model output data are publically available through{" "}
+                <a href={model_files?.nci_file_path} style={{ fontWeight: 'bold', color: '#007acc', backgroundColor: '#f0f8ff', padding: '5px 10px', borderRadius: '5px', textDecoration: 'none' }}>this Thredds Server Link</a>
+              </p>
+            }
+
+
+            <p>
+            The catalogue record for this model can be accessed through the Model DOI near the top of the page.
+            </p>
+
+            {
+              model_files?.nci_file_path &&
+              <section id="nci-catalog">
+                <h3>NCI file catalogue preview:</h3>
+                <Catalog url={model_files.nci_file_path}/>
+              </section>
+            }
+
+            <h2>Notes</h2>
+
+            {
+              model_files?.notes &&
+              <>
+                <h3>Model code & inputs: </h3>
+                <p className="cool-caption">
+                  <Markdown
+                    remarkPlugins={[remarkMath]}
+                    rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
+                  >
+                    {model_files.notes}
+                  </Markdown>
+                </p>
+              </>
+            }
+
+            {/* Adding a horizontal line and extra spacing */}
+            <hr style={{ margin: '20px 0' }} />
+
+            {
+              dataset?.notes &&
+              <>
+              <h3>Model output data: </h3>
+              <p className="cool-caption">
+                <Markdown
+                  remarkPlugins={[remarkMath]}
+                  rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
+                >
+                  {dataset.notes}
+                </Markdown>
+              </p>
+              </>
+            }
+
+
+
+            {
+            (model_files?.existing_identifier || dataset?.existing_identifier) && (
+              <h2>Existing records</h2>
+            )
+            }
+
+
+            {
+              model_files?.existing_identifier &&
+              <p>
+                An existing version of the model code & inputs can be accessed{" "}
+                <a href={model_files.existing_identifier} style={{ fontWeight: 'bold', color: '#007acc', backgroundColor: '#f0f8ff', padding: '5px 10px', borderRadius: '5px', textDecoration: 'none' }}>via this link</a>
+              </p>
+            }
+
+            {
+              dataset?.existing_identifier &&
+              <p>
+                An existing version of the model output data can be accessed{" "}
+                <a href={dataset.existing_identifier} style={{ fontWeight: 'bold', color: '#007acc', backgroundColor: '#f0f8ff', padding: '5px 10px', borderRadius: '5px', textDecoration: 'none' }}>via this link</a>
+              </p>
+            }
+
+
+
+
+          </TabPanel>
+
+  <TabPanel key="metadata">
+
+
             {
               metadataFile?.publicURL &&
               <section id="metadata" className="model-page">
-                <h3>Metadata file</h3>
+                <h2>Model metadata</h2>
                 <p>
                   Download{" "}
                   <a href={metadataFile?.publicURL} download>
@@ -222,8 +470,10 @@ const ModelTemplate = ({
               </section>
             }
 
+
+
             <section id="licence" className="model-page">
-              <h3>Licence</h3>
+              <h2>Licence</h2>
               <a href={licence.licence_url}>
                 <PreviewCompatibleImage
                   imageInfo={{
@@ -250,127 +500,17 @@ const ModelTemplate = ({
                 </ReadMore>
               }
             </section>
-          </TabPanel>
 
-          <TabPanel key="model-setup">
             {
-              model_setup?.src &&
-              <>
-                <h2>Model setup</h2>
-                <PreviewCompatibleImage
-                  imageInfo={{
-                    image: model_setup.src,
-                    alt: (
-                      model_setup.caption ||
-                      "Model setup | " + title
-                    ),
-                  }}
-                />
+              creditText &&
+              <section id="how-to-cite" className="model-page">
+                <h2>Cite this model</h2>
                 {
-                  model_setup.caption &&
-                  <p>{model_setup.caption}</p>
+                  doi &&
+                  <BadgeDoi doi={doi} style={{marginBottom: "10px"}}/>
                 }
-              </>
-
-            }
-            {
-              model_setup_info?.summary &&
-              <p>
-                <Markdown
-                  remarkPlugins={[remarkMath]}
-                  rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
-                >
-                  {model_setup_info.summary}
-                </Markdown>
-              </p>
-            }
-          </TabPanel>
-
-          <TabPanel key="model-files">
-            <h2>Model code & inputs</h2>
-            {
-              model_files?.nci_file_path &&
-              <section id="nci-catalog">
-                <h3>NCI file catalogue preview:</h3>
-                <Catalog url={model_files.nci_file_path}/>
+                <p dangerouslySetInnerHTML={{__html: replaceDois({html: creditText})}}></p>
               </section>
-            }
-            <h3>Access:</h3>
-            <p>
-              Model code will be added to the <strong>{slug}</strong> model,
-              hosted as part of the M@TE collection on{" "}
-              <a href="https://geonetwork.nci.org.au">NCI GeoNetwork</a> (from early 2024).
-            </p>
-            {
-              model_files?.existing_identifier &&
-              <p>
-                An existing version of the model code can be accessed{" "}
-                <a href={model_files.existing_identifier}>here</a>.
-              </p>
-            }
-            {
-              compute_info?.name && <>
-                <p>
-                  This model was originally run on {
-                    compute_info?.url ?
-                    <a href={compute_info.url}>{compute_info.name}</a>
-                    : compute_info.name
-                  }
-                  {
-                    compute_info?.organisation ?
-                    ` (${compute_info.organisation}).`
-                    : "."
-                  }
-                </p>
-                {
-                  compute_info?.doi && <p>
-                    <BadgeDoi doi={compute_info.doi}/>
-                  </p>
-                }
-              </>
-            }
-
-            {
-              model_files?.notes &&
-              <>
-                <h3>Notes:</h3>
-                <p>{model_files.notes}</p>
-              </>
-            }
-
-
-            <h2>Model output data</h2>
-
-            <h3>Access:</h3>
-
-            <p>
-              Output data will be added to the <strong>{slug}</strong> model, hosted as part of the M@TE collection on  <a href="https://geonetwork.nci.org.au"> NCI GeoNetwork</a>  (from early 2024).
-            </p>
-
-            {
-              dataset?.existing_identifier &&
-              <p>
-                A preliminary version of the model output data can be accessed <a href={dataset.existing_identifier}> here</a>
-              </p>
-            }
-
-            {
-              dataset?.nci_file_path &&
-              <p>
-                Data can be downloaded from <a href={dataset.nci_file_path}> this URL </a>
-              </p>
-            }
-
-
-
-            {
-              dataset.notes &&
-              (
-                <p>
-                  <h3>Notes:</h3>
-                  <p>{dataset.notes}</p>
-                </p>
-              )
             }
           </TabPanel>
         </Tabs>
@@ -411,6 +551,7 @@ const ModelsPage = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         creators={post.frontmatter.creators}
+        creditText={post.frontmatter.creditText}
         dataset={post.frontmatter.dataset}
         date={post.frontmatter.date}
         description={post.frontmatter.description}
@@ -422,12 +563,12 @@ const ModelsPage = ({ data }) => {
         model_files={post.frontmatter.model_files}
         model_setup_info={post.frontmatter.model_setup_info}
         model_setup={post.frontmatter.images.model_setup}
-        publication={post.childCitation}
+        publication={post.frontmatter.associated_publication}
         research_tags={post.frontmatter.research_tags}
         title={post.frontmatter.title}
         slug={post.frontmatter.slug}
-        doi={post.frontmatter.doi}
         submitter={post.frontmatter.submitter}
+        software={post.frontmatter.software}
       />
     </Layout>
   )
@@ -443,10 +584,6 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
-      childCitation {
-        html
-        doi
-      }
       frontmatter {
         abstract
         slug
@@ -458,6 +595,17 @@ export const pageQuery = graphql`
             publicURL
           }
         }
+        associated_publication {
+          authors {
+            family_name
+            name
+          }
+          date
+          doi
+          journal
+          publisher
+          title
+        }
         compute_info {
           doi
           name
@@ -468,9 +616,9 @@ export const pageQuery = graphql`
         creators {
           name
           family_name
-          affiliation
           ORCID
         }
+        creditText
         dataset {
           url
           notes
@@ -534,7 +682,6 @@ export const pageQuery = graphql`
             }
           }
           licence_url
-          name
         }
         metadataFile {
           fields {
@@ -562,7 +709,7 @@ export const pageQuery = graphql`
         submitter {
           name
           family_name
-          affiliation
+          ORCID
         }
         title
       }

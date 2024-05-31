@@ -43,6 +43,8 @@ exports.createPages = ({ actions, graphql }) => {
               research_tags
               software {
                 name
+                doi
+                url_source
               }
               submitter {
                 name
@@ -221,21 +223,6 @@ exports.onCreateNode = ({
       node,
       value,
     })
-
-    const doi = node.frontmatter.associated_publication?.doi
-    if (doi) {
-      const citation = new Cite(doi)
-      const html = citation.format("bibliography", {format: "html", style: "apa"})
-      transformObject(
-        {
-          html,
-          doi,
-          data: citation.data[0]
-        },
-        citation.id ? citation.id : createNodeId(`${node.id} citation`),
-        _.upperFirst(_.camelCase(`citation`))
-      )
-    }
   }
 
   if (node.internal.type === `File`) {

@@ -1,6 +1,6 @@
 ---
 templateKey: model
-slug: sandiford-2021-detachment-1
+slug: sandiford-2021-detachment
 title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block
   Rotation and Apparent Unbending'
 date: '2024-05-17T01:55:42.000Z'
@@ -8,16 +8,16 @@ featuredpost:
 for_codes:
   - 370401
 status:
-doi: https://doi.org/10.25914/10.25914/r3ya-bg54
-url: ''
+doi: https://doi.org/10.25914/r3ya-bg54
+url: https://mate.science/models/sandiford-2021-detachment
 creditText: 'Sandiford, D., Brune, S., Glerum, A., Naliboff, J., & Whittaker, J. (2024).
   Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block Rotation
   and Apparent Unbending [Data set]. AuScope, National Computational Infrastructure.
   https://doi.org/r3ya-bg54'
 software:
-  - name: 'geodynamics/aspect: ASPECT 2.5.0'
-    doi: https://doi.org/10.5281/zenodo.8200213
-    url_source: ''
+  name: 'geodynamics/aspect: ASPECT 2.5.0'
+  doi: https://doi.org/10.5281/zenodo.8200213
+  url_source: https://github.com/geodynamics/aspect
 licence:
   licence_url: https://creativecommons.org/licenses/by/4.0/legalcode
   licence_image: ../../../img/licence/by.png
@@ -44,59 +44,24 @@ creators:
     family_name: Whittaker
     ORCID: 0000-0002-3170-3935
 associated_publication:
-  authors:
-    - '@type': Person
-      '@id': http://orcid.org/0000-0002-2207-6837
-      givenName: Dan
-      familyName: Sandiford
-      affiliation:
-        - '@type': Organization
-          name: Institute for Marine and Antarctic Studies University of Tasmania  Hobart
-            TAS Australia
-        - '@type': Organization
-          name: Helmholtz Centre Potsdam—German Research Centre for Geosciences (GFZ)  Potsdam
-            Germany
-    - '@type': Person
-      '@id': http://orcid.org/0000-0003-4985-1810
-      givenName: Sascha
-      familyName: Brune
-      affiliation:
-        - '@type': Organization
-          name: Helmholtz Centre Potsdam—German Research Centre for Geosciences (GFZ)  Potsdam
-            Germany
-        - '@type': Organization
-          name: Institute of Geosciences University of Potsdam  Potsdam Germany
-    - '@type': Person
-      '@id': http://orcid.org/0000-0002-9481-1749
-      givenName: Anne
-      familyName: Glerum
-      affiliation:
-        - '@type': Organization
-          name: Helmholtz Centre Potsdam—German Research Centre for Geosciences (GFZ)  Potsdam
-            Germany
-    - '@type': Person
-      '@id': http://orcid.org/0000-0002-5697-7203
-      givenName: John
-      familyName: Naliboff
-      affiliation:
-        - '@type': Organization
-          name: Department of Earth and Environmental Science New Mexico Institute
-            of Mining and Technology  Socorro NM USA
-    - '@type': Person
-      '@id': http://orcid.org/0000-0002-3170-3935
-      givenName: Joanne M.
-      familyName: Whittaker
-      affiliation:
-        - '@type': Organization
-          name: Institute for Marine and Antarctic Studies University of Tasmania  Hobart
-            TAS Australia
   title: 'Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block
     Rotation and Apparent Unbending'
-  doi: http://dx.doi.org/10.1029/2021gc009681
-  url: ''
-  journal: Geochemistry, Geophysics, Geosystems
+  url: http://dx.doi.org/10.1029/2021gc009681
+  doi: 10.1029/2021gc009681
   publisher: American Geophysical Union (AGU)
+  journal: Geochemistry, Geophysics, Geosystems
   date: 2021-4
+  authors:
+    - name: Dan
+      family_name: Sandiford
+    - name: Sascha
+      family_name: Brune
+    - name: Anne
+      family_name: Glerum
+    - name: John
+      family_name: Naliboff
+    - name: Joanne M.
+      family_name: Whittaker
 compute_info:
   name: Gadi Supercomputer
   organisation: National Computational Infrastructure
@@ -155,7 +120,7 @@ images:
     caption: Initial conditions, showing mesh refinement.
 animation:
   src: ./graphics/animation.mp4
-  caption: Animation for alternative model showing vorticity.
+  caption: Animation for alternative model (see publication) showing vorticity. Velocity vectors are shown in hangingwall reference frame. Dark regions show the acccumulation of plastic strain. 
 model_setup_info:
   url: ''
   summary: The domain is $400 \; \mathrm{km}$ wide and $100 \; \mathrm{km}$ deep,
@@ -192,7 +157,7 @@ model_files:
   file_tree: ''
   existing_identifier: https://github.com/dansand/odf_paper
   nci_file_path:
-    https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment-1/catalog.html
+    https://thredds.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment/catalog.html
   include: true
 dataset:
   url: ''
@@ -206,7 +171,7 @@ dataset:
     These can be opened with Paraview using the solution.pvd file in the top level.'
   existing_identifier: ''
   nci_file_path:
-    https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment-1/catalog.html
+    https://thredds.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment/catalog.html
   include: true
 metadataFile: ro-crate-metadata.json
 ---

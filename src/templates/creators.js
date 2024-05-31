@@ -92,6 +92,8 @@ export const creatorPageQuery = graphql`
             research_tags
             software {
               name
+              doi
+              url_source
             }
             submitter {
               name

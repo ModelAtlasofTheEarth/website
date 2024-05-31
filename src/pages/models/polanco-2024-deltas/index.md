@@ -16,9 +16,9 @@ creditText: Polanco, S., Blum, M., Salles, T., Frederick, B., Farrington, R., Di
   continental-scale deltas to climatically driven sea level changes [Data set]. AuScope,
   National Computational Infrastructure. https://doi.org/4m82-y773
 software:
-  - name: Badlands
-    doi: https://doi.org/10.5281/zenodo.1069573
-    url_source: https://github.com/badlands-model/badlands
+  name: Badlands
+  doi: https://doi.org/10.5281/zenodo.1069573
+  url_source: https://github.com/badlands-model/badlands
 licence:
   licence_url: https://creativecommons.org/licenses/by/4.0/legalcode
   licence_image: ../../../img/licence/by.png
@@ -57,53 +57,36 @@ creators:
     family_name: Moresi
     ORCID: 0000-0003-3685-174X
 associated_publication:
-  authors:
-    - '@type': Person
-      '@id': http://orcid.org/0000-0002-1270-4377
-      givenName: Sara
-      familyName: Polanco
-    - '@type': Person
-      givenName: Mike
-      familyName: Blum
-    - '@type': Person
-      '@id': http://orcid.org/0000-0001-6095-7689
-      givenName: Tristan
-      familyName: Salles
-    - '@type': Person
-      givenName: Bruce C.
-      familyName: Frederick
-    - '@type': Person
-      '@id': http://orcid.org/0000-0002-2594-6965
-      givenName: Rebecca
-      familyName: Farrington
-    - '@type': Person
-      '@id': http://orcid.org/0000-0003-3693-932X
-      givenName: Xuesong
-      familyName: Ding
-    - '@type': Person
-      '@id': http://orcid.org/0000-0003-3566-1557
-      givenName: Ben
-      familyName: Mather
-    - '@type': Person
-      '@id': http://orcid.org/0000-0003-2595-2414
-      givenName: Claire
-      familyName: Mallard
-    - '@type': Person
-      '@id': http://orcid.org/0000-0003-3685-174X
-      givenName: Louis
-      familyName: Moresi
-  title: Flexural isostatic response of continental-scale deltas to climatically driven
-    sea level changes
-  doi: http://dx.doi.org/10.5194/esurf-12-301-2024
-  url: ''
-  journal: Earth Surface Dynamics
+  title: Flexural isostatic response of continental-scale deltas to climatically driven sea level changes
+  url: http://dx.doi.org/10.5194/esurf-12-301-2024
+  doi: 10.5194/esurf-12-301-2024
   publisher: Copernicus GmbH
+  journal: Earth Surface Dynamics
   date: 2024-2-1
+  authors:
+    - name: Sara
+      family_name: Polanco
+    - name: Mike
+      family_name: Blum
+    - name: Tristan
+      family_name: Salles
+    - name: Bruce C.
+      family_name: Frederick
+    - name: Rebecca
+      family_name: Farrington
+    - name: Xuesong
+      family_name: Ding
+    - name: Ben
+      family_name: Mather
+    - name: Claire
+      family_name: Mallard
+    - name: Louis
+      family_name: Moresi
 compute_info:
-  name: ''
-  organisation: ''
-  url: ''
-  doi: ''
+  name:
+  organisation:
+  url:
+  doi:
 research_tags:
   - Flexural isostasy
   - Glacial isostatic adjustment (GIA)
@@ -112,14 +95,14 @@ research_tags:
 compute_tags: []
 funder:
   - name: Australian Research Council
-    doi: ''
+    doi:
   - name: Australian–American Fulbright Commission
-    doi: ''
+    doi:
   - name: The University of Melbourne
-    doi: ''
+    doi:
 funding:
   - name: Australian Research Council
-    doi: ''
+    doi:
     number_id: IH130200012
 abstract: "Abstract. The interplay between climate-forced sea level change, erosional
   and depositional processes, and flexural isostasy in deep time on passive margin
@@ -172,15 +155,15 @@ images:
       NF = non-flexural, F = flexural, IH = icehouse, and GH = greenhouse."
   model_setup:
     src: ./graphics/fig_setup.png
-    caption: ''
+    caption:
 animation:
-  src: ./graphics/animation
+  src: ./graphics/animation.mp4
   caption: The animation shows the surface and stratigraphic evolution of our simulated
     continental-scale deltas. We let each simulation initialize and run for 2 Myr
     without any sea-level fluctuations so that the delta can reach dynamic equilibrium
     without any disturbances in base level, then impose climate-forced sea-level changes.
 model_setup_info:
-  url: ''
+  url:
   summary: Planview of model setup (top) and cross-section in the middle of the modeling
     domain. The initial configuration of the modeling domain resembles the topography
     of a natural source-to-sink system with 3400 m elevation in the headwaters, a
@@ -190,19 +173,19 @@ model_setup_info:
     a point-source for sediment input to the marine domain we imposed a longitudinal
     topographic low in the middle of the model.
 model_files:
-  url: ''
+  url:
   notes: "The input and boundary conditions for the model are structured as follows:\r
     \nan input XML file where the initial and boundary conditions are set\r\na data
     folder containing the initial surface and the boundary conditions, in this case
     different sea-level scenarios\r\na series of IPython Notebooks used to run the
     experiment and perform some pre or post-processing tasks."
-  file_tree: ''
-  existing_identifier: ''
-  nci_file_path: 
+  file_tree:
+  existing_identifier:
+  nci_file_path:
     https://thredds.nci.org.au/thredds/catalog/nm08/MATE/polanco-2024-deltas/catalog.html
   include: true
 dataset:
-  url: ''
+  url:
   notes: "The model output data is stored in a hdf5 format. You will see a h5 folder
     and a series of xdmf files. \r\n- **h5** folder contains the **hdf5** data, all
     the information computed by the model are stored in these files. You will have
@@ -210,8 +193,8 @@ dataset:
     *sed* (stratigraphy) data if the stratal structure is computed in your simulation.\r
     \n\r\n- two **.xdmf** files for the surface (**tin_series.xdmf**) and the flow
     network (**flow_series.xdmf**) that read the **xmf** files through time."
-  existing_identifier: ''
-  nci_file_path: 
+  existing_identifier:
+  nci_file_path:
     https://thredds.nci.org.au/thredds/catalog/nm08/MATE/polanco-2024-deltas/catalog.html
   include: true
 metadataFile: ro-crate-metadata.json

@@ -48,17 +48,44 @@ const cleanData = (data) => {
   return data
 }
 
+const cleanDOI = (doi) => {
+  const doi_split = doi.split("/")
+  const doi_parts = doi_split.slice(-2)
+  return doi_parts.join("/")
+}
+
+const toCSL = (data) => (
+  {
+    id: cleanDOI(data.doi),
+    type: "article-journal",
+    DOI: cleanDOI(data.doi),
+    issued: { raw: data.date },
+    publisher: data.publisher,
+    page: data.page,
+    volume: data.volume,
+    issue: data.issue,
+    "container-title": data.journal,
+    title: data.title,
+    author: data.authors.map(author => ({
+      "@type": author["@type"],
+      "@id": author["@id"],
+      given: author.name,
+      family: author.family_name,
+    })),
+  }
+)
+
 // Taken from gatsby-source-publications
 // https://github.com/bacor/gatsby-source-publications/blob/main/gatsby-node.mjs#L12
-function replaceDois({ html, style = "apa" }) {
+function replaceDois({ html, style = "apa", target="_blank" }) {
   if (style === "apa") {
-    const regex = /(https\:\/\/doi\.org\/([^<]+)\<\/div\>)/gm;
+    const regex = /(https\:\/\/doi\.org\/([^<]+)(?:\<\/div\>)?)/gm;
     const match = html.match(regex);
     if (match) {
       const url = match[0].replace("</div>", "");
       const doi = url.replace("https://doi.org/", "");
       const anchor = `
-        <a href="${url}">
+        <a href="${url}" target="${target}">
           <span className="doi-label">DOI:</span>
           <span className="doi-value">${doi}</span>
         </a>`;
@@ -69,4 +96,4 @@ function replaceDois({ html, style = "apa" }) {
 }
 
 export default Citation
-export { getHtml, replaceDois, cleanData }
+export { getHtml, replaceDois, cleanData, cleanDOI, toCSL }

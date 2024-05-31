@@ -215,7 +215,7 @@ const IndexPageTemplate = ({
           />
         </div>
       </div>
-      
+
     </div>
   );
 };
@@ -294,6 +294,8 @@ query MyQuery {
           research_tags
           software {
             name
+            doi
+            url_source
           }
           submitter {
             name

@@ -27,7 +27,8 @@ const ModelList = ({ posts }) => {
             title={post.frontmatter.title}
             creator={post.frontmatter.submitter}
             date={post.frontmatter.date}
-            tags={post.frontmatter.research_tags.concat(post.frontmatter.compute_tags)}
+            tags={post.frontmatter.research_tags}
+            compute_tags={post.frontmatter.compute_tags}
             software={post.frontmatter.software}
             landing_image={post.frontmatter.images.landing_image}
             key={post.fields.slug}
@@ -53,6 +54,7 @@ const ModelListItem = ({
   creator,
   date,
   tags,
+  compute_tags,
   software,
   landing_image,
 }) => {
@@ -94,7 +96,15 @@ const ModelListItem = ({
             </p>
           }
             <p><b>Tags:</b></p>
-            <p><TagsList tags={tags}/></p>
+            {tags && tags.length > 0 && (
+              <>
+                <p><b>Tags:</b></p>
+                <p><TagsList tags={tags} style={{ backgroundColor: 'green', color: '#fff' }}/></p>
+              </>
+            )}
+            {compute_tags && compute_tags.length > 0 && (
+              <p><TagsList tags={compute_tags}/></p>
+            )}
         </th>
       </tr>
     </table>
@@ -147,12 +157,13 @@ const ModelCarouselItem = ({
               </p>
             }
             <p><Link to="#0">Tags:</Link></p>
-            <p><TagsList tags={tags}/></p>
+            <p><TagsList tags={tags} style={{ backgroundColor: 'green', color: '#fff' }}/></p>
+
           </div>
         </div>
       </div>
     </div>
-  );  
+  );
 }
 
 const personEqual = (person1, person2) => (
