@@ -48,6 +48,33 @@ const cleanData = (data) => {
   return data
 }
 
+const cleanDOI = (doi) => {
+  const doi_split = doi.split("/")
+  const doi_parts = doi_split.slice(-2)
+  return doi_parts.join("/")
+}
+
+const toCSL = (data) => (
+  {
+    id: cleanDOI(data.doi),
+    type: "article-journal",
+    DOI: cleanDOI(data.doi),
+    issued: { raw: data.date },
+    publisher: data.publisher,
+    page: data.page,
+    volume: data.volume,
+    issue: data.issue,
+    "container-title": data.journal,
+    title: data.title,
+    author: data.authors.map(author => ({
+      "@type": author["@type"],
+      "@id": author["@id"],
+      given: author.name,
+      family: author.family_name,
+    })),
+  }
+)
+
 // Taken from gatsby-source-publications
 // https://github.com/bacor/gatsby-source-publications/blob/main/gatsby-node.mjs#L12
 function replaceDois({ html, style = "apa", target="_blank" }) {
@@ -69,4 +96,4 @@ function replaceDois({ html, style = "apa", target="_blank" }) {
 }
 
 export default Citation
-export { getHtml, replaceDois, cleanData }
+export { getHtml, replaceDois, cleanData, cleanDOI, toCSL }

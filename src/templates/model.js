@@ -1,3 +1,5 @@
+import Cite from "citation-js"
+import "@citation-js/plugin-csl"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useEffect, useState } from 'react';
@@ -10,7 +12,11 @@ import {
   BadgeDoi,
   TagsList,
 } from "../components/Badges"
-import Citation, { replaceDois } from "../components/Citation"
+import Citation, {
+  cleanDOI,
+  toCSL,
+  replaceDois,
+} from "../components/Citation"
 import Content, { HTMLContent } from "../components/Content"
 import PageHead from "../components/Head"
 import Layout from "../components/Layout"
@@ -69,9 +75,11 @@ const ModelTemplate = ({
     ))
   }
 
-
-
-
+  let citation = (
+    publication &&
+    new Cite(toCSL(publication)).format("bibliography",
+                                        {format: "html", style: "apa"})
+  )
 
   return (
     <section className="section">
@@ -177,7 +185,7 @@ const ModelTemplate = ({
           )}
 
             {
-              publication.html &&
+              citation &&
               <section id="publication" className="model-page">
                 <h2>Associated publication</h2>
                 {
@@ -187,7 +195,7 @@ const ModelTemplate = ({
                     style={{marginBottom: "10px"}}
                   />
                 }
-                <Citation html={publication.html}/>
+                <Citation html={citation}/>
               </section>
             }
 
@@ -555,7 +563,7 @@ const ModelsPage = ({ data }) => {
         model_files={post.frontmatter.model_files}
         model_setup_info={post.frontmatter.model_setup_info}
         model_setup={post.frontmatter.images.model_setup}
-        publication={post.childCitation}
+        publication={post.frontmatter.associated_publication}
         research_tags={post.frontmatter.research_tags}
         title={post.frontmatter.title}
         slug={post.frontmatter.slug}
@@ -576,10 +584,6 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
-      childCitation {
-        html
-        doi
-      }
       frontmatter {
         abstract
         slug
@@ -590,6 +594,17 @@ export const pageQuery = graphql`
           src {
             publicURL
           }
+        }
+        associated_publication {
+          authors {
+            family_name
+            name
+          }
+          date
+          doi
+          journal
+          publisher
+          title
         }
         compute_info {
           doi
