@@ -10,10 +10,9 @@ for_codes:
 status:
 doi: https://doi.org/10.25914/r3ya-bg54
 url: https://mate.science/models/sandiford-2021-detachment
-creditText: 'Sandiford, D., Brune, S., Glerum, A., Naliboff, J., & Whittaker, J. (2024).
+creditText: Sandiford, D., Brune, S., Glerum, A., Naliboff, J., & Whittaker, J. (2024).
   Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid‐Block Rotation
-  and Apparent Unbending [Data set]. AuScope, National Computational Infrastructure.
-  https://doi.org/r3ya-bg54'
+  and Apparent Unbending [Data set]. AuScope, National Computational Infrastructure.https://doi.org/10.25914/r3ya-bg54
 software:
   name: 'geodynamics/aspect: ASPECT 2.5.0'
   doi: https://doi.org/10.5281/zenodo.8200213
@@ -120,7 +119,7 @@ images:
     caption: Initial conditions, showing mesh refinement.
 animation:
   src: ./graphics/animation.mp4
-  caption: Animation for alternative model (see publication) showing vorticity. Velocity vectors are shown in hangingwall reference frame. Dark regions show the acccumulation of plastic strain. 
+  caption: Animation for alternative model (see publication) showing vorticity. Velocity vectors are shown in hangingwall reference frame. Dark regions show the acccumulation of plastic strain.
 model_setup_info:
   url: ''
   summary: The domain is $400 \; \mathrm{km}$ wide and $100 \; \mathrm{km}$ deep,

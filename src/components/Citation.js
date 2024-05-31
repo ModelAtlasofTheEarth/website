@@ -50,7 +50,8 @@ const cleanData = (data) => {
 
 // Taken from gatsby-source-publications
 // https://github.com/bacor/gatsby-source-publications/blob/main/gatsby-node.mjs#L12
-function replaceDois({ html, style = "apa", target="_blank" }) {
+// Updated replaceDois function to handle complex DOIs
+function replaceDois({ html, style = "apa", target = "_blank" }) {
   if (style === "apa") {
     const regex = /(https\:\/\/doi\.org\/([^<]+)(?:\<\/div\>)?)/gm;
     const match = html.match(regex);
