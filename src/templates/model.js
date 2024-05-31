@@ -169,11 +169,6 @@ const ModelTemplate = ({
               </Markdown>
             </p>
             }
-
-            <p>
-              Model submitted by <b>{submitter_full_name}</b> on <b>{date}</b>.
-            </p>
-
           </TabPanel>
 
           <TabPanel key="overview">
@@ -232,10 +227,6 @@ const ModelTemplate = ({
 
               </section>
             }
-            <p>
-              Model submitted by <b>{submitter_full_name}</b> on <b>{date}</b>.
-            </p>
-
           </TabPanel>
 
 
@@ -513,8 +504,11 @@ const ModelTemplate = ({
               </section>
             }
           </TabPanel>
-        </Tabs>
 
+        </Tabs>
+        <p>
+          Model submitted by <b>{submitter_full_name}</b> on <b>{date}</b>.
+        </p>
       </div>
       <PostContent
         content={content}
