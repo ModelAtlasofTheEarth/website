@@ -12,6 +12,7 @@ import {
   BadgeDoi,
   TagsList,
 } from "../components/Badges"
+import Catalog from "../components/Catalog"
 import Citation, {
   cleanDOI,
   toCSL,
@@ -168,11 +169,6 @@ const ModelTemplate = ({
               </Markdown>
             </p>
             }
-
-            <p>
-              Model submitted by <b>{submitter_full_name}</b> on <b>{date}</b>.
-            </p>
-
           </TabPanel>
 
           <TabPanel key="overview">
@@ -231,10 +227,6 @@ const ModelTemplate = ({
 
               </section>
             }
-            <p>
-              Model submitted by <b>{submitter_full_name}</b> on <b>{date}</b>.
-            </p>
-
           </TabPanel>
 
 
@@ -359,6 +351,13 @@ const ModelTemplate = ({
             The catalogue record for this model can be accessed through the Model DOI near the top of the page.
             </p>
 
+            {
+              model_files?.nci_file_path &&
+              <section id="nci-catalog">
+                <h3>NCI file catalogue preview:</h3>
+                <Catalog url={model_files.nci_file_path}/>
+              </section>
+            }
 
             <h2>Notes</h2>
 
@@ -504,17 +503,12 @@ const ModelTemplate = ({
                 <p dangerouslySetInnerHTML={{__html: replaceDois({html: creditText})}}></p>
               </section>
             }
-
-
-            <p>
-              Model submitted by <b>{submitter_full_name}</b> on <b>{date}</b>.
-            </p>
-
           </TabPanel>
 
-
         </Tabs>
-
+        <p>
+          Model submitted by <b>{submitter_full_name}</b> on <b>{date}</b>.
+        </p>
       </div>
       <PostContent
         content={content}
