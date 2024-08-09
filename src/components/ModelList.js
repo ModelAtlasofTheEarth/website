@@ -98,7 +98,6 @@ const ModelListItem = ({
             <p><b>Tags:</b></p>
             {tags && tags.length > 0 && (
               <>
-                <p><b>Tags:</b></p>
                 <p><TagsList tags={tags} style={{ backgroundColor: 'green', color: '#fff' }}/></p>
               </>
             )}
