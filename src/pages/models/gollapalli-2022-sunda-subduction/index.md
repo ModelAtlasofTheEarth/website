@@ -90,7 +90,7 @@ description: The negative buoyancy of the slab drives subducting plate and trenc
   the crucial role of trench-parallel forces in plate dynamics.
 images:
   landing_image:
-    src: ./graphics/vel_sr_inv_landing_page.pdf
+    src: ./graphics/vel_sr_inv_landing_page.jpg
     caption: "\nMantle flow and upper plate deformation due to slab step"
   graphic_abstract:
     src: ./graphics/sketch.png
