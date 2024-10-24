@@ -35,6 +35,9 @@ associated_publication:
   title: Unravelling tectonic coupling and loading along the Sunda margin through 3-D regional numerical  modelling
   doi: https://doi.org/10.26180/21664034.v1
   date: 2022-12
+  authors:
+    - name: Thyagarajulu
+      family_name: Gollapalli
 compute_info:
   name: Gadi Supercomputer
   organisation: National Computational Infrastructure
