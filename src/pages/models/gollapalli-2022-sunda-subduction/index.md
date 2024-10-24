@@ -8,7 +8,7 @@ for_codes:
   - 370401
 status:
   - completed
-doi: ''
+doi: https://doi.org/10.25914/vw5k-q269
 url: https://mate.science//models/gollapalli-2022-sunda-subduction
 creditText: ''
 software:
