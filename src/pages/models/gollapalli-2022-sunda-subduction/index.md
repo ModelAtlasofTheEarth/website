@@ -43,8 +43,13 @@ compute_info:
   organisation: National Computational Infrastructure
   url: https://pid.nci.org.au/doi/f5966_0057_9267_4579
   doi: https://doi.org/10.25914/608bfd1838db2
-research_tags: []
-compute_tags: []
+research_tags:
+  - Subduction
+  - Plate boundary
+compute_tags:
+  - Python
+  - Finite element
+  - Particle-in-cell
 funder:
   name: National Computational Infrastructure
   doi: https://ror.org/04yx6dh41
