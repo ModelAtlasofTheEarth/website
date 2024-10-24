@@ -40,8 +40,8 @@ compute_info:
 research_tags: []
 compute_tags: []
 funder:
-    name: National Computational Infrastructure
-    doi: https://ror.org/04yx6dh41
+  name: National Computational Infrastructure
+  doi: https://ror.org/04yx6dh41
 abstract: The negative buoyancy of the slab primarily controls the subducting plate
   and trench motions, and tectonic stresses around the convergent margins. Lateral
   variations in negative buoyancy associated with varying slab depth along strike
