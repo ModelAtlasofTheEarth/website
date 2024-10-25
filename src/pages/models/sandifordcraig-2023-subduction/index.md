@@ -144,7 +144,7 @@ images:
       show convergence rates at 5 Myr into the simulation. Inset panels show details
       of the adaptive mesh refinement during the simulation.
 animation:
-  src: ./graphics/animation.ogv
+  src: ./graphics/animation.mp4
   caption: 'Animation shows the model domain at 2x vertical exaggeration. The scalar
     field is the effective strain rate, i.e. $\dot\epsilon_{II} =  \sqrt{J2} = \sqrt{0.5(\dot\epsilon_{i,j}:
     \dot\epsilon_{i,j})}$. Upper panel shows the evolution of the model topography (a
