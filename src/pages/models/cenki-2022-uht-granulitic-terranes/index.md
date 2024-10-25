@@ -103,7 +103,7 @@ description: Long-lived high to ultra-high temperature (HT-UHT) granulitic terra
   paths that can be compared with the natural rock archive.
 images:
   landing_image:
-    src: ./graphics/Figure2_v9.pdf
+    src: ./graphics/Figure2_v9.png
     caption: ' Figure 2. A-B. Model geometry, initial conditions as well as geotherm,
       viscosity and density profiles. The circles pattern superimposed on the continental
       crust represents the finite strain ellipses. White squares represent the Lagrangian
@@ -114,7 +114,7 @@ images:
       snapshots for each model: i) shortening-delamination and ii) collapse. Shortening
       velocity is either slow (0.24 cm.y-1, C-F) or fast (2.4 cm.y-1, G-J).'
   graphic_abstract:
-    src: ./graphics/Figure3_v6.pdf
+    src: ./graphics/Figure3_v6.png
     caption: ' Figure 3. Depth – time profiles indicating the onset of partial melting
       and granulite formation through the evolution of the models.'
   model_setup:
