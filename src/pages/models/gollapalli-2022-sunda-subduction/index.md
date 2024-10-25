@@ -108,8 +108,8 @@ images:
       from 0-2000 and 2000-4000 km in the Y-direction. The trench is located at X
       = 2000 km."
 animation:
-  src: ./graphics/side_view_snapshot.png
-  caption: "\nMantle flow and upper plate deformation due to slab step"
+  src: ./graphics/
+  caption: ''
 model_setup_info:
   url: ''
   summary: The model setup consists of the subducting plate with attached slab and
