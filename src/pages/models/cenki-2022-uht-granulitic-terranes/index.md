@@ -68,8 +68,7 @@ compute_tags:
   - Python
   - Finite Element
 funder:
-  - name: European Union's Horizon 2020 research and innovation program under grant
-      agreement no 793978
+  - name: ''
     doi: ''
 abstract: Long‐lived high to ultra‐high temperature (HT‐UHT) granulitic terranes formed
   throughout Earth's history. Yet, the detailed processes involved in their formation
