@@ -63,7 +63,9 @@ compute_info:
   organisation: ''
   url: ''
   doi: ''
-research_tags: []
+research_tags:
+  - HT‐UHT terranes
+  - Orogenic cycle
 compute_tags:
   - Python
   - Finite Element
