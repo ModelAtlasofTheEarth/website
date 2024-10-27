@@ -1,6 +1,6 @@
 ---
 templateKey: model
-slug: cenki-2022-uht-granulitic-terranes-1
+slug: cenki-2022-uht-granulitic-terranes
 title: 'Timing of partial melting and granulite formation during the genesis of high
   to ultra‐high temperature terranes: Insight from numerical experiments'
 date: '2024-10-25T06:41:30.000Z'
@@ -10,7 +10,7 @@ for_codes:
 status:
   - completed
 doi: https://doi.org/10.25914/aaen-nc33
-url: https://mate.science//models/cenki-2022-uht-granulitic-terranes-1
+url: https://mate.science//models/cenki-2022-uht-granulitic-terranes
 creditText: 'Cenki-Tok or Cenki, B., Rey, Patrice F.., Arcay, D., & Giordani, J. (2024).
   Timing of partial melting and granulite formation during the genesis of high to
   ultra‐high temperature terranes: Insight from numerical experiments [Data set].
@@ -169,14 +169,14 @@ model_files:
   file_tree: ''
   existing_identifier: https://github.com/underworld-community/cenki-et-al-UHT-granulitic-terranes
   nci_file_path: 
-    https://thredds.nci.org.au/thredds/catalog/nm08/MATE/cenki-2022-uht-granulitic-terranes-1/catalog.html
+    https://thredds.nci.org.au/thredds/catalog/nm08/MATE/cenki-2022-uht-granulitic-terranes/catalog.html
   include: true
 dataset:
   url: ''
   notes: ''
   existing_identifier: ''
   nci_file_path: 
-    https://thredds.nci.org.au/thredds/catalog/nm08/MATE/cenki-2022-uht-granulitic-terranes-1/catalog.html
+    https://thredds.nci.org.au/thredds/catalog/nm08/MATE/cenki-2022-uht-granulitic-terranes/catalog.html
   include: true
 metadataFile: ro-crate-metadata.json
 ---
