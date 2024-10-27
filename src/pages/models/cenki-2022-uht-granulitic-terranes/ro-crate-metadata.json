@@ -41,7 +41,7 @@
                 "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370401"
             },
             "abstract": "Long\u2010lived high to ultra\u2010high temperature (HT\u2010UHT) granulitic terranes formed throughout Earth's history. Yet, the detailed processes involved in their formation remain unresolved and notably the sequence of appearance and duration of migmatisation and granulites conditions in the orogenic cycle. These processes can be evaluated by analytical and numerical models. First, solving the steady\u2010state heat equation allows underlining the interdependency of the parameters controlling the crustal geotherm at thermal equilibrium. Second, performing two\u2010dimensional thermo\u2010mechanical experiments of an orogenic cycle, from shortening to gravitational collapse, allows to consider non\u2010steady\u2010state geotherms and understand how deformation velocity may affect the relative timing of migmatite and granulite formation. These numerical experiments with elevated radiogenic heat production and slow shortening rates allow the formation of large volumes of prograde migmatites and granulites going through the sillimanite field as observed in many HT\u2010UHT terranes. Finally, the interplay between these parameters can explain the difference in predicted pressure\u2010temperature\u2010time paths that can be compared with the natural rock archive.",
-            "alternateName": "cenki-2022-uht-granulitic-terranes-1",
+            "alternateName": "cenki-2022-uht-granulitic-terranes",
             "citation": {
                 "@id": "http://dx.doi.org/10.1111/ter.12577"
             },
@@ -102,8 +102,8 @@
             "spatialCoverage": "",
             "temporalCoverage": "",
             "url": [
-                "https://mate.science/models/cenki-2022-uht-granulitic-terranes-1/",
-                "https://github.com/ModelAtlasofTheEarth/cenki-2022-uht-granulitic-terranes-1/"
+                "https://mate.science/models/cenki-2022-uht-granulitic-terranes/",
+                "https://github.com/ModelAtlasofTheEarth/cenki-2022-uht-granulitic-terranes/"
             ],
             "version": "",
             "creditText": [
@@ -371,7 +371,7 @@
             "programmingLanguage": "",
             "runtimePlatform": "",
             "storageRequirements": "./",
-            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/cenki-2022-uht-granulitic-terranes-1/catalog.html",
+            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/cenki-2022-uht-granulitic-terranes/catalog.html",
             "version": ""
         },
         {
@@ -382,7 +382,7 @@
             "description": "",
             "fileFormat": "./",
             "identifier": [],
-            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/cenki-2022-uht-granulitic-terranes-1/catalog.html"
+            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/cenki-2022-uht-granulitic-terranes/catalog.html"
         },
         {
             "@id": "ro-crate-metadata.json",
