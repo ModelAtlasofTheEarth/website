@@ -1,21 +1,22 @@
 ---
 templateKey: model
-slug: cenki-2022-uht-granulitic-terranes
-title: 'Subduction dynamics and plate coupling along seismically active margin: the
-  role of slab steps'
-date: '2024-10-24T02:18:49.000Z'
+slug: cenki-2022-uht-granulitic-terranes-1
+title: 'Timing of partial melting and granulite formation during the genesis of high
+  to ultra‐high temperature terranes: Insight from numerical experiments'
+date: '2024-10-25T06:41:30.000Z'
 featuredpost:
 for_codes:
   - 370401
 status:
   - completed
-doi: https://doi.org/10.25914/vw5k-q269
-url: https://mate.science//models/gollapalli-2022-sunda-subduction
-creditText: 'Gollapalli, T. (2024). Subduction dynamics and plate coupling along seismically
-  active margin: the role of slab steps [Data set]. AuScope, National Computational
-  Infrastructure. https://doi.org/vw5k-q269'
+doi: https://doi.org/10.25914/aaen-nc33
+url: https://mate.science//models/cenki-2022-uht-granulitic-terranes-1
+creditText: 'Cenki-Tok or Cenki, B., Rey, Patrice F.., Arcay, D., & Giordani, J. (2024).
+  Timing of partial melting and granulite formation during the genesis of high to
+  ultra‐high temperature terranes: Insight from numerical experiments [Data set].
+  AuScope, National Computational Infrastructure. https://doi.org/aaen-nc33'
 software:
-  name: 'Underworld2: Python Geodynamics Modelling for Desktop, HPC and Cloud'
+  name: Underworld 2
   doi: https://doi.org/10.5281/zenodo.3975252
   url_source: ''
 licence:
@@ -24,70 +25,83 @@ licence:
   description: Creative Commons Attribution 4.0 International
   licence_file: license.txt
 submitter:
-  name: Thyagarajulu
-  family_name: Gollapalli
-  ORCID: https://orcid.org/0000-0001-9394-4104
+  name: Bénédicte
+  family_name: Cenki-Tok or Cenki
+  ORCID: https://orcid.org/0000-0001-7649-4498
 creators:
-  - name: Thyagarajulu
-    family_name: Gollapalli
-    ORCID: 0000-0001-9394-4104
+  - name: Bénédicte
+    family_name: Cenki-Tok or Cenki
+    ORCID: 0000-0001-7649-4498
+  - name: Patrice
+    family_name: Rey
+    ORCID: 0000-0002-1767-8593
+  - name: Diane
+    family_name: Arcay
+    ORCID: 0000-0001-6773-0807
+  - name: Julian
+    family_name: Giordani
+    ORCID: 0000-0003-4515-9296
 associated_publication:
-  title: Unravelling tectonic coupling and loading along the Sunda margin through 3-D regional numerical  modelling
-  doi: https://doi.org/10.26180/21664034.v1
-  date: 2022-12
+  title: 'Timing of partial melting and granulite formation during the genesis of
+    high to ultra‐high temperature terranes: Insight from numerical experiments'
+  url: http://dx.doi.org/10.1111/ter.12577
+  doi: 10.1111/ter.12577
+  publisher: Wiley
+  journal: Terra Nova
+  date: 2022-1-14
   authors:
-    - name: Thyagarajulu
-      family_name: Gollapalli
+    - name: Bénédicte
+      family_name: Cenki
+    - name: Patrice F.
+      family_name: Rey
+    - name: Diane
+      family_name: Arcay
+    - name: Julian
+      family_name: Giordani
 compute_info:
-  name: Gadi Supercomputer
-  organisation: National Computational Infrastructure
-  url: https://pid.nci.org.au/doi/f5966_0057_9267_4579
-  doi: https://doi.org/10.25914/608bfd1838db2
+  name: ''
+  organisation: ''
+  url: ''
+  doi: ''
 research_tags:
-  - Subduction
-  - Plate boundary
+  - HT‐UHT terranes
+  - Orogenic cycle
 compute_tags:
   - Python
-  - Finite element
-  - Particle-in-cell
+  - Finite Element
 funder:
-  name: National Computational Infrastructure
-  doi: https://ror.org/04yx6dh41
-abstract: The negative buoyancy of the slab primarily controls the subducting plate
-  and trench motions, and tectonic stresses around the convergent margins. Lateral
-  variations in negative buoyancy associated with varying slab depth along strike
-  must affect plate and margin motions, and, most importantly, have an impact on the
-  stress acting across the margin, thereby setting the context for plate coupling,
-  tectonics and present-day seismicity. Here, we investigated these interactions in
-  3-D subduction numerical models, focusing on along-trench variations in the subduction
-  depth and the resulting perturbations to the force balance. While we focus on the
-  steps in the slab depth, we additionally test the role of subducting plate, i.e.,
-  cohesion and viscosity, and upper plate properties, i.e., thickness, viscosity,
-  and cohesion. The results show that the magnitude of convergence velocity only depends
-  on the integrated slab mass and rheology of the subducting plate when the upper
-  plate is thin. Instead, the trench retreat/advance is sensitive to the heterogeneity
-  in the slab depth, and a complex pattern arises atop the slab step, with a characteristic
-  length of ~500 km from the slab depth perturbation. The remaining parameters of
-  the subducting and upper plate mainly affect the magnitude of the trench velocities
-  with minor influence on the pattern. The highest deformation/stress in the upper
-  plate is observed around the slab step due to the rigidity of the plate, causing
-  mutual perturbation between the deep and shallow slab portions, and the lateral
-  flow around the step. These results are compared with the observations along the
-  Sunda margin, where similar slab depth variations are found. The upper plate deformation
-  in the model shows remarkable compatibility with the observed distributions of compression
-  and extension of the Andaman- Sumatra-Java segments. Our study indicates that trench-parallel
-  forces, arising from the natural variations of slab depth, exert a first-order control
-  on the plate coupling and deformation along convergent margins and should not be
-  neglected.
-description: The negative buoyancy of the slab drives subducting plate and trench
-  motions, influencing tectonic stresses at convergent margins. Variations in slab
-  depth along the trench affect plate coupling and seismicity. We investigated these
-  effects using 3-D subduction models, focusing on slab depth variations and their
-  impact on force balance. Results show convergence velocity is primarily controlled
-  by slab mass and subducting plate rheology, while trench movement is sensitive to
-  slab depth heterogeneity. The highest stress occurs around slab steps, aligning
-  with deformation patterns observed along the Sunda margin. This study highlights
-  the crucial role of trench-parallel forces in plate dynamics.
+  - name: ''
+    doi: ''
+abstract: Long‐lived high to ultra‐high temperature (HT‐UHT) granulitic terranes formed
+  throughout Earth's history. Yet, the detailed processes involved in their formation
+  remain unresolved and notably the sequence of appearance and duration of migmatisation
+  and granulites conditions in the orogenic cycle. These processes can be evaluated
+  by analytical and numerical models. First, solving the steady‐state heat equation
+  allows underlining the interdependency of the parameters controlling the crustal
+  geotherm at thermal equilibrium. Second, performing two‐dimensional thermo‐mechanical
+  experiments of an orogenic cycle, from shortening to gravitational collapse, allows
+  to consider non‐steady‐state geotherms and understand how deformation velocity may
+  affect the relative timing of migmatite and granulite formation. These numerical
+  experiments with elevated radiogenic heat production and slow shortening rates allow
+  the formation of large volumes of prograde migmatites and granulites going through
+  the sillimanite field as observed in many HT‐UHT terranes. Finally, the interplay
+  between these parameters can explain the difference in predicted pressure‐temperature‐time
+  paths that can be compared with the natural rock archive.
+description: Long-lived high to ultra-high temperature (HT-UHT) granulitic terranes
+  formed throughout Earth's history. Yet, the detailed processes involved in their
+  formation remain unresolved and notably the sequence of appearance and duration
+  of migmatisation and granulites conditions in the orogenic cycle. These processes
+  can be evaluated by analytical and numerical models. First, solving the steady-state
+  heat equation allows underlining the interdependency of the parameters controlling
+  the crustal geotherm at thermal equilibrium. Second, performing two-dimensional
+  thermo-mechanical experiments of an orogenic cycle, from shortening to gravitational
+  collapse, allows to consider non-steady-state geotherms and understand how deformation
+  velocity may affect the relative timing of migmatite and granulite formation. These
+  numerical experiments with elevated radiogenic heat production and slow shortening
+  rates allow the formation of large volumes of prograde migmatites and granulites
+  going through the sillimanite field as observed in many HT-UHT terranes. Finally,
+  the interplay between these parameters can explain the difference in predicted pressure-temperature-time
+  paths that can be compared with the natural rock archive.
 images:
   landing_image:
     src: ./graphics/Figure2_v9.png
@@ -108,7 +122,7 @@ images:
     src: ''
     caption: ''
 animation:
-  src: ./graphics/
+  src: ''
   caption: ''
 model_setup_info:
   url: ''
