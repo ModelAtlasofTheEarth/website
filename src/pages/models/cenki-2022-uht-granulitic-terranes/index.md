@@ -104,25 +104,25 @@ description: Long-lived high to ultra-high temperature (HT-UHT) granulitic terra
   paths that can be compared with the natural rock archive.
 images:
   landing_image:
-    src: ./graphics/Figure2_v9.png
-    caption: ' Figure 2. A-B. Model geometry, initial conditions as well as geotherm,
-      viscosity and density profiles. The circles pattern superimposed on the continental
-      crust represents the finite strain ellipses. White squares represent the Lagrangian
-      particles recording the PTt paths presented in Fig. 4. A. Initial conditions
-      for models RHP2_diff, mimicking a Proterozoic highly differentiated and highly
-      radiogenic crust. B. Initial conditions for model RHP1_unif, simulating a Phanerozoic
-      uniform and less radiogenic crust. C-J. Orogenic modeling results showing two
-      snapshots for each model: i) shortening-delamination and ii) collapse. Shortening
-      velocity is either slow (0.24 cm.y-1, C-F) or fast (2.4 cm.y-1, G-J).'
+    src: ./graphics/vel_sr_inv_landing_page.png
+    caption: "\nMantle flow and upper plate deformation due to slab step"
   graphic_abstract:
-    src: ./graphics/Figure3_v6.png
-    caption: ' Figure 3. Depth – time profiles indicating the onset of partial melting
-      and granulite formation through the evolution of the models.'
+    src: ./graphics/sketch.png
+    caption: "\nSketch of the tectonic forces acting at the Sunda margin and interface
+      stress along Andaman (DD’), Sumatra (FF’), and Java (MM’). At the Sumatra margin,
+      an additional transferred force ($F^*_{SP}$) from Java is acting that contributes
+      to crustal thickening/compression in the upper plate. The blue stars represent
+      the interplate earthquakes, and black dots are intraplate seismicity. The sketch
+      neglects the curvature of the trench and the obliquity of convergence."
   model_setup:
-    src: ./graphics/Figure3_v6.png
-    caption: 'foo'
+    src: ./graphics/model_matvar_edit_model_setup.png
+    caption: "\nNumerical model setup. The parameter `d` denotes the depth of the
+      long slab (i.e., 660 km, green plane), and `Δ𝑑` represents step length (i.e.,
+      the difference between the long and short slab). The long and short slabs extend
+      from 0-2000 and 2000-4000 km in the Y-direction. The trench is located at X
+      = 2000 km."
 animation:
-  src: ''
+  src: ./graphics/
   caption: ''
 model_setup_info:
   url: ''
