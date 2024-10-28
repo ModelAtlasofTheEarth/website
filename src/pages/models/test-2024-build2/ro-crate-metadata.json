@@ -8,13 +8,13 @@
             "@id": "#datasetCreation",
             "@type": "CreateAction",
             "agent": {
-                "@id": "https://orcid.org/0000-0001-9394-4104"
+                "@id": "https://orcid.org/0000-0002-2207-6837"
             },
             "description": "Running the computational model",
             "endTime": "",
             "instrument": [
                 {
-                    "@id": "https://doi.org/10.5281/zenodo.3975252"
+                    "@id": "https://doi.org/10.5281/zenodo.8200213"
                 },
                 {
                     "@id": "https://doi.org/10.25914/608bfd1838db2"
@@ -34,19 +34,40 @@
             "about": {
                 "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370401"
             },
-            "abstract": "The negative buoyancy of the slab primarily controls the subducting plate and trench motions, and tectonic stresses around the convergent margins. Lateral variations in negative buoyancy associated with varying slab depth along strike must affect plate and margin motions, and, most importantly, have an impact on the stress acting across the margin, thereby setting the context for plate coupling, tectonics and present-day seismicity. Here, we investigated these interactions in 3-D subduction numerical models, focusing on along-trench variations in the subduction depth and the resulting perturbations to the force balance. While we focus on the steps in the slab depth, we additionally test the role of subducting plate, i.e., cohesion and viscosity, and upper plate properties, i.e., thickness, viscosity, and cohesion. The results show that the magnitude of convergence velocity only depends on the integrated slab mass and rheology of the subducting plate when the upper plate is thin. Instead, the trench retreat/advance is sensitive to the heterogeneity in the slab depth, and a complex pattern arises atop the slab step, with a characteristic length of ~500 km from the slab depth perturbation. The remaining parameters of the subducting and upper plate mainly affect the magnitude of the trench velocities with minor influence on the pattern. The highest deformation/stress in the upper plate is observed around the slab step due to the rigidity of the plate, causing mutual perturbation between the deep and shallow slab portions, and the lateral flow around the step. These results are compared with the observations along the Sunda margin, where similar slab depth variations are found. The upper plate deformation in the model shows remarkable compatibility with the observed distributions of compression and extension of the Andaman- Sumatra-Java segments. Our study indicates that trench-parallel forces, arising from the natural variations of slab depth, exert a first-order control on the plate coupling and deformation along convergent margins and should not be neglected.",
-            "alternateName": "gollapalli-2022-sunda-subduction",
-            "citation": "",
+            "abstract": "Seafloor spreading at slow rates can be accommodated on large\u2010offset oceanic detachment faults (ODFs), that exhume lower crustal and mantle rocks in footwall domes termed oceanic core complexes (OCCs). Footwall rocks experience large rotation during exhumation, yet important aspects of the kinematics\u2014particularly the relative roles of solid\u2010block rotation and flexure\u2014are not clearly understood. Using a high\u2010resolution numerical model, we explore the exhumation kinematics in the footwall beneath an emergent ODF/OCC. A key feature of the models is that footwall motion is dominated by solid\u2010block rotation, accommodated by the nonplanar, concave\u2010down fault interface. A consequence is that curvature measured along the ODF is representative of a neutral stress configuration, rather than a \u201cbent\u201d one. Instead, it is in the subsequent process of \u201capparent unbending\u201d that significant flexural stresses are developed in the model footwall. The brittle strain associated with apparent unbending is produced dominantly in extension, beneath the OCC, consistent with earthquake clustering observed in the Trans\u2010Atlantic Geotraverse at the Mid\u2010Atlantic Ridge.",
+            "alternateName": "sandiford-2021-detachment-1",
+            "citation": {
+                "@id": "http://dx.doi.org/10.1029/2021gc009681"
+            },
             "contributor": "",
-            "creativeWorkStatus": "completed",
-            "creator": {
-                "@id": "https://orcid.org/0000-0001-9394-4104"
-            },
-            "datePublished": "2024-10-24T02:18:49.000Z",
-            "description": "The negative buoyancy of the slab drives subducting plate and trench motions, influencing tectonic stresses at convergent margins. Variations in slab depth along the trench affect plate coupling and seismicity. We investigated these effects using 3-D subduction models, focusing on slab depth variations and their impact on force balance. Results show convergence velocity is primarily controlled by slab mass and subducting plate rheology, while trench movement is sensitive to slab depth heterogeneity. The highest stress occurs around slab steps, aligning with deformation patterns observed along the Sunda margin. This study highlights the crucial role of trench-parallel forces in plate dynamics.",
-            "funder": {
-                "@id": "_:b0"
-            },
+            "creativeWorkStatus": "",
+            "creator": [
+                {
+                    "@id": "http://orcid.org/0000-0002-2207-6837"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0003-4985-1810"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-9481-1749"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-5697-7203"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-3170-3935"
+                }
+            ],
+            "datePublished": "2024-05-17T01:55:42.000Z",
+            "description": "This model was developed in order to study the rotation of footwall rocks beneath oceanic detachment faults (ODFs). It showed that solid-block rotation dominates beneath a concave-down fault, while significant flexural stresses form later during \"apparent unbending,\" causing both compression and extension-related brittle strain within oceanic core complexes (OCCs).",
+            "funder": [
+                {
+                    "@id": "https://ror.org/05mmh0f86"
+                },
+                {
+                    "@id": "https://www.helmholtz.de/"
+                }
+            ],
             "hasPart": [
                 {
                     "@id": "model_inputs"
@@ -65,13 +86,17 @@
                 }
             ],
             "identifier": [
-                "https://doi.org/10.25914/vw5k-q269"
+                "https://doi.org/10.25914/10.25914/r3ya-bg54"
             ],
             "isBasedOn": [],
             "isPartOf": "http://dx.doi.org/10.25914/yrzp-g882",
-            "keywords": "",
+            "keywords": [
+                "tectonics",
+                "faulting",
+                "detachment faults"
+            ],
             "license": "https://creativecommons.org/licenses/by/4.0/legalcode",
-            "name": "Subduction dynamics and plate coupling along seismically active margin: the role of slab steps",
+            "name": "Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid\u2010Block Rotation and Apparent Unbending",
             "publisher": [
                 {
                     "@id": "https://ror.org/04s1m4564"
@@ -83,66 +108,107 @@
             "spatialCoverage": "",
             "temporalCoverage": "",
             "url": [
-                "https://mate.science/models/gollapalli-2022-sunda-subduction/",
-                "https://github.com/ModelAtlasofTheEarth/gollapalli-2022-sunda-subduction/"
+                "https://mate.science/models/sandiford-2021-detachment-1/",
+                "https://github.com/ModelAtlasofTheEarth/sandiford-2021-detachment-1/"
             ],
             "version": "",
+            "funding": [
+                {
+                    "@id": "_:b0"
+                },
+                {
+                    "@id": "_:b1"
+                }
+            ],
             "creditText": [
-                "Gollapalli, T. (2024). Subduction dynamics and plate coupling along seismically active margin: the role of slab steps [Data set]. AuScope, National Computational Infrastructure. https://doi.org/vw5k-q269"
+                "Sandiford, D., Brune, S., Glerum, A., Naliboff, J., & Whittaker, J. (2024). Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid\u2010Block Rotation and Apparent Unbending [Data set]. AuScope, National Computational Infrastructure. https://doi.org/r3ya-bg54"
             ]
         },
         {
-            "@id": ".metadata_trail",
-            "@type": "Dataset",
-            "hasPart": [
-                {
-                    "@id": "metadata_trail/issue_body.md"
-                },
-                {
-                    "@id": "metadata_trail/issue_dict.json"
-                },
-                {
-                    "@id": "metadata_trail/nci_iso.csv"
-                },
-                {
-                    "@id": "metadata_trail/ro-crate-metadata-nested.json"
-                }
-            ],
-            "name": ".metadata_trail"
-        },
-        {
-            "@id": ".website_material",
-            "@type": [
-                "Dataset",
-                "CreativeWork"
-            ],
-            "creator": {
-                "@id": "https://orcid.org/0000-0001-9394-4104"
-            },
-            "description": "material for m@te website",
-            "fileFormat": "./",
-            "name": ".website_material"
-        },
-        {
             "@id": "_:b0",
-            "@type": "Organization",
-            "name": "_No response_"
+            "@type": "Grant",
+            "funder": {
+                "@id": "https://ror.org/05mmh0f86"
+            },
+            "identifier": "DP180102280"
         },
         {
             "@id": "_:b1",
-            "@type": "Person",
-            "familyName": "Velic",
-            "givenName": "Mirko"
+            "@type": "Grant",
+            "funder": {
+                "@id": "https://www.helmholtz.de/"
+            },
+            "identifier": "VH-NG-1132"
         },
         {
             "@id": "_:b2",
-            "@type": "Organization",
-            "name": "datacite"
+            "@type": "PropertyValue",
+            "propertyID": "URL",
+            "value": "https://zenodo.org/record/8200213"
         },
         {
             "@id": "_:b3",
             "@type": "Organization",
+            "name": "datacite"
+        },
+        {
+            "@id": "_:b4",
+            "@type": "Organization",
             "name": "NCI Australia"
+        },
+        {
+            "@id": "http://dx.doi.org/10.1029/2021gc009681",
+            "@type": "ScholarlyArticle",
+            "abstract": "Seafloor spreading at slow rates can be accommodated on large\u2010offset oceanic detachment faults (ODFs), that exhume lower crustal and mantle rocks in footwall domes termed oceanic core complexes (OCCs). Footwall rocks experience large rotation during exhumation, yet important aspects of the kinematics\u2014particularly the relative roles of solid\u2010block rotation and flexure\u2014are not clearly understood. Using a high\u2010resolution numerical model, we explore the exhumation kinematics in the footwall beneath an emergent ODF/OCC. A key feature of the models is that footwall motion is dominated by solid\u2010block rotation, accommodated by the nonplanar, concave\u2010down fault interface. A consequence is that curvature measured along the ODF is representative of a neutral stress configuration, rather than a \u201cbent\u201d one. Instead, it is in the subsequent process of \u201capparent unbending\u201d that significant flexural stresses are developed in the model footwall. The brittle strain associated with apparent unbending is produced dominantly in extension, beneath the OCC, consistent with earthquake clustering observed in the Trans\u2010Atlantic Geotraverse at the Mid\u2010Atlantic Ridge.",
+            "author": [
+                {
+                    "@id": "http://orcid.org/0000-0002-2207-6837"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0003-4985-1810"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-9481-1749"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-5697-7203"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-3170-3935"
+                }
+            ],
+            "identifier": "10.1029/2021GC009681",
+            "name": "Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid\u2010Block Rotation and Apparent Unbending"
+        },
+        {
+            "@id": "http://orcid.org/0000-0002-2207-6837",
+            "@type": "Person",
+            "familyName": "Sandiford",
+            "givenName": "Dan"
+        },
+        {
+            "@id": "http://orcid.org/0000-0002-3170-3935",
+            "@type": "Person",
+            "familyName": "Whittaker",
+            "givenName": "Joanne M."
+        },
+        {
+            "@id": "http://orcid.org/0000-0002-5697-7203",
+            "@type": "Person",
+            "familyName": "Naliboff",
+            "givenName": "John"
+        },
+        {
+            "@id": "http://orcid.org/0000-0002-9481-1749",
+            "@type": "Person",
+            "familyName": "Glerum",
+            "givenName": "Anne"
+        },
+        {
+            "@id": "http://orcid.org/0000-0003-4985-1810",
+            "@type": "Person",
+            "familyName": "Brune",
+            "givenName": "Sascha"
         },
         {
             "@id": "https://creativecommons.org/licenses/by/4.0/legalcode",
@@ -162,51 +228,49 @@
             "inLanguage": "en",
             "name": "Gadi Supercomputer",
             "provider": {
-                "@id": "_:b2"
+                "@id": "_:b3"
             },
             "publisher": {
-                "@id": "_:b3"
+                "@id": "_:b4"
             },
             "url": "https://pid.nci.org.au/doi/f5966_0057_9267_4579"
         },
         {
-            "@id": "https://doi.org/10.5281/zenodo.3975252",
+            "@id": "https://doi.org/10.5281/zenodo.8200213",
             "@type": "SoftwareSourceCode",
             "author": [
                 {
-                    "@id": "https://orcid.org/0000-0001-5865-1664"
+                    "@id": "https://orcid.org/0000-0003-2311-9402"
                 },
                 {
-                    "@id": "https://orcid.org/0000-0003-4515-9296"
+                    "@id": "https://orcid.org/0000-0003-0357-7115"
                 },
                 {
-                    "@id": "https://orcid.org/0000-0003-3685-174X"
+                    "@id": "https://orcid.org/0000-0003-0035-7723"
                 },
                 {
-                    "@id": "https://orcid.org/0000-0003-3891-5444"
+                    "@id": "https://orcid.org/0000-0001-7098-8198"
                 },
                 {
-                    "@id": "https://orcid.org/0000-0001-6303-5671"
+                    "@id": "https://orcid.org/0000-0002-9481-1749"
                 },
                 {
-                    "@id": "_:b1"
+                    "@id": "https://orcid.org/0000-0002-8137-3903"
                 },
                 {
-                    "@id": "https://orcid.org/0000-0002-2594-6965"
+                    "@id": "https://orcid.org/0000-0001-9489-5236"
                 },
                 {
-                    "@id": "https://orcid.org/0000-0002-0368-7341"
-                },
-                {
-                    "@id": "https://orcid.org/0000-0002-7182-1864"
+                    "@id": "https://orcid.org/0000-0002-5697-7203"
                 }
             ],
+            "identifier": "_:b2",
             "license": [
-                "https://www.gnu.org/licenses/lgpl-3.0-standalone.html",
+                "https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
                 "info:eu-repo/semantics/openAccess"
             ],
-            "name": "Underworld2: Python Geodynamics Modelling for Desktop, HPC and Cloud",
-            "url": "https://zenodo.org/record/3975252"
+            "name": "geodynamics/aspect: ASPECT 2.5.0",
+            "url": "https://zenodo.org/record/8200213"
         },
         {
             "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370401",
@@ -215,58 +279,58 @@
             "termCode": "370401"
         },
         {
-            "@id": "https://orcid.org/0000-0001-5865-1664",
+            "@id": "https://orcid.org/0000-0001-7098-8198",
             "@type": "Person",
-            "familyName": "Mansour",
+            "familyName": "Gassmoeller",
+            "givenName": "Rene"
+        },
+        {
+            "@id": "https://orcid.org/0000-0001-9489-5236",
+            "@type": "Person",
+            "familyName": "Myhill",
+            "givenName": "Robert"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-2207-6837",
+            "@type": "Person",
+            "familyName": "Sandiford",
+            "givenName": "Dan"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-5697-7203",
+            "@type": "Person",
+            "familyName": "Naliboff",
             "givenName": "John"
         },
         {
-            "@id": "https://orcid.org/0000-0001-6303-5671",
+            "@id": "https://orcid.org/0000-0002-8137-3903",
             "@type": "Person",
-            "familyName": "Kaluza",
-            "givenName": "Owen"
+            "familyName": "Heister",
+            "givenName": "Timo"
         },
         {
-            "@id": "https://orcid.org/0000-0001-9394-4104",
+            "@id": "https://orcid.org/0000-0002-9481-1749",
             "@type": "Person",
-            "familyName": "Gollapalli",
-            "givenName": "Thyagarajulu"
+            "familyName": "Glerum",
+            "givenName": "Anne"
         },
         {
-            "@id": "https://orcid.org/0000-0002-0368-7341",
+            "@id": "https://orcid.org/0000-0003-0035-7723",
             "@type": "Person",
-            "familyName": "Quenette",
-            "givenName": "Steve"
+            "familyName": "Fraters",
+            "givenName": "Menno"
         },
         {
-            "@id": "https://orcid.org/0000-0002-2594-6965",
+            "@id": "https://orcid.org/0000-0003-0357-7115",
             "@type": "Person",
-            "familyName": "Farrington",
-            "givenName": "Rebecca"
+            "familyName": "Dannberg",
+            "givenName": "Juliane"
         },
         {
-            "@id": "https://orcid.org/0000-0002-7182-1864",
+            "@id": "https://orcid.org/0000-0003-2311-9402",
             "@type": "Person",
-            "familyName": "Beall",
-            "givenName": "Adam"
-        },
-        {
-            "@id": "https://orcid.org/0000-0003-3685-174X",
-            "@type": "Person",
-            "familyName": "Moresi",
-            "givenName": "Louis"
-        },
-        {
-            "@id": "https://orcid.org/0000-0003-3891-5444",
-            "@type": "Person",
-            "familyName": "Beucher",
-            "givenName": "Romain"
-        },
-        {
-            "@id": "https://orcid.org/0000-0003-4515-9296",
-            "@type": "Person",
-            "familyName": "Giordani",
-            "givenName": "Julian"
+            "familyName": "Bangerth",
+            "givenName": "Wolfgang"
         },
         {
             "@id": "https://ror.org/04s1m4564",
@@ -277,6 +341,35 @@
             "@id": "https://ror.org/04yx6dh41",
             "@type": "Organization",
             "name": "National Computational Infrastructure"
+        },
+        {
+            "@id": "https://ror.org/05mmh0f86",
+            "@type": "Organization",
+            "name": "Australian Research Council"
+        },
+        {
+            "@id": "https://www.helmholtz.de/",
+            "@type": "Organization",
+            "name": ""
+        },
+        {
+            "@id": "metadata_trail",
+            "@type": "Dataset",
+            "hasPart": [
+                {
+                    "@id": "metadata_trail/issue_body.md"
+                },
+                {
+                    "@id": "metadata_trail/issue_dict.json"
+                },
+                {
+                    "@id": "metadata_trail/nci_iso.csv"
+                },
+                {
+                    "@id": "metadata_trail/ro-crate-metadata-nested.json"
+                }
+            ],
+            "name": "metadata_trail"
         },
         {
             "@id": "metadata_trail/issue_body.md",
@@ -313,13 +406,27 @@
                 "SoftwareSourceCode"
             ],
             "contentSize": "",
-            "creator": {
-                "@id": "https://orcid.org/0000-0001-9394-4104"
-            },
+            "creator": [
+                {
+                    "@id": "http://orcid.org/0000-0002-2207-6837"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0003-4985-1810"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-9481-1749"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-5697-7203"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-3170-3935"
+                }
+            ],
             "description": "Code and inputs for computational model",
             "identifier": [
-                "https://doi.org/10.25914/vw5k-q269",
-                "https://doi.org/10.5281/zenodo.7022845"
+                "https://doi.org/10.25914/10.25914/r3ya-bg54",
+                "https://github.com/dansand/odf_paper"
             ],
             "keywords": "",
             "memoryRequirements": "./",
@@ -327,22 +434,22 @@
             "programmingLanguage": "",
             "runtimePlatform": "",
             "storageRequirements": "./",
-            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/gollapalli-2022-sunda-subduction/catalog.html",
+            "url": "https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment-1/catalog.html",
             "version": ""
         },
         {
             "@id": "model_outputs",
             "@type": "Dataset",
-            "contentSize": 3298534883328,
+            "contentSize": 11811160064,
             "creator": {
-                "@id": "https://orcid.org/0000-0001-9394-4104"
+                "@id": "https://orcid.org/0000-0002-2207-6837"
             },
-            "description": "Output data mainly contains *.h5 and *.xdmf files.",
+            "description": "Data directory contains output data for 2 simulations stored in the following directories: ref_model_hires, alt_model_hires. Top level contains typical ASPECT output files, including log.txt and restart files. Topography and mesh variables were output at 100 Kyr intervals. Model end time is 5 Myr. Main output data consists of of plain text files representing model topography (e.g. topography.00000), vtu files (in the ./solution sub-directory) representing model output fields (e.g. solution-00000.0000.vtu). At each output step, there are 16 vtu files written. These can be opened with Paraview using the solution.pvd file in the top level.",
             "fileFormat": "./",
             "identifier": [
-                "https://doi.org/10.25914/vw5k-q269"
+                "https://doi.org/10.25914/10.25914/r3ya-bg54"
             ],
-            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/gollapalli-2022-sunda-subduction/catalog.html"
+            "url": "https://dapds00.nci.org.au/thredds/catalog/nm08/MATE/sandiford-2021-detachment-1/catalog.html"
         },
         {
             "@id": "ro-crate-metadata.json",
@@ -354,6 +461,32 @@
                 "@id": "./"
             },
             "description": "RO-Crate Metadata File Descriptor (this file)"
+        },
+        {
+            "@id": "website_material",
+            "@type": [
+                "Dataset",
+                "CreativeWork"
+            ],
+            "creator": [
+                {
+                    "@id": "http://orcid.org/0000-0002-2207-6837"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0003-4985-1810"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-9481-1749"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-5697-7203"
+                },
+                {
+                    "@id": "http://orcid.org/0000-0002-3170-3935"
+                }
+            ],
+            "description": "material for m@te website",
+            "fileFormat": "./"
         }
     ]
 }
