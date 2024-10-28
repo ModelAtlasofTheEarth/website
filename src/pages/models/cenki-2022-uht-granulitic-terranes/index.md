@@ -1,22 +1,21 @@
 ---
 templateKey: model
-slug: cenki-2022-uht-granulitic-terranes
-title: 'Timing of partial melting and granulite formation during the genesis of high
-  to ultra‐high temperature terranes: Insight from numerical experiments'
-date: '2024-10-25T06:41:30.000Z'
+slug: test-2022-sunda-subduction
+title: 'Subduction dynamics and plate coupling along seismically active margin: the
+  role of slab steps'
+date: '2024-10-24T02:18:49.000Z'
 featuredpost:
 for_codes:
   - 370401
 status:
   - completed
-doi: https://doi.org/10.25914/aaen-nc33
-url: https://mate.science//models/cenki-2022-uht-granulitic-terranes
-creditText: 'Cenki-Tok or Cenki, B., Rey, Patrice F.., Arcay, D., & Giordani, J. (2024).
-  Timing of partial melting and granulite formation during the genesis of high to
-  ultra‐high temperature terranes: Insight from numerical experiments [Data set].
-  AuScope, National Computational Infrastructure. https://doi.org/aaen-nc33'
+doi: https://doi.org/10.25914/vw5k-q269
+url: https://mate.science//models/gollapalli-2022-sunda-subduction
+creditText: 'Gollapalli, T. (2024). Subduction dynamics and plate coupling along seismically
+  active margin: the role of slab steps [Data set]. AuScope, National Computational
+  Infrastructure. https://doi.org/vw5k-q269'
 software:
-  name: Underworld 2
+  name: 'Underworld2: Python Geodynamics Modelling for Desktop, HPC and Cloud'
   doi: https://doi.org/10.5281/zenodo.3975252
   url_source: ''
 licence:
@@ -25,83 +24,70 @@ licence:
   description: Creative Commons Attribution 4.0 International
   licence_file: license.txt
 submitter:
-  name: Bénédicte
-  family_name: Cenki-Tok or Cenki
-  ORCID: https://orcid.org/0000-0001-7649-4498
+  name: Thyagarajulu
+  family_name: Gollapalli
+  ORCID: https://orcid.org/0000-0001-9394-4104
 creators:
-  - name: Bénédicte
-    family_name: Cenki-Tok or Cenki
-    ORCID: 0000-0001-7649-4498
-  - name: Patrice
-    family_name: Rey
-    ORCID: 0000-0002-1767-8593
-  - name: Diane
-    family_name: Arcay
-    ORCID: 0000-0001-6773-0807
-  - name: Julian
-    family_name: Giordani
-    ORCID: 0000-0003-4515-9296
+  - name: Thyagarajulu
+    family_name: Gollapalli
+    ORCID: 0000-0001-9394-4104
 associated_publication:
-  title: 'Timing of partial melting and granulite formation during the genesis of
-    high to ultra‐high temperature terranes: Insight from numerical experiments'
-  url: http://dx.doi.org/10.1111/ter.12577
-  doi: 10.1111/ter.12577
-  publisher: Wiley
-  journal: Terra Nova
-  date: 2022-1-14
+  title: Unravelling tectonic coupling and loading along the Sunda margin through 3-D regional numerical  modelling
+  doi: https://doi.org/10.26180/21664034.v1
+  date: 2022-12
   authors:
-    - name: Bénédicte
-      family_name: Cenki
-    - name: Patrice F.
-      family_name: Rey
-    - name: Diane
-      family_name: Arcay
-    - name: Julian
-      family_name: Giordani
+    - name: Thyagarajulu
+      family_name: Gollapalli
 compute_info:
-  name: ''
-  organisation: ''
-  url: ''
-  doi: ''
+  name: Gadi Supercomputer
+  organisation: National Computational Infrastructure
+  url: https://pid.nci.org.au/doi/f5966_0057_9267_4579
+  doi: https://doi.org/10.25914/608bfd1838db2
 research_tags:
-  - HT‐UHT terranes
-  - Orogenic cycle
+  - Subduction
+  - Plate boundary
 compute_tags:
   - Python
-  - Finite Element
+  - Finite element
+  - Particle-in-cell
 funder:
-  - name: ''
-    doi: ''
-abstract: Long‐lived high to ultra‐high temperature (HT‐UHT) granulitic terranes formed
-  throughout Earth's history. Yet, the detailed processes involved in their formation
-  remain unresolved and notably the sequence of appearance and duration of migmatisation
-  and granulites conditions in the orogenic cycle. These processes can be evaluated
-  by analytical and numerical models. First, solving the steady‐state heat equation
-  allows underlining the interdependency of the parameters controlling the crustal
-  geotherm at thermal equilibrium. Second, performing two‐dimensional thermo‐mechanical
-  experiments of an orogenic cycle, from shortening to gravitational collapse, allows
-  to consider non‐steady‐state geotherms and understand how deformation velocity may
-  affect the relative timing of migmatite and granulite formation. These numerical
-  experiments with elevated radiogenic heat production and slow shortening rates allow
-  the formation of large volumes of prograde migmatites and granulites going through
-  the sillimanite field as observed in many HT‐UHT terranes. Finally, the interplay
-  between these parameters can explain the difference in predicted pressure‐temperature‐time
-  paths that can be compared with the natural rock archive.
-description: Long-lived high to ultra-high temperature (HT-UHT) granulitic terranes
-  formed throughout Earth's history. Yet, the detailed processes involved in their
-  formation remain unresolved and notably the sequence of appearance and duration
-  of migmatisation and granulites conditions in the orogenic cycle. These processes
-  can be evaluated by analytical and numerical models. First, solving the steady-state
-  heat equation allows underlining the interdependency of the parameters controlling
-  the crustal geotherm at thermal equilibrium. Second, performing two-dimensional
-  thermo-mechanical experiments of an orogenic cycle, from shortening to gravitational
-  collapse, allows to consider non-steady-state geotherms and understand how deformation
-  velocity may affect the relative timing of migmatite and granulite formation. These
-  numerical experiments with elevated radiogenic heat production and slow shortening
-  rates allow the formation of large volumes of prograde migmatites and granulites
-  going through the sillimanite field as observed in many HT-UHT terranes. Finally,
-  the interplay between these parameters can explain the difference in predicted pressure-temperature-time
-  paths that can be compared with the natural rock archive.
+  name: National Computational Infrastructure
+  doi: https://ror.org/04yx6dh41
+abstract: The negative buoyancy of the slab primarily controls the subducting plate
+  and trench motions, and tectonic stresses around the convergent margins. Lateral
+  variations in negative buoyancy associated with varying slab depth along strike
+  must affect plate and margin motions, and, most importantly, have an impact on the
+  stress acting across the margin, thereby setting the context for plate coupling,
+  tectonics and present-day seismicity. Here, we investigated these interactions in
+  3-D subduction numerical models, focusing on along-trench variations in the subduction
+  depth and the resulting perturbations to the force balance. While we focus on the
+  steps in the slab depth, we additionally test the role of subducting plate, i.e.,
+  cohesion and viscosity, and upper plate properties, i.e., thickness, viscosity,
+  and cohesion. The results show that the magnitude of convergence velocity only depends
+  on the integrated slab mass and rheology of the subducting plate when the upper
+  plate is thin. Instead, the trench retreat/advance is sensitive to the heterogeneity
+  in the slab depth, and a complex pattern arises atop the slab step, with a characteristic
+  length of ~500 km from the slab depth perturbation. The remaining parameters of
+  the subducting and upper plate mainly affect the magnitude of the trench velocities
+  with minor influence on the pattern. The highest deformation/stress in the upper
+  plate is observed around the slab step due to the rigidity of the plate, causing
+  mutual perturbation between the deep and shallow slab portions, and the lateral
+  flow around the step. These results are compared with the observations along the
+  Sunda margin, where similar slab depth variations are found. The upper plate deformation
+  in the model shows remarkable compatibility with the observed distributions of compression
+  and extension of the Andaman- Sumatra-Java segments. Our study indicates that trench-parallel
+  forces, arising from the natural variations of slab depth, exert a first-order control
+  on the plate coupling and deformation along convergent margins and should not be
+  neglected.
+description: The negative buoyancy of the slab drives subducting plate and trench
+  motions, influencing tectonic stresses at convergent margins. Variations in slab
+  depth along the trench affect plate coupling and seismicity. We investigated these
+  effects using 3-D subduction models, focusing on slab depth variations and their
+  impact on force balance. Results show convergence velocity is primarily controlled
+  by slab mass and subducting plate rheology, while trench movement is sensitive to
+  slab depth heterogeneity. The highest stress occurs around slab steps, aligning
+  with deformation patterns observed along the Sunda margin. This study highlights
+  the crucial role of trench-parallel forces in plate dynamics.
 images:
   landing_image:
     src: ./graphics/vel_sr_inv_landing_page.png
@@ -126,57 +112,38 @@ animation:
   caption: ''
 model_setup_info:
   url: ''
-  summary: "The numerical models are performed with Underworld, a well-tested open-source
-    finite element code, to solve the equations of conservation of momentum, mass,
-    and energy for an incompressible fluid on a Cartesian Eulerian mesh (Moresi et
-    al., 2007; Beucher et al., 2019). The 2D thermo-mechanical experiments involve
-    a geological model of dimensions 480 km x 160 km discretized over a computational
-    grid made of 240 x 80 elements. The initial setup consists of a 35 km or 40 km
-    thick crust with 20 km of air-like material above, and mantle below (Fig. 2A-B).
-    Each model runs through three stages: \r\n\r\ni) a shortening phase during which
-    the crust thickens to ~ 60 km with either a slow total velocity of 0.24 cm/yr
-    during 70 My or a fast total velocity of 2.4 cm/yr during ~ 7 My (delivering a
-    strain rate averaged over the length of the model of $1.6 \\times 10^{-16} s^{-1}$
-    and $1.6 \\times 10^{-15} s^{-1}$ respectively); ii) a rapid increase in BHF (from
-    $0.020 W/m^2$ to $0.030 W/m^2$) over 2.5 My while the velocities imposed on the
-    vertical boundaries are set to zero (vx = vy = 0 cm/yr) mimicking the thermal
-    impact of a mantle delamination phase; iii) a relaxation phase in which the crust
-    returns to normal thickness under slow extensional boundary conditions (total
-    velocity of 0.10 cm/yr) associated with a decrease in BHF from $0.030 W/m^2$ to
-    $0.020 W/m^2$ in ~ 70 My. Details of modeling procedures, rheological and thermal
-    parameters, as well as the input Python script, are available as supplementary
-    data.\r\n\r\nThese experiments focus on two end-member crustal structures with
-    average values of total RHP at ~ $1 \\mu W/m^3$ and ~ $2 \\mu W/m^3$ (Fig. 2).
-    A value of ~ $1 \\mu W/m^3$ is in line with RHP calculations predicted from the
-    present-day composition of the bulk continental crust determined by Taylor and
-    McLennan (1995). Models RHP1_unif mimic a Phanerozoic orogenic cycle involving
-    a continental crust with a uniform RHP ($1.0483 \\mu W/m^3$) yielding an initial
-    Moho temperature of 650°C at 40 km depth (Fig. 1A). However, Mareschal and Jaupart
-    (2013), Artemieva et al. (2017), and Gard et al. (2019) showed that the crustal
-    RHP may have been higher than ~ $1 \\mu W/m^3$ during the Proterozoic, having
-    varied between ~ $0.8 \\mu W/m^3$ and ~ $4 \\mu W/m^3$ between 0.5 Ga and 2.5
-    Ga with an average RHP close to ~ $2 \\mu W/m^3$. In addition, recent studies
-    reveal that, in tectonically stable regions, the upper crust’s RHP may be higher
-    than in the lower crust (Goes et al., 2020; Alessio et al., 2020). The conditions
-    for model RHP2_diff include a total average RHP of ~ $2.0922 \\mu W/m^3$ with
-    high RHP in the upper crust (~ $5 \\mu W/m^3$) that decreases exponentially with
-    a length scale factor $h_c$ of 20 km yielding an initial Moho temperature at 35
-    km depth of 650°C (Fig. 1D). Models RHP2_diff aim at approaching thermal conditions
-    of a differentiated crust prevailing during the Proterozoic."
+  summary: The model setup consists of the subducting plate with attached slab and
+    upper plate inserted in the 660 km upper mantle lying over 340 km lower mantle.
+    The model extends 4000 km in each x, y, and 1000 km in the z-axis with a numerical
+    resolution of 512×512×128, respectively. This resolution results in an element
+    size of 7.8 km in all three directions. Each element is populated with 20 Lagrangian
+    particles to store material properties. All boundaries in the model are under
+    free slip conditions. All models include a 100 km thick subducting plate and slab.
+    The rheology in the top 30 km (crust) is viscoplastic, and the rest (70 km lithospheric
+    mantle) is viscous. Oceanic lithosphere has a density contrast of 50 $kg/m^3$
+    with respect to the underlying sublithospheric mantle. The entire slab has a uniform
+    initial dip angle of 45°. The upper plate consists of crust 30 km thick, and its
+    lithospheric mantle thickness is varied between 20 km, 40 km, and 60 km. The trailing
+    end of the subducting plate is free and upper plate end is fixed. The density
+    contrast between the upper plate and mantle is set to zero. This avoids lithostatic
+    pressure gradients, and the stress distribution in the upper plate is only influenced
+    by the dynamics driven by lateral slab buoyancy variations.  Therefore, the stress
+    distribution in the upper plate can be used as a proxy for tectonic coupling at
+    the interface.
 model_files:
   url: ''
-  notes: ''
+  notes: Underworld2 input files of Sunda Subduction Zone (3D cartesian models).
   file_tree: ''
-  existing_identifier: https://github.com/underworld-community/cenki-et-al-UHT-granulitic-terranes
+  existing_identifier: https://doi.org/10.5281/zenodo.7022845
   nci_file_path: 
-    https://thredds.nci.org.au/thredds/catalog/nm08/MATE/cenki-2022-uht-granulitic-terranes/catalog.html
+    https://thredds.nci.org.au/thredds/catalog/nm08/MATE/gollapalli-2022-sunda-subduction/catalog.html
   include: true
 dataset:
   url: ''
-  notes: ''
+  notes: Output data mainly contains *.h5 and *.xdmf files.
   existing_identifier: ''
   nci_file_path: 
-    https://thredds.nci.org.au/thredds/catalog/nm08/MATE/cenki-2022-uht-granulitic-terranes/catalog.html
+    https://thredds.nci.org.au/thredds/catalog/nm08/MATE/gollapalli-2022-sunda-subduction/catalog.html
   include: true
 metadataFile: ro-crate-metadata.json
 ---
