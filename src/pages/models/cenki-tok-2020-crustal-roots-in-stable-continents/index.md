@@ -57,7 +57,10 @@ compute_info:
   organisation: ''
   url: ''
   doi: ''
-research_tags: []
+research_tags:
+  - crustal roots
+  - stability
+  - retrogression
 compute_tags:
   - Python
   - Finite Element
