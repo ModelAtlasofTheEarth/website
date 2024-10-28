@@ -1,0 +1,338 @@
+{
+    "@context": [
+        "https://www.researchobject.org/ro-crate/1.1/context.jsonld",
+        "https://raw.githubusercontent.com/codemeta/codemeta/master/codemeta.jsonld"
+    ],
+    "@graph": [
+        {
+            "@id": "#datasetCreation",
+            "@type": "CreateAction",
+            "agent": [
+                {
+                    "@id": "_:b10"
+                },
+                {
+                    "@id": "_:b11"
+                },
+                {
+                    "@id": "_:b12"
+                }
+            ],
+            "description": "Running the computational model",
+            "endTime": "",
+            "instrument": {
+                "@id": "Underworld 2 version 2.8.5"
+            },
+            "object": {
+                "@id": "model_code_inputs"
+            },
+            "result": {
+                "@id": "model_output_data"
+            },
+            "startTime": ""
+        },
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "about": {
+                "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370401"
+            },
+            "abstract": "Away from tectonically active regions, the continental crust has an average thickness of 40 \u00b1 1 km. Yet, it shows a remarkable variability from 25 to 65 km, comparable to that of the most tectonically active regions. Here, we consider the problem of the formation and preservation of anomalous deep crustal roots in stable intracontinental regions. Using two-dimensional thermomechanical experiments, we show that the interplay between partial melting, the formation of garnet-pyroxene-bearing rocks, and their strain rate\u2013dependent retrogression result in the preservation of thick and strong crustal roots. We argue that it is the partitioning into narrow regions of strain, retrogression, and weakening coupled into a positive feedback loop that explains why strong high-grade crustal roots remain largely immune to gravitational stresses and are able to persist over hundreds of millions of years.",
+            "alternateName": "cenki-tok-2020-crustal-roots-in-stable-continents",
+            "citation": {
+                "@id": "http://dx.doi.org/10.1130/g47301.1"
+            },
+            "contributor": "",
+            "creativeWorkStatus": "completed",
+            "creator": [
+                {
+                    "@id": "_:b3"
+                },
+                {
+                    "@id": "_:b4"
+                },
+                {
+                    "@id": "_:b5"
+                }
+            ],
+            "datePublished": "2024-10-27T10:25:22.000Z",
+            "description": "Away from tectonically active regions, the continental crust has an average thickness of 40 \u00b1 1 km. Yet, it shows a remarkable variability from 25 to 65 km, comparable to that of the most tectonically active regions. Here, we consider the problem of the formation and preservation of anomalous deep crustal roots in stable intracontinental regions. Using two- dimensional thermomechanical experiments, we show that the interplay between partial melting, the formation of garnet-pyroxene-bearing rocks, and their strain rate\u2013dependent retrogression result in the preservation of thick and strong crustal roots. We argue that it is the partitioning into narrow regions of strain, retrogression, and weakening coupled into a positive feedback loop that explains why strong high-grade crustal roots remain largely immune to gravitational stresses and are able to persist over hundreds of millions of years.",
+            "funder": {
+                "@id": "_:b6"
+            },
+            "hasPart": [
+                {
+                    "@id": "model_code_inputs"
+                },
+                {
+                    "@id": "model_output_data"
+                },
+                {
+                    "@id": "website_material"
+                },
+                {
+                    "@id": "metadata_trail"
+                },
+                {
+                    "@id": "#datasetCreation"
+                }
+            ],
+            "identifier": [
+                "https://doi.org/10.25914/tm6d-t466"
+            ],
+            "isBasedOn": [],
+            "isPartOf": "http://dx.doi.org/10.25914/yrzp-g882",
+            "keywords": "",
+            "license": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "name": "Strain and retrogression partitioning explain long-term stability of crustal roots in stable continents",
+            "publisher": [
+                {
+                    "@id": "https://ror.org/04s1m4564"
+                },
+                {
+                    "@id": "https://ror.org/04yx6dh41"
+                }
+            ],
+            "spatialCoverage": "",
+            "temporalCoverage": "",
+            "url": [
+                "https://mate.science/models/cenki-tok-2020-crustal-roots-in-stable-continents/",
+                "https://github.com/ModelAtlasofTheEarth/cenki-tok-2020-crustal-roots-in-stable-continents/"
+            ],
+            "version": "",
+            "creditText": [
+                "Cenki-Tok, B., Rey, P., & Arcay, D. (2024). Strain and retrogression partitioning explain long-term stability of crustal roots in stable continents [Data set]. AuScope, National Computational Infrastructure. https://doi.org/tm6d-t466"
+            ]
+        },
+        {
+            "@id": ".metadata_trail",
+            "@type": "Dataset",
+            "hasPart": [
+                {
+                    "@id": "metadata_trail/issue_body.md"
+                },
+                {
+                    "@id": "metadata_trail/issue_dict.json"
+                },
+                {
+                    "@id": "metadata_trail/nci_iso.csv"
+                },
+                {
+                    "@id": "metadata_trail/ro-crate-metadata-nested.json"
+                }
+            ],
+            "name": ".metadata_trail"
+        },
+        {
+            "@id": ".website_material",
+            "@type": [
+                "Dataset",
+                "CreativeWork"
+            ],
+            "creator": [
+                {
+                    "@id": "_:b7"
+                },
+                {
+                    "@id": "_:b8"
+                },
+                {
+                    "@id": "_:b9"
+                }
+            ],
+            "description": "material for m@te website",
+            "fileFormat": "./",
+            "name": ".website_material"
+        },
+        {
+            "@id": "Underworld 2 version 2.8.5",
+            "@type": "SoftwareApplication",
+            "name": "Underworld 2"
+        },
+        {
+            "@id": "_:b0",
+            "@type": "Person",
+            "familyName": "Cenki-Tok",
+            "givenName": "B."
+        },
+        {
+            "@id": "_:b1",
+            "@type": "Person",
+            "familyName": "Rey",
+            "givenName": "P.F."
+        },
+        {
+            "@id": "_:b10",
+            "@type": "Person",
+            "familyName": "Cenki-Tok",
+            "givenName": "B."
+        },
+        {
+            "@id": "_:b11",
+            "@type": "Person",
+            "familyName": "Rey",
+            "givenName": "P.F."
+        },
+        {
+            "@id": "_:b12",
+            "@type": "Person",
+            "familyName": "Arcay",
+            "givenName": "D."
+        },
+        {
+            "@id": "_:b2",
+            "@type": "Person",
+            "familyName": "Arcay",
+            "givenName": "D."
+        },
+        {
+            "@id": "_:b3",
+            "@type": "Person",
+            "familyName": "Cenki-Tok",
+            "givenName": "B."
+        },
+        {
+            "@id": "_:b4",
+            "@type": "Person",
+            "familyName": "Rey",
+            "givenName": "P.F."
+        },
+        {
+            "@id": "_:b5",
+            "@type": "Person",
+            "familyName": "Arcay",
+            "givenName": "D."
+        },
+        {
+            "@id": "_:b6",
+            "@type": "Organization",
+            "name": "European Union\u2019s Horizon 2020 research and innovation program under grant agreement 793978"
+        },
+        {
+            "@id": "_:b7",
+            "@type": "Person",
+            "familyName": "Cenki-Tok",
+            "givenName": "B."
+        },
+        {
+            "@id": "_:b8",
+            "@type": "Person",
+            "familyName": "Rey",
+            "givenName": "P.F."
+        },
+        {
+            "@id": "_:b9",
+            "@type": "Person",
+            "familyName": "Arcay",
+            "givenName": "D."
+        },
+        {
+            "@id": "http://dx.doi.org/10.1130/g47301.1",
+            "@type": "ScholarlyArticle",
+            "abstract": "Away from tectonically active regions, the continental crust has an average thickness of 40 \u00b1 1 km. Yet, it shows a remarkable variability from 25 to 65 km, comparable to that of the most tectonically active regions. Here, we consider the problem of the formation and preservation of anomalous deep crustal roots in stable intracontinental regions. Using two-dimensional thermomechanical experiments, we show that the interplay between partial melting, the formation of garnet-pyroxene-bearing rocks, and their strain rate\u2013dependent retrogression result in the preservation of thick and strong crustal roots. We argue that it is the partitioning into narrow regions of strain, retrogression, and weakening coupled into a positive feedback loop that explains why strong high-grade crustal roots remain largely immune to gravitational stresses and are able to persist over hundreds of millions of years.",
+            "author": [
+                {
+                    "@id": "_:b0"
+                },
+                {
+                    "@id": "_:b1"
+                },
+                {
+                    "@id": "_:b2"
+                }
+            ],
+            "name": "Strain and retrogression partitioning explain long-term stability of crustal roots in stable continents"
+        },
+        {
+            "@id": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "@type": "CreativeWork",
+            "description": "Creative Commons Attribution 4.0 International",
+            "name": "CC-BY-4.0",
+            "url": " https://creativecommons.org/licenses/by/4.0/legalcode.txt"
+        },
+        {
+            "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370401",
+            "@type": "DefinedTerm",
+            "name": "Computational modelling and simulation in earth sciences",
+            "termCode": "370401"
+        },
+        {
+            "@id": "https://ror.org/04s1m4564",
+            "@type": "Organization",
+            "name": "AuScope"
+        },
+        {
+            "@id": "https://ror.org/04yx6dh41",
+            "@type": "Organization",
+            "name": "National Computational Infrastructure"
+        },
+        {
+            "@id": "metadata_trail/issue_body.md",
+            "@type": "CreativeWork",
+            "description": "Markdown document showing the original github issue body associated with the model submission.",
+            "encodingFormat": "text/markdown",
+            "name": "Issue Body"
+        },
+        {
+            "@id": "metadata_trail/issue_dict.json",
+            "@type": "CreativeWork",
+            "description": "json file representing the dictionary that is constructured by model_submission/.github/scripts/parse_issue.py",
+            "encodingFormat": "application/json",
+            "name": "Issue Dictionary"
+        },
+        {
+            "@id": "metadata_trail/nci_iso.csv",
+            "@type": "CreativeWork",
+            "description": "Simple crosswalk of metadata into ISO 19115 format/schema compatible with NCI GeoNwtework",
+            "encodingFormat": "text/csv",
+            "name": "NCI ISO Crosswalk"
+        },
+        {
+            "@id": "metadata_trail/ro-crate-metadata-nested.json",
+            "@type": "CreativeWork",
+            "description": "Nested version of RO-Crate, hasn't been flattenened.",
+            "encodingFormat": "application/json",
+            "name": "Nested version of RO-Crate"
+        },
+        {
+            "@id": "model_code_inputs",
+            "@type": [
+                "Dataset",
+                "SoftwareSourceCode"
+            ],
+            "contentSize": "",
+            "creator": "",
+            "description": "Code and inputs for computational model",
+            "identifier": [],
+            "keywords": "",
+            "memoryRequirements": "./",
+            "processorRequirements": "",
+            "programmingLanguage": "",
+            "runtimePlatform": "",
+            "storageRequirements": "./",
+            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/cenki-tok-2020-crustal-roots-in-stable-continents/catalog.html",
+            "version": ""
+        },
+        {
+            "@id": "model_output_data",
+            "@type": "Dataset",
+            "contentSize": "",
+            "creator": "",
+            "description": "",
+            "fileFormat": "./",
+            "identifier": [],
+            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/cenki-tok-2020-crustal-roots-in-stable-continents/catalog.html"
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "conformsTo": {
+                "@id": "https://w3id.org/ro/crate/1.1"
+            },
+            "about": {
+                "@id": "./"
+            },
+            "description": "RO-Crate Metadata File Descriptor (this file)"
+        }
+    ]
+}
