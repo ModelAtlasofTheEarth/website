@@ -1,0 +1,359 @@
+{
+    "@context": [
+        "https://www.researchobject.org/ro-crate/1.1/context.jsonld",
+        "https://raw.githubusercontent.com/codemeta/codemeta/master/codemeta.jsonld"
+    ],
+    "@graph": [
+        {
+            "@id": "#datasetCreation",
+            "@type": "CreateAction",
+            "agent": {
+                "@id": "https://orcid.org/0000-0001-9394-4104"
+            },
+            "description": "Running the computational model",
+            "endTime": "",
+            "instrument": [
+                {
+                    "@id": "https://doi.org/10.5281/zenodo.3975252"
+                },
+                {
+                    "@id": "https://doi.org/10.25914/608bfd1838db2"
+                }
+            ],
+            "object": {
+                "@id": "model_inputs"
+            },
+            "result": {
+                "@id": "model_outputs"
+            },
+            "startTime": ""
+        },
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "about": {
+                "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370401"
+            },
+            "abstract": "The negative buoyancy of the slab primarily controls the subducting plate and trench motions, and tectonic stresses around the convergent margins. Lateral variations in negative buoyancy associated with varying slab depth along strike must affect plate and margin motions, and, most importantly, have an impact on the stress acting across the margin, thereby setting the context for plate coupling, tectonics and present-day seismicity. Here, we investigated these interactions in 3-D subduction numerical models, focusing on along-trench variations in the subduction depth and the resulting perturbations to the force balance. While we focus on the steps in the slab depth, we additionally test the role of subducting plate, i.e., cohesion and viscosity, and upper plate properties, i.e., thickness, viscosity, and cohesion. The results show that the magnitude of convergence velocity only depends on the integrated slab mass and rheology of the subducting plate when the upper plate is thin. Instead, the trench retreat/advance is sensitive to the heterogeneity in the slab depth, and a complex pattern arises atop the slab step, with a characteristic length of ~500 km from the slab depth perturbation. The remaining parameters of the subducting and upper plate mainly affect the magnitude of the trench velocities with minor influence on the pattern. The highest deformation/stress in the upper plate is observed around the slab step due to the rigidity of the plate, causing mutual perturbation between the deep and shallow slab portions, and the lateral flow around the step. These results are compared with the observations along the Sunda margin, where similar slab depth variations are found. The upper plate deformation in the model shows remarkable compatibility with the observed distributions of compression and extension of the Andaman- Sumatra-Java segments. Our study indicates that trench-parallel forces, arising from the natural variations of slab depth, exert a first-order control on the plate coupling and deformation along convergent margins and should not be neglected.",
+            "alternateName": "gollapalli-2022-sunda-subduction",
+            "citation": "",
+            "contributor": "",
+            "creativeWorkStatus": "completed",
+            "creator": {
+                "@id": "https://orcid.org/0000-0001-9394-4104"
+            },
+            "datePublished": "2024-10-24T02:18:49.000Z",
+            "description": "The negative buoyancy of the slab drives subducting plate and trench motions, influencing tectonic stresses at convergent margins. Variations in slab depth along the trench affect plate coupling and seismicity. We investigated these effects using 3-D subduction models, focusing on slab depth variations and their impact on force balance. Results show convergence velocity is primarily controlled by slab mass and subducting plate rheology, while trench movement is sensitive to slab depth heterogeneity. The highest stress occurs around slab steps, aligning with deformation patterns observed along the Sunda margin. This study highlights the crucial role of trench-parallel forces in plate dynamics.",
+            "funder": {
+                "@id": "_:b0"
+            },
+            "hasPart": [
+                {
+                    "@id": "model_inputs"
+                },
+                {
+                    "@id": "model_outputs"
+                },
+                {
+                    "@id": "website_material"
+                },
+                {
+                    "@id": "metadata_trail"
+                },
+                {
+                    "@id": "#datasetCreation"
+                }
+            ],
+            "identifier": [
+                "https://doi.org/10.25914/vw5k-q269"
+            ],
+            "isBasedOn": [],
+            "isPartOf": "http://dx.doi.org/10.25914/yrzp-g882",
+            "keywords": "",
+            "license": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "name": "Subduction dynamics and plate coupling along seismically active margin: the role of slab steps",
+            "publisher": [
+                {
+                    "@id": "https://ror.org/04s1m4564"
+                },
+                {
+                    "@id": "https://ror.org/04yx6dh41"
+                }
+            ],
+            "spatialCoverage": "",
+            "temporalCoverage": "",
+            "url": [
+                "https://mate.science/models/gollapalli-2022-sunda-subduction/",
+                "https://github.com/ModelAtlasofTheEarth/gollapalli-2022-sunda-subduction/"
+            ],
+            "version": "",
+            "creditText": [
+                "Gollapalli, T. (2024). Subduction dynamics and plate coupling along seismically active margin: the role of slab steps [Data set]. AuScope, National Computational Infrastructure. https://doi.org/vw5k-q269"
+            ]
+        },
+        {
+            "@id": ".metadata_trail",
+            "@type": "Dataset",
+            "hasPart": [
+                {
+                    "@id": "metadata_trail/issue_body.md"
+                },
+                {
+                    "@id": "metadata_trail/issue_dict.json"
+                },
+                {
+                    "@id": "metadata_trail/nci_iso.csv"
+                },
+                {
+                    "@id": "metadata_trail/ro-crate-metadata-nested.json"
+                }
+            ],
+            "name": ".metadata_trail"
+        },
+        {
+            "@id": ".website_material",
+            "@type": [
+                "Dataset",
+                "CreativeWork"
+            ],
+            "creator": {
+                "@id": "https://orcid.org/0000-0001-9394-4104"
+            },
+            "description": "material for m@te website",
+            "fileFormat": "./",
+            "name": ".website_material"
+        },
+        {
+            "@id": "_:b0",
+            "@type": "Organization",
+            "name": "_No response_"
+        },
+        {
+            "@id": "_:b1",
+            "@type": "Person",
+            "familyName": "Velic",
+            "givenName": "Mirko"
+        },
+        {
+            "@id": "_:b2",
+            "@type": "Organization",
+            "name": "datacite"
+        },
+        {
+            "@id": "_:b3",
+            "@type": "Organization",
+            "name": "NCI Australia"
+        },
+        {
+            "@id": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "@type": "CreativeWork",
+            "description": "Creative Commons Attribution 4.0 International",
+            "name": "CC-BY-4.0",
+            "url": " https://creativecommons.org/licenses/by/4.0/legalcode.txt"
+        },
+        {
+            "@id": "https://doi.org/10.25914/608bfd1838db2",
+            "@type": "Service",
+            "author": [
+                {
+                    "@id": "https://ror.org/04yx6dh41"
+                }
+            ],
+            "inLanguage": "en",
+            "name": "Gadi Supercomputer",
+            "provider": {
+                "@id": "_:b2"
+            },
+            "publisher": {
+                "@id": "_:b3"
+            },
+            "url": "https://pid.nci.org.au/doi/f5966_0057_9267_4579"
+        },
+        {
+            "@id": "https://doi.org/10.5281/zenodo.3975252",
+            "@type": "SoftwareSourceCode",
+            "author": [
+                {
+                    "@id": "https://orcid.org/0000-0001-5865-1664"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-4515-9296"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-3685-174X"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-3891-5444"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0001-6303-5671"
+                },
+                {
+                    "@id": "_:b1"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-2594-6965"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-0368-7341"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-7182-1864"
+                }
+            ],
+            "license": [
+                "https://www.gnu.org/licenses/lgpl-3.0-standalone.html",
+                "info:eu-repo/semantics/openAccess"
+            ],
+            "name": "Underworld2: Python Geodynamics Modelling for Desktop, HPC and Cloud",
+            "url": "https://zenodo.org/record/3975252"
+        },
+        {
+            "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370401",
+            "@type": "DefinedTerm",
+            "name": "Computational modelling and simulation in earth sciences",
+            "termCode": "370401"
+        },
+        {
+            "@id": "https://orcid.org/0000-0001-5865-1664",
+            "@type": "Person",
+            "familyName": "Mansour",
+            "givenName": "John"
+        },
+        {
+            "@id": "https://orcid.org/0000-0001-6303-5671",
+            "@type": "Person",
+            "familyName": "Kaluza",
+            "givenName": "Owen"
+        },
+        {
+            "@id": "https://orcid.org/0000-0001-9394-4104",
+            "@type": "Person",
+            "familyName": "Gollapalli",
+            "givenName": "Thyagarajulu"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-0368-7341",
+            "@type": "Person",
+            "familyName": "Quenette",
+            "givenName": "Steve"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-2594-6965",
+            "@type": "Person",
+            "familyName": "Farrington",
+            "givenName": "Rebecca"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-7182-1864",
+            "@type": "Person",
+            "familyName": "Beall",
+            "givenName": "Adam"
+        },
+        {
+            "@id": "https://orcid.org/0000-0003-3685-174X",
+            "@type": "Person",
+            "familyName": "Moresi",
+            "givenName": "Louis"
+        },
+        {
+            "@id": "https://orcid.org/0000-0003-3891-5444",
+            "@type": "Person",
+            "familyName": "Beucher",
+            "givenName": "Romain"
+        },
+        {
+            "@id": "https://orcid.org/0000-0003-4515-9296",
+            "@type": "Person",
+            "familyName": "Giordani",
+            "givenName": "Julian"
+        },
+        {
+            "@id": "https://ror.org/04s1m4564",
+            "@type": "Organization",
+            "name": "AuScope"
+        },
+        {
+            "@id": "https://ror.org/04yx6dh41",
+            "@type": "Organization",
+            "name": "National Computational Infrastructure"
+        },
+        {
+            "@id": "metadata_trail/issue_body.md",
+            "@type": "CreativeWork",
+            "description": "Markdown document showing the original github issue body associated with the model submission.",
+            "encodingFormat": "text/markdown",
+            "name": "Issue Body"
+        },
+        {
+            "@id": "metadata_trail/issue_dict.json",
+            "@type": "CreativeWork",
+            "description": "json file representing the dictionary that is constructured by model_submission/.github/scripts/parse_issue.py",
+            "encodingFormat": "application/json",
+            "name": "Issue Dictionary"
+        },
+        {
+            "@id": "metadata_trail/nci_iso.csv",
+            "@type": "CreativeWork",
+            "description": "Simple crosswalk of metadata into ISO 19115 format/schema compatible with NCI GeoNwtework",
+            "encodingFormat": "text/csv",
+            "name": "NCI ISO Crosswalk"
+        },
+        {
+            "@id": "metadata_trail/ro-crate-metadata-nested.json",
+            "@type": "CreativeWork",
+            "description": "Nested version of RO-Crate, hasn't been flattenened.",
+            "encodingFormat": "application/json",
+            "name": "Nested version of RO-Crate"
+        },
+        {
+            "@id": "model_inputs",
+            "@type": [
+                "Dataset",
+                "SoftwareSourceCode"
+            ],
+            "contentSize": "",
+            "creator": {
+                "@id": "https://orcid.org/0000-0001-9394-4104"
+            },
+            "description": "Code and inputs for computational model",
+            "identifier": [
+                "https://doi.org/10.25914/vw5k-q269",
+                "https://doi.org/10.5281/zenodo.7022845"
+            ],
+            "keywords": "",
+            "memoryRequirements": "./",
+            "processorRequirements": "",
+            "programmingLanguage": "",
+            "runtimePlatform": "",
+            "storageRequirements": "./",
+            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/gollapalli-2022-sunda-subduction/catalog.html",
+            "version": ""
+        },
+        {
+            "@id": "model_outputs",
+            "@type": "Dataset",
+            "contentSize": 3298534883328,
+            "creator": {
+                "@id": "https://orcid.org/0000-0001-9394-4104"
+            },
+            "description": "Output data mainly contains *.h5 and *.xdmf files.",
+            "fileFormat": "./",
+            "identifier": [
+                "https://doi.org/10.25914/vw5k-q269"
+            ],
+            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/gollapalli-2022-sunda-subduction/catalog.html"
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "conformsTo": {
+                "@id": "https://w3id.org/ro/crate/1.1"
+            },
+            "about": {
+                "@id": "./"
+            },
+            "description": "RO-Crate Metadata File Descriptor (this file)"
+        }
+    ]
+}
