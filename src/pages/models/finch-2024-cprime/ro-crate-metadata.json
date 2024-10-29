@@ -12,7 +12,10 @@
                     "@id": "https://orcid.org/0000-0001-9699-2769"
                 },
                 {
-                    "@id": "https://orcid.org/0000-0001-5828-8711"
+                    "@id": "https://orcid.org/0000-0002-6469-3526"
+                },
+                {
+                    "@id": "_:b7"
                 },
                 {
                     "@id": "https://orcid.org/0000-0003-4598-8385"
@@ -25,6 +28,9 @@
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-8639-3890"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0001-5828-8711"
                 }
             ],
             "description": "Running the computational model",
@@ -58,7 +64,10 @@
                     "@id": "https://orcid.org/0000-0001-9699-2769"
                 },
                 {
-                    "@id": "https://orcid.org/0000-0001-5828-8711"
+                    "@id": "https://orcid.org/0000-0002-6469-3526"
+                },
+                {
+                    "@id": "_:b4"
                 },
                 {
                     "@id": "https://orcid.org/0000-0003-4598-8385"
@@ -71,9 +80,12 @@
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-8639-3890"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0001-5828-8711"
                 }
             ],
-            "datePublished": "2024-10-29T01:38:41.000Z",
+            "datePublished": "2024-10-29T02:36:04.000Z",
             "description": "This model simulates the development of C' shear bands in ductile shear zones. The model begins with an equigranular texture of three phases: a strong phase (e.g., feldspar) an intermediate-strength phase (e.g., quartz) and an anisotropic weak phase (e.g., mica). Dextral shearing stretches and rotates the microstructure, forming S-C fabric, asymmetric folds and C' shear bands.",
             "funder": [
                 {
@@ -124,10 +136,10 @@
             ],
             "version": "",
             "funding": {
-                "@id": "_:b4"
+                "@id": "_:b5"
             },
             "creditText": [
-                "Finch, M., de Riese, T.., Griera Artigas, A., Llorens, M., Gomez-Rivas, E.., & Ran, H.. (2024). The ephemeral development of C\u2032 shear bands: A numerical modelling approach [Data set]. AuScope, National Computational Infrastructure. https://doi.org/whbg-hd74"
+                "Finch, M., Bons, P.D.., Steinbach, F., Griera Artigas, A., Llorens, M., Gomez-Rivas, E.., Ran, H.., & de Riese, T.. (2024). The ephemeral development of C\u2032 shear bands: A numerical modelling approach [Data set]. AuScope, National Computational Infrastructure. https://doi.org/whbg-hd74"
             ]
         },
         {
@@ -160,7 +172,10 @@
                     "@id": "https://orcid.org/0000-0001-9699-2769"
                 },
                 {
-                    "@id": "https://orcid.org/0000-0001-5828-8711"
+                    "@id": "https://orcid.org/0000-0002-6469-3526"
+                },
+                {
+                    "@id": "_:b6"
                 },
                 {
                     "@id": "https://orcid.org/0000-0003-4598-8385"
@@ -173,6 +188,9 @@
                 },
                 {
                     "@id": "https://orcid.org/0000-0002-8639-3890"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0001-5828-8711"
                 }
             ],
             "description": "material for m@te website",
@@ -205,11 +223,29 @@
         },
         {
             "@id": "_:b4",
+            "@type": "Person",
+            "familyName": "Steinbach",
+            "givenName": "Florian"
+        },
+        {
+            "@id": "_:b5",
             "@type": "Grant",
             "funder": {
                 "@id": "https://ror.org/05r0vyz12"
             },
             "identifier": "RYC2018-026335-I"
+        },
+        {
+            "@id": "_:b6",
+            "@type": "Person",
+            "familyName": "Steinbach",
+            "givenName": "Florian"
+        },
+        {
+            "@id": "_:b7",
+            "@type": "Person",
+            "familyName": "Steinbach",
+            "givenName": "Florian"
         },
         {
             "@id": "http://dx.doi.org/10.1016/j.jsg.2020.104091",
