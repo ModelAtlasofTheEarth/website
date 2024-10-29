@@ -1,0 +1,550 @@
+{
+    "@context": [
+        "https://www.researchobject.org/ro-crate/1.1/context.jsonld",
+        "https://raw.githubusercontent.com/codemeta/codemeta/master/codemeta.jsonld"
+    ],
+    "@graph": [
+        {
+            "@id": "#datasetCreation",
+            "@type": "CreateAction",
+            "agent": [
+                {
+                    "@id": "https://orcid.org/0000-0001-9699-2769"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-6469-3526"
+                },
+                {
+                    "@id": "_:b7"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-4598-8385"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-6148-2600"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-1317-6289"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-8639-3890"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0001-5828-8711"
+                }
+            ],
+            "description": "Running the computational model",
+            "endTime": "",
+            "instrument": {
+                "@id": "https://elle.ws/"
+            },
+            "object": {
+                "@id": "model_code_inputs"
+            },
+            "result": {
+                "@id": "model_output_data"
+            },
+            "startTime": ""
+        },
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "about": {
+                "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370401"
+            },
+            "abstract": "",
+            "alternateName": "finch-2024-cprime",
+            "citation": {
+                "@id": "http://dx.doi.org/10.1016/j.jsg.2020.104091"
+            },
+            "contributor": "",
+            "creativeWorkStatus": "completed",
+            "creator": [
+                {
+                    "@id": "https://orcid.org/0000-0001-9699-2769"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-6469-3526"
+                },
+                {
+                    "@id": "_:b4"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-4598-8385"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-6148-2600"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-1317-6289"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-8639-3890"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0001-5828-8711"
+                }
+            ],
+            "datePublished": "2024-10-29T02:36:04.000Z",
+            "description": "This model simulates the development of C' shear bands in ductile shear zones. The model begins with an equigranular texture of three phases: a strong phase (e.g., feldspar) an intermediate-strength phase (e.g., quartz) and an anisotropic weak phase (e.g., mica). Dextral shearing stretches and rotates the microstructure, forming S-C fabric, asymmetric folds and C' shear bands.",
+            "funder": [
+                {
+                    "@id": "https://ror.org/012kf4317"
+                },
+                {
+                    "@id": "https://ror.org/05r0vyz12"
+                }
+            ],
+            "hasPart": [
+                {
+                    "@id": "model_code_inputs"
+                },
+                {
+                    "@id": "model_output_data"
+                },
+                {
+                    "@id": "website_material"
+                },
+                {
+                    "@id": "metadata_trail"
+                },
+                {
+                    "@id": "#datasetCreation"
+                }
+            ],
+            "identifier": [
+                "https://doi.org/10.25914/whbg-hd74"
+            ],
+            "isBasedOn": [],
+            "isPartOf": "http://dx.doi.org/10.25914/yrzp-g882",
+            "keywords": "",
+            "license": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "name": "The ephemeral development of C\u2032 shear bands: A numerical modelling approach",
+            "publisher": [
+                {
+                    "@id": "https://ror.org/04s1m4564"
+                },
+                {
+                    "@id": "https://ror.org/04yx6dh41"
+                }
+            ],
+            "spatialCoverage": "",
+            "temporalCoverage": "",
+            "url": [
+                "https://mate.science/models/finch-2024-cprime/",
+                "https://github.com/ModelAtlasofTheEarth/finch-2024-cprime/"
+            ],
+            "version": "",
+            "funding": {
+                "@id": "_:b5"
+            },
+            "creditText": [
+                "Finch, M., Bons, P.D.., Steinbach, F., Griera Artigas, A., Llorens, M., Gomez-Rivas, E.., Ran, H.., & de Riese, T.. (2024). The ephemeral development of C\u2032 shear bands: A numerical modelling approach [Data set]. AuScope, National Computational Infrastructure. https://doi.org/whbg-hd74"
+            ]
+        },
+        {
+            "@id": ".metadata_trail",
+            "@type": "Dataset",
+            "hasPart": [
+                {
+                    "@id": "metadata_trail/issue_body.md"
+                },
+                {
+                    "@id": "metadata_trail/issue_dict.json"
+                },
+                {
+                    "@id": "metadata_trail/nci_iso.csv"
+                },
+                {
+                    "@id": "metadata_trail/ro-crate-metadata-nested.json"
+                }
+            ],
+            "name": ".metadata_trail"
+        },
+        {
+            "@id": ".website_material",
+            "@type": [
+                "Dataset",
+                "CreativeWork"
+            ],
+            "creator": [
+                {
+                    "@id": "https://orcid.org/0000-0001-9699-2769"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-6469-3526"
+                },
+                {
+                    "@id": "_:b6"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-4598-8385"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-6148-2600"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-1317-6289"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-8639-3890"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0001-5828-8711"
+                }
+            ],
+            "description": "material for m@te website",
+            "fileFormat": "./",
+            "name": ".website_material"
+        },
+        {
+            "@id": "_:b0",
+            "@type": "Person",
+            "familyName": "Finch",
+            "givenName": "M.A."
+        },
+        {
+            "@id": "_:b1",
+            "@type": "Person",
+            "familyName": "Steinbach",
+            "givenName": "F."
+        },
+        {
+            "@id": "_:b2",
+            "@type": "Person",
+            "familyName": "Griera",
+            "givenName": "A."
+        },
+        {
+            "@id": "_:b3",
+            "@type": "Person",
+            "familyName": "Llorens",
+            "givenName": "M.-G."
+        },
+        {
+            "@id": "_:b4",
+            "@type": "Person",
+            "familyName": "Steinbach",
+            "givenName": "Florian"
+        },
+        {
+            "@id": "_:b5",
+            "@type": "Grant",
+            "funder": {
+                "@id": "https://ror.org/05r0vyz12"
+            },
+            "identifier": "RYC2018-026335-I"
+        },
+        {
+            "@id": "_:b6",
+            "@type": "Person",
+            "familyName": "Steinbach",
+            "givenName": "Florian"
+        },
+        {
+            "@id": "_:b7",
+            "@type": "Person",
+            "familyName": "Steinbach",
+            "givenName": "Florian"
+        },
+        {
+            "@id": "http://dx.doi.org/10.1016/j.jsg.2020.104091",
+            "@type": "ScholarlyArticle",
+            "author": [
+                {
+                    "@id": "_:b0"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-6469-3526"
+                },
+                {
+                    "@id": "_:b1"
+                },
+                {
+                    "@id": "_:b2"
+                },
+                {
+                    "@id": "_:b3"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-1317-6289"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-8639-3890"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0001-5828-8711"
+                }
+            ],
+            "datePublished": "2020-10",
+            "identifier": "S0191814119305127",
+            "name": "The ephemeral development of C\u2032 shear bands: A numerical modelling approach"
+        },
+        {
+            "@id": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "@type": "CreativeWork",
+            "description": "Creative Commons Attribution 4.0 International",
+            "name": "CC-BY-4.0",
+            "url": " https://creativecommons.org/licenses/by/4.0/legalcode.txt"
+        },
+        {
+            "@id": "https://elle.ws/",
+            "@type": "SoftwareApplication",
+            "author": [
+                {
+                    "@id": "https://orcid.org/0000-0002-6469-3526"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0001-5828-8711"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-0954-6072"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0001-9699-2769"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0001-8707-8537"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-1317-6289"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-4598-8385"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-3762-1655"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-0375-7311"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-2276-2626"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-3152-9105"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-6148-2600"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0001-7723-8170"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0002-3790-1385"
+                },
+                {
+                    "@id": "https://orcid.org/0009-0000-4868-3152"
+                }
+            ],
+            "name": "Elle Numerical Simulation Platform"
+        },
+        {
+            "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370401",
+            "@type": "DefinedTerm",
+            "name": "Computational modelling and simulation in earth sciences",
+            "termCode": "370401"
+        },
+        {
+            "@id": "https://orcid.org/0000-0001-5828-8711",
+            "@type": "Person",
+            "familyName": "de Riese",
+            "givenName": [
+                "T.",
+                "Tamara"
+            ]
+        },
+        {
+            "@id": "https://orcid.org/0000-0001-7723-8170",
+            "@type": "Person",
+            "familyName": "Piazolo",
+            "givenName": "Sandra"
+        },
+        {
+            "@id": "https://orcid.org/0000-0001-8707-8537",
+            "@type": "Person",
+            "familyName": "Gardner",
+            "givenName": "Robyn",
+            "url": "https://researchers.mq.edu.au/en/persons/a6cb3a03-1ff1-4c8f-a1d2-b4c320cf178a"
+        },
+        {
+            "@id": "https://orcid.org/0000-0001-9699-2769",
+            "@type": "Person",
+            "familyName": "Finch",
+            "givenName": "Melanie",
+            "url": "http://Melaniefinch.net"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-0375-7311",
+            "@type": "Person",
+            "familyName": "jessell",
+            "givenName": "mark",
+            "url": "https://research-repository.uwa.edu.au/en/persons/28dee9b7-55c7-470f-a6a8-4d49f3f4dd8b"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-0954-6072",
+            "@type": "Person",
+            "familyName": "Evans",
+            "givenName": "Lynn",
+            "url": "https://research.monash.edu/en/persons/0a907cdc-9677-4f05-a406-46bb86202d6c"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-1317-6289",
+            "@type": "Person",
+            "familyName": "Gomez-Rivas",
+            "givenName": [
+                "E.",
+                "Enrique"
+            ],
+            "url": "http://www.gomez-rivas.info"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-2276-2626",
+            "@type": "Person",
+            "familyName": "Koehn",
+            "givenName": "Daniel"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-3152-9105",
+            "@type": "Person",
+            "familyName": "Lebensohn",
+            "givenName": "Ricardo"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-3790-1385",
+            "@type": "Person",
+            "familyName": "Sachau",
+            "givenName": "Till"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-6148-2600",
+            "@type": "Person",
+            "familyName": "Llorens",
+            "givenName": "Maria-Gema"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-6469-3526",
+            "@type": "Person",
+            "familyName": "Bons",
+            "givenName": [
+                "P.D.",
+                "Paul D."
+            ]
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-8639-3890",
+            "@type": "Person",
+            "familyName": "Ran",
+            "givenName": [
+                "H.",
+                "Hao"
+            ]
+        },
+        {
+            "@id": "https://orcid.org/0000-0003-3762-1655",
+            "@type": "Person",
+            "familyName": "Hao",
+            "givenName": "Baoqin"
+        },
+        {
+            "@id": "https://orcid.org/0000-0003-4598-8385",
+            "@type": "Person",
+            "familyName": "Griera Artigas",
+            "givenName": "Albert"
+        },
+        {
+            "@id": "https://orcid.org/0009-0000-4868-3152",
+            "@type": "Person",
+            "familyName": "Yu",
+            "givenName": "Yuanchao"
+        },
+        {
+            "@id": "https://ror.org/012kf4317",
+            "@type": "Organization",
+            "name": "Alexander von Humboldt Foundation"
+        },
+        {
+            "@id": "https://ror.org/04s1m4564",
+            "@type": "Organization",
+            "name": "AuScope"
+        },
+        {
+            "@id": "https://ror.org/04yx6dh41",
+            "@type": "Organization",
+            "name": "National Computational Infrastructure"
+        },
+        {
+            "@id": "https://ror.org/05r0vyz12",
+            "@type": "Organization",
+            "name": "Ministerio de Ciencia, Innovaci\u00f3n y Universidades"
+        },
+        {
+            "@id": "metadata_trail/issue_body.md",
+            "@type": "CreativeWork",
+            "description": "Markdown document showing the original github issue body associated with the model submission.",
+            "encodingFormat": "text/markdown",
+            "name": "Issue Body"
+        },
+        {
+            "@id": "metadata_trail/issue_dict.json",
+            "@type": "CreativeWork",
+            "description": "json file representing the dictionary that is constructured by model_submission/.github/scripts/parse_issue.py",
+            "encodingFormat": "application/json",
+            "name": "Issue Dictionary"
+        },
+        {
+            "@id": "metadata_trail/nci_iso.csv",
+            "@type": "CreativeWork",
+            "description": "Simple crosswalk of metadata into ISO 19115 format/schema compatible with NCI GeoNwtework",
+            "encodingFormat": "text/csv",
+            "name": "NCI ISO Crosswalk"
+        },
+        {
+            "@id": "metadata_trail/ro-crate-metadata-nested.json",
+            "@type": "CreativeWork",
+            "description": "Nested version of RO-Crate, hasn't been flattenened.",
+            "encodingFormat": "application/json",
+            "name": "Nested version of RO-Crate"
+        },
+        {
+            "@id": "model_code_inputs",
+            "@type": [
+                "Dataset",
+                "SoftwareSourceCode"
+            ],
+            "contentSize": "",
+            "creator": "",
+            "description": "Code and inputs for computational model",
+            "identifier": [],
+            "keywords": "",
+            "memoryRequirements": "./",
+            "processorRequirements": "",
+            "programmingLanguage": "",
+            "runtimePlatform": "",
+            "storageRequirements": "./",
+            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/finch-2024-cprime/catalog.html",
+            "version": ""
+        },
+        {
+            "@id": "model_output_data",
+            "@type": "Dataset",
+            "contentSize": "",
+            "creator": "",
+            "description": "",
+            "fileFormat": "./",
+            "identifier": [],
+            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/finch-2024-cprime/catalog.html"
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "conformsTo": {
+                "@id": "https://w3id.org/ro/crate/1.1"
+            },
+            "about": {
+                "@id": "./"
+            },
+            "description": "RO-Crate Metadata File Descriptor (this file)"
+        }
+    ]
+}
