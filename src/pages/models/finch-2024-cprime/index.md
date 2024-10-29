@@ -2,7 +2,7 @@
 templateKey: model
 slug: finch-2024-cprime
 title: 'The ephemeral development of C′ shear bands: A numerical modelling approach'
-date: '2024-10-29T01:38:41.000Z'
+date: '2024-10-29T02:36:04.000Z'
 featuredpost:
 for_codes:
   - 370401
@@ -10,9 +10,10 @@ status:
   - completed
 doi: https://doi.org/10.25914/whbg-hd74
 url: https://mate.science//models/finch-2024-cprime
-creditText: 'Finch, M., de Riese, T.., Griera Artigas, A., Llorens, M., Gomez-Rivas,
-  E.., & Ran, H.. (2024). The ephemeral development of C′ shear bands: A numerical
-  modelling approach [Data set]. AuScope, National Computational Infrastructure. https://doi.org/whbg-hd74'
+creditText: 'Finch, M., Bons, P.D.., Steinbach, F., Griera Artigas, A., Llorens, M.,
+  Gomez-Rivas, E.., Ran, H.., & de Riese, T.. (2024). The ephemeral development of
+  C′ shear bands: A numerical modelling approach [Data set]. AuScope, National Computational
+  Infrastructure. https://doi.org/whbg-hd74'
 software:
   name: Elle Numerical Simulation Platform
   doi: https://elle.ws/
@@ -30,9 +31,12 @@ creators:
   - name: Melanie
     family_name: Finch
     ORCID: 0000-0001-9699-2769
-  - name: Tamara
-    family_name: de Riese
-    ORCID: 0000-0001-5828-8711
+  - name: Paul D.
+    family_name: Bons
+    ORCID: 0000-0002-6469-3526
+  - name: Florian
+    family_name: Steinbach
+    ORCID: Invalid ORCiD ID
   - name: Albert
     family_name: Griera Artigas
     ORCID: 0000-0003-4598-8385
