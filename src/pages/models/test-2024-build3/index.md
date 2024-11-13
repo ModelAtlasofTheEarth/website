@@ -108,7 +108,7 @@ images:
       from 0-2000 and 2000-4000 km in the Y-direction. The trench is located at X
       = 2000 km."
 animation:
-  src: ./graphics/
+  src:
   caption: ''
 model_setup_info:
   url: ''
