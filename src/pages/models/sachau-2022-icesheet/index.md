@@ -88,7 +88,7 @@ images:
     src: ./graphics/gmd-15-8749-2022-f01-web.png
     caption: (a) 2D geometry of Experiment B. This is identical to a section parallel X located at yˆ = 0.25 in Experiment A (right). Sloping angle α is given in degrees. Also depicted is the velocity field of the flowing ice, resulting for a model width L of 5000 m from the simulations described below. Color and arrow length visualize the amount of velocity. (b) Bedrock topography for Experiment A and general naming scheme for the axes of 3D experiments.
 animation:
-  src: ./graphics/
+  src:
   caption: ''
 model_setup_info:
   url: ''
