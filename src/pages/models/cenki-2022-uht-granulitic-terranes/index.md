@@ -119,8 +119,8 @@ images:
     caption: ' Figure 3. Depth – time profiles indicating the onset of partial melting
       and granulite formation through the evolution of the models.'
   model_setup:
-    src: ./graphics/Figure3_v6.png
-    caption: 'foo'
+    src: ./graphics/Figure2_v9.png
+    caption: '(A) Model geometry & initial conditions'
 animation:
   src:
   caption: ''
