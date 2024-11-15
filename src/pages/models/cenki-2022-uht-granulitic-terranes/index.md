@@ -70,8 +70,8 @@ compute_tags:
   - Python
   - Finite Element
 funder:
-  - name: ''
-    doi: ''
+  - name: AuScope
+    doi: https://ror.org/04s1m4564
 abstract: Long‐lived high to ultra‐high temperature (HT‐UHT) granulitic terranes formed
   throughout Earth's history. Yet, the detailed processes involved in their formation
   remain unresolved and notably the sequence of appearance and duration of migmatisation
