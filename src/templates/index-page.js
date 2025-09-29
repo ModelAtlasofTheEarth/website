@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 
 import Layout from "../components/Layout";
 import "../pages/contact/index_styles.css";
@@ -140,8 +140,8 @@ const IndexPageTemplate = ({
               borderRadius: '0',
             }}
         >
-          <a
-            href="https://mate.science/models/"
+          <Link
+            to="/about"
             className="link-arrow gp-title"
             style={{
               fontWeight: "bold",
@@ -149,7 +149,7 @@ const IndexPageTemplate = ({
             }}
           >
             Learn more &nbsp; <span>&#10132;</span>
-          </a>
+          </Link>
         </div>
       </div>
 
