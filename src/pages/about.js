@@ -7,29 +7,103 @@ const AboutPage = () => {
   return (
     <Layout>
       <div className="about-page">
-      <h1>About M@TE</h1>
-      <section>
-        <p>
-          The M@TE collection provides access to a wide range of computational models and their outputs, focused on Earth's evolution—from the Geosphere to the Hydrosphere.
-        </p>
-        <p>
-          M@TE provides a digital platform that encapsulates the entire model development process: from setup to model output, and analysis.
-          It enables discovery, data preservation, reproducibility, and reuse, while providing flexibility for users with varying levels of expertise.
-        </p>
-
-        <p>
-          M@TE is purpose-built to meet the specific needs of the geoscience community - a lasting, sustainable, and scalable resource that supports and leverages research infrastructure.
-          It provides not only flexible tools for managing, sharing, and preserving numerical models, but also built-in DOI creation to ensure persistent, citable access to model results.
-        </p>
-        <p>
-          M@TE is developed by a team of Earth scientists and professional software developers, with contributions from the following organisations:
-          <ul className="about-page">
-            <li><a href="https://www.auscope.org.au/">AuScope</a></li>
-            <li> <a href="https://nci.org.au/">National Computational Infrastructure (NCI)</a></li>
-            <li><a href="https://www.sydney.edu.au/research/facilities/sydney-informatics-hub.html">Sydney Informatics Hub</a></li>
-          </ul>
-        </p>
-      </section>
+        <h1>About M@TE</h1>
+        <section className="about-page">
+          <p>
+            M@TE is designed to meet geoscientists where they are: from educators
+            and students using visualizations in the classroom to researchers
+            developing and benchmarking new numerical models. It lowers the
+            learning curve of numerical models and bridges the gap between
+            traditional geology and numerical geosciences.
+          </p>
+          <p>
+            <b>M@TE enables you to:</b>
+            <ul className="about-page">
+              <li>
+                <b>Explore and visualize models</b> through an intuitive web
+                interface: play animations, use them in your teaching or to
+                better understand Earth system concepts.
+              </li>
+              <li>
+                <b>Download and build on models</b> by accessing input files and
+                configuration scripts to reproduce or expand upon simulations on
+                your own.
+              </li>
+              <li>
+                <b>Analyze and benchmark model outputs</b> by comparing results
+                across models and datasets without having to recreate
+                simulations from scratch.
+              </li>
+              <li>
+                <b>Upload your own models</b> using streamlined tools for
+                packaging code, metadata and outputs. These are stored,
+                preserved and assigned a DOI for citation.
+                <i>(Currently by invitation only, as we are being intentional about
+                showcasing a diverse and representative set of models.)</i>
+              </li>
+            </ul>
+          </p>
+          <p>
+            <b>Together we build reproducible, reusable, robust models — it
+            takes a village — so please cite the models you use.</b>
+          </p>
+        </section>
+        <section className="about-page">
+          <h2>
+            How does M@TE work?
+          </h2>
+          <p>
+            M@TE combines a user-friendly experience with a robust backend built
+            on widely adopted, sustainable infrastructure. Users browse model
+            summaries through the website, which links to GitHub and NCI
+            repositories for downloading code and outputs. Behind the scenes,
+            carefully chosen tools ensure consistency, accessibility and
+            long-term preservation.
+          </p>
+          <p>
+            <b>Key design choices include:</b>
+            <ul className="about-page">
+              <li>
+                <h3>RO-Crates for packaging</h3>
+                Model metadata is packaged using the{" "}
+                <a href="https://www.researchobject.org/ro-crate/">
+                  RO-Crate standard
+                </a>,
+                a lightweight JSON-LD format that captures rich metadata and
+                references model components (e.g. code, inputs, outputs,
+                publications, authors and persistent identifiers). This
+                ensures models are machine-readable and FAIR (Findable,
+                Accessible, Interoperable, Reusable).
+              </li>
+              <li>
+                <h3>GitHub for submission and validation</h3>
+                Models are submitted through structured{" "}
+                <a href="https://github.com/ModelAtlasofTheEarth/model_submission">
+                  GitHub issue templates
+                </a>.
+                Metadata is automatically validated and enriched
+                via GitHub Actions, which connect to external services such as
+                Crossref, DataCite and ORCID.
+              </li>
+              <li>
+                <h3>Gatsby for showcasing</h3>
+                The M@TE website is built with Gatsby, a static-site generator
+                that delivers a fast, lightweight interface for browsing
+                models. It integrates figures, animations and interactive
+                content to make models discoverable and usable across different
+                audiences.
+              </li>
+              <li>
+                <h3>NCI GeoNetwork for storage and preservation</h3>
+                Model outputs are stored and preserved through the National
+                Computational Infrastructure (NCI){" "}
+                <a href="https://geonetwork.nci.org.au/">GeoNetwork</a>.
+                This system supports terabyte-scale data, assigns persistent DOIs
+                and ensures discoverability through standard catalog services.
+              </li>
+            </ul>
+          </p>
+        </section>
       </div>
     </Layout>
   )

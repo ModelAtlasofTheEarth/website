@@ -69,63 +69,27 @@ const IndexPageTemplate = ({
 }) => {
   return (
     <div>
-      <div class="image-container">
-        <img
-          src={landingPhoto}
-          alt="Description"
-          style={{
-            width: "100%",
-            height: "600px",
-            objectFit: "cover",
-            margin: "auto",
-            backgroundPosition: "center center",
-            display: "block",
-            zIndex: "-1",
-            opacity: "80%"
-          }}
-        />
-        <div class="overlay-box">
-          <p class="overlay-text">
-            <h1
-              className="mate-name"
-              style={{ color: "white", fontSize: "60px" }}
-            >
-              Model Atlas of the Earth (M@TE)
-            </h1>
-
-            <h1
-              className="gp-title"
-              style={{ color: "white", fontSize: "20px" }}
-            >
-              M@TE is an open-source collection of computational models<br></br>
-              with a focus on tectonics, hydrogeology and surface processes. <br></br>
-              M@TE provides a range of digital infrastructure to support the <br></br>
-              FAIR principles: Findability, Accessibility, Interoperability and Reusability.
-            </h1>
-
-            <h1
-              className=" gp-title"
-              style={{ color: "white", fontSize:"15px" }}
-            >
-              <br></br>
-              Powered by
-            </h1>
-
+      <div className="main-page-background">
+        <section className="main-page-header">
+          <h1>
+            Model Atlas of the Earth (M@TE)
+          </h1>
+          <p>
+            M@TE is a purpose-built digital platform for geoscience that
+            provides access to computational models of Earth's processes,
+            from the Geosphere to the Hydrosphere, like Zenodo for
+            geoscience but bigger and better.
+          </p>
+          <section className="main-page-header main-page-smaller">
+            <p>Funded by</p>
             <a title="AuScope" href="https://www.auscope.org.au/">
               <img
                 src={auscopeIcon}
                 alt="AuScope Logo"
-                style={{
-                  maxWidth: "200px",
-                  marginLeft: "5px",
-                  marginBottom: "0px",
-                  borderRadius: "15px",
-                  verticalAlign: "middle",
-                }}
               />
             </a>
-          </p>
-        </div>
+          </section>
+        </section>
       </div>
 
       <div
@@ -160,6 +124,86 @@ const IndexPageTemplate = ({
       </h1>
       <WithScrollbar models={allModels}/>
 
+      <div className="main-page-box main-page-box-dark">
+        <section className="main-page-box">
+          <h2>
+            What is M@TE?
+          </h2>
+          <p>
+            M@TE is a digital platform that provides access to a wide range of
+            computational models and their outputs, focused on Earth's
+            evolution from the Geosphere to the Hydrosphere.
+          </p>
+          <p>
+            M@te encapsulates the entire model development process—from setup
+            to output and analysis—enabling discovery, data preservation,
+            reproducibility and reuse, offering flexibility for users with
+            varying levels of expertise.
+          </p>
+          <p>
+            Purpose-built to meet the specific needs of the geoscience
+            community, M@TE is a lasting, sustainable, and scalable
+            resource that supports and leverages research infrastructure.
+            It offers flexible tools for managing, sharing, and preserving
+            numerical models, with built-in DOI creation to ensure persistent,
+            citable access to results. Similar in spirit to Zenodo, but bigger
+            and better for geoscientific modeling.
+          </p>
+        </section>
+        </div>
+
+        <div className="main-page-box main-page-box-light">
+        <section className="main-page-box">
+          <h2>
+            Why M@TE?
+          </h2>
+          <p>
+            The field of numerical modeling of Earth's systems is rapidly
+            expanding, enabling new insights into the coevolution of the solid
+            Earth and surface processes. These models often require
+            specialized high-performance computing resources, can take days
+            to weeks to run, and generate large volumes of heterogeneous
+            output data. Without proper curation and community standards, it
+            is difficult to access, interpret, and build upon published work.
+          </p>
+          <p>
+            M@TE addresses these needs by providing:
+            <ul className="main-page-box">
+              <li>
+                Integrated management of the full model life cycle: code,
+                documentation, output data, publications, figures, animations
+                and metadata
+              </li>
+              <li>
+                Purpose-built infrastructure for storing, preserving, and
+                sharing computational models
+              </li>
+              <li>
+                A central hub connecting educators, model developers, and
+                geoscientists
+              </li>
+              <li>
+                Support for reproducibility and reuse
+              </li>
+              <li>
+                Built-in DOI creation for persistent, citable results
+              </li>
+              <li>
+                Scalable and sustainable research infrastructure
+              </li>
+              <li>
+                Flexibility for users with different levels of expertise
+              </li>
+              <li>
+                Capabilities beyond general-purpose repositories
+                (e.g., Zenodo, Figshare)
+              </li>
+            </ul>
+          </p>
+        </section>
+      </div>
+
+      {false &&
       <div
         className="be-our-mate"
         style={{
@@ -261,7 +305,7 @@ const IndexPageTemplate = ({
           />
         </div>
       </div>
-
+    }
     </div>
   );
 };
