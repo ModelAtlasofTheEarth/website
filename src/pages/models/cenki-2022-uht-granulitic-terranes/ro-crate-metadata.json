@@ -364,7 +364,9 @@
             "contentSize": "",
             "creator": "",
             "description": "Code and inputs for computational model",
-            "identifier": [],
+            "identifier": [
+                "https://doi.org/10.25914/aaen-nc33"
+            ],
             "keywords": "",
             "memoryRequirements": "./",
             "processorRequirements": "",
@@ -381,7 +383,9 @@
             "creator": "",
             "description": "",
             "fileFormat": "./",
-            "identifier": [],
+            "identifier": [
+                "https://doi.org/10.25914/aaen-nc33"
+            ],
             "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/cenki-2022-uht-granulitic-terranes/catalog.html"
         },
         {
