@@ -7,6 +7,7 @@ import {
   faGlobeAfrica,
   faMagnifyingGlass,
   faUsersViewfinder,
+  faQuestionCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import "./navbar_styles.css";
 
@@ -77,6 +78,17 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
+              <Link className="navbar-item hover-darken" to="/about">
+                <span
+                  className="icon has-text-extensions"
+                  aria-hidden="true"
+                  style={{ color: "grey" }}
+                >
+                  <FontAwesomeIcon icon={faQuestionCircle} />
+                </span>
+
+                <span>About</span>
+              </Link>
               <Link className="navbar-item hover-darken" to="/models">
                 <span
                   className="icon has-text-extensions"
