@@ -1,4 +1,5 @@
 import React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 
 import PageHead from "../components/Head"
 import Layout from "../components/Layout"
@@ -48,6 +49,12 @@ const AboutPage = () => {
             takes a village — so please cite the models you use.</b>
           </p>
         </section>
+        <div className="about-page about-page-image">
+          <StaticImage
+            src="../img/mate_trinity.png"
+            alt="M@TE Trinity diagram"
+          />
+        </div>
         <section className="about-page">
           <h2>
             How does M@TE work?
