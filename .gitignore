@@ -6,4 +6,3 @@ static/admin/*.bundle.*
 yarn-error.log
 package-lock.json
 .eslintrc.js
-yarn.lock
