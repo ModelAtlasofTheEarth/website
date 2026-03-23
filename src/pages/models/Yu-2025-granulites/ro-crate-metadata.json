@@ -1,0 +1,298 @@
+{
+    "@context": [
+        "https://www.researchobject.org/ro-crate/1.1/context.jsonld",
+        "https://raw.githubusercontent.com/codemeta/codemeta/master/codemeta.jsonld"
+    ],
+    "@graph": [
+        {
+            "@id": "#datasetCreation",
+            "@type": "CreateAction",
+            "agent": {
+                "@id": "https://orcid.org/0000-0001-7919-2575"
+            },
+            "description": "Running the computational model",
+            "endTime": "",
+            "instrument": {
+                "@id": "https://zenodo.org/records/6820562"
+            },
+            "object": {
+                "@id": "model_code_inputs"
+            },
+            "result": {
+                "@id": "model_output_data"
+            },
+            "startTime": ""
+        },
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "about": {
+                "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370401"
+            },
+            "abstract": "Mesoproterozoic orogens are unusual in that they commonly preserve a record of high geothermal gradients, low crustal thickness, and limited topography. One such terrane is the Fraser Zone in the Albany\u2013Fraser Orogen (AFO), Western Australia, where granulite-facies rocks record a counterclockwise pressure\u2013temperature (CCW $P\u2013T$) evolution, the drivers of which remain the subject of debate. To understand how the Fraser Zone reached high temperatures followed by burial, a new geochronological and petrological dataset from a metamorphosed gabbronorite was collected. This data places direct temporal constraints on the up-pressure section of the CCW $P\u2013T$ evolution. The gabbronorite preserves an original cumulate texture that crystallised at $\\sim 6\\ \\text{kbar}$ and $\\sim 810^{\\circ}\\text{C}$ that partially recrystallised at conditions of $\\sim 9.5\\ \\text{kbar}$ and $850{-}950^{\\circ}\\text{C}$, as constrained by conventional thermobarometers and pseudosection modelling. Zircon grains with distinct textural and geochemical characteristics constrain the timing of emplacement, melt crystallisation at $1288 \\pm 7\\ \\text{Ma}$, and subsequent up-pressure recrystallisation at $1284 \\pm 7\\ \\text{Ma}$. These combined $P\u2013T$ and geochronological constraints define a rapid burial path to $\\sim 12\\ \\text{km}$ within $c.\\ 4\\ \\text{Myr}$ of initial crystallisation, requiring a re-evaluation of the previous models involving collision and thickening as the timing of the up-pressure excursion pre-dates the established timing of collision between the Western Australian and South Australian Cratons. Thermomechanical geodynamic modelling elucidates a viable tectonic setting for the generation of the granulites of the Fraser Zone, involving rift foundering triggered by asymmetric extension in the backarc that was terminated by subsequent arc advance. Globally, a similar mechanism may have resulted in the ubiquitous high thermobaric ratio metamorphism, low crustal thickness, and limited elevation, associated with the Mesoproterozoic metamorphic record associated with the assembly of Rodinia.",
+            "alternateName": "Yu-2025-granulites",
+            "citation": {
+                "@id": "https://doi.org/10.1016/j.epsl.2025.119681"
+            },
+            "contributor": "",
+            "creativeWorkStatus": "completed",
+            "creator": {
+                "@id": "https://orcid.org/0000-0001-7919-2575"
+            },
+            "datePublished": "2025-12-11T04:44:24.000Z",
+            "description": "This model was developed to test the generation of non-orogenic granulites due to rifting. We implemented a melt generation and emplacement model and compared with analytical results obtained from the Fraser zone, SW WA.",
+            "funder": {
+                "@id": "https://ror.org/05mmh0f86"
+            },
+            "hasPart": [
+                {
+                    "@id": "model_code_inputs"
+                },
+                {
+                    "@id": "model_output_data"
+                },
+                {
+                    "@id": "website_material"
+                },
+                {
+                    "@id": "metadata_trail"
+                },
+                {
+                    "@id": "#datasetCreation"
+                }
+            ],
+            "identifier": [
+                "https://doi.org/10.25914/0a2t-by03"
+            ],
+            "isBasedOn": [],
+            "isPartOf": "http://dx.doi.org/10.25914/yrzp-g882",
+            "keywords": [
+                "granulites",
+                "melt",
+                "emplacement"
+            ],
+            "license": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "name": "Rift foundering and the generation of non-orogenic granulites during the Mesoproterozoic",
+            "publisher": [
+                {
+                    "@id": "https://ror.org/04s1m4564"
+                },
+                {
+                    "@id": "https://ror.org/04yx6dh41"
+                }
+            ],
+            "spatialCoverage": "",
+            "temporalCoverage": "",
+            "url": [
+                "https://mate.science/models/Yu-2025-granulites/",
+                "https://github.com/ModelAtlasofTheEarth/Yu-2025-granulites/"
+            ],
+            "version": "",
+            "funding": {
+                "@id": "_:b1"
+            },
+            "creditText": [
+                "Knight, Ben S.. (2025). Rift foundering and the generation of non-orogenic granulites during the Mesoproterozoic [Data set]. AuScope, National Computational Infrastructure. https://doi.org/0a2t-by03"
+            ]
+        },
+        {
+            "@id": ".metadata_trail",
+            "@type": "Dataset",
+            "hasPart": [
+                {
+                    "@id": "metadata_trail/issue_body.md"
+                },
+                {
+                    "@id": "metadata_trail/issue_dict.json"
+                },
+                {
+                    "@id": "metadata_trail/nci_iso.csv"
+                },
+                {
+                    "@id": "metadata_trail/ro-crate-metadata-nested.json"
+                }
+            ],
+            "name": ".metadata_trail"
+        },
+        {
+            "@id": ".website_material",
+            "@type": [
+                "Dataset",
+                "CreativeWork"
+            ],
+            "creator": {
+                "@id": "https://orcid.org/0000-0001-7919-2575"
+            },
+            "description": "material for m@te website",
+            "fileFormat": "./",
+            "name": ".website_material"
+        },
+        {
+            "@id": "_:b0",
+            "@type": "Person",
+            "familyName": "Hand",
+            "givenName": "Martin"
+        },
+        {
+            "@id": "_:b1",
+            "@type": "Grant",
+            "funder": {
+                "@id": "https://ror.org/05mmh0f86"
+            },
+            "identifier": "FT220100566"
+        },
+        {
+            "@id": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "@type": "CreativeWork",
+            "description": "Creative Commons Attribution 4.0 International",
+            "name": "CC-BY-4.0",
+            "url": " https://creativecommons.org/licenses/by/4.0/legalcode.txt"
+        },
+        {
+            "@id": "https://doi.org/10.1016/j.epsl.2025.119681",
+            "@type": "ScholarlyArticle",
+            "author": [
+                {
+                    "@id": "https://orcid.org/0000-0002-9437-6847"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0001-7919-2575"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0001-9982-7849"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0003-3367-8961"
+                },
+                {
+                    "@id": "_:b0"
+                }
+            ],
+            "datePublished": "2025-12",
+            "identifier": "S0012821X25004790",
+            "name": "Rift foundering and the generation of non-orogenic granulites during the Mesoproterozoic"
+        },
+        {
+            "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370401",
+            "@type": "DefinedTerm",
+            "name": "Computational modelling and simulation in earth sciences",
+            "termCode": "370401"
+        },
+        {
+            "@id": "https://orcid.org/0000-0001-7919-2575",
+            "@type": "Person",
+            "familyName": "Knight",
+            "givenName": [
+                "Ben S.",
+                "Ben Steven"
+            ]
+        },
+        {
+            "@id": "https://orcid.org/0000-0001-9982-7849",
+            "@type": "Person",
+            "familyName": "Clark",
+            "givenName": "Chris"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-9437-6847",
+            "@type": "Person",
+            "familyName": "Yu",
+            "givenName": "Jie"
+        },
+        {
+            "@id": "https://orcid.org/0000-0003-3367-8961",
+            "@type": "Person",
+            "familyName": "Kirkland",
+            "givenName": "Christopher L."
+        },
+        {
+            "@id": "https://ror.org/04s1m4564",
+            "@type": "Organization",
+            "name": "AuScope"
+        },
+        {
+            "@id": "https://ror.org/04yx6dh41",
+            "@type": "Organization",
+            "name": "National Computational Infrastructure"
+        },
+        {
+            "@id": "https://ror.org/05mmh0f86",
+            "@type": "Organization",
+            "name": "ARC",
+            "url": "http://www.arc.gov.au/"
+        },
+        {
+            "@id": "https://zenodo.org/records/6820562",
+            "@type": "SoftwareApplication",
+            "name": "underworld2"
+        },
+        {
+            "@id": "metadata_trail/issue_body.md",
+            "@type": "CreativeWork",
+            "description": "Markdown document showing the original github issue body associated with the model submission.",
+            "encodingFormat": "text/markdown",
+            "name": "Issue Body"
+        },
+        {
+            "@id": "metadata_trail/issue_dict.json",
+            "@type": "CreativeWork",
+            "description": "json file representing the dictionary that is constructured by model_submission/.github/scripts/parse_issue.py",
+            "encodingFormat": "application/json",
+            "name": "Issue Dictionary"
+        },
+        {
+            "@id": "metadata_trail/nci_iso.csv",
+            "@type": "CreativeWork",
+            "description": "Simple crosswalk of metadata into ISO 19115 format/schema compatible with NCI GeoNwtework",
+            "encodingFormat": "text/csv",
+            "name": "NCI ISO Crosswalk"
+        },
+        {
+            "@id": "metadata_trail/ro-crate-metadata-nested.json",
+            "@type": "CreativeWork",
+            "description": "Nested version of RO-Crate, hasn't been flattenened.",
+            "encodingFormat": "application/json",
+            "name": "Nested version of RO-Crate"
+        },
+        {
+            "@id": "model_code_inputs",
+            "@type": [
+                "Dataset",
+                "SoftwareSourceCode"
+            ],
+            "contentSize": "",
+            "creator": "",
+            "description": "Code and inputs for computational model",
+            "identifier": [],
+            "keywords": "",
+            "memoryRequirements": "./",
+            "processorRequirements": "",
+            "programmingLanguage": "",
+            "runtimePlatform": "",
+            "storageRequirements": "./",
+            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/Yu-2025-granulites/catalog.html",
+            "version": ""
+        },
+        {
+            "@id": "model_output_data",
+            "@type": "Dataset",
+            "contentSize": "",
+            "creator": "",
+            "description": "",
+            "fileFormat": "./",
+            "identifier": [],
+            "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/Yu-2025-granulites/catalog.html"
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "conformsTo": {
+                "@id": "https://w3id.org/ro/crate/1.1"
+            },
+            "about": {
+                "@id": "./"
+            },
+            "description": "RO-Crate Metadata File Descriptor (this file)"
+        }
+    ]
+}
