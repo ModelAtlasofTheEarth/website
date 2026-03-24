@@ -263,7 +263,9 @@
             "contentSize": "",
             "creator": "",
             "description": "Code and inputs for computational model",
-            "identifier": [],
+            "identifier": [
+                "https://doi.org/10.25914/0a2t-by03"
+            ],
             "keywords": "",
             "memoryRequirements": "./",
             "processorRequirements": "",
@@ -280,7 +282,9 @@
             "creator": "",
             "description": "",
             "fileFormat": "./",
-            "identifier": [],
+            "identifier": [
+                "https://doi.org/10.25914/0a2t-by03"
+            ],
             "url": "https://thredds.nci.org.au/thredds/catalog/nm08/MATE/Yu-2025-granulites/catalog.html"
         },
         {
