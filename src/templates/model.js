@@ -29,6 +29,7 @@ import Markdown from "react-markdown"
 import remarkMath from "remark-math"
 import rehypeMathjax from "rehype-mathjax/svg"
 
+const rehypeMathjaxPlugins = rehypeMathjax ? [[rehypeMathjax, { svg: { scale: 1.0 } }]] : []
 
 const ModelTemplate = ({
   abstract,
@@ -163,7 +164,7 @@ const ModelTemplate = ({
             <p className="cool-caption">
               <Markdown
                 remarkPlugins={[remarkMath]}
-                rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
+                rehypePlugins={rehypeMathjaxPlugins}
               >
                 {animation.caption}
               </Markdown>
@@ -217,7 +218,7 @@ const ModelTemplate = ({
                   <p className="cool-caption">
                     <Markdown
                       remarkPlugins={[remarkMath]}
-                      rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
+                      rehypePlugins={rehypeMathjaxPlugins}
                     >
                       {graphic_abstract.caption}
                     </Markdown>
@@ -307,7 +308,7 @@ const ModelTemplate = ({
                 <p className="cool-caption">
                   <Markdown
                     remarkPlugins={[remarkMath]}
-                    rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
+                    rehypePlugins={rehypeMathjaxPlugins}
                   >
                   {model_setup_info.summary && typeof model_setup_info.summary === 'string'
                   ? `${model_setup.caption} ${model_setup_info.summary}`
@@ -368,7 +369,7 @@ const ModelTemplate = ({
                 <p className="cool-caption">
                   <Markdown
                     remarkPlugins={[remarkMath]}
-                    rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
+                    rehypePlugins={rehypeMathjaxPlugins}
                   >
                     {model_files.notes}
                   </Markdown>
@@ -386,7 +387,7 @@ const ModelTemplate = ({
               <p className="cool-caption">
                 <Markdown
                   remarkPlugins={[remarkMath]}
-                  rehypePlugins={[[rehypeMathjax, { svg: { scale: 1.0 } }]]}
+                  rehypePlugins={rehypeMathjaxPlugins}
                 >
                   {dataset.notes}
                 </Markdown>

@@ -6,7 +6,7 @@ module.exports = {
   plugins: [
     {
       resolve: "gatsby-plugin-sass",
-      sassOptions: { indentedSyntax: true },
+      options: { sassOptions: { indentedSyntax: true } },
     },
     {
       resolve: "gatsby-source-filesystem",
@@ -22,7 +22,6 @@ module.exports = {
         name: "images",
       },
     },
-    "react-copy-to-clipboard",
     "gatsby-plugin-fontawesome-css",
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
@@ -31,18 +30,6 @@ module.exports = {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          {
-            resolve: `gatsby-plugin-google-gtag`,
-            options: {
-              trackingIds: [
-              "G-SW2X6STFYY", // Google Analytics / GA
-              ],
-              pluginConfig: {
-                // Puts tracking script in the head instead of the body
-                head: true
-              },
-            },
-          },
           {
             resolve: "gatsby-remark-autolink-headers",
             options: {
@@ -91,6 +78,13 @@ module.exports = {
         printRejected: true
       },
     }, // must be after other CSS plugins
-    "gatsby-adapter-netlify"
+    "gatsby-adapter-netlify",
+    {
+      resolve: "gatsby-plugin-google-gtag",
+      options: {
+        trackingIds: ["G-SW2X6STFYY"],
+        pluginConfig: { head: true },
+      },
+    },
   ],
 };
