@@ -1,22 +1,16 @@
-# julesg-org.github.io — M@TE Quarto Replica
+# M@TE-website — Quarto powered
 
-[![Publish Quarto Site](https://github.com/julesg-org/julesg-org.github.io/actions/workflows/publish.yml/badge.svg)](https://github.com/julesg-org/julesg-org.github.io/actions/workflows/publish.yml)
+A **Quarto-based static website** that serves [M@TE (Model Atlas of the Earth)](https://mate.science/). Driven by a **model ingestion pipeline** that pulls content directly from M@TE model submission repositories on GitHub.
 
-A **Quarto-based static website** that replicates the design and structure of the
-[M@TE (Model Atlas of the Earth)](https://mate.science/) website, with a
-**data-driven model ingestion pipeline** that pulls content directly from model
-repositories on GitHub.
-
-Original M@TE site: <https://mate.science/>  
-Original M@TE source: <https://github.com/ModelAtlasofTheEarth/website>
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d4f730fc-398c-4226-9c25-7091734ab1e0/deploy-status)](https://app.netlify.com/projects/mate-science/deploys)
+Original M@TE source: <https://github.com/ModelAtlasofTheEarth/mate-website>
 ---
 
-## Quick Start
+## Quick Start, to run locally.
 
 ```bash
-git clone https://github.com/julesg-org/julesg-org.github.io.git
-cd julesg-org.github.io
+git clone https://github.com/ModelAtlasofTheEarth/mate-website.git
+cd mate-website
 pixi run heymate
 ```
 
@@ -36,7 +30,7 @@ and opens a local preview in your browser.
 ## 🗂️ Repository Structure
 
 ```
-julesg-org.github.io/
+mate-website/
 ├── pixi.toml                    # ← Single dependency manifest (Python, Quarto, poppler)
 ├── _quarto.yml                  # ← M@TE site config; registers pandoc filter + global JS
 ├── _registry.yml                # ← MODEL REGISTRY: add a model slug+repo here
@@ -53,9 +47,7 @@ julesg-org.github.io/
 ├── contact.qmd                  # ← Contact / model submission info
 ├── styles/
 │   └── mate.css                 # ← M@TE visual design (colours, badges, tabs)
-├── images/
-│   ├── atlas-icon.svg           # ← M@TE navbar logo (SVG)
-│   └── AuScopeLogo.webp         # ← Funder logo
+├── images/                      # ← M@TE website images
 ├── models/
 │   ├── _graphics/               # ← Auto-generated PNGs (converted from PDFs, gitignored)
 │   ├── index.qmd                # ← Model listing page (generated, gitignored)
@@ -86,27 +78,17 @@ models:
 2. Run `pixi run ingest` to fetch model metadata and regenerate all pages locally,
    or just commit and push — CI handles everything automatically.
 
-### Running locally
-
-```bash
-# 1. Clone the repo
-git clone https://github.com/julesg-org/julesg-org.github.io.git
-cd julesg-org.github.io
-
-# 2. Ingest model data, render the site, and open a preview
-pixi run heymate
-```
 
 **All pixi tasks:**
 
 | Command | What it does |
 |---------|-------------|
+| `pixi run heymate` | Ingest + preview — run a local version of M@TE website |
+| `pixi run clean` | Remove all generated files to force a fresh rebuild |
 | `pixi run ingest` | Fetch model metadata from GitHub, discover graphics, generate `.qmd` files |
 | `pixi run render` | Render the site with Quarto to `_site/` |
 | `pixi run preview` | 'render' + start a local Quarto server |
-| `pixi run build` | Ingest + render (no preview) — used in CI |
-| `pixi run heymate` | Ingest + preview — full local version of m@te website |
-| `pixi run clean` | Remove all generated files to force a fresh rebuild |
+| `pixi run build` | Ingest + render (no preview) — used in CI only |
 
 The ingest must run **before** every render to ensure model pages reflect
 the latest metadata. `pixi run build` and `pixi run heymate` handle this ordering
@@ -142,9 +124,9 @@ The M@TE design is replicated from the original Gatsby/Netlify site:
 | Home | `index.qmd` | hand-authored | Hero section + model card grid + highlights |
 | Models | `models/index.qmd` | generated | Searchable/filterable model listing |
 | Model detail | `models/{slug}.qmd` | generated | YAML frontmatter only — HTML rendered at build time by pandoc filter |
-| Tags | `tags/index.qmd` | generated | Tag cloud browse page |
+| Tags | `tags/index.qmd` | generated | (Hidden) Tag cloud browse page |
 | Tag detail | `tags/{tag}.qmd` | generated | All models sharing a tag |
-| Creators | `creators/index.qmd` | generated | A–Z creator listing |
+| Creators | `creators/index.qmd` | generated | (Hidden) A–Z creator listing |
 | Creator detail | `creators/{creator}.qmd` | generated | All models by a creator |
 | News | `news/index.qmd` | hand-authored | News listing placeholder |
 | About | `about.qmd` | hand-authored | What M@TE is and how it works |
@@ -184,29 +166,20 @@ This separation means:
 
 ## 🚀 Deployment
 
-Deployment is fully automatic via GitHub Actions. A single workflow builds the
-site once with pixi and then deploys the output to two independent targets.
+Deployment is fully automatic via GitHub Actions (GHA). The `publish.yml` workflow builds the
+site once with pixi and then deploys the output to Netlify. Netlify *never* triggers a rebuild.
 
-See **[.github/workflows/publish.yml](.github/workflows/publish.yml)** for the
-full workflow.
+See **[.github/workflows/publish.yml](.github/workflows/publish.yml)** for the full workflow.
 
-### GitHub Pages
+### Algorithm
 
 1. Push to the `main` branch
-2. GitHub Actions runs `prefix-dev/setup-pixi@v0.9.6` (installs pixi and all
+2. GitHub Actions runs `prefix-dev/setup-pixi` (installs pixi and all
    dependencies from `pixi.toml` — Python, Quarto, poppler — with caching)
 3. `pixi run build` fetches model metadata from GitHub, generates all pages,
    PDF thumbnails, and renders the full site to `_site/`
-4. `peaceiris/actions-gh-pages` pushes `_site/` to the `gh-pages` branch
-5. GitHub Pages serves it at **https://julesg-org.github.io**
-
-### Netlify TODO
-
-After the build step, `nwtgck/actions-netlify` deploys the same `_site/`
-output directly to Netlify via the Netlify API — GHA does all the building,
-Netlify only serves the result.
-
-Site: **https://\<your-netlify-site\>.netlify.app**
+4. `nwtgck/actions-netlify` pushes `_site/` to the `Netlify'
+5. `Netlify` serves it at **https://mate.science**
 
 #### Required secrets
 
@@ -217,11 +190,3 @@ Add these in **GitHub → repo Settings → Secrets and variables → Actions**:
 | `NETLIFY_AUTH_TOKEN` | Netlify UI → User settings → Personal access tokens → New token |
 | `NETLIFY_SITE_ID` | Netlify UI → Site → Site configuration → Site ID (a UUID) |
 
-
-After this, Netlify only receives deployments pushed by GHA — it never triggers
-its own build from a Git push.
-
-#### Independence of the two deploy targets
-
-The GitHub Pages step and the Netlify step are independent — neither depends on
-the other. Removing or disabling one does not affect the other.
