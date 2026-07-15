@@ -59,11 +59,10 @@ Crossref, DataCite and ORCID.
 
 ### Quarto for showcasing
 
-This replica of the M@TE website is built with [Quarto](https://quarto.org),
+The M@TE website is built with [Quarto](https://quarto.org),
 a scientific publishing system that delivers a fast, lightweight interface for
 browsing models. It integrates figures, animations and interactive content to
 make models discoverable and usable across different audiences.
-*(The original M@TE site uses Gatsby, a React-based static-site generator.)*
 
 ### NCI GeoNetwork for storage and preservation
 
@@ -75,15 +74,9 @@ assigns persistent DOIs and ensures discoverability through standard catalog ser
 
 ## Content ingestion mechanism
 
-Each scientific model has its own repository in the `ModelAtlasofTheEarth` GitHub organisation.
-When a model is ready for publication, a GitHub Actions workflow automatically:
+Each scientific model has its own repository in the `ModelAtlasofTheEarth` GitHub organisation. When a model is ready for publication, a bunch or steps occur:
 
-1. Updates the DOI in the model repository
-2. Creates a new branch in the website repository named after the model
-3. Copies the `.website_material/` folder contents into `generated/models/<model-name>.qmd` in the Quarto site
-4. Updates the model submission issue tracker
-
-The branch is then merged and the site rebuilds automatically — no manual file copying required.
+TODO: outline the steps for model repo + output -> website publication.
 
 ```{=html}
 </div>
