@@ -1,0 +1,578 @@
+/* =============================================================================
+   styles/mate.css — M@TE visual design
+   Translating from ModelAtlasofTheEarth/website src/components/atlas.sass
+   ============================================================================= */
+
+/* Google Fonts — Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* Primary colour tokens */
+:root {
+  --mate-primary: #D64000;
+  --mate-link: #2c8ec7;
+  --mate-navbar-bg: #DAE1E3;
+  --mate-body: #333;
+}
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--mate-body);
+  scrollbar-width: thin;
+  overflow-y: scroll;
+}
+
+a {
+  color: var(--mate-link);
+}
+
+a:hover {
+  color: var(--mate-primary);
+}
+
+/* ── Navbar ───────────────────────────────────────────────────────────────── */
+.navbar {
+  background: var(--mate-navbar-bg) !important;
+  border-bottom: 1px solid lightgray;
+  backdrop-filter: blur(4px);
+}
+
+.navbar-brand img {
+  height: 32px;
+  width: auto;
+}
+
+/* ── Hero section ─────────────────────────────────────────────────────────── */
+.mate-hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: var(--mate-navbar-bg);
+}
+
+.mate-hero h1 {
+  font-size: 60px;
+  font-weight: 700;
+  color: var(--mate-primary);
+  margin-bottom: 0.25rem;
+}
+
+.mate-hero .mate-subtitle {
+  font-size: 26px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.mate-hero p {
+  font-size: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-top: 10px;
+  color: var(--mate-body);
+}
+
+/* ── Section headings ─────────────────────────────────────────────────────── */
+.mate-section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--mate-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* ── Highlights list ──────────────────────────────────────────────────────── */
+.mate-highlights {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.mate-highlights li {
+  background: #fff;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--mate-primary);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+}
+
+/* ── Badges ───────────────────────────────────────────────────────────────── */
+.badge-tag {
+  background-color: var(--mate-link);
+  color: #eee;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 2px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.badge-creator {
+  background-color: #6c757d;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 2px;
+  display: inline-block;
+}
+
+.badge-doi {
+  display: inline-flex;
+  margin: 4px 0;
+  text-decoration: none;
+}
+
+.badge-doi-left {
+  background-color: #555;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 5px 0 0 5px;
+  font-size: 13px;
+  display: inline-block;
+  font-family: monospace;
+}
+
+.badge-doi-right {
+  background-color: #007ec6;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 0 5px 5px 0;
+  font-size: 13px;
+  display: inline-block;
+  font-family: monospace;
+}
+
+/* ── Model cards ──────────────────────────────────────────────────────────── */
+.mc-card-container {
+  border: 1px solid #dadce0;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
+  background: #fff;
+  text-decoration: none;
+  color: inherit;
+}
+
+.mc-card-container:hover {
+  box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: inherit;
+}
+
+.mc-card-container img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.mc-card-container h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0.75rem 0.75rem 0.4rem;
+  color: #222;
+  line-height: 1.3;
+}
+
+/* Link wrapper inside card (image + title + optional abstract are the main clickable area) */
+.mc-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.mc-card-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mc-card-meta {
+  margin-top: auto;
+  padding: 0.6rem 0.75rem 0.75rem;
+  background: #f8f9fa;
+  border-top: 1px solid #eee;
+}
+
+.mc-card-abstract {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
+  margin: 0 0.75rem 0.5rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* ── Featured carousel (home page) ────────────────────────────────────────── */
+.featured-carousel {
+  position: relative;
+  overflow: hidden;
+  margin: 0 -0.625rem;        /* counter padding so arrows can sit at edges */
+  padding: 0 0.625rem;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1rem 0;
+  will-change: transform;
+}
+
+.carousel-track .mc-card-container {
+  flex: 0 0 calc((100% - 2.5rem) / 3);
+  min-width: 0;
+}
+
+/* ── Carousel arrow buttons ───────────────────────────────────────────────── */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.9);
+  color: #333;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+.carousel-btn:hover {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.carousel-btn:focus-visible {
+  outline: 2px solid var(--mate-link);
+  outline-offset: 2px;
+}
+
+.carousel-prev { left: 0.25rem; }
+.carousel-next { right: 0.25rem; }
+
+/* ── Carousel dot indicators ──────────────────────────────────────────────── */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.carousel-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  transition: background 0.2s;
+}
+
+.carousel-dot.active {
+  background: var(--mate-primary);
+}
+
+/* ── Models grid ──────────────────────────────────────────────────────────── */
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  padding: 1rem 0;
+}
+
+/* ── Search box ───────────────────────────────────────────────────────────── */
+.model-search-box {
+  width: 100%;
+  max-width: 480px;
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+/* ── About page ───────────────────────────────────────────────────────────── */
+.about-page {
+  font-size: 18px;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-page h1 {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--mate-primary);
+  margin-bottom: 1.5rem;
+}
+
+.about-page h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--mate-primary);
+  margin-top: 2rem;
+}
+
+.about-page h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.about-page ul {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.about-page li {
+  margin-bottom: 0.75rem;
+}
+
+/* ── Model detail page ────────────────────────────────────────────────────── */
+.model-page {
+  font-size: 18px;
+  text-align: left;
+}
+
+.model-page h1 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.model-page h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--mate-primary);
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.3rem;
+  margin-top: 2rem;
+}
+
+.model-page a {
+  color: var(--mate-link);
+}
+
+.model-page .model-meta-block {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 15px;
+}
+
+/* ── Full-width image ─────────────────────────────────────────────────────── */
+.full-width-image {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+/* ── Animation container ──────────────────────────────────────────────────── */
+.animation-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  overflow: hidden;
+  max-height: 700px;
+}
+
+/* ── News page ────────────────────────────────────────────────────────────── */
+.news-section {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+.news-section h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--mate-primary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────────────── */
+.nav-footer {
+  border-top: 1px solid #dadce0;
+  background: #f8f9fa;
+  color: #555;
+  font-size: 14px;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .mate-hero h1 {
+    font-size: 42px;
+  }
+
+  .mate-hero .mate-subtitle {
+    font-size: 20px;
+  }
+
+  .mate-hero p {
+    font-size: 17px;
+  }
+
+  .models-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Tabs ─────────────────────────────────────────────────────────────────── */
+.tab-container { margin: 1.5rem 0; }
+.tab-nav { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 2px solid #eee; margin-bottom: 1rem; }
+.tab-btn { background: none; border: none; padding: 0.5rem 1.1rem; font-size: 15px; font-weight: 600; color: #555; cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -2px; }
+.tab-btn.active { color: var(--mate-primary); border-bottom-color: var(--mate-primary); }
+.tab-btn:hover { color: var(--mate-primary); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ── Clickable tag and creator badges ─────────────────────────────────────── */
+a.badge-tag { cursor: pointer; }
+a.badge-tag:hover { background-color: var(--mate-primary); text-decoration: none; color: #fff; }
+a.badge-creator { cursor: pointer; text-decoration: none; }
+a.badge-creator:hover { background-color: #444; text-decoration: none; }
+
+/* ── Tag cloud page ───────────────────────────────────────────────────────── */
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+.tag-cloud .badge-tag { font-size: 15px; padding: 4px 12px; }
+
+/* ── Creator list ─────────────────────────────────────────────────────────── */
+.creator-list { list-style: none; padding: 0; }
+.creator-list li { padding: 0.4rem 0; border-bottom: 1px solid #eee; font-size: 16px; }
+
+/* ── People / Team grid ──────────────────────────────────────────────────── */
+.people-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.people-section h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--mate-primary);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.people-section .people-intro {
+  text-align: center;
+  font-size: 18px;
+  color: var(--mate-body);
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.people-card {
+  background: #fff;
+  border: 1px solid #dadce0;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.people-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.people-card img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: grayscale(30%);
+  transition: filter 0.3s ease;
+  margin-bottom: 0.75rem;
+}
+
+.people-card:hover img {
+  filter: grayscale(0%);
+}
+
+.people-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--mate-primary);
+  margin: 0.25rem 0 0.15rem;
+  line-height: 1.3;
+}
+
+.people-card .people-title {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.people-card .people-orcid {
+  font-size: 13px;
+  color: var(--mate-link);
+  word-break: break-all;
+}
+
+/* ── Contact form (below team section) ───────────────────────────────────── */
+.contact-section {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+.contact-section h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--mate-primary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .people-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .people-card img {
+    width: 100px;
+    height: 100px;
+  }
+}

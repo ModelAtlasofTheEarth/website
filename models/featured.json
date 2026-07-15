@@ -1,0 +1,495 @@
+[
+  {
+    "slug": "polanco-2024-deltas",
+    "title": "Flexural isostatic response of continental-scale deltas to climatically driven sea level changes",
+    "img_url": "https://raw.githubusercontent.com/ModelAtlasofTheEarth/polanco-2024-deltas/main/.website_material/graphics/fig1.png",
+    "creators": [
+      {
+        "full_name": "Sara Polanco",
+        "slug": "sara-polanco"
+      },
+      {
+        "full_name": "Michael Blum",
+        "slug": "michael-blum"
+      },
+      {
+        "full_name": "Tristan Salles",
+        "slug": "tristan-salles"
+      },
+      {
+        "full_name": "Bruce C Frederick",
+        "slug": "bruce-c-frederick"
+      },
+      {
+        "full_name": "Rebecca Farrington",
+        "slug": "rebecca-farrington"
+      },
+      {
+        "full_name": "Xuesong Ding",
+        "slug": "xuesong-ding"
+      },
+      {
+        "full_name": "Ben Mather",
+        "slug": "ben-mather"
+      },
+      {
+        "full_name": "Claire A. Mallard",
+        "slug": "claire-a-mallard"
+      },
+      {
+        "full_name": "Louis-Noel Moresi",
+        "slug": "louis-noel-moresi"
+      }
+    ],
+    "tags": [
+      {
+        "name": "Flexural isostasy",
+        "slug": "flexural-isostasy"
+      },
+      {
+        "name": "Glacial isostatic adjustment (GIA)",
+        "slug": "glacial-isostatic-adjustment-gia"
+      },
+      {
+        "name": "Deltaic depocenters",
+        "slug": "deltaic-depocenters"
+      },
+      {
+        "name": "Stratigraphic record",
+        "slug": "stratigraphic-record"
+      }
+    ],
+    "doi": "10.25914/4m82-y773",
+    "doi_href": "https://doi.org/10.25914/4m82-y773",
+    "doi_display": "10.25914/4m82-y773"
+  },
+  {
+    "slug": "sandiford-2021-detachment",
+    "title": "Kinematics of Footwall Exhumation at Oceanic Detachment faults: Solid\u2010Block Rotation and Apparent Unbending",
+    "img_url": "https://raw.githubusercontent.com/ModelAtlasofTheEarth/sandiford-2021-detachment/main/.website_material/graphics/fig1.png",
+    "creators": [
+      {
+        "full_name": "Dan Sandiford",
+        "slug": "dan-sandiford"
+      },
+      {
+        "full_name": "Sascha Brune",
+        "slug": "sascha-brune"
+      },
+      {
+        "full_name": "Anne Glerum",
+        "slug": "anne-glerum"
+      },
+      {
+        "full_name": "John Naliboff",
+        "slug": "john-naliboff"
+      },
+      {
+        "full_name": "Joanne M. Whittaker",
+        "slug": "joanne-m-whittaker"
+      }
+    ],
+    "tags": [
+      {
+        "name": "tectonics",
+        "slug": "tectonics"
+      },
+      {
+        "name": "faulting",
+        "slug": "faulting"
+      },
+      {
+        "name": "detachment faults",
+        "slug": "detachment-faults"
+      }
+    ],
+    "doi": "10.25914/r3ya-bg54",
+    "doi_href": "https://doi.org/10.25914/r3ya-bg54",
+    "doi_display": "10.25914/r3ya-bg54"
+  },
+  {
+    "slug": "sandifordcraig-2023-subduction",
+    "title": "Plate bending earthquakes and the strength distribution of the lithosphere",
+    "img_url": "https://raw.githubusercontent.com/ModelAtlasofTheEarth/sandifordcraig-2023-subduction/main/.website_material/graphics/res_fig_final_ann.png",
+    "creators": [
+      {
+        "full_name": "Dan Sandiford",
+        "slug": "dan-sandiford"
+      },
+      {
+        "full_name": "Timothy J Craig",
+        "slug": "timothy-j-craig"
+      }
+    ],
+    "tags": [
+      {
+        "name": "Dynamics of lithosphere",
+        "slug": "dynamics-of-lithosphere"
+      },
+      {
+        "name": "Lithospheric flexure",
+        "slug": "lithospheric-flexure"
+      },
+      {
+        "name": "Subduction",
+        "slug": "subduction"
+      },
+      {
+        "name": "Earthquakes",
+        "slug": "earthquakes"
+      }
+    ],
+    "doi": "10.25914/t13d-0r63",
+    "doi_href": "https://doi.org/10.25914/t13d-0r63",
+    "doi_display": "10.25914/t13d-0r63"
+  },
+  {
+    "slug": "mather-2022-groundwater",
+    "title": "Constraining the response of continental-scale groundwater flow to climate change",
+    "img_url": "https://raw.githubusercontent.com/ModelAtlasofTheEarth/mather-2022-groundwater/main/.website_material/graphics/fig1.png",
+    "creators": [
+      {
+        "full_name": "Ben Mather",
+        "slug": "ben-mather"
+      },
+      {
+        "full_name": "R. Dietmar M\u00fcller",
+        "slug": "r-dietmar-m\u00fcller"
+      },
+      {
+        "full_name": "Craig O\u2019Neill",
+        "slug": "craig-oneill"
+      },
+      {
+        "full_name": "Adam Beall",
+        "slug": "adam-beall"
+      },
+      {
+        "full_name": "R. Willem Vervoort",
+        "slug": "r-willem-vervoort"
+      },
+      {
+        "full_name": "Louis Moresi",
+        "slug": "louis-moresi"
+      }
+    ],
+    "tags": [
+      {
+        "name": "groundwater",
+        "slug": "groundwater"
+      },
+      {
+        "name": "thermal-hydraulic",
+        "slug": "thermal-hydraulic"
+      },
+      {
+        "name": "Bayesian",
+        "slug": "bayesian"
+      },
+      {
+        "name": "water-management",
+        "slug": "water-management"
+      }
+    ],
+    "doi": "10.25914/t2mn-bk81",
+    "doi_href": "https://doi.org/10.25914/t2mn-bk81",
+    "doi_display": "10.25914/t2mn-bk81"
+  },
+  {
+    "slug": "sachau-2022-icesheet",
+    "title": "ISMIP-HOM benchmark experiments using Underworld",
+    "img_url": "https://raw.githubusercontent.com/ModelAtlasofTheEarth/sachau-2022-icesheet/main/.website_material/graphics/gmd-15-8749-2022-f09.png",
+    "creators": [
+      {
+        "full_name": "Till Sachau",
+        "slug": "till-sachau"
+      },
+      {
+        "full_name": "Haibin Yang",
+        "slug": "haibin-yang"
+      },
+      {
+        "full_name": "Paul D. Bons",
+        "slug": "paul-d-bons"
+      },
+      {
+        "full_name": "Louis Moresi",
+        "slug": "louis-moresi"
+      }
+    ],
+    "tags": [
+      {
+        "name": "ice-sheet",
+        "slug": "ice-sheet"
+      },
+      {
+        "name": "benchmark",
+        "slug": "benchmark"
+      },
+      {
+        "name": "Stokes",
+        "slug": "stokes"
+      },
+      {
+        "name": "anisotropy",
+        "slug": "anisotropy"
+      },
+      {
+        "name": "mechanical",
+        "slug": "mechanical"
+      }
+    ],
+    "doi": "10.25914/fhew-h678",
+    "doi_href": "https://doi.org/10.25914/fhew-h678",
+    "doi_display": "10.25914/fhew-h678"
+  },
+  {
+    "slug": "Yu-2025-granulites",
+    "title": "Rift foundering and the generation of non-orogenic granulites during the Mesoproterozoic",
+    "img_url": "models/_graphics/Yu-2025-granulites_landing.png",
+    "creators": [
+      {
+        "full_name": "Ben S. Knight",
+        "slug": "ben-s-knight"
+      }
+    ],
+    "tags": [
+      {
+        "name": "granulites",
+        "slug": "granulites"
+      },
+      {
+        "name": "melt",
+        "slug": "melt"
+      },
+      {
+        "name": "emplacement",
+        "slug": "emplacement"
+      }
+    ],
+    "doi": "10.25914/0a2t-by03",
+    "doi_href": "https://doi.org/10.25914/0a2t-by03",
+    "doi_display": "10.25914/0a2t-by03"
+  },
+  {
+    "slug": "cenki-tok-2020-crustal-roots-in-stable-continents",
+    "title": "Strain and retrogression partitioning explain long-term stability of crustal roots in stable continents",
+    "img_url": "https://raw.githubusercontent.com/ModelAtlasofTheEarth/cenki-tok-2020-crustal-roots-in-stable-continents/main/.website_material/graphics/459D1B30-8E88-4E84-81CE-3201350F335A.jpg",
+    "creators": [
+      {
+        "full_name": "B\u00e9n\u00e9dicte Cenki-Tok or Cenki",
+        "slug": "b\u00e9n\u00e9dicte-cenki-tok-or-cenki"
+      },
+      {
+        "full_name": "Patrice Rey",
+        "slug": "patrice-rey"
+      },
+      {
+        "full_name": "Diane Arcay",
+        "slug": "diane-arcay"
+      }
+    ],
+    "tags": [
+      {
+        "name": "crustal roots",
+        "slug": "crustal-roots"
+      },
+      {
+        "name": "stability",
+        "slug": "stability"
+      },
+      {
+        "name": "retrogression",
+        "slug": "retrogression"
+      }
+    ],
+    "doi": "10.25914/tm6d-t466",
+    "doi_href": "https://doi.org/10.25914/tm6d-t466",
+    "doi_display": "10.25914/tm6d-t466"
+  },
+  {
+    "slug": "cenki-2022-uht-granulitic-terranes",
+    "title": "Timing of partial melting and granulite formation during the genesis of high to ultra\u2010high temperature terranes: Insight from numerical experiments",
+    "img_url": "https://raw.githubusercontent.com/ModelAtlasofTheEarth/cenki-2022-uht-granulitic-terranes/main/.website_material/graphics/Figure2_v9.png",
+    "creators": [
+      {
+        "full_name": "B\u00e9n\u00e9dicte Cenki-Tok or Cenki",
+        "slug": "b\u00e9n\u00e9dicte-cenki-tok-or-cenki"
+      },
+      {
+        "full_name": "Patrice F. Rey",
+        "slug": "patrice-f-rey"
+      },
+      {
+        "full_name": "Diane Arcay",
+        "slug": "diane-arcay"
+      },
+      {
+        "full_name": "Julian Giordani",
+        "slug": "julian-giordani"
+      }
+    ],
+    "tags": [],
+    "doi": "10.25914/aaen-nc33",
+    "doi_href": "https://doi.org/10.25914/aaen-nc33",
+    "doi_display": "10.25914/aaen-nc33"
+  },
+  {
+    "slug": "finch-2024-cprime",
+    "title": "The ephemeral development of C\u2032 shear bands: A numerical modelling approach",
+    "img_url": "https://raw.githubusercontent.com/ModelAtlasofTheEarth/finch-2024-cprime/main/.website_material/graphics/Fig  3.png",
+    "creators": [
+      {
+        "full_name": "Melanie Finch",
+        "slug": "melanie-finch"
+      },
+      {
+        "full_name": "P.D. Bons",
+        "slug": "pd-bons"
+      },
+      {
+        "full_name": "Florian Steinbach",
+        "slug": "florian-steinbach"
+      },
+      {
+        "full_name": "Albert Griera Artigas",
+        "slug": "albert-griera-artigas"
+      },
+      {
+        "full_name": "Maria-Gema Llorens",
+        "slug": "maria-gema-llorens"
+      },
+      {
+        "full_name": "E. Gomez-Rivas",
+        "slug": "e-gomez-rivas"
+      },
+      {
+        "full_name": "H. Ran",
+        "slug": "h-ran"
+      },
+      {
+        "full_name": "T. de Riese",
+        "slug": "t-de-riese"
+      }
+    ],
+    "tags": [],
+    "doi": "10.25914/whbg-hd74",
+    "doi_href": "https://doi.org/10.25914/whbg-hd74",
+    "doi_display": "10.25914/whbg-hd74"
+  },
+  {
+    "slug": "yang-2023-eqcycles",
+    "title": "Numerical Modeling of Earthquake Cycles Based On Navier-Stokes Equations With Viscoelastic-Plasticity Rheology",
+    "img_url": "https://raw.githubusercontent.com/ModelAtlasofTheEarth/yang-2023-eqcycles/main/.website_material/graphics/Fig5_Compare1100.jpg",
+    "creators": [
+      {
+        "full_name": "Haibin Yang",
+        "slug": "haibin-yang"
+      },
+      {
+        "full_name": "Louis Moresi",
+        "slug": "louis-moresi"
+      },
+      {
+        "full_name": "Huihui Weng",
+        "slug": "huihui-weng"
+      },
+      {
+        "full_name": "Julian Giordani",
+        "slug": "julian-giordani"
+      }
+    ],
+    "tags": [
+      {
+        "name": "Earthquake Cycles",
+        "slug": "earthquake-cycles"
+      },
+      {
+        "name": "Navier-Stokes",
+        "slug": "navier-stokes"
+      },
+      {
+        "name": "Viscoelastic-Plasticity",
+        "slug": "viscoelastic-plasticity"
+      },
+      {
+        "name": "Cratonic Earthquakes",
+        "slug": "cratonic-earthquakes"
+      }
+    ],
+    "doi": "10.25914/3jz9-mv44",
+    "doi_href": "https://doi.org/10.25914/3jz9-mv44",
+    "doi_display": "10.25914/3jz9-mv44"
+  },
+  {
+    "slug": "RodriguezCorcho-2022-ArcCollision",
+    "title": "The Role of Lithospheric-Deep Mantle Interactions on the Style and Stress Evolution of Arc-Continent Collision",
+    "img_url": "https://raw.githubusercontent.com/ModelAtlasofTheEarth/RodriguezCorcho-2022-ArcCollision/main/.website_material/graphics/landing_image.png",
+    "creators": [
+      {
+        "full_name": "Andr\u00e9s Felipe Rodr\u00edguez Corcho",
+        "slug": "andr\u00e9s-felipe-rodr\u00edguez-corcho"
+      },
+      {
+        "full_name": "Sara Polanco",
+        "slug": "sara-polanco"
+      },
+      {
+        "full_name": "Rebecca Farrington",
+        "slug": "rebecca-farrington"
+      },
+      {
+        "full_name": "Romain Beucher",
+        "slug": "romain-beucher"
+      },
+      {
+        "full_name": "Camilo Montes",
+        "slug": "camilo-montes"
+      },
+      {
+        "full_name": "Louis Moresi",
+        "slug": "louis-moresi"
+      }
+    ],
+    "tags": [
+      {
+        "name": "buoyancy contrast",
+        "slug": "buoyancy-contrast"
+      },
+      {
+        "name": "gravitational collapse",
+        "slug": "gravitational-collapse"
+      },
+      {
+        "name": "arc-collision",
+        "slug": "arc-collision"
+      },
+      {
+        "name": "slab-folding",
+        "slug": "slab-folding"
+      },
+      {
+        "name": "slab-anchoring",
+        "slug": "slab-anchoring"
+      }
+    ],
+    "doi": "10.25914/xy60-b940",
+    "doi_href": "https://doi.org/10.25914/xy60-b940",
+    "doi_display": "10.25914/xy60-b940"
+  },
+  {
+    "slug": "gollapalli-2022-sunda-subduction",
+    "title": "Subduction dynamics and plate coupling along seismically active margin: the role of slab steps",
+    "img_url": "https://raw.githubusercontent.com/ModelAtlasofTheEarth/gollapalli-2022-sunda-subduction/main/.website_material/graphics/vel_sr_inv_landing_page.jpg",
+    "creators": [
+      {
+        "full_name": "Thyagarajulu Gollapalli",
+        "slug": "thyagarajulu-gollapalli"
+      }
+    ],
+    "tags": [],
+    "doi": "10.25914/vw5k-q269",
+    "doi_href": "https://doi.org/10.25914/vw5k-q269",
+    "doi_display": "10.25914/vw5k-q269"
+  }
+]
