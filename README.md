@@ -81,7 +81,7 @@ models:
     repo: ModelAtlasofTheEarth/my-new-model
 ```
 
-2. Run `pixi run ingest` to fetch model metadata and regenerate all pages locally,
+2. Run `pixi run heymate` to fetch all models' metadata and regenerate all pages locally,
    or just commit and push — CI handles everything automatically.
 
 
