@@ -3,7 +3,7 @@
 scripts/model_renderer.py — Shared HTML generation for M@TE model pages
 ======================================================================
 Used by:
-  - ingest_models.py (generates models/index.qmd, tags/*, creators/*)
+  - ingest_models.py (generates generated/models/index.qmd, generated/tags/*, generated/creators/*)
   - _extensions/mate/model-page.py (pandoc filter for per-model pages)
 """
 
@@ -49,7 +49,7 @@ def creator_badges_html(creators: list, linked: bool = True, indent: int = 4) ->
     """Return HTML badge elements for a list of model creators.
 
     Each creator is rendered as either a linked ``<a>`` (pointing to their
-    ``/creators/{slug}.html`` page) or an unlinked ``<span>``, styled with
+    ``/generated/creators/{slug}.html`` page) or an unlinked ``<span>``, styled with
     the ``badge-creator`` CSS class.
 
     Args:
@@ -73,7 +73,7 @@ def creator_badges_html(creators: list, linked: bool = True, indent: int = 4) ->
         slug = _creator_slug(name)
         if linked:
             parts.append(
-                f'{pad}<a class="badge-creator" href="/creators/{slug}.html">{name}</a>'
+                f'{pad}<a class="badge-creator" href="/generated/creators/{slug}.html">{name}</a>'
             )
         else:
             parts.append(f'{pad}<span class="badge-creator">{name}</span>')
@@ -84,7 +84,7 @@ def tag_badges_html(tags: list, linked: bool = True, indent: int = 4) -> str:
     """Return HTML badge elements for a list of research or compute tags.
 
     Each tag is rendered as either a linked ``<a>`` (pointing to
-    ``/tags/{slug}.html``) or an unlinked ``<span>``, styled with the
+    ``/generated/tags/{slug}.html``) or an unlinked ``<span>``, styled with the
     ``badge-tag`` CSS class.
 
     Args:
@@ -103,7 +103,7 @@ def tag_badges_html(tags: list, linked: bool = True, indent: int = 4) -> str:
             continue
         slug = _tag_slug(t)
         if linked:
-            parts.append(f'{pad}<a class="badge-tag" href="/tags/{slug}.html">{t}</a>')
+            parts.append(f'{pad}<a class="badge-tag" href="/generated/tags/{slug}.html">{t}</a>')
         else:
             parts.append(f'{pad}<span class="badge-tag">{t}</span>')
     return "\n".join(parts)
@@ -432,8 +432,8 @@ def render_model_page(m: dict) -> str:
 def model_card_html(m: dict) -> str:
     """Render an HTML summary card for use in model listing pages.
 
-    Used by ``ingest_models.py`` when generating ``models/index.qmd``,
-    tag pages (``tags/*.qmd``), and creator pages (``creators/*.qmd``).
+    Used by ``ingest_models.py`` when generating ``generated/models/index.qmd``,
+    tag pages (``generated/tags/*.qmd``), and creator pages (``generated/creators/*.qmd``).
     Each card is a clickable ``<a>`` element containing a thumbnail image,
     model title, up to three creator badges, up to five tag badges, and
     a DOI badge.
@@ -466,14 +466,14 @@ def model_card_html(m: dict) -> str:
         name = c["full_name"]
         if name:
             cslug = _creator_slug(name)
-            creator_badges += f'\n      <a class="badge-creator" href="/creators/{cslug}.html">{name}</a>'
+            creator_badges += f'\n      <a class="badge-creator" href="/generated/creators/{cslug}.html">{name}</a>'
 
     tag_badges = ""
     for t in m["tags"][:5]:
         if t:
             tslug = _tag_slug(t)
             tag_badges += (
-                f'\n      <a class="badge-tag" href="/tags/{tslug}.html">{t}</a>'
+                f'\n      <a class="badge-tag" href="/generated/tags/{tslug}.html">{t}</a>'
             )
 
     doi_block = ""
@@ -490,7 +490,7 @@ def model_card_html(m: dict) -> str:
        data-title="{title_lc}"
        data-tags="{tags_lc}"
        data-creators="{creators_lc}">
-    <a href="/models/{slug}.html" class="mc-card-link">
+    <a href="/generated/models/{slug}.html" class="mc-card-link">
       <img src="{img_url}"
            alt="{title}"
            onerror="this.src='https://placehold.co/600x300/D64000/white?text=M%40TE+Model';" />

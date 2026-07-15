@@ -117,7 +117,7 @@ Submissions are currently **by invitation only** as M@TE is being intentional ab
 
 For general enquiries about M@TE, please open a GitHub Discussion or Issue in the main repository:
 
-👉 **[ModelAtlasofTheEarth/website](https://github.com/ModelAtlasofTheEarth/website)**
+👉 **[ModelAtlasofTheEarth/mate-website](https://github.com/ModelAtlasofTheEarth/mate-website)**
 
 ---
 

@@ -6,12 +6,12 @@ Reads _registry.yml, fetches each model's root-level
 ro-crate-metadata.json from GitHub, normalises the
 data into a common schema, then generates:
 
-  models/{slug}.qmd               — detailed model page (tabbed layout)
-  models/index.qmd                — model listing page (real cards)
-  tags/index.qmd                  — tag cloud browse page
-  tags/{tag-slug}.qmd             — one page per unique tag
-  creators/index.qmd              — A–Z creator listing
-  creators/{creator-slug}.qmd     — one page per unique creator
+  generated/models/{slug}.qmd          — detailed model page (tabbed layout)
+  generated/models/index.qmd           — model listing page (real cards)
+  generated/tags/index.qmd             — tag cloud browse page
+  generated/tags/{tag-slug}.qmd        — one page per unique tag
+  generated/creators/index.qmd         — A–Z creator listing
+  generated/creators/{creator-slug}.qmd — one page per unique creator
 
 Run this script from the repository root before `quarto render`:
   python scripts/ingest_models.py
@@ -25,6 +25,7 @@ import re
 import subprocess
 import sys
 import tempfile
+import time
 from typing import Dict, List, Optional, Set, Tuple
 
 import requests
@@ -40,9 +41,10 @@ from scripts import model_renderer
 # Paths (relative to repo root)
 # ---------------------------------------------------------------------------
 REGISTRY_PATH = os.path.join(REPO_ROOT, "_registry.yml")
-MODELS_DIR = os.path.join(REPO_ROOT, "models")
-TAGS_DIR = os.path.join(REPO_ROOT, "tags")
-CREATORS_DIR = os.path.join(REPO_ROOT, "creators")
+GENERATED_DIR = os.path.join(REPO_ROOT, "generated")
+MODELS_DIR = os.path.join(GENERATED_DIR, "models")
+TAGS_DIR = os.path.join(GENERATED_DIR, "tags")
+CREATORS_DIR = os.path.join(GENERATED_DIR, "creators")
 
 # ---------------------------------------------------------------------------
 # Slug helpers
@@ -97,13 +99,43 @@ def parse_registry(path: str) -> List[dict]:
     return entries
 
 
-def fetch_raw(url: str) -> Optional[str]:
-    try:
-        r = requests.get(url, timeout=15)
-        if r.status_code == 200:
-            return r.text
-    except Exception as exc:
-        print(f"  WARNING: fetch failed for {url}: {exc}", file=sys.stderr)
+def fetch_raw(url: str, timeout: int = 30, max_retries: int = 3) -> Optional[str]:
+    """Fetch URL content with exponential backoff retry."""
+    for attempt in range(1, max_retries + 1):
+        try:
+            r = requests.get(url, timeout=timeout)
+            if r.status_code == 200:
+                return r.text
+        except Exception as exc:
+            print(
+                f"  WARNING: fetch attempt {attempt}/{max_retries} failed for {url}: {exc}",
+                file=sys.stderr,
+            )
+        if attempt < max_retries:
+            delay = 2**attempt
+            print(f"  Retrying in {delay}s...", file=sys.stderr)
+            time.sleep(delay)
+    return None
+
+
+def fetch_raw_bytes(
+    url: str, timeout: int = 60, max_retries: int = 3
+) -> Optional[bytes]:
+    """Fetch binary URL content with exponential backoff retry."""
+    for attempt in range(1, max_retries + 1):
+        try:
+            r = requests.get(url, timeout=timeout)
+            if r.status_code == 200:
+                return r.content
+        except Exception as exc:
+            print(
+                f"  WARNING: fetch attempt {attempt}/{max_retries} failed for {url}: {exc}",
+                file=sys.stderr,
+            )
+        if attempt < max_retries:
+            delay = 2**attempt
+            print(f"  Retrying in {delay}s...", file=sys.stderr)
+            time.sleep(delay)
     return None
 
 
@@ -287,13 +319,13 @@ def _parse_index_sheet(repo: str) -> dict:
 
     # --- Try index.md (YAML frontmatter) ---
     try:
-        r = requests.get(f"{raw_base}/index.md", timeout=15)
-        if r.status_code == 200 and r.text.startswith("---"):
+        r = fetch_raw(f"{raw_base}/index.md", timeout=30)
+        if r and r.startswith("---"):
             import yaml
 
-            end = r.text.find("---", 3)
+            end = r.find("---", 3)
             if end > 0:
-                fm = yaml.safe_load(r.text[3:end])
+                fm = yaml.safe_load(r[3:end])
                 if isinstance(fm, dict):
                     # Check under images: block
                     images = fm.get("images", {}) or {}
@@ -320,16 +352,16 @@ def _parse_index_sheet(repo: str) -> dict:
 
     # --- Try index.json ---
     try:
-        r = requests.get(f"{raw_base}/index.json", timeout=15)
-        if r.status_code == 200:
+        data = fetch_raw(f"{raw_base}/index.json", timeout=30)
+        if data:
             import json
 
-            data = r.json()
-            if isinstance(data, dict):
+            parsed = json.loads(data)
+            if isinstance(parsed, dict):
                 for img_key, (url_key, cap_key) in INDEX_KEYS.items():
                     if result[url_key]:
                         continue  # already set by index.md
-                    entry = data.get(img_key)
+                    entry = parsed.get(img_key)
                     if isinstance(entry, dict):
                         url = _assign(entry)
                         if url:
@@ -368,11 +400,11 @@ def _parse_ro_crate_graphics(repo: str) -> dict | None:
         crate_url = (
             f"https://raw.githubusercontent.com/{repo}/main/ro-crate-metadata.json"
         )
-        r = requests.get(crate_url, timeout=15)
-        if r.status_code != 200:
+        text = fetch_raw(crate_url, timeout=30)
+        if text is None:
             return None
 
-        graph = r.json().get("@graph", [])
+        graph = json.loads(text).get("@graph", [])
         for node in graph:
             if not isinstance(node, dict):
                 continue
@@ -431,7 +463,7 @@ def _convert_pdf_to_png(url: str, slug: str, label: str) -> str:
     """Convert a PDF graphic URL to a local PNG.
 
     Downloads the PDF from *url*, converts the first page to PNG using
-    pdftoppm, and saves to models/_graphics/{slug}_{label}.png.
+    pdftoppm, and saves to generated/models/_graphics/{slug}_{label}.png.
 
     If the URL does not end with ``.pdf``, or if anything fails
     (download error, missing pdftoppm, conversion error), the original
@@ -441,7 +473,7 @@ def _convert_pdf_to_png(url: str, slug: str, label: str) -> str:
     if not url.lower().endswith(".pdf"):
         return url
 
-    out_dir = "models/_graphics"
+    out_dir = os.path.join(MODELS_DIR, "_graphics")
     out_path = os.path.join(out_dir, f"{slug}_{label}.png")
     rel_path = f"_graphics/{slug}_{label}.png"
     if os.path.exists(out_path):
@@ -449,11 +481,13 @@ def _convert_pdf_to_png(url: str, slug: str, label: str) -> str:
 
     os.makedirs(out_dir, exist_ok=True)
 
+    pdf_tmp = None
     try:
-        resp = requests.get(url, timeout=30)
-        resp.raise_for_status()
+        pdf_bytes = fetch_raw_bytes(url, timeout=60, max_retries=3)
+        if pdf_bytes is None:
+            return url
         with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as f:
-            f.write(resp.content)
+            f.write(pdf_bytes)
             pdf_tmp = f.name
 
         prefix = os.path.splitext(out_path)[0]
@@ -470,7 +504,7 @@ def _convert_pdf_to_png(url: str, slug: str, label: str) -> str:
     except Exception:
         return url
     finally:
-        if os.path.exists(pdf_tmp):
+        if pdf_tmp and os.path.exists(pdf_tmp):
             os.unlink(pdf_tmp)
 
     return rel_path if os.path.exists(out_path) else url
@@ -783,7 +817,7 @@ def write_tags_index(
         for tag in tags:
             tslug = tag_slug(tag)
             count = len(all_tags[tag])
-            html += f'  <a class="badge-tag" href="/tags/{tslug}.html">{tag} <small>({count})</small></a>\n'
+            html += f'  <a class="badge-tag" href="/generated/tags/{tslug}.html">{tag} <small>({count})</small></a>\n'
         return html
 
     sections = ""
@@ -857,7 +891,7 @@ def write_creators_index(all_creators: Dict[str, List[dict]]) -> None:
     for name in sorted_names:
         cslug = creator_slug(name)
         count = len(all_creators[name])
-        items_html += f'  <li><a href="/creators/{cslug}.html">{name}</a> <small>({count} model{"s" if count != 1 else ""})</small></li>\n'
+        items_html += f'  <li><a href="/generated/creators/{cslug}.html">{name}</a> <small>({count} model{"s" if count != 1 else ""})</small></li>\n'
 
     content = f"""---
 title: "Creators"
@@ -905,14 +939,14 @@ title: "{yaml_esc(name)}"
 
 
 def write_featured_json(models: List[dict]) -> None:
-    """Write ``models/_featured.json`` — a lightweight JSON snapshot of every
+    """Write ``generated/models/_featured.json`` — a lightweight JSON snapshot of every
     model used by the home-page carousel (``scripts/featured-carousel.js``).
 
     Each entry contains only the fields needed to render a model card in the
     carousel, keeping the file small and avoiding the full model schema.
 
     When ``landing_image_url`` is a local relative path (starts with
-    ``_graphics/``), it is rewritten to ``models/_graphics/…`` so that the
+    ``_graphics/``), it is rewritten to ``generated/models/_graphics/…`` so that the
     URL resolves correctly from the home page at the site root (``/``).
 
     Args:
@@ -922,18 +956,21 @@ def write_featured_json(models: List[dict]) -> None:
     featured = []
     for m in models:
         img_url = m["landing_image_url"] or model_renderer.PLACEHOLDER_IMG
-        # Model pages at /models/{slug}.html resolve a relative _graphics/…
+        # Model pages at /generated/models/{slug}.html resolve a relative _graphics/…
         # path correctly, but the home page at / needs an explicit
-        # /models/ prefix so the browser finds the file.
+        # /generated/models/ prefix so the browser finds the file.
         if img_url.startswith("_graphics/"):
-            img_url = "models/" + img_url
+            img_url = "generated/models/" + img_url
         featured.append(
             {
                 "slug": m["slug"],
                 "title": m["title"],
                 "img_url": img_url,
                 "creators": [
-                    {"full_name": c["full_name"], "slug": model_renderer._creator_slug(c["full_name"])}
+                    {
+                        "full_name": c["full_name"],
+                        "slug": model_renderer._creator_slug(c["full_name"]),
+                    }
                     for c in m["creators"]
                     if c["full_name"]
                 ],
@@ -944,7 +981,9 @@ def write_featured_json(models: List[dict]) -> None:
                 ],
                 "doi": m["doi"],
                 "doi_href": model_renderer.safe_doi(m["doi"]),
-                "doi_display": m["doi"].replace("https://doi.org/", "") if m["doi"] else "",
+                "doi_display": m["doi"].replace("https://doi.org/", "")
+                if m["doi"]
+                else "",
             }
         )
     path = os.path.join(MODELS_DIR, "featured.json")

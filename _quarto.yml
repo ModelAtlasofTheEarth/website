@@ -2,17 +2,16 @@
 # _quarto.yml — M@TE Quarto site configuration
 # =============================================================================
 #
-# Quarto-based replica of the M@TE (Model Atlas of the Earth) website
-# Original site: https://mate.science/
-# Original source: https://github.com/ModelAtlasofTheEarth/website
+# Quarto-powered M@TE (Model Atlas of the Earth) website. Built from the
+# remains for the original Gatsby wesite.
 # =============================================================================
 
 project:
   type: website
   output-dir: _site
   resources:
-    - models/_graphics/
-    - models/featured.json
+    - generated/models/_graphics/
+    - generated/models/featured.json
 
 website:
   title: "M@TE"
@@ -25,12 +24,12 @@ website:
     logo-alt: "M@TE logo"
     left:
       - text: "Models"
-        href: models/index.qmd
+        href: generated/models/index.qmd
         # Disable Tags and Creators for now
       #      - text: "Tags"
-      #        href: tags/index.qmd
+      #        href: generated/tags/index.qmd
       #      - text: "Creators"
-      #        href: creators/index.qmd
+      #        href: generated/creators/index.qmd
       - text: "News"
         href: news/index.qmd
       - text: "About"
