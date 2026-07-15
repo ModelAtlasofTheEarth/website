@@ -3,7 +3,9 @@
 A **Quarto-based static website** that serves [M@TE (Model Atlas of the Earth)](https://mate.science/). Driven by a **model ingestion pipeline** that pulls content directly from M@TE model submission repositories on GitHub.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d4f730fc-398c-4226-9c25-7091734ab1e0/deploy-status)](https://app.netlify.com/projects/mate-science/deploys)
-Original M@TE source: <https://github.com/ModelAtlasofTheEarth/mate-website>
+
+M@TE website ![source](https://github.com/ModelAtlasofTheEarth/mate-website)
+
 ---
 
 ## Quick Start, to run locally.
