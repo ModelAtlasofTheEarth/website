@@ -6,12 +6,12 @@ Reads _registry.yml, fetches each model's root-level
 ro-crate-metadata.json from GitHub, normalises the
 data into a common schema, then generates:
 
-  generated/models/{slug}.qmd          — detailed model page (tabbed layout)
-  generated/models/index.qmd           — model listing page (real cards)
-  generated/tags/index.qmd             — tag cloud browse page
-  generated/tags/{tag-slug}.qmd        — one page per unique tag
-  generated/creators/index.qmd         — A–Z creator listing
-  generated/creators/{creator-slug}.qmd — one page per unique creator
+  models/{slug}.qmd          — detailed model page (tabbed layout)
+  models/index.qmd           — model listing page (real cards)
+  tags/index.qmd             — tag cloud browse page
+  tags/{tag-slug}.qmd        — one page per unique tag
+  creators/index.qmd         — A–Z creator listing
+  creators/{creator-slug}.qmd — one page per unique creator
 
 Run this script from the repository root before `quarto render`:
   python scripts/ingest_models.py
@@ -42,9 +42,9 @@ from scripts import model_renderer
 # ---------------------------------------------------------------------------
 REGISTRY_PATH = os.path.join(REPO_ROOT, "_registry.yml")
 GENERATED_DIR = os.path.join(REPO_ROOT, "generated")
-MODELS_DIR = os.path.join(GENERATED_DIR, "models")
-TAGS_DIR = os.path.join(GENERATED_DIR, "tags")
-CREATORS_DIR = os.path.join(GENERATED_DIR, "creators")
+MODELS_DIR = os.path.join(REPO_ROOT, "models")
+TAGS_DIR = os.path.join(REPO_ROOT, "tags")
+CREATORS_DIR = os.path.join(REPO_ROOT, "creators")
 
 # ---------------------------------------------------------------------------
 # Slug helpers
@@ -497,7 +497,7 @@ def _process_graphic(url: str, slug: str, label: str) -> str:
     """Convert a PDF graphic URL to a local PNG.
 
     Downloads the PDF from *url*, converts the first page to PNG using
-    pdftoppm, and saves to generated/models/_graphics/{slug}_{label}.png.
+    pdftoppm, and saves to models/_graphics/{slug}_{label}.png.
 
     If the URL does not end with ``.pdf``, or if anything fails
     (download error, missing pdftoppm, conversion error), the original
@@ -851,7 +851,7 @@ def write_tags_index(
         for tag in tags:
             tslug = tag_slug(tag)
             count = len(all_tags[tag])
-            html += f'  <a class="badge-tag" href="/generated/tags/{tslug}.html">{tag} <small>({count})</small></a>\n'
+            html += f'  <a class="badge-tag" href="/tags/{tslug}.html">{tag} <small>({count})</small></a>\n'
         return html
 
     sections = ""
@@ -925,7 +925,7 @@ def write_creators_index(all_creators: Dict[str, List[dict]]) -> None:
     for name in sorted_names:
         cslug = creator_slug(name)
         count = len(all_creators[name])
-        items_html += f'  <li><a href="/generated/creators/{cslug}.html">{name}</a> <small>({count} model{"s" if count != 1 else ""})</small></li>\n'
+        items_html += f'  <li><a href="/creators/{cslug}.html">{name}</a> <small>({count} model{"s" if count != 1 else ""})</small></li>\n'
 
     content = f"""---
 title: "Creators"
@@ -973,14 +973,14 @@ title: "{yaml_esc(name)}"
 
 
 def write_featured_json(models: List[dict]) -> None:
-    """Write ``generated/models/_featured.json`` — a lightweight JSON snapshot of every
+    """Write ``models/_featured.json`` — a lightweight JSON snapshot of every
     model used by the home-page carousel (``scripts/featured-carousel.js``).
 
     Each entry contains only the fields needed to render a model card in the
     carousel, keeping the file small and avoiding the full model schema.
 
     When ``landing_image_url`` is a local relative path (starts with
-    ``_graphics/``), it is rewritten to ``generated/models/_graphics/…`` so that the
+    ``_graphics/``), it is rewritten to ``models/_graphics/…`` so that the
     URL resolves correctly from the home page at the site root (``/``).
 
     Args:
@@ -990,11 +990,11 @@ def write_featured_json(models: List[dict]) -> None:
     featured = []
     for m in models:
         img_url = m["landing_image_url"] or model_renderer.PLACEHOLDER_IMG
-        # Model pages at /generated/models/{slug}.html resolve a relative _graphics/…
+        # Model pages at /models/{slug}.html resolve a relative _graphics/…
         # path correctly, but the home page at / needs an explicit
-        # /generated/models/ prefix so the browser finds the file.
+        # /models/ prefix so the browser finds the file.
         if img_url.startswith("_graphics/"):
-            img_url = "generated/models/" + img_url
+            img_url = "models/" + img_url
         featured.append(
             {
                 "slug": m["slug"],

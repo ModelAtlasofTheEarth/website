@@ -50,16 +50,15 @@ mate-website/
 ├── styles/
 │   └── mate.css                 # ← M@TE visual design (colours, badges, tabs)
 ├── images/                      # ← M@TE website images
-├── generated/                   # ← All ingest-generated content (gitignored)
-│   ├── models/
-│   │   ├── _graphics/           # ← Auto-generated PNGs (converted from PDFs)
-│   │   ├── index.qmd            # ← Model listing page
-│   │   ├── featured.json        # ← Home page carousel data
-│   │   └── {slug}.qmd           # ← Per-model YAML frontmatter only
-│   ├── tags/                    # ← Generated tag pages (one per tag)
-│   │   └── {tag-slug}.qmd
-│   └── creators/                # ← Generated creator pages (one per creator)
-│       └── {creator-slug}.qmd
+├── models/                      # ← All ingest-generated content (gitignored)
+│   ├── _graphics/               # ← Auto-generated PNGs (converted from PDFs)
+│   ├── index.qmd                # ← Model listing page
+│   ├── featured.json            # ← Home page carousel data
+│   └── {slug}.qmd               # ← Per-model YAML frontmatter only
+├── tags/                        # ← Generated tag pages (one per tag)
+│   └── {tag-slug}.qmd
+├── creators/                    # ← Generated creator pages (one per creator)
+│   └── {creator-slug}.qmd
 ├── news/
 │   └── index.qmd                # ← News listing page
 └── .github/
@@ -77,8 +76,7 @@ mate-website/
 
 ```yaml
 models:
-  - slug: my-new-model
-    repo: ModelAtlasofTheEarth/my-new-model
+  - repo: ModelAtlasofTheEarth/my-new-model
 ```
 
 2. Run `pixi run heymate` to fetch all models' metadata and regenerate all pages locally,
@@ -117,8 +115,8 @@ The M@TE design is replicated from the original Gatsby/Netlify site:
 | Link colour | `#2c8ec7` (blue) |
 | Navbar / hero background | `#DAE1E3` (light grey-blue) |
 | Font | Open Sans Bold, sans-serif |
-| Tag badges | Blue (`#2c8ec7`), link to `/generated/tags/{slug}.html` |
-| Creator badges | Grey (`#6c757d`), link to `/generated/creators/{slug}.html` |
+| Tag badges | Blue (`#2c8ec7`), link to `/tags/{slug}.html` |
+| Creator badges | Grey (`#6c757d`), link to `/creators/{slug}.html` |
 | DOI badges | Two-part: grey `#555` + blue `#007ec6` |
 
 ---
@@ -128,19 +126,19 @@ The M@TE design is replicated from the original Gatsby/Netlify site:
 | Page | File | Source | Description |
 |------|------|--------|-------------|
 | Home | `index.qmd` | hand-authored | Hero section + model card grid + highlights |
-| Models | `generated/models/index.qmd` | generated | Searchable/filterable model listing |
-| Model detail | `generated/models/{slug}.qmd` | generated | YAML frontmatter only — HTML rendered at build time by pandoc filter |
-| Tags | `generated/tags/index.qmd` | generated | (Hidden) Tag cloud browse page |
-| Tag detail | `generated/tags/{tag}.qmd` | generated | All models sharing a tag |
-| Creators | `generated/creators/index.qmd` | generated | (Hidden) A–Z creator listing |
-| Creator detail | `generated/creators/{creator}.qmd` | generated | All models by a creator |
+| Models | `models/index.qmd` | generated | Searchable/filterable model listing |
+| Model detail | `models/{slug}.qmd` | generated | YAML frontmatter only — HTML rendered at build time by pandoc filter |
+| Tags | `tags/index.qmd` | generated | (Hidden) Tag cloud browse page |
+| Tag detail | `tags/{tag}.qmd` | generated | All models sharing a tag |
+| Creators | `creators/index.qmd` | generated | (Hidden) A–Z creator listing |
+| Creator detail | `creators/{creator}.qmd` | generated | All models by a creator |
 | News | `news/index.qmd` | hand-authored | News listing placeholder |
 | About | `about.qmd` | hand-authored | What M@TE is and how it works |
 | Contact | `contact.qmd` | hand-authored | Model submission info |
 
 ### How model detail pages are rendered
 
-The per-model QMDs (`generated/models/{slug}.qmd`) contain **no HTML body** — only a YAML
+The per-model QMDs (`models/{slug}.qmd`) contain **no HTML body** — only a YAML
 frontmatter block with all model data nested under a `model:` key:
 
 ```yaml

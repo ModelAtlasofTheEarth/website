@@ -10,8 +10,8 @@ project:
   type: website
   output-dir: _site
   resources:
-    - generated/models/_graphics/
-    - generated/models/featured.json
+    - models/_graphics/
+    - models/featured.json
 
 website:
   title: "M@TE"
@@ -24,12 +24,12 @@ website:
     logo-alt: "M@TE logo"
     left:
       - text: "Models"
-        href: generated/models/index.qmd
+        href: models/index.qmd
         # Disable Tags and Creators for now
       #      - text: "Tags"
-      #        href: generated/tags/index.qmd
+      #        href: tags/index.qmd
       #      - text: "Creators"
-      #        href: generated/creators/index.qmd
+      #        href: creators/index.qmd
       - text: "News"
         href: news/index.qmd
       - text: "About"

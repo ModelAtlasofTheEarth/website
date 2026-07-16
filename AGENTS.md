@@ -14,7 +14,7 @@
 | `pixi run render` | `quarto render` — produce HTML in `_site/` |
 | `pixi run build` | **ingest → render** (order matters; use this in CI) |
 | `pixi run heymate` | ingest → preview (full local dev) |
-| `pixi run clean` | Wipe all generated files (`_site/`, `_freeze/`, `.quarto/`, `generated/`) |
+| `pixi run clean` | Wipe all generated files (`_site/`, `_freeze/`, `.quarto/`, `models/`, `tags/`, `creators/`) |
 
 **Build order**: `ingest` must run before `render`. Prefer `pixi run build` or `pixi run heymate` to get the order right.
 
@@ -33,7 +33,7 @@
 
 ## How model pages work
 
-Per-model QMDs (`generated/models/{slug}.qmd`) contain **YAML frontmatter only** — no HTML body.
+Per-model QMDs (`models/{slug}.qmd`) contain **YAML frontmatter only** — no HTML body.
 All model data lives under a `model:` key:
 
 ```yaml
@@ -70,16 +70,15 @@ Two known edge cases fixed in this codebase:
 1. Add entry to `_registry.yml`:
    ```yaml
    models:
-     - slug: my-model
-       repo: ModelAtlasofTheEarth/my-model
+     - repo: ModelAtlasofTheEarth/my-model
    ```
 2. Run `pixi run build` (or push to `main` — CI handles it).
 3. Never commit generated files — they are gitignored.
 
 ## Generated files (all gitignored, never commit)
 
-- `generated/models/*.qmd`, `generated/models/_graphics/`
-- `generated/tags/`, `generated/creators/`
+- `models/*.qmd`, `models/_graphics/`
+- `tags/`, `creators/`
 - `_site/`, `_freeze/`, `.quarto/`
 
 ## Data source
@@ -97,8 +96,8 @@ Two known edge cases fixed in this codebase:
 | Link | `#2c8ec7` |
 | Navbar/hero bg | `#DAE1E3` |
 | Font | Open Sans |
-| Tag badges | Blue `#2c8ec7` → `/generated/tags/{slug}.html` |
-| Creator badges | Grey `#6c757d` → `/generated/creators/{slug}.html` |
+| Tag badges | Blue `#2c8ec7` → `/tags/{slug}.html` |
+| Creator badges | Grey `#6c757d` → `/creators/{slug}.html` |
 | DOI badges | Grey `#555` + blue `#007ec6` |
 
 `styles/mate.css` is the primary theme file. `styles.css` provides additional site-wide styling on top of the cosmo Quarto theme.

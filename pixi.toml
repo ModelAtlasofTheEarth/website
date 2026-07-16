@@ -14,7 +14,7 @@ heymate = { depends-on = [
   "ingest",
   "preview",
 ], description = "Runs a local version of the M@TE website" }
-clean = { cmd = "rm -rf _site _freeze .quarto generated/", description = "Remove all website material" }
+clean = { cmd = "rm -rf _site _freeze .quarto models/ tags/ creators/", description = "Remove all website material" }
 
 [dependencies]
 python = ">=3.10"
