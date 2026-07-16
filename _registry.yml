@@ -5,30 +5,22 @@
 # python scripts/ingest_models.py automatically before each render.
 # Each entry needs only the GitHub repo — all metadata comes from the
 # repo root ro-crate-metadata.json (or ro-create-metadata.json, RO-Crate 1.1 format).
+# The model slug is derived from the repo name (the part after the owner).
+# An optional MATE DOI can be provided by the author; if present it is
+# displayed on the model's "Code & Data" tab.
 # =============================================================================
 
 models:
-  - slug: polanco-2024-deltas
-    repo: ModelAtlasofTheEarth/polanco-2024-deltas
-  - slug: sandiford-2021-detachment
-    repo: ModelAtlasofTheEarth/sandiford-2021-detachment
-  - slug: sandifordcraig-2023-subduction
-    repo: ModelAtlasofTheEarth/sandifordcraig-2023-subduction
-  - slug: mather-2022-groundwater
-    repo: ModelAtlasofTheEarth/mather-2022-groundwater
-  - slug: sachau-2022-icesheet
-    repo: ModelAtlasofTheEarth/sachau-2022-icesheet
-  - slug: Yu-2025-granulites
-    repo: ModelAtlasofTheEarth/Yu-2025-granulites
-  - slug: cenki-tok-2020-crustal-roots-in-stable-continents
-    repo: ModelAtlasofTheEarth/cenki-tok-2020-crustal-roots-in-stable-continents
-  - slug: cenki-2022-uht-granulitic-terranes
-    repo: ModelAtlasofTheEarth/cenki-2022-uht-granulitic-terranes
-  - slug: finch-2024-cprime
-    repo: ModelAtlasofTheEarth/finch-2024-cprime
-  - slug: yang-2023-eqcycles
-    repo: ModelAtlasofTheEarth/yang-2023-eqcycles
-  - slug: RodriguezCorcho-2022-ArcCollision
-    repo: ModelAtlasofTheEarth/RodriguezCorcho-2022-ArcCollision
-  - slug: gollapalli-2022-sunda-subduction
-    repo: ModelAtlasofTheEarth/gollapalli-2022-sunda-subduction
+  - repo: ModelAtlasofTheEarth/polanco-2024-deltas
+    doi: "10.xxxx/mate.polanco.2024"
+  - repo: ModelAtlasofTheEarth/sandiford-2021-detachment
+  - repo: ModelAtlasofTheEarth/sandifordcraig-2023-subduction
+  - repo: ModelAtlasofTheEarth/mather-2022-groundwater
+  - repo: ModelAtlasofTheEarth/sachau-2022-icesheet
+  - repo: ModelAtlasofTheEarth/Yu-2025-granulites
+  - repo: ModelAtlasofTheEarth/cenki-tok-2020-crustal-roots-in-stable-continents
+  - repo: ModelAtlasofTheEarth/cenki-2022-uht-granulitic-terranes
+  - repo: ModelAtlasofTheEarth/finch-2024-cprime
+  - repo: ModelAtlasofTheEarth/yang-2023-eqcycles
+  - repo: ModelAtlasofTheEarth/RodriguezCorcho-2022-ArcCollision
+  - repo: ModelAtlasofTheEarth/gollapalli-2022-sunda-subduction

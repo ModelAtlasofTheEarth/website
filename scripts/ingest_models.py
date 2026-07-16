@@ -75,64 +75,77 @@ def tag_slug(tag: str) -> str:
 
 def parse_registry(path: str) -> List[dict]:
     """
-    Parse a minimal registry YAML with entries under:
+    Parse _registry.yml using the standard PyYAML library.
+
+    Expected schema:
+
       models:
-        - slug: ...
-          repo: Owner/repo
+        - repo: ModelAtlasofTheEarth/slug-name
+          doi: xxx.xxx/xxx  # optional
+
+    Returns a list of dicts, each with keys ``repo``, ``slug`` (derived from
+    the repo name), and optionally ``doi``.
     """
-    entries: List[dict] = []
-    current: Dict[str, str] = {}
     with open(path, encoding="utf-8") as f:
-        for line in f:
-            stripped = line.strip()
-            if not stripped or stripped.startswith("#"):
-                continue
-            if stripped.startswith("- slug:"):
-                if current.get("slug") and current.get("repo"):
-                    entries.append(current)
-                current = {"slug": stripped.split(":", 1)[1].strip()}
-            elif stripped.startswith("repo:"):
-                if current:
-                    current["repo"] = stripped.split(":", 1)[1].strip()
-    if current.get("slug") and current.get("repo"):
-        entries.append(current)
+        data = yaml.safe_load(f)
+
+    entries: List[dict] = []
+    for item in data.get("models", []):
+        repo = item["repo"]
+        slug = repo.split("/")[1] if "/" in repo else repo
+        entry = {"repo": repo, "slug": slug}
+        if item.get("doi"):
+            entry["doi"] = str(item["doi"]).strip()
+        entries.append(entry)
     return entries
 
 
-def fetch_raw(url: str, timeout: int = 30, max_retries: int = 3) -> Optional[str]:
-    """Fetch URL content with exponential backoff retry."""
-    for attempt in range(1, max_retries + 1):
+def fetch_raw(
+    url: str,
+    timeout: int = 30,
+    max_retries: int = 3,
+    log_failures: bool = True,
+    as_bytes: bool = False,
+) -> Optional[str | bytes]:
+    """Fetch URL content with exponential backoff retry.
+
+    Args:
+        url: URL to fetch.
+        timeout: Request timeout in seconds.
+        max_retries: Maximum number of retry attempts when *log_failures* is
+            True.  When *log_failures* is False only one attempt is made.
+        log_failures: If True (default), print warnings for non-200 status
+            codes and exceptions, and retry on failure.  Set to False for
+            optional probes where a 404 is expected — in this mode only
+            one attempt is made and no warnings are printed.
+        as_bytes: If False (default), returns the response body as decoded
+            text (``r.text``).  Set to True to return raw bytes
+            (``r.content``), e.g. for downloading binary files such as PDFs
+            for conversion to PNG.
+
+    Returns:
+        Response body as ``str`` or ``bytes``, or ``None`` if all attempts
+        failed.
+    """
+    attempts = max_retries if log_failures else 1
+    for attempt in range(1, attempts + 1):
         try:
             r = requests.get(url, timeout=timeout)
             if r.status_code == 200:
-                return r.text
+                return r.content if as_bytes else r.text
+            if log_failures:
+                print(
+                    f"  WARNING: fetch attempt {attempt}/{attempts} for {url}: "
+                    f"HTTP {r.status_code}",
+                    file=sys.stderr,
+                )
         except Exception as exc:
-            print(
-                f"  WARNING: fetch attempt {attempt}/{max_retries} failed for {url}: {exc}",
-                file=sys.stderr,
-            )
-        if attempt < max_retries:
-            delay = 2**attempt
-            print(f"  Retrying in {delay}s...", file=sys.stderr)
-            time.sleep(delay)
-    return None
-
-
-def fetch_raw_bytes(
-    url: str, timeout: int = 60, max_retries: int = 3
-) -> Optional[bytes]:
-    """Fetch binary URL content with exponential backoff retry."""
-    for attempt in range(1, max_retries + 1):
-        try:
-            r = requests.get(url, timeout=timeout)
-            if r.status_code == 200:
-                return r.content
-        except Exception as exc:
-            print(
-                f"  WARNING: fetch attempt {attempt}/{max_retries} failed for {url}: {exc}",
-                file=sys.stderr,
-            )
-        if attempt < max_retries:
+            if log_failures:
+                print(
+                    f"  WARNING: fetch attempt {attempt}/{attempts} failed for {url}: {exc}",
+                    file=sys.stderr,
+                )
+        if attempt < attempts:
             delay = 2**attempt
             print(f"  Retrying in {delay}s...", file=sys.stderr)
             time.sleep(delay)
@@ -319,7 +332,7 @@ def _parse_index_sheet(repo: str) -> dict:
 
     # --- Try index.md (YAML frontmatter) ---
     try:
-        r = fetch_raw(f"{raw_base}/index.md", timeout=30)
+        r = fetch_raw(f"{raw_base}/index.md", timeout=30, log_failures=False)
         if r and r.startswith("---"):
             import yaml
 
@@ -352,7 +365,7 @@ def _parse_index_sheet(repo: str) -> dict:
 
     # --- Try index.json ---
     try:
-        data = fetch_raw(f"{raw_base}/index.json", timeout=30)
+        data = fetch_raw(f"{raw_base}/index.json", timeout=30, log_failures=False)
         if data:
             import json
 
@@ -459,7 +472,7 @@ def discover_graphics(repo: str) -> dict:
     return result
 
 
-def _convert_pdf_to_png(url: str, slug: str, label: str) -> str:
+def _process_graphic(url: str, slug: str, label: str) -> str:
     """Convert a PDF graphic URL to a local PNG.
 
     Downloads the PDF from *url*, converts the first page to PNG using
@@ -483,7 +496,7 @@ def _convert_pdf_to_png(url: str, slug: str, label: str) -> str:
 
     pdf_tmp = None
     try:
-        pdf_bytes = fetch_raw_bytes(url, timeout=60, max_retries=3)
+        pdf_bytes = fetch_raw(url, timeout=60, as_bytes=True)
         if pdf_bytes is None:
             return url
         with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as f:
@@ -510,12 +523,13 @@ def _convert_pdf_to_png(url: str, slug: str, label: str) -> str:
     return rel_path if os.path.exists(out_path) else url
 
 
-def normalise_ro_crate(crate: dict, slug: str, repo: str) -> dict:
+def normalise_ro_crate(crate: dict, slug: str, repo: str, mate_doi: str = "") -> dict:
     """
     Parse a RO-Crate 1.1 @graph into the common normalised schema dict.
     crate: parsed JSON (has "@graph" key)
-    slug: from registry
+    slug: derived from repo name (or alternateName override)
     repo: "Owner/repo-name"
+    mate_doi: optional MATE DOI provided by the author in the registry
     Returns the same schema dict as the old normalisers.
     """
     graph = always_list(crate.get("@graph"))
@@ -664,6 +678,7 @@ def normalise_ro_crate(crate: dict, slug: str, repo: str) -> dict:
         "abstract": abstract,
         "description": description,
         "doi": doi,
+        "mate_doi": mate_doi,
         "creators": creators,
         "tags": tags,
         "research_tags": tags,
@@ -980,6 +995,7 @@ def write_featured_json(models: List[dict]) -> None:
                     if t
                 ],
                 "doi": m["doi"],
+                "mate_doi": m.get("mate_doi", ""),
                 "doi_href": model_renderer.safe_doi(m["doi"]),
                 "doi_display": m["doi"].replace("https://doi.org/", "")
                 if m["doi"]
@@ -1004,26 +1020,27 @@ def main() -> None:
 
     models = []
     for entry in entries:
-        slug = entry["slug"]
         repo = entry["repo"]
+        slug = entry["slug"]
+        mate_doi = entry.get("doi", "")
         print(f"\nIngesting: {slug} from {repo}")
         crate = fetch_ro_crate(repo)
-        m = normalise_ro_crate(crate, slug, repo)
+        m = normalise_ro_crate(crate, slug, repo, mate_doi)
         models.append(m)
-        print(f"  Format: ro-crate  |  title: {m['title'][:60]}")
+        print(f"  Format: ro-crate  |  title: {m['title']}")
 
     # Write individual model pages (YAML frontmatter, no HTML body)
     os.makedirs(MODELS_DIR, exist_ok=True)
     for m in models:
-        # Resolve PDF URLs before writing to YAML frontmatter
         slug = m["slug"]
-        m["landing_image_url"] = _convert_pdf_to_png(
+        # Resolve PDF graphic URLs before writing to YAML frontmatter
+        m["landing_image_url"] = _process_graphic(
             m["landing_image_url"], slug, "landing"
         )
-        m["model_setup_image_url"] = _convert_pdf_to_png(
+        m["model_setup_image_url"] = _process_graphic(
             m["model_setup_image_url"], slug, "setup"
         )
-        m["graphic_abstract_url"] = _convert_pdf_to_png(
+        m["graphic_abstract_url"] = _process_graphic(
             m["graphic_abstract_url"], slug, "abstract"
         )
 

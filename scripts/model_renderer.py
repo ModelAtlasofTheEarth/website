@@ -182,14 +182,14 @@ def render_model_page(m: dict) -> str:
            ``animation_url``, ``model_setup_image_url``, ``dataset_nci_url``,
            ``dataset_existing_id``, ``dataset_notes``, ``model_files_nci_url``,
            ``model_files_existing_id``, ``model_files_notes``, ``licence_url``,
-           ``licence_name``, ``credit_text``, ``funders``, ``source_repo``.
+           ``licence_name``, ``credit_text``, ``funders``, ``source_repo``,
+           ``mate_doi`` (optional).
 
     Returns:
         HTML string starting with ``<div class="model-page">`` ready to be
         embedded directly into a Quarto-rendered page.
     """
     slug = m["slug"]
-    title = m["title"]
 
     doi_raw = m["doi"]
     doi_href = safe_doi(doi_raw)
@@ -265,8 +265,15 @@ def render_model_page(m: dict) -> str:
 
     credit = m["credit_text"]
     source_repo_url = f"https://github.com/{m['source_repo']}"
+    mate_doi = m.get("mate_doi", "")
 
     data_tab_parts = []
+    if mate_doi:
+        mate_doi_href = f"https://doi.org/{mate_doi}" if not mate_doi.startswith("http") else mate_doi
+        data_tab_parts.append(
+            f"        <p><strong>MATE DOI:</strong><br/>"
+            f'<a href="{mate_doi_href}" target="_blank" rel="noopener">{mate_doi}</a></p>'
+        )
     if ds_nci:
         data_tab_parts.append(
             f"        <p><strong>Dataset (NCI catalogue):</strong><br/>"
@@ -350,8 +357,6 @@ def render_model_page(m: dict) -> str:
     ga_url = m["graphic_abstract_url"]
 
     return f"""<div class="model-page">
-
-  <h1>{title}</h1>
 
   <div class="model-meta-block">
     <strong>DOI:</strong>
