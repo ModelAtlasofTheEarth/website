@@ -89,10 +89,12 @@
       '      <br/>',
       tagLinks,
       '      <br/>',
-      '      <a class="badge-doi" href="' + esc(m.doi_href) + '" onclick="event.stopPropagation()" target="_blank" rel="noopener">',
-      '        <span class="badge-doi-left">DOI</span>',
-      '        <span class="badge-doi-right">' + esc(m.doi_display) + '</span>',
-      '      </a>',
+      m.doi_display
+        ? ('      <a class="badge-doi" href="' + esc(m.doi_href) + '" onclick="event.stopPropagation()" target="_blank" rel="noopener">' +
+           '        <span class="badge-doi-left">DOI</span>' +
+           '        <span class="badge-doi-right">' + esc(m.doi_display) + '</span>' +
+           '      </a>')
+        : '      <em style="font-size:12px;color:#888;">DOI not verified.</em>',
       '    </div>',
       '  </div>'
     ].join('\n');

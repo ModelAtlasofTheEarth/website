@@ -6,31 +6,18 @@
 # Each entry needs only the GitHub repo — all metadata comes from the
 # repo root ro-crate-metadata.json (or ro-create-metadata.json, RO-Crate 1.1 format).
 # The model slug is derived from the repo name (the part after the owner).
-# An optional MATE DOI can be provided by the author; if present it is
-# displayed on the model's "Code & Data" tab.
 # =============================================================================
 
 models:
   - repo: ModelAtlasofTheEarth/polanco-2024-deltas
-    doi: https://dx.doi.org/10.25914/4m82-y773
   - repo: ModelAtlasofTheEarth/sandiford-2021-detachment
-    doi: https://dx.doi.org/10.25914/aaen-nc33
   - repo: ModelAtlasofTheEarth/mather-2022-groundwater
-    doi: https://dx.doi.org/10.25914/t2mn-bk81
   - repo: ModelAtlasofTheEarth/RodriguezCorcho-2022-ArcCollision
-    doi: https://dx.doi.org/10.25914/xy60-b940
   - repo: ModelAtlasofTheEarth/sandifordcraig-2023-subduction
-    doi: https://dx.doi.org/10.25914/t13d-0r63
   - repo: ModelAtlasofTheEarth/sachau-2022-icesheet
-    doi: https://dx.doi.org/10.25914/fhew-h678
   - repo: ModelAtlasofTheEarth/Yu-2025-granulites
-    doi: https://dx.doi.org/10.25914/0a2t-by03
   - repo: ModelAtlasofTheEarth/cenki-tok-2020-crustal-roots-in-stable-continents
-    doi: https://dx.doi.org/10.25914/tm6d-t466
   - repo: ModelAtlasofTheEarth/cenki-2022-uht-granulitic-terranes
-    doi: https://dx.doi.org/10.25914/aaen-nc33
   - repo: ModelAtlasofTheEarth/finch-2024-cprime
   - repo: ModelAtlasofTheEarth/yang-2023-eqcycles
-    doi: https://doi.org/10.25914/3jz9-mv44
   - repo: ModelAtlasofTheEarth/gollapalli-2022-sunda-subduction
-    doi: https://dx.doi.org/10.25914/vw5k-q269

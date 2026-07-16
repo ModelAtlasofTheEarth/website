@@ -81,10 +81,9 @@ def parse_registry(path: str) -> List[dict]:
 
       models:
         - repo: ModelAtlasofTheEarth/slug-name
-          doi: xxx.xxx/xxx  # optional
 
-    Returns a list of dicts, each with keys ``repo``, ``slug`` (derived from
-    the repo name), and optionally ``doi``.
+    Returns a list of dicts, each with keys ``repo`` and ``slug`` (derived from
+    the repo name).
     """
     with open(path, encoding="utf-8") as f:
         data = yaml.safe_load(f)
@@ -93,10 +92,7 @@ def parse_registry(path: str) -> List[dict]:
     for item in data.get("models", []):
         repo = item["repo"]
         slug = repo.split("/")[1] if "/" in repo else repo
-        entry = {"repo": repo, "slug": slug}
-        if item.get("doi"):
-            entry["doi"] = str(item["doi"]).strip()
-        entries.append(entry)
+        entries.append({"repo": repo, "slug": slug})
     return entries
 
 
@@ -167,6 +163,31 @@ def fetch_ro_crate(repo: str) -> dict:
         return json.loads(text)
     except json.JSONDecodeError as exc:
         raise RuntimeError(f"Invalid JSON in {ro_file} for {repo}: {exc}") from exc
+
+
+def validate_doi(doi: str, timeout: int = 10) -> bool:
+    """Check whether a DOI resolves via the DOI resolver.
+
+    Sends a HEAD request to ``https://doi.org/{doi}`` and returns ``True``
+    for HTTP 200 or 302 responses.  Returns ``False`` for 404, other
+    error codes, or any network/timeout exception.
+
+    Args:
+        doi: Bare DOI identifier (e.g. ``10.25914/whbg-hd74``).  If empty,
+            returns ``False`` immediately.
+        timeout: Request timeout in seconds.
+
+    Returns:
+        ``True`` if the DOI resolves, ``False`` otherwise.
+    """
+    if not doi:
+        return False
+    url = f"https://doi.org/{doi}"
+    try:
+        r = requests.head(url, timeout=timeout, allow_redirects=True)
+        return r.status_code in (200, 302)
+    except Exception:
+        return False
 
 
 # ---------------------------------------------------------------------------
@@ -523,13 +544,12 @@ def _process_graphic(url: str, slug: str, label: str) -> str:
     return rel_path if os.path.exists(out_path) else url
 
 
-def normalise_ro_crate(crate: dict, slug: str, repo: str, mate_doi: str = "") -> dict:
+def normalise_ro_crate(crate: dict, slug: str, repo: str) -> dict:
     """
     Parse a RO-Crate 1.1 @graph into the common normalised schema dict.
     crate: parsed JSON (has "@graph" key)
     slug: derived from repo name (or alternateName override)
     repo: "Owner/repo-name"
-    mate_doi: optional MATE DOI provided by the author in the registry
     Returns the same schema dict as the old normalisers.
     """
     graph = always_list(crate.get("@graph"))
@@ -678,7 +698,6 @@ def normalise_ro_crate(crate: dict, slug: str, repo: str, mate_doi: str = "") ->
         "abstract": abstract,
         "description": description,
         "doi": doi,
-        "mate_doi": mate_doi,
         "creators": creators,
         "tags": tags,
         "research_tags": tags,
@@ -995,7 +1014,6 @@ def write_featured_json(models: List[dict]) -> None:
                     if t
                 ],
                 "doi": m["doi"],
-                "mate_doi": m.get("mate_doi", ""),
                 "doi_href": model_renderer.safe_doi(m["doi"]),
                 "doi_display": m["doi"].replace("https://doi.org/", "")
                 if m["doi"]
@@ -1022,10 +1040,22 @@ def main() -> None:
     for entry in entries:
         repo = entry["repo"]
         slug = entry["slug"]
-        mate_doi = entry.get("doi", "")
         print(f"\nIngesting: {slug} from {repo}")
         crate = fetch_ro_crate(repo)
-        m = normalise_ro_crate(crate, slug, repo, mate_doi)
+        m = normalise_ro_crate(crate, slug, repo)
+        if not validate_doi(m["doi"]):
+            if m["doi"]:
+                print(
+                    f"  WARNING: DOI does not resolve for {slug}: "
+                    f"https://doi.org/{m['doi']} — model included but DOI will be marked as unverified",
+                    file=sys.stderr,
+                )
+            else:
+                print(
+                    f"  WARNING: No DOI found for {slug} — model included but DOI will be marked as unverified",
+                    file=sys.stderr,
+                )
+            m["doi"] = ""
         models.append(m)
         print(f"  Format: ro-crate  |  title: {m['title']}")
 

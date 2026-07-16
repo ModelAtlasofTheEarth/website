@@ -182,8 +182,7 @@ def render_model_page(m: dict) -> str:
            ``animation_url``, ``model_setup_image_url``, ``dataset_nci_url``,
            ``dataset_existing_id``, ``dataset_notes``, ``model_files_nci_url``,
            ``model_files_existing_id``, ``model_files_notes``, ``licence_url``,
-           ``licence_name``, ``credit_text``, ``funders``, ``source_repo``,
-           ``mate_doi`` (optional).
+            ``licence_name``, ``credit_text``, ``funders``, ``source_repo``.
 
     Returns:
         HTML string starting with ``<div class="model-page">`` ready to be
@@ -265,15 +264,8 @@ def render_model_page(m: dict) -> str:
 
     credit = m["credit_text"]
     source_repo_url = f"https://github.com/{m['source_repo']}"
-    mate_doi = m.get("mate_doi", "")
 
     data_tab_parts = []
-    if mate_doi:
-        mate_doi_href = f"https://doi.org/{mate_doi}" if not mate_doi.startswith("http") else mate_doi
-        data_tab_parts.append(
-            f"        <p><strong>MATE DOI:</strong><br/>"
-            f'<a href="{mate_doi_href}" target="_blank" rel="noopener">{mate_doi}</a></p>'
-        )
     if ds_nci:
         data_tab_parts.append(
             f"        <p><strong>Dataset (NCI catalogue):</strong><br/>"
@@ -360,7 +352,7 @@ def render_model_page(m: dict) -> str:
 
   <div class="model-meta-block">
     <strong>DOI:</strong>
-    {doi_badge_html if doi_badge_html else "<em>Not yet assigned.</em>"}
+    {doi_badge_html if doi_badge_html else "<em>DOI not verified.</em>"}
     <br/><br/>
     <strong>Creators:</strong><br/>
 {creator_hdg_badges}
@@ -489,6 +481,8 @@ def model_card_html(m: dict) -> str:
         <span class="badge-doi-left">DOI</span>
         <span class="badge-doi-right">{doi_display}</span>
       </a>"""
+    else:
+        doi_block = '\n      <br/><em style="font-size:12px;color:#888;">DOI not verified.</em>'
 
     return f"""
   <div class="mc-card-container"
