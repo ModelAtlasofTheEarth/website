@@ -1,4 +1,4 @@
-# AGENTS.md — julesg-org.github.io (M@TE Quarto site)
+# AGENTS.md — M@TE Quarto site
 
 ## Branch & CI
 

@@ -105,7 +105,7 @@ a:hover {
 /* ── Badges ───────────────────────────────────────────────────────────────── */
 .badge-tag {
   background-color: var(--mate-link);
-  color: #eee;
+  color: #fff;
   padding: 2px 8px;
   border-radius: 5px;
   font-size: 13px;
@@ -365,7 +365,6 @@ a:hover {
 .model-page h2 {
   font-size: 22px;
   font-weight: 700;
-  color: var(--mate-primary);
   border-bottom: 2px solid #eee;
   padding-bottom: 0.3rem;
   margin-top: 2rem;
@@ -375,6 +374,16 @@ a:hover {
   color: var(--mate-link);
 }
 
+a.badge-tag {
+  /* Linked variant: explicit color: #fff prevents .model-page a (specificity 0,1,1)
+     from overriding badge text to blue. Same specificity, wins by cascade order. */
+  color: #fff;
+}
+
+a.badge-creator {
+  /* Linked variant: same specificity rationale as a.badge-tag above. */
+  color: #fff;
+}
 .model-page .model-meta-block {
   background: #f8f9fa;
   border-radius: 8px;
@@ -458,7 +467,7 @@ a:hover {
 a.badge-tag { cursor: pointer; }
 a.badge-tag:hover { background-color: var(--mate-primary); text-decoration: none; color: #fff; }
 a.badge-creator { cursor: pointer; text-decoration: none; }
-a.badge-creator:hover { background-color: #444; text-decoration: none; }
+a.badge-creator:hover { background-color: var(--mate-primary); text-decoration: none; color: #fff; }
 
 /* ── Tag cloud page ───────────────────────────────────────────────────────── */
 .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
