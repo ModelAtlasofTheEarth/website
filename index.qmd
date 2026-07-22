@@ -8,55 +8,106 @@ toc: false
 ---
 
 ```{=html}
-<!-- ── Hero ─────────────────────────────────────────────────────────────── -->
-<div class="mate-hero">
+<style>
+  h1.title, .title-block { display: none !important; }
+
+  /* ════════════════════════════════════════════════════════════════════════
+     TUNABLE PARAMETER — adjust carousel height here.
+     Cards that are taller than this value are clipped rather than
+     pushing the page content below the carousel.
+     ════════════════════════════════════════════════════════════════════════ */
+  :root { --carousel-height: 420px; }
+
+  /* ── Eyebrow title block ── */
+  .eyebrow-title {
+    text-align: center;
+    padding: 1.5rem 1rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .eyebrow-title .eyebrow {
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #D64000;
+    margin: 0 0 0.4rem;
+  }
+  .eyebrow-title h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  /* ── Fixed-height carousel: height driven by --carousel-height ── */
+  .featured-carousel {
+    height: var(--carousel-height);
+    overflow: hidden;
+  }
+  .carousel-track    { height: 100%; align-items: stretch; }
+  .mc-card-container { height: 100%; }
+  /* Clip the badge/meta area so long cards don't overflow */
+  .mc-card-meta      { overflow: hidden; max-height: 120px; }
+
+  /* ── Capability tiles — pill shape, center-justified ── */
+  .capability-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1rem;
+    max-width: 880px;
+    margin: 0 auto 2rem;
+  }
+  .cap-tile {
+    background: #f8f9fa;
+    border: 1.5px solid #e4e7ec;
+    border-radius: 999px;
+    padding: 1.4rem 1.2rem 1.2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .cap-tile:hover {
+    box-shadow: 0 4px 14px rgba(214,64,0,0.12);
+    border-color: #D64000;
+  }
+  .cap-tile .cap-icon { font-size: 26px; line-height: 1; }
+  .cap-tile strong    { font-size: 14px; font-weight: 700; color: #D64000; }
+  .cap-tile span      { font-size: 13px; color: #555; line-height: 1.5; }
+
+  /* ── Filled oval highlights — non-interactive, no hover effect ── */
+  .oval-highlights {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin: 1.75rem 0;
+  }
+  .oval-highlights li {
+    background: #D64000;
+    border-radius: 999px;
+    padding: 0.4rem 1.4rem;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    cursor: default;        /* not a link — show default arrow cursor */
+    pointer-events: none;   /* suppress any inherited hover behaviour */
+  }
+</style>
+
+<!-- Eyebrow title -->
+<div class="eyebrow-title">
+  <p class="eyebrow">Model Atlas of the Earth</p>
   <h1>M@TE</h1>
-  <p class="mate-subtitle">Model Atlas of the Earth</p>
-  <p>
-    M@TE is a purpose-built digital platform for geoscience that provides access to computational models of Earth's processes, from the Geosphere to the Hydrosphere, like Zenodo for geoscience but bigger and better.
-  <!-- A curated, open atlas of geoscientific numerical models — reproducible,
-  reusable, and FAIR. -->
-  </p>
-  <br/>
-  Funded by:
-  <br/>
-
-<img src="images/AuScopeLogo.webp" alt="AuScopeLogo" style="height:40px; vertical-alingn:middle;" />
-
-  <br/>
-  <br/>
-  <br/>
-  <a href="models/index.html" class="btn btn-primary" style="background:#D64000; border-color:#D64000; font-size:18px; padding:0.5rem 1.5rem;">
-    Browse Models
-  </a>
-  &nbsp;
-  <a href="about.html" class="btn btn-outline-secondary" style="font-size:18px; padding:0.5rem 1.5rem;">
-    Learn More
-  </a>
 </div>
-```
 
----
-
-## What is M@TE?
-
-**M@TE** (Model Atlas of the Earth) is designed to meet geoscientists where they are: from educators
-and students using visualizations in the classroom to researchers developing and benchmarking new
-numerical models. It lowers the learning curve of numerical models and bridges the gap between
-traditional geology and numerical geosciences.
-
-**M@TE enables you to:**
-
-- **Explore and visualize models** through an intuitive web interface: play animations, use them in your teaching or to better understand Earth system concepts.
-- **Download and build on models** by accessing input files and configuration scripts to reproduce or expand upon simulations on your own.
-- **Analyze and benchmark model outputs** by comparing results across models and datasets without having to recreate simulations from scratch.
-- **Upload your own models** using streamlined tools for packaging code, metadata and outputs — stored, preserved and assigned a DOI for citation.
-
----
-
-## Featured Models
-
-```{=html}
+<!-- Fixed-height carousel -->
 <div id="featured-carousel" class="featured-carousel">
   <div class="carousel-track" id="carousel-track"></div>
   <button class="carousel-btn carousel-prev" id="carousel-prev" aria-label="Previous slide">&#8249;</button>
@@ -68,47 +119,53 @@ traditional geology and numerical geosciences.
   </div>
 </div>
 
-<div style="text-align:center; margin-top:1.5rem;">
-  <a href="models/index.html" class="btn btn-outline-primary" style="border-color:#D64000; color:#D64000;">
+<div style="text-align:center; margin-top:1rem; margin-bottom:2rem; display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap;">
+  <a href="models/index.html" class="btn btn-primary" style="background:#D64000; border-color:#D64000;">
     View all models →
   </a>
+  <a href="about.html" class="btn btn-outline-secondary" style="border-color:#D64000; color:#D64000;">
+    About M@TE →
+  </a>
 </div>
-```
 
----
+<!-- Original wording, centered -->
+<p style="text-align:center; max-width:700px; margin:0 auto 1.75rem; font-size:16px; line-height:1.7; color:#444;">
+  <strong>M@TE</strong> (Model Atlas of the Earth) is a purpose-built digital platform for geoscience
+  that provides access to computational models of Earth's processes, from the Geosphere to the
+  Hydrosphere, like Zenodo for geoscience but bigger and better.
+</p>
 
-## Why M@TE?
+<!-- Capability tiles — pill shape, center-justified, with emojis -->
+<div class="capability-tiles">
+  <div class="cap-tile">
+    <span class="cap-icon">🔍</span>
+    <strong>Explore &amp; visualise</strong>
+    <span>Play animations and use models in teaching or research.</span>
+  </div>
+  <div class="cap-tile">
+    <span class="cap-icon">⬇️</span>
+    <strong>Download &amp; build</strong>
+    <span>Access input files and scripts to reproduce simulations.</span>
+  </div>
+  <div class="cap-tile">
+    <span class="cap-icon">📊</span>
+    <strong>Analyse &amp; benchmark</strong>
+    <span>Compare results across models without rerunning them.</span>
+  </div>
+  <div class="cap-tile">
+    <span class="cap-icon">📦</span>
+    <strong>Upload your models</strong>
+    <span>Packaged, preserved, and assigned a DOI for citation.</span>
+  </div>
+</div>
 
-The field of numerical modeling of Earth's systems is rapidly
-expanding, enabling new insights into the coevolution of the solid
-Earth and surface processes. These models often require
-specialized high-performance computing resources, can take days
-to weeks to run, and generate large volumes of heterogeneous
-output data. Without proper curation and community standards, it
-is difficult to access, interpret, and build upon published work.
-
-M@TE addresses these needs by providing:
-
- * Integrated management of the full model life cycle: code,
-                documentation, output data, publications, figures, animations
-                and metadata 
- * Purpose-built infrastructure for storing, preserving, and
-                sharing computational models
- * A central hub connecting educators, model developers, and
-                geoscientists
- * Support for reproducibility and reuse
- * Built-in DOI creation for persistent, citable results
- * Scalable and sustainable research infrastructure
- * Flexibility for users with different levels of expertise
- * Capabilities beyond general-purpose repositories
-                (e.g., Zenodo, Figshare)
-
-```{=html}
-<ul class="mate-highlights">
-  <li>✅ Open source and free</li>
+<!-- Filled oval highlights (non-interactive) -->
+<ul class="oval-highlights">
+  <li>✅ Open source &amp; free</li>
   <li>🔎 FAIR data principles</li>
   <li>♻️ Reproducible models</li>
-  <li>🏗️ Built on sustainable infrastructure</li>
-  <li>📦 RO-Crate packaging</li>
   <li>🆔 DOI-assigned datasets</li>
+  <li>📦 RO-Crate packaging</li>
+  <li>🏗️ Sustainable infrastructure</li>
 </ul>
+```
