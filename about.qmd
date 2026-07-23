@@ -6,6 +6,9 @@ title: "About M@TE"
 ---
 
 ```{=html}
+<style>
+  h1.title, .title-block { display: none !important; }
+</style>
 <div class="about-page">
 ```
 
@@ -25,7 +28,7 @@ traditional geology and numerical geosciences.
 </a>
 ```
 
-**M@TE enables you to:**
+**M@TE** enables you to:
 
 - **Explore and visualize models** through an intuitive web interface: play animations, use them in your teaching or to better understand Earth system concepts.
 - **Download and build on models** by accessing input files and configuration scripts to reproduce or expand upon simulations on your own.

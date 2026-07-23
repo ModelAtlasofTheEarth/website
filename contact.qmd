@@ -6,6 +6,10 @@ title: "Contact"
 ---
 
 ```{=html}
+<style>
+  h1.title, .title-block { display: none !important; }
+</style>
+
 <div class="people-section">
 
 <h1>Meet the M@TE Team</h1>
