@@ -767,6 +767,14 @@ title: "Models"
 ---
 
 ```{{=html}}
+<style>
+  h1.title, .title-block {{display: none !important; }}
+</style>
+
+<div class="people-section">
+
+<h1>Search the Models</h1>
+
 <div style="padding: 1rem 0;">
   <input
     class="model-search-box"

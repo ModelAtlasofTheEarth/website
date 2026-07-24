@@ -4,15 +4,29 @@
 # =============================================================================
 title: "News"
 ---
+```{=html}
+<style>
+  h1.title, .title-block { display: none !important; }
+</style>
+<div class="about-page">
+```
 
 ::: {.news-section}
 
 # News
 
-Stay up to date with the latest announcements, publications, and events from the M@TE community.
+Stay up to date with the latest announcements, publications, and events from the *M@TE* community.
 
 ---
 
+- **June 2026** - *M@TE* website revamp - now powered by [Quarto](https://quarto.org/)
+
+- **June 2025** - NCI recognises *M@TE* in 2025-annual [report](https://nci.org.au/about-us/annual-reports), page 34.
+
+- **Jan 2025** - *M@TE* features on the RO-crate [website](https://www.researchobject.org/ro-crate/mate)
+
+
+<!--
 ### Coming Soon
 
 News and blog posts will appear here as the M@TE platform grows. Check back for:
@@ -22,8 +36,8 @@ News and blog posts will appear here as the M@TE platform grows. Check back for:
 - **Feature releases** — improvements to the M@TE platform and tooling
 - **Publications** — peer-reviewed papers associated with M@TE models
 
+-->
 ---
-
 In the meantime, follow the M@TE project on GitHub:
 [ModelAtlasofTheEarth](https://github.com/ModelAtlasofTheEarth)
 
