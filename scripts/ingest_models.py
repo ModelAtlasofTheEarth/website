@@ -92,7 +92,8 @@ def parse_registry(path: str) -> List[dict]:
     for item in data.get("models", []):
         repo = item["repo"]
         slug = repo.split("/")[1] if "/" in repo else repo
-        entries.append({"repo": repo, "slug": slug})
+        branch = item.get("branch", "main")
+        entries.append({"repo": repo, "slug": slug, "branch": branch})
     return entries
 
 
@@ -148,21 +149,28 @@ def fetch_raw(
     return None
 
 
-def fetch_ro_crate(repo: str) -> dict:
+def fetch_ro_crate(repo: str, branch: str = "main") -> dict:
     """
     Fetch RO-Crate metadata from repository root for a model repository.
-    """
-    text = None
 
+    Args:
+        repo: GitHub repository in ``Owner/name`` form.
+        branch: Branch to fetch from (default ``"main"``).  If the fetch
+            fails the error is raised immediately — no fallback to ``main``.
+    """
     ro_file = "ro-crate-metadata.json"
-    url = f"https://raw.githubusercontent.com/{repo}/main/{ro_file}"
+    url = f"https://raw.githubusercontent.com/{repo}/{branch}/{ro_file}"
     text = fetch_raw(url)
     if not text:
-        raise RuntimeError(f"Could not fetch {ro_file} for {repo}")
+        raise RuntimeError(
+            f"Could not fetch {ro_file} for {repo} on branch '{branch}'"
+        )
     try:
         return json.loads(text)
     except json.JSONDecodeError as exc:
-        raise RuntimeError(f"Invalid JSON in {ro_file} for {repo}: {exc}") from exc
+        raise RuntimeError(
+            f"Invalid JSON in {ro_file} for {repo} on branch '{branch}': {exc}"
+        ) from exc
 
 
 def validate_doi(doi: str, timeout: int = 10) -> bool:
@@ -302,19 +310,23 @@ GRAPHIC_FIELDS = [
 ]
 
 
-def _parse_index_sheet(repo: str) -> dict:
+def _parse_index_sheet(repo: str, branch: str = "main") -> dict:
     """Backward-compatibility: try to parse an image mapping from legacy
     .website_material/index.md (YAML frontmatter) or .website_material/index.json.
 
     *Future* repositories will NOT have these index files — they will rely on
     the RO-Crate graphic entries parsed by discover_graphics() instead.
     This function exists solely to support repositories created before the
-    June 2026 naming convention without requiring any changes to those
+    June 2026 naming convention without requiring any changes to those
     repositories.
+
+    Args:
+        repo: GitHub repository in ``Owner/name`` form.
+        branch: Branch to fetch from (default ``"main"``).
 
     Returns a standard 8-field dict; any field not found is left empty.
     """
-    raw_base = f"https://raw.githubusercontent.com/{repo}/main/.website_material"
+    raw_base = f"https://raw.githubusercontent.com/{repo}/{branch}/.website_material"
 
     result = {
         "graphic_abstract_url": "",
@@ -407,8 +419,8 @@ def _parse_index_sheet(repo: str) -> dict:
     return result
 
 
-def _parse_ro_crate_graphics(repo: str) -> dict | None:
-    """Parse RO-Crate metadata for graphic entries (June 2026+ convention).
+def _parse_ro_crate_graphics(repo: str, branch: str = "main") -> dict | None:
+    """Parse RO-Crate metadata for graphic entries (June 2026+ convention).
 
     Scans the RO-Crate @graph for entries whose @id ends with one of the
     four known graphic role identifiers (graphic_abstract, landing_image,
@@ -416,6 +428,10 @@ def _parse_ro_crate_graphics(repo: str) -> dict | None:
 
       path        — full download URL
       description — caption text
+
+    Args:
+        repo: GitHub repository in ``Owner/name`` form.
+        branch: Branch to fetch from (default ``"main"``).
 
     Returns the standard 8-field dict if any graphic entries were found,
     or None if the RO-Crate has no graphic entries (legacy repository).
@@ -432,7 +448,7 @@ def _parse_ro_crate_graphics(repo: str) -> dict | None:
 
     try:
         crate_url = (
-            f"https://raw.githubusercontent.com/{repo}/main/ro-crate-metadata.json"
+            f"https://raw.githubusercontent.com/{repo}/{branch}/ro-crate-metadata.json"
         )
         text = fetch_raw(crate_url, timeout=30)
         if text is None:
@@ -455,28 +471,32 @@ def _parse_ro_crate_graphics(repo: str) -> dict | None:
     return result if found else None
 
 
-def discover_graphics(repo: str) -> dict:
+def discover_graphics(repo: str, branch: str = "main") -> dict:
     """
     Discover model graphics for a repository.
 
-    Strategy 1 — RO-Crate graphic entries (primary, June 2026+):
+    Strategy 1 — RO-Crate graphic entries (primary, June 2026+):
       Parse ro-crate-metadata.json for
       @graph entries whose @id ends with graphic_abstract, landing_image,
       model_setup_figure, or animation.  Uses the ``path`` field as the
       download URL and ``description`` as the caption.
 
     Strategy 2 — Legacy index sheet (backward compatibility fallback):
-      Only reached when the RO-Crate has no graphic entries (pre-June 2026
+      Only reached when the RO-Crate has no graphic entries (pre-June 2026
       repositories).  Parses .website_material/index.md or .website_material/
       index.json for explicit image→role mappings with captions.
+
+    Args:
+        repo: GitHub repository in ``Owner/name`` form.
+        branch: Branch to fetch from (default ``"main"``).
     """
     # Strategy 1: RO-Crate graphic entries (primary)
-    result = _parse_ro_crate_graphics(repo)
+    result = _parse_ro_crate_graphics(repo, branch)
     if result is not None:
         return result
 
     # Strategy 2: Legacy index sheet (fallback)
-    result = _parse_index_sheet(repo)
+    result = _parse_index_sheet(repo, branch)
 
     # Warn about any graphic fields that remain empty
     url_keys = [k for k in result if k.endswith("_url")]
@@ -544,7 +564,45 @@ def _process_graphic(url: str, slug: str, label: str) -> str:
     return rel_path if os.path.exists(out_path) else url
 
 
-def normalise_ro_crate(crate: dict, slug: str, repo: str) -> dict:
+# Candidate @ids for the RO-Crate root Data Entity, tried in order.
+#
+# The RO-Crate 1.1 spec (https://researchobject.github.io/ro-crate/) requires
+# the root Data Entity to be addressed as "./".  All legacy M@TE model crates
+# comply, but the Lu-2026 crate generator emits the root as
+# "http://example.org/base/" instead.  If a future model crate ever returns
+# empty root-level fields (title, abstract, description, creators, DOI, ...),
+# its root @id has changed again — add the new value here rather than
+# hard-coding it inside normalise_ro_crate().
+ROOT_ID_CANDIDATES = [
+    "./",  # RO-Crate 1.1 spec (all legacy M@TE model crates)
+    "http://example.org/base/",  # Lu-2026 generator convention
+]
+
+
+def _find_root_node(index: dict) -> dict:
+    """Resolve the RO-Crate root Data Entity from the @graph ``index``.
+
+    Tries the known root @ids from ``ROOT_ID_CANDIDATES`` first, then falls
+    back to a heuristic scan: the root is the Dataset-typed node that carries
+    model-level metadata (a ``name`` plus an ``abstract`` or ``description``),
+    which child datasets (``.metadata_trail``, ``model_outputs``, ...) never
+    have.  Returns ``{}`` if nothing matches, matching the old
+    ``index.get("./", {})`` behaviour.
+    """
+    for candidate in ROOT_ID_CANDIDATES:
+        if candidate in index:
+            return index[candidate]
+    for node in index.values():
+        if not isinstance(node, dict):
+            continue
+        if "Dataset" not in always_list(node.get("@type")):
+            continue
+        if node.get("name") and (node.get("abstract") or node.get("description")):
+            return node
+    return {}
+
+
+def normalise_ro_crate(crate: dict, slug: str, repo: str, branch: str = "main") -> dict:
     """
     Parse a RO-Crate 1.1 @graph into the common normalised schema dict.
     crate: parsed JSON (has "@graph" key)
@@ -554,7 +612,7 @@ def normalise_ro_crate(crate: dict, slug: str, repo: str) -> dict:
     """
     graph = always_list(crate.get("@graph"))
     index = {n.get("@id"): n for n in graph if isinstance(n, dict) and n.get("@id")}
-    root = index.get("./", {})
+    root = _find_root_node(index)
 
     title = _clean(root.get("name"))
     out_slug = _clean(root.get("alternateName")) or slug
@@ -690,7 +748,7 @@ def normalise_ro_crate(crate: dict, slug: str, repo: str) -> dict:
         if fname:
             funders.append({"name": fname})
 
-    graphics = discover_graphics(repo)
+    graphics = discover_graphics(repo, branch)
 
     return {
         "slug": out_slug,
@@ -1048,9 +1106,10 @@ def main() -> None:
     for entry in entries:
         repo = entry["repo"]
         slug = entry["slug"]
-        print(f"\nIngesting: {slug} from {repo}")
-        crate = fetch_ro_crate(repo)
-        m = normalise_ro_crate(crate, slug, repo)
+        branch = entry["branch"]
+        print(f"\nIngesting: {slug} from {repo} (branch: {branch})")
+        crate = fetch_ro_crate(repo, branch)
+        m = normalise_ro_crate(crate, slug, repo, branch)
         if not validate_doi(m["doi"]):
             if m["doi"]:
                 print(

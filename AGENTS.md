@@ -88,6 +88,20 @@ Two known edge cases fixed in this codebase:
 - Graphics discovered from RO-Crate `@graph` entries (primary, June 2026+) or legacy `.website_material/` (fallback).
 - PDF graphics auto-converted to PNG via `pdftoppm` (poppler dependency in pixi) **during ingest**; resolved URLs are stored in the YAML frontmatter so the pandoc filter never touches the filesystem.
 
+### RO-Crate root `@id` gotcha
+
+The RO-Crate 1.1 spec requires the root Data Entity to be addressed as `./`, and
+all legacy M@TE model crates comply. The **Lu-2026 generator** instead emits the
+root as `http://example.org/base/`. `scripts/ingest_models.py` resolves the root
+via `ROOT_ID_CANDIDATES` + a heuristic fallback (`_find_root_node()`), because
+every root-level field (title, abstract, description, creators, DOI, publication,
+… ) is read from that single node — a wrong root means a model page renders with
+all of those blank even though graphics still appear.
+
+**Future work:** if a new model crate comes back with empty root-level fields,
+its root `@id` has changed again. Add the new value to `ROOT_ID_CANDIDATES`
+in `scripts/ingest_models.py` — never hard-code the root lookup elsewhere.
+
 ## Design tokens (M@TE theme in `styles/mate.css`)
 
 | Token | Value |

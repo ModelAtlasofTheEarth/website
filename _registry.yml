@@ -21,3 +21,6 @@ models:
   - repo: ModelAtlasofTheEarth/finch-2024-cprime
   - repo: ModelAtlasofTheEarth/yang-2023-eqcycles
   - repo: ModelAtlasofTheEarth/gollapalli-2022-sunda-subduction
+  - repo: ModelAtlasofTheEarth/CopyLu-2026-ALEIB-Coupling
+    branch: update-mate2
+  - repo: ModelAtlasofTheEarth/Lu-2026-ALEIB-FreeSurface
