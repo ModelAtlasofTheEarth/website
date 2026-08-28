@@ -23,6 +23,8 @@ models:
   - repo: ModelAtlasofTheEarth/gollapalli-2022-sunda-subduction
   - repo: ModelAtlasofTheEarth/CopyLu-2026-ALEIB-Coupling
     branch: update-mate2
+  - repo: ModelAtlasofTheEarth/Kay-2024-Vulcan
+    branch: update-mate2
   - repo: ModelAtlasofTheEarth/Lu-2026-ALEIB-FreeSurface
   - repo: ModelAtlasofTheEarth/RodriguezCorcho-2026-RIbbonCollision
     branch: update-mate2
