@@ -210,19 +210,22 @@ def render_model_page(m: dict) -> str:
     if m.get("animation_url"):
         anim_url = m["animation_url"]
         anim_cap = m.get("animation_caption", "")
-        if anim_url.lower().endswith(".mp4"):
-            media_html = f"""      <div class="animation-container">
-        <video controls autoplay loop muted playsinline style="max-width:100%; border-radius:6px;">
-          <source src="{anim_url}" type="video/mp4" />
-          Your browser does not support video playback.
-        </video>
-      </div>"""
-        else:
+        anim_kind = (m.get("animation_kind") or "video").lower()
+        # animation_kind is decided during ingest so render time does not need
+        # to probe the network or guess a MIME type.
+        if anim_kind == "image":
             media_html = f"""      <div class="animation-container">
         <img src="{anim_url}"
              alt="{anim_cap or "Model animation"}"
              style="max-width:100%; border-radius:6px;"
              onerror="this.style.display='none'" />
+      </div>"""
+        else:
+            media_html = f"""      <div class="animation-container">
+        <video controls autoplay loop muted playsinline style="max-width:100%; border-radius:6px;">
+          <source src="{anim_url}" />
+          Your browser does not support video playback.
+        </video>
       </div>"""
         if anim_cap:
             media_html += f'\n      <p style="font-size:13px;color:#777;text-align:center;margin-top:0.25rem;">{anim_cap}</p>'
@@ -482,7 +485,9 @@ def model_card_html(m: dict) -> str:
         <span class="badge-doi-right">{doi_display}</span>
       </a>"""
     else:
-        doi_block = '\n      <br/><em style="font-size:12px;color:#888;">DOI not verified.</em>'
+        doi_block = (
+            '\n      <br/><em style="font-size:12px;color:#888;">DOI not verified.</em>'
+        )
 
     return f"""
   <div class="mc-card-container"

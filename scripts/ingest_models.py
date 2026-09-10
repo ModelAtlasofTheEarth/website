@@ -20,6 +20,7 @@ No GitHub token is required — all source repos must be public.
 """
 
 import json
+from datetime import datetime, timezone
 import os
 import re
 import subprocess
@@ -45,6 +46,7 @@ GENERATED_DIR = os.path.join(REPO_ROOT, "generated")
 MODELS_DIR = os.path.join(REPO_ROOT, "models")
 TAGS_DIR = os.path.join(REPO_ROOT, "tags")
 CREATORS_DIR = os.path.join(REPO_ROOT, "creators")
+INGEST_LOG_PATH = os.path.join(REPO_ROOT, ".ingest.log")
 
 # ---------------------------------------------------------------------------
 # Slug helpers
@@ -162,9 +164,7 @@ def fetch_ro_crate(repo: str, branch: str = "main") -> dict:
     url = f"https://raw.githubusercontent.com/{repo}/{branch}/{ro_file}"
     text = fetch_raw(url)
     if not text:
-        raise RuntimeError(
-            f"Could not fetch {ro_file} for {repo} on branch '{branch}'"
-        )
+        raise RuntimeError(f"Could not fetch {ro_file} for {repo} on branch '{branch}'")
     try:
         return json.loads(text)
     except json.JSONDecodeError as exc:
@@ -310,6 +310,24 @@ GRAPHIC_FIELDS = [
 ]
 
 
+def _infer_animation_kind(*values: str) -> str:
+    """Infer animation media type during ingest so rendering stays offline.
+
+    ``gif`` and image formats are returned when the source clearly points to
+    a raster image; video formats fall back to ``video`` so the renderer can
+    use ``<video>`` without network probing.
+    """
+    text = " ".join(_clean(v).lower() for v in values if _clean(v))
+
+    if text.endswith((".png", ".jpg", ".jpeg", ".webp", ".svg", ".gif")):
+        return "image"
+    if text.endswith((".mp4", ".webm", ".mov", ".m4v")):
+        return "video"
+    if text.startswith("video/"):
+        return "video"
+    return "video"
+
+
 def _parse_index_sheet(repo: str, branch: str = "main") -> dict:
     """Backward-compatibility: try to parse an image mapping from legacy
     .website_material/index.md (YAML frontmatter) or .website_material/index.json.
@@ -433,8 +451,9 @@ def _parse_ro_crate_graphics(repo: str, branch: str = "main") -> dict | None:
         repo: GitHub repository in ``Owner/name`` form.
         branch: Branch to fetch from (default ``"main"``).
 
-    Returns the standard 8-field dict if any graphic entries were found,
-    or None if the RO-Crate has no graphic entries (legacy repository).
+    Returns the standard 8-field dict only if all required graphic entries are
+    present. If any required graphic role is missing, returns ``None`` so the
+    caller can fall back to the legacy index sheet.
     """
     role_suffixes = {
         "graphic_abstract": ("graphic_abstract_url", "graphic_abstract_caption"),
@@ -444,6 +463,7 @@ def _parse_ro_crate_graphics(repo: str, branch: str = "main") -> dict | None:
     }
 
     result = {k: "" for k in GRAPHIC_FIELDS}
+    animation_kind = "video"
     found = False
 
     try:
@@ -461,14 +481,30 @@ def _parse_ro_crate_graphics(repo: str, branch: str = "main") -> dict | None:
             nid = node.get("@id", "")
             for suffix, (url_key, cap_key) in role_suffixes.items():
                 if nid.endswith(suffix):
-                    result[url_key] = (node.get("path") or "").strip()
+                    url = (node.get("path") or node.get("url") or "").strip()
+                    result[url_key] = url
                     result[cap_key] = (node.get("description") or "").strip()
+                    if suffix == "animation":
+                        animation_kind = _infer_animation_kind(
+                            url,
+                            node.get("encodingFormat", ""),
+                            node.get("contentUrl", ""),
+                        )
                     found = True
                     break
     except Exception:
         return None
 
-    return result if found else None
+    if not found:
+        return None
+
+    # Strict fallback: treat a partial RO-Crate as absent so legacy index
+    # sheets can supply missing graphics such as animation.
+    if any(not result[url_key] for url_key, _ in role_suffixes.values()):
+        return None
+
+    result["animation_kind"] = animation_kind
+    return result
 
 
 def discover_graphics(repo: str, branch: str = "main") -> dict:
@@ -509,6 +545,8 @@ def discover_graphics(repo: str, branch: str = "main") -> dict:
             f"no graphic found for: {', '.join(missing)}",
             file=sys.stderr,
         )
+
+    result["animation_kind"] = _infer_animation_kind(result.get("animation_url", ""))
 
     return result
 
@@ -770,6 +808,7 @@ def normalise_ro_crate(crate: dict, slug: str, repo: str, branch: str = "main") 
         "model_setup_image_caption": graphics["model_setup_image_caption"],
         "animation_url": graphics["animation_url"],
         "animation_caption": graphics["animation_caption"],
+        "animation_kind": graphics.get("animation_kind", "video"),
         "licence_url": licence_url,
         "licence_name": licence_name,
         "dataset_nci_url": dataset_nci_url,
@@ -1092,12 +1131,28 @@ def write_featured_json(models: List[dict]) -> None:
     print(f"  Wrote {path}")
 
 
+def write_ingest_log(elapsed_seconds: float) -> None:
+    """Write the most recent successful ingest timing to the repo root log."""
+    now = datetime.now(timezone.utc)
+    line = (
+        f"timestamp={int(now.timestamp())} "
+        f"datetime={now.isoformat()} "
+        f"elapsed={elapsed_seconds:.2f}s status=0\n"
+    )
+    tmp_path = f"{INGEST_LOG_PATH}.tmp"
+    with open(tmp_path, "w", encoding="utf-8") as f:
+        f.write(line)
+    os.replace(tmp_path, INGEST_LOG_PATH)
+
+
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
 
 def main() -> None:
+    ingest_started = time.time()
+
     # Read registry
     entries = parse_registry(REGISTRY_PATH)
     print(f"Found {len(entries)} model(s) in registry.")
@@ -1195,6 +1250,7 @@ def main() -> None:
     # Write models/_featured.json (carousel data for the home page)
     write_featured_json(models)
 
+    write_ingest_log(time.time() - ingest_started)
     print("\nDone. Commit the generated .qmd files and run `quarto render`.")
 
 

@@ -26,5 +26,8 @@ models:
   - repo: ModelAtlasofTheEarth/Kay-2024-Vulcan
     branch: update-mate2
   - repo: ModelAtlasofTheEarth/Lu-2026-ALEIB-FreeSurface
+    branch: update-mate2
   - repo: ModelAtlasofTheEarth/RodriguezCorcho-2026-RIbbonCollision
+    branch: update-mate2
+  - repo: ModelAtlasofTheEarth/gollapalli-2025-sundamegathrust
     branch: update-mate2
